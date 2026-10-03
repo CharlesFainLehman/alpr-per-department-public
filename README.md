@@ -4,8 +4,7 @@ Estimate the number of automated license plate readers (ALPRs) per US police
 department. The method crosswalks crowdsourced OpenStreetMap camera data (the
 DeFlock layer) to law-enforcement agencies.
 
-Status: scaffold only. No data or analysis code yet. The task specification is
-in `PROMPT.md`.
+Status: in progress. Task spec in `PROMPT.md`.
 
 ## Layout
 
@@ -32,3 +31,32 @@ in `PROMPT.md`.
   limits to the local police department.
 - Volunteer coverage is uneven across areas.
 - LEAIC is old; newer agencies are missing.
+
+## Run order (from the repo root)
+
+```
+Rscript R/01_download_census.R   # TIGER/Line 2025 states, counties, places, county subdivisions; ACS 2020-24 B01003
+Rscript R/02_pull_osm.R          # Overpass, state by state -> data/raw/osm/<date>/, osm_alpr_raw_<date>.csv
+Rscript R/03_agencies.R          # FBI CDE agency directory + FBI employee file (population) + LEAIC FIPS
+Rscript R/04_method_a.R          # operator-tag name match
+Rscript R/05_method_b.R          # spatial join (needs LEAIC)
+Rscript R/06_combine_outputs.R   # cameras.csv, agencies.csv, summary_stats.csv, density plot
+Rscript R/07_validate.R          # comparison with N&O Flock transparency-portal counts
+```
+
+R packages: sf, dplyr, readr, tidyr, stringr, purrr, jsonlite, httr2, stringdist, ggplot2.
+
+## Manual download: LEAIC (needed for method B)
+
+ICPSR needs a login and blocks scripted access. Download by hand:
+https://www.icpsr.umich.edu/web/NACJD/studies/35158 -> DS1, Delimited (or R) format.
+Put `35158-0001-Data.tsv` (or `.rda`) under `data/raw/leaic/`, then re-run from `03_agencies.R`.
+
+## Access notes
+
+- Overpass: `overpass-api.de` is tried first, the `maps.mail.ru` mirror second (same Overpass
+  software, live OSM data). The endpoint and OSM timestamp per state are in `data/raw/osm/<date>/query_log.csv`.
+- FBI: agency directory from `cde.ucr.cjis.gov/LATEST/agency/byStateAbbr/<ST>`; population served
+  from the CDE "Law Enforcement Employees" file (`lee_1960_2025.csv`), latest year per ORI.
+- ACS: summary-file download (`acsdt5y2024-b01003.dat`); the Census API now requires a key.
+- Validation file is dated 2024-04-26 in its `updated` field, despite "2023" in the file name.

@@ -1,0 +1,8 @@
+Overpass endpoints reachable: https://overpass-api.de/api/interpreter TRUE; https://maps.mail.ru/osm/tools/overpass/api/interpreter TRUE
+  NY: 8210 nodes in bbox (https://maps.mail.ru/osm/tools/overpass/api/interpreter)
+  NV: 1934 nodes in bbox (https://maps.mail.ru/osm/tools/overpass/api/interpreter)
+  AK: 13 nodes in bbox (https://maps.mail.ru/osm/tools/overpass/api/interpreter)
+  VT: 68 nodes in bbox (https://maps.mail.ru/osm/tools/overpass/api/interpreter)
+  CT: 1191 nodes in bbox (https://maps.mail.ru/osm/tools/overpass/api/interpreter)
+  DE: 713 nodes in bbox (https://maps.mail.ru/osm/tools/overpass/api/interpreter)
+  NM: 1379 nodes in bbox (https://maps.mail.ru/osm/tools/overpass/api/interpreter)
