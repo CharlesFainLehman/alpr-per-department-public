@@ -43,6 +43,7 @@ Rscript R/04b_operator_class.R      # operator class for every camera (private /
 Rscript R/05_method_b.R             # located: spatial assignment with per-camera b_status
 Rscript R/06_combine_outputs.R      # cameras.csv, agencies.csv (tagged / located / attributed), summary_stats.csv, density plot
 Rscript R/07_validate.R             # historical comparison with N&O Flock portal counts
+Rscript R/07b_validate_web.R        # comparison with web-collected reported counts (data/validation_web/)
 Rscript R/08_summary.R              # output/summary.md
 Rscript R/09_hist_stats.R           # share of agencies by camera-count range, with mean, median, 99th percentile
 Rscript R/10_checks.R               # regression checks from the 2026-10-03 audit

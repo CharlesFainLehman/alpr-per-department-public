@@ -1,0 +1,25 @@
+state,agency_name,program_status,reason
+NY,Syracuse Police Department,current,13-14 Flock cameras still reported Jan 2026
+KY,Louisville Metro Police Department,current,'pending' cameras are additional; 240 operating
+CA,Berkeley Police Department,current,contract extended May 2026
+TX,Dallas Police Department,current,count is cameras remaining after cancellation
+CA,Half Moon Bay (San Mateo County Sheriff contract),current,count as of 3/30/2026; pilot ending Oct 2026
+FL,Collier County Sheriff's Office,changed,count predates removal of 72 cameras
+FL,Alachua County Sheriff's Office,changed,count includes 27 being shut off
+CO,Denver Police Department,planned_or_contracted,planned Axon replacement; Flock network removed
+OH,Cleveland Division of Police,current,contract extension; cameras operating
+OH,Columbus Division of Police,current,65 active
+NY,Peekskill Police Department,current,15 fixed installed (grant-funded)
+AR,Little Rock Police Department,current,113 of 116 installed
+TX,Fort Worth Police Department,current,2024 installed count from PIO
+CA,Oakland Police Department,current,operating network under renewed contract
+CO,Summit County Sheriff's Office,current,installed count (some vandalized)
+WA,Yakima County Sheriff's Office,current,installed count
+CO,Arapahoe County Sheriff's Office,current,25-camera pilot installed
+MN,Anoka County Sheriff's Office,current,installed count as of Apr 2026
+IN,West Lafayette Police Department,current,installed count
+ME,Lewiston Police Department,current,installed count (lower bound)
+NJ,Edison Police Department,current,20 existing
+NY,Suffolk County Police Department,current,25 existing
+RI,East Providence Police Department,current,operating
+NY,Amherst Police Department,current,17 Flock operating at time of source

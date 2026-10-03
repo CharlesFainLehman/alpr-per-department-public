@@ -9,14 +9,25 @@ source("R/00_setup.R")
 library(ggplot2)
 library(stringdist)
 
-files <- list.files("data/validation_web", pattern = "\\.csv$", full.names = TRUE)
+files <- list.files("data/validation_web", pattern = "^(northeast|midwest|south|west)\\.csv$", full.names = TRUE)
 stopifnot(length(files) > 0)
 w <- map_dfr(files, \(f) read_csv(f, col_types = cols(.default = "c")) |> mutate(file = basename(f)))
 n_log(w, "web-reported rows")
+# Program status from the collector's notes (keyword rules) plus reviewed overrides
+DISC_RX <- regex("remov|turned off|turn off|shut (off|down)|deactivat|disabl|terminat|cancel|suspend|paus|lapse|inactive|\\bended\\b|discontinu|\\bending\\b|dropped|switch(ing)? off", ignore_case = TRUE)
+PLAN_RX <- regex("planned|approved|not confirmed|installing|to be installed|will install|proposed|pilot|contracted|grant-funded|not yet installed|replacing|replace", ignore_case = TRUE)
+ovr <- read_csv("data/validation_web/status_overrides.csv", col_types = cols(.default = "c"))
 w <- w |> mutate(reported = suppressWarnings(as.numeric(reported_cameras)),
                  state = str_to_upper(str_trim(state)),
-                 mobile_or_shared = str_to_lower(coalesce(includes_mobile_or_shared, "")) %in% c("yes", "y", "true"),
-                 year = suppressWarnings(as.integer(substr(as_of_date, 1, 4))))
+                 mobile_flag = str_to_lower(coalesce(includes_mobile_or_shared, "")),
+                 mobile_or_shared = mobile_flag != "no",          # yes / unknown / unclear
+                 year = suppressWarnings(as.integer(substr(as_of_date, 1, 4))),
+                 program_status = case_when(str_detect(coalesce(notes, ""), DISC_RX) ~ "discontinued",
+                                            str_detect(coalesce(notes, ""), PLAN_RX) ~ "planned_or_contracted",
+                                            TRUE ~ "current")) |>
+  left_join(ovr |> select(state, agency_name, ovr_status = program_status), by = c("state", "agency_name")) |>
+  mutate(program_status = coalesce(ovr_status, program_status)) |> select(-ovr_status)
+print(count(w, program_status)); print(count(w, mobile_flag))
 message("  rows with non-numeric count (dropped): ", sum(is.na(w$reported)),
         "; rows with no URL (dropped): ", sum(is.na(w$url) | w$url == ""))
 w <- w |> filter(!is.na(reported), !is.na(url), url != "", state %in% STATES$abbr)
@@ -32,7 +43,11 @@ ag_p <- bind_cols(ag |> select(ori, name, state, agency_type), parse_name(ag$nam
   mutate(kind = if_else(agency_type == "Sheriff", "sheriff", "police"),
          core2 = if_else(agency_type != "Municipal police", core, core2))
 w <- w |> mutate(hint = case_when(agency_type == "sheriff" ~ "sheriff", agency_type %in% c("municipal", "county_police") ~ "police", TRUE ~ "none"))
-pw <- parse_name(w$agency_name)
+# reviewed name aliases (source name -> FBI agency name)
+ALIAS <- c("Indianapolis Metropolitan Police Department" = "Indianapolis Police Department",
+           "North Attleborough Police Department" = "North Attleboro Police Department",
+           "York-Poquoson Sheriff's Office" = "York County Sheriff's Office")
+pw <- parse_name(coalesce(unname(ALIAS[w$agency_name]), w$agency_name))
 w <- bind_cols(w, pw |> select(kind, core, core2, core_typed)) |>
   mutate(kind = if_else(kind == "none", hint, kind),
          core2 = if_else(str_detect(core, "\\b(county|parish)\\b"), core, core2))
@@ -76,7 +91,7 @@ dupe <- v |> count(ori) |> filter(n > 1)
 if (nrow(dupe)) { message("  ORIs matched by >1 row (most recent kept): ", nrow(dupe))
   v <- v |> arrange(ori, desc(as_of_date)) |> distinct(ori, .keep_all = TRUE) }
 n_log(v, "matched web-reported agencies")
-write_csv(v |> select(state, agency_name, ori, matched_name = cand_name, basis, agency_type_fbi, reported, mobile_or_shared,
+write_csv(v |> select(state, agency_name, ori, matched_name = cand_name, basis, agency_type_fbi, reported, program_status, mobile_flag,
                       vendor, flock_only, as_of_date, source_type, osm_tagged = tagged_all, osm_located, osm_attributed,
                       url, quote, notes),
           file.path(OUT, "validation_web_comparison.csv"))
@@ -87,14 +102,17 @@ metrics <- function(osm, rep) {
          median_ratio = median(r), within_2x = mean(r >= 0.5 & r <= 2),
          below_half = mean(r < 0.5), above_double = mean(r > 2), median_abs_error = median(abs(osm - rep)))
 }
-core <- v |> filter(!mobile_or_shared)
+core <- v |> filter(!mobile_or_shared, program_status == "current")
+n_log(core, "core comparison set (current program, fixed agency-operated count)")
 res <- bind_rows(
-  metrics(core$osm_located, core$reported) |> mutate(measure = "located", subset = "fixed, agency-operated", .before = 1),
-  metrics(core$osm_attributed, core$reported) |> mutate(measure = "attributed", subset = "fixed, agency-operated", .before = 1),
+  metrics(core$osm_located, core$reported) |> mutate(measure = "located", subset = "core: current, fixed, agency-operated", .before = 1),
+  metrics(core$osm_attributed, core$reported) |> mutate(measure = "attributed", subset = "core: current, fixed, agency-operated", .before = 1),
   { d <- filter(core, year >= 2025); metrics(d$osm_located, d$reported) |> mutate(measure = "located", subset = "fixed, source dated 2025-2026", .before = 1) },
   { d <- filter(core, agency_type_fbi == "Municipal police"); metrics(d$osm_located, d$reported) |> mutate(measure = "located", subset = "municipal police", .before = 1) },
   { d <- filter(core, agency_type_fbi != "Municipal police"); metrics(d$osm_located, d$reported) |> mutate(measure = "located", subset = "sheriffs / county police", .before = 1) },
-  { d <- filter(v, mobile_or_shared); if (nrow(d) > 2) metrics(d$osm_located, d$reported) |> mutate(measure = "located", subset = "figures incl. mobile/shared", .before = 1) })
+  { d <- filter(v, mobile_or_shared); if (nrow(d) > 2) metrics(d$osm_located, d$reported) |> mutate(measure = "located", subset = "figures incl. mobile/shared or unclear", .before = 1) },
+  { d <- filter(v, program_status == "discontinued"); metrics(d$osm_located, d$reported) |> mutate(measure = "located", subset = "discontinued programs (last count)", .before = 1) },
+  { d <- filter(v, program_status == "planned_or_contracted"); metrics(d$osm_located, d$reported) |> mutate(measure = "located", subset = "planned / contracted counts", .before = 1) })
 print(res, width = Inf)
 write_csv(res, file.path(OUT, "validation_web_metrics.csv"))
 
@@ -105,10 +123,32 @@ p <- ggplot(core, aes(reported, osm_located)) +
   scale_y_continuous(trans = "log1p", breaks = c(0, 1, 3, 10, 30, 100, 300, 1000)) +
   labs(x = "Publicly reported fixed ALPR cameras (log scale, +1)", y = "Mapped OSM cameras located in agency's area (log scale, +1)",
        title = "Mapped OpenStreetMap counts vs. publicly reported camera counts",
-       subtitle = sprintf("%d agencies; sources dated %s-%s (agency sites, government documents, news). r(log) = %.2f; median ratio %.2f; within 2x: %.0f%%",
+       subtitle = sprintf("%d agencies with a current program and a fixed, agency-operated count; sources dated %s-%s\n(agency sites, government documents, news). r(log) = %.2f; median ratio %.2f; within 2x: %.0f%%. Dashed line = equal counts.",
                           nrow(core), min(core$year, na.rm = TRUE), max(core$year, na.rm = TRUE),
                           res$pearson_r_log1p[1], res$median_ratio[1], 100 * res$within_2x[1])) +
   theme_minimal(base_size = 11) +
   theme(panel.grid.minor = element_blank(), panel.grid.major = element_line(colour = "#e6e5e0", linewidth = 0.3),
         plot.background = element_rect(fill = "#fcfcfb", colour = NA), plot.subtitle = element_text(colour = "#52514e"))
 ggsave(file.path(OUT, "validation_web_scatter.png"), p, width = 9, height = 6, dpi = 150)
+
+# Reported counts as an independent estimate of cameras per agency -------------------------------------
+# The web sample is not random: it holds agencies that have cameras and whose count was published
+# (often because of a council debate or news story). It says nothing about agencies with zero cameras,
+# and skews toward larger and more contested programs. Compared here with OSM for the SAME agencies.
+dstat <- function(x, nm) tibble(estimate = nm, agencies = length(x), mean = mean(x), median = median(x),
+                                p25 = quantile(x, .25), p75 = quantile(x, .75), p90 = quantile(x, .90), max = max(x))
+core <- core |> mutate(rep_per10k = if_else(population_fbi > 0, 1e4 * reported / population_fbi, NA),
+                       osm_per10k = if_else(population_fbi > 0, 1e4 * osm_located / population_fbi, NA))
+dens <- bind_rows(
+  dstat(core$reported, "reported count (web sources)"),
+  dstat(core$osm_located, "OSM located, same agencies"),
+  dstat(na.omit(core$rep_per10k), "reported per 10,000 residents"),
+  dstat(na.omit(core$osm_per10k), "OSM located per 10,000 residents, same agencies"))
+popbin <- function(p) cut(p, c(-Inf, 10000, 50000, 250000, Inf), right = FALSE, labels = c("<10k", "10k-50k", "50k-250k", "250k+"))
+dens_size <- core |> mutate(size = coalesce(as.character(popbin(population_fbi)), "unknown")) |>
+  group_by(size) |> summarise(agencies = n(), median_reported = median(reported), median_osm_located = median(osm_located),
+                              median_reported_per10k = median(rep_per10k, na.rm = TRUE), median_osm_per10k = median(osm_per10k, na.rm = TRUE),
+                              median_ratio_osm_to_reported = median(osm_located[reported > 0] / reported[reported > 0]), .groups = "drop")
+print(dens, width = Inf); print(dens_size, width = Inf)
+write_csv(dens, file.path(OUT, "validation_web_density.csv"))
+write_csv(dens_size, file.path(OUT, "validation_web_density_by_size.csv"))
