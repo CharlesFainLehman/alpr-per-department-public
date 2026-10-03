@@ -27,9 +27,9 @@ p <- ggplot(pos, aes(cameras_b)) +
            colour = "#52514e", lineheight = 1.05) +
   scale_x_log10(breaks = c(1, 2, 5, 10, 20, 50, 100, 200, 466, 1000, 2000),
                 labels = c("1", "2", "5", "10", "20", "50", "100", "200", "466", "1,000", "2,000")) +
-  labs(x = "OSM ALPR cameras per agency, method B (log scale)", y = "Density",
+  labs(x = "License plate reader cameras per agency, mapped in OpenStreetMap (log scale)", y = "Density",
        title = "Almost every agency's camera network is smaller than one a court has upheld",
-       subtitle = sprintf("Local police and sheriffs with at least one mapped camera (n = %s). OSM pull %s.",
+       subtitle = sprintf("Local police and sheriffs with at least one camera mapped in OpenStreetMap (OSM), the crowdsourced map\nused by DeFlock. Cameras assigned by location (n = %s agencies). Data pulled %s.",
                           format(nrow(pos), big.mark = ","), readLines(file.path(PROC, "osm_pull_date.txt")))) +
   theme_minimal(base_size = 11) +
   theme(panel.grid.minor = element_blank(), panel.grid.major = element_line(colour = "#e6e5e0", linewidth = 0.3),
