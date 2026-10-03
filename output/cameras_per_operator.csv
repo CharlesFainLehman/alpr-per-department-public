@@ -1,0 +1,1353 @@
+operator,cameras,states,flock_share
+Flock Safety,1781,AL FL GA IA IL IN KY LA MN MO NC NJ NM OH OK OR PA RI SC TN TX UT VA WI,0.09320606400898372
+Lowe's,1220,AK AL AR AZ CA CT DE FL GA HI IA ID IL IN KY LA MA MD MI MN MO MT NC ND NJ NM NV NY OH OK OR PA RI SC TN TX UT VA VT WA WI WV WY,0.9459016393442623
+The Home Depot,698,AL AZ CA CT DC DE FL GA IA IL IN KY MA MD MI MN MO MT NC NJ NM NV NY OH OK OR PA RI SC TN TX UT VA WA WI,0.9871060171919771
+NYC Department of Transportation,593,NY,0
+Chicago Police Department,225,IL,0.0044444444444444444
+New York City Police Department,215,NY,0
+St. Charles County PD,175,MO,0.09714285714285714
+Norfolk Police Department,166,VA,0.03614457831325301
+St. Louis City PD,158,MO,0
+Las Vegas Metropolitan Police Department,157,NV,0.5796178343949044
+Albuquerque Police Department,125,NM,0.008
+Hampton Police Division,115,VA,0.008695652173913044
+New Haven Police Department,105,CT,0
+Buffalo Police Department,104,NY,0
+Henrico County Police Division,97,VA,1
+Tulsa Police Department,97,OK,0.41237113402061853
+Newport News Police Department,96,VA,0.010416666666666666
+Toledo Police Department,93,OH,1
+Simon Property Group,91,AZ CT DC FL GA IL LA MD MI MO NC NJ NY OH OK OR PA TN TX UT VA WI WV,0.8571428571428571
+West University Place Police Dept,88,TX,0
+Volusia County Sheriff's Office,82,FL,0.9146341463414634
+Metropolitan Transportation Authority,79,NY,0
+Tucson Police Department,76,AZ,0
+Amarillo Police Department,75,TX,1
+Customs and Border Protection,74,AZ CA NM TX,0
+Illinois State Police,72,IL,0
+Clay County Sheriff's Office,68,FL,0.8970588235294118
+Lowes,68,FL IA KY MA MN MO NC NY OK RI SC TN VA VT,0.75
+City of Buckeye,67,AZ,0.8208955223880597
+Dallas Police Department,64,OR TX,0.984375
+University of Arizona Police Department,64,AZ,0.90625
+Champaign Police Department,63,IL,0.5555555555555556
+Dearborn Police Department,61,MI,0.9344262295081968
+Detroit Police Department,60,MI,0.65
+Lexington Police Department,60,KY,0.13333333333333333
+Richmond Police Department,59,VA,1
+Louisville Metro Police Department,58,KY,0.9482758620689655
+Portsmouth Police Department,54,VA,0.037037037037037035
+New York Police Department,53,NY,0
+Hempstead Police Department,52,NY,0.9615384615384616
+New Hampshire Bureau of Turnpikes,52,NH,0
+Dierbergs Markets,50,MO,1
+JCPD,50,TN,0.8
+Cedar Rapids Police Department,49,IA,1
+St. Johns County Sheriff,49,FL,1
+Suffolk Police Department,48,VA,0.7916666666666666
+Taylor Police Department,48,MI,0.9583333333333334
+West Des Moines Police Department,48,IA,1
+Westchester County Police RTC/Intelligence Regional and National Data Sharing,48,NY,0
+Minneapolis Police Department,45,MN,0
+Youngstown Police Department,42,OH,1
+University of Florida,41,FL,0
+Lowell Police,40,MA,0.975
+Altoona Police Department,39,IA,1
+LSSC,39,FL,0
+Springfield Police,39,MA,0.9743589743589743
+Home Depot,38,AZ CA FL MA MD MN MO NM VA,0.9473684210526315
+Pasco Sheriff’s Office,38,FL,0.8421052631578947
+Meijer,37,MI OH,0.16216216216216217
+Chesapeake Police Department,36,VA,0.1111111111111111
+City of Bakersfield,36,CA,0.4444444444444444
+Van Buren Township Police Department,36,MI,1
+Station Casinos,34,NV,0
+Maricopa PD,33,AZ,0.9696969696969697
+Seminole County Sheriff's Office,33,FL GA,1
+Virginia Beach Police Department,32,VA,0.25
+Cherokee Indian Police Department,31,NC,0
+Methuen Police,31,MA,0.5483870967741935
+O'Fallon PD,31,MO,0.967741935483871
+Prescott Police Department,31,AZ,1
+Marshalltown Police Department,30,IA,1
+Metro Police Department,30,DC,1
+Mount Pleasant/Westchester County Police RTC/Intelligence Regional and National Data Sharing,30,NY,0
+Prescott Valley Police Department,30,AZ,1
+Sutherlin Police Department,30,OR,0.03333333333333333
+New York City Department of Transportation,29,NY,0
+University of Toledo Police Department,29,OH,1
+Atlanta Police Department,28,GA,0.9642857142857143
+River Rouge Police Department,28,MI,1
+Wood Dale Police Department,28,IL,1
+Garden City Police Department,27,MI NY,1
+Massachusetts Department of Transportation,27,MA,0
+Northampton County Sheriff's Office,27,VA,0
+Romulus Police Department,27,MI,1
+Wayne County Airport Authority,26,MI,1
+Henderson,25,NV,0.04
+Norwich Police Department,25,CT,1
+Owasso Police,25,OK,0.96
+Town of Westfield Police Department,25,NJ,0.04
+Williamsburg Police Department,25,VA,0.32
+Iowa State University Police Department,24,IA,1
+Southington Police Department,24,CT,0.7083333333333334
+Urbandale Police Department,24,IA,1
+Brownstown Police Department,23,MI,1
+Drug Enforcement Administration,23,AZ NM TX,0
+Fairfield Police Department,23,CT,0.8260869565217391
+Laredo PD,23,TX,1
+Manitowoc Police Department,23,WI,0.6521739130434783
+Ridgecrest Police Department,23,CA,0.9565217391304348
+Saint Johns County Sheriff's Office,23,FL,1
+Syracuse Police Department,23,NY,0
+Walmart,23,AZ FL MA OK PA WA,0.13043478260869565
+York-Poquoson Sheriff's Office,23,VA,0.043478260869565216
+Beaumont Police Department,22,TX,1
+Florida International University,22,FL,0
+Mass State Police,22,MA,0.5
+Fall River Police,21,MA,0.9047619047619048
+FedEx,21,CT MA MO TX WI,1
+Lawrence Police,21,MA,0.9523809523809523
+Lincoln Park Police Department,21,MI,1
+Lucas County Sheriff's Office,21,OH,1
+Milford Police Department,21,CT,1
+Odessa Police Department,21,TX,1
+Vidalia GA,21,GA,1
+West Hartford Police Department,21,CT,0.8095238095238095
+[City of Florence PD],20,SC,0.9
+CCPD,20,VA,1
+Forest Park PD,20,OH,1
+Live Oak,20,TX,1
+Maryland Transportation Authority,20,MD VA,0
+Sun City Texas,20,TX,1
+Accomack County Sheriff's Office,19,VA,0
+Boardman Police Department,19,OH,1
+Clive Police Department,19,IA,1
+Dover Police Department,19,DE,0
+Kyle Police Department,19,TX,1
+Mount Lebanon Police Department,19,PA,0
+MTA Bridges and Tunnels,19,NY,0
+Nassau County Police Department,19,NY,0.10526315789473684
+NYC D.O.T,19,NY,0
+PANYNJ,19,NJ NY,0
+Rossford Police Department,19,OH,1
+Tewksbury Police,19,MA,1
+Tufts University,19,MA,0
+University of Iowa Police Department,19,IA,1
+Wyandotte Police Department,19,MI,0.8947368421052632
+Boston Police,18,MA,0.8333333333333334
+Hernando County Sheriff's Office,18,FL,1
+Monroe Police Department,18,CT MI,1
+Oro Valley Police Department,18,AZ,1
+Roseburg Police Department,18,OR,0.8888888888888888
+Town of Bay Harbor Islands,18,FL,1
+University Heights PD,18,OH,1
+Unknown,18,MA OH OK TN VA,0.7222222222222222
+West Allis,18,WI,0
+Albion Department of Public Safety,17,MI,1
+Glastonbury Police Department,17,CT,1
+Kenwood Towne Center,17,OH,1
+Police,17,GA,0.29411764705882354
+Wentzville PD,17,MO,0.9411764705882353
+Clovis Police Department,16,NM,1
+CVS,16,FL MA NH,0.9375
+Dodge County,16,WI,0.0625
+Haverhill Police,16,MA,1
+Hudson Police Department,16,WI,0.0625
+Lynn Police,16,MA,0.9375
+New Britain Police Department,16,CT,0
+NYC M.T.A,16,NY,0
+Pasco Sheriff's Office,16,FL,0.5625
+Plano Police Department,16,TX,1
+Rogers Police Department,16,AR MN,0.4375
+Storm Lake Police Department,16,IA,1
+Sylvania Police Department,16,OH,1
+Windsor Police Department,16,CT VA,0.9375
+Bristol TN Police Department,15,TN,0
+Clark County Sheriff's Office,15,WA,0
+Fashion Show Mall,15,NV,1
+Highland Park Police Department,15,IL,1
+Johnston Police Department,15,IA,1
+Lake St. Louis PD,15,MO,1
+Lantana Police Department,15,FL,1
+Oak Creek Police Department,15,WI,0.9333333333333333
+Saugus Police,15,MA,1
+West Fargo Police Department,15,ND,1
+Ankeny Police Department,14,IA,1
+BYU PD,14,UT,0
+City of Strongsville Police,14,OH,1
+Cranston Police Department,14,RI,1
+Elk River Police Department,14,MN,1
+Huron Township Police Department,14,MI,1
+Mayfair Mall / Brookfield Properties Retail Inc.,14,WI,1
+Melvindale Police Department,14,MI,1
+Owensboro Police Dept.,14,IN KY,1
+UNC Chapel Hill Police Department,14,NC,0
+Wright County Sheriffs Office,14,MN,1
+Albuqueque Police Department,13,NM,0.07692307692307693
+Blackman-Leoni Township Department of Public Safety,13,MI,1
+Dearborn Heights Police Department,13,MI,1
+Edmond Police Department,13,OK,0.3076923076923077
+Florida Department of Transportation,13,FL,0
+Hopewell Police Department,13,VA,0.15384615384615385
+Lowe's Home Improvement,13,FL OK,0.3076923076923077
+Midlothian Police Department,13,TX,1
+New Canaan Police Department,13,CT,1
+Norfolk State University,13,VA,0
+North Andover Police,13,MA,0.6923076923076923
+The Colony Police Department,13,TX,1
+University of Central Florida,13,FL,0
+Virginia Tech Police Department,13,VA,1
+Wausau Police Department,13,WI,1
+Whitewater Police Department,13,WI,1
+Bedford Police Department,12,TX,1
+Clarkstown Police Department,12,NY,1
+Fond Du Lac County,12,WI,0
+Jackson Police Department,12,MI,1
+James City County Police Department,12,VA,0.3333333333333333
+Maumee Police Department,12,OH,1
+Metropolitan Transit Authority,12,NY,0
+Plainfield Police,12,IL,1
+Polk County Sheriff,12,FL,1
+Salamanca Police Department,12,NY,0
+Sparks,12,NV,1
+St. Peters PD,12,MO,1
+Town of Culpeper Police Department,12,VA,1
+Universal City,12,TX,1
+Barron County Sheriff,11,WI,1
+Bedford/Westchester County Police RTC/Intelligence Regional and National Data Sharing,11,NY,0
+Blacksburg Police Department,11,VA,0.7272727272727273
+Boeing,11,OK,1
+Carrollton Police Department,11,TX,1
+Green Township PD,11,OH,1
+Greenfield,11,WI,0
+Lake County Indiana Sheriff,11,IN,0
+Ludlow Police,11,MA,1
+Manchester Police Department,11,CT VT,1
+Newark Ohio Division of Police,11,OH,1
+Newtown Police Department,11,CT,1
+North Liberty Police Department,11,IA,1
+Ossining/Westchester County Police RTC/Intelligence Regional and National Data Sharing,11,NY,0
+Pensacola,11,FL,0
+Pinellas County Sheriff's Office,11,FL,1
+Quapaw Nation,11,KS OK,1
+Smithfield Police Department,11,VA,0
+Somerton Police Department,11,AZ,1
+The Colony PD,11,TX,1
+Woburn Police,11,MA,0.9090909090909091
+Worcester Police,11,MA,0.45454545454545453
+Adrian Police Department,10,MI,1
+anne arundel police department,10,MD,1
+Athens County Sheriff's Office,10,OH,1
+Brookfield Property Partners,10,VA,0.4
+Canfield Police Department,10,OH,1
+Creve Coeur PD,10,MO,1
+Faribault Police Department,10,MN,1
+Lyons GA,10,GA,1
+Menomonee Falls,10,WI,0
+New Braunfels,10,TX,1
+Revere Police,10,MA,1
+Rock Security,10,MI,0
+Saint Cloud Police Department,10,MN,0.5
+San Luis Police Department,10,AZ,1
+Sawyer County Sheriff,10,WI,1
+Town of Groton Police Department,10,CT,0.8
+University of Chicago Police Department,10,IL,0
+UoF,10,FL,0
+Wake Forest Police Department,10,NC,1
+Warner Robins Police Department,10,GA,1
+Waukee Police Department,10,IA,1
+Williamsburg Settlement Maintenance Association,10,TX,1
+Billerica Police,9,MA,0.8888888888888888
+Chelsea Police,9,MA,0.8888888888888888
+Cheshire Police Department,9,CT,0.4444444444444444
+City of Fredericksburg,9,VA,1
+City of Oxford,9,NC,1
+College of William and Mary,9,VA,0.1111111111111111
+Colleyville PD,9,TX,0.3333333333333333
+Darien Police Department,9,CT,1
+Ecorse Police Department,9,MI,1
+Hamden Police Department,9,CT,0
+Indianola Police Department,9,IA,1
+Kroger,9,OR TX WA,0.2222222222222222
+Massachusetts State Police,9,MA,0
+Murrysville Police Department,9,PA,0
+Napoleon Township Police Department,9,MI,1
+Navy Federal Credit Union,9,FL MD,0.8888888888888888
+Perrysburg Police Department,9,OH,1
+Port Authority of New York and New Jersey,9,NJ NY,0
+Premium Parking,9,FL,0
+Putnam County Sheriff,9,NY,0
+Scottsdale Police Department,9,AZ,1
+ThedaCare-Froedtert Health,9,WI,0.8888888888888888
+Trophy Club PD,9,TX,1
+Warwick Police Department,9,RI,1
+Worthington PD,9,OH,0.8888888888888888
+Yorktown/Westchester County Police RTC/Intelligence Regional and National Data Sharing,9,NY,0
+Baylor Scott & White Health,8,TX,1
+Celebration Community Development District,8,FL,0
+"City of Taylor, TX",8,TX,1
+Columbia County,8,WI,0
+County of Indiana,8,PA,0
+Delhi Township PD,8,OH,1
+Destiny USA,8,NY,1
+Edina Police Department,8,MN,0.875
+Farmington Police Department,8,CT NM,0.875
+Grafton Police,8,MA,1
+Greenburgh Westchester County Police RTC/Intelligence Regional and National Data Sharing,8,NY,0
+Harrington Police Department,8,DE,0.25
+Heath Police Department,8,OH,1
+Hopkins PD,8,MN,0.875
+King George Sherrifs Office,8,VA,1
+Mashantucket Pequot Tribal Nation Police Department,8,CT,1
+McCracken County Sheriffs Office,8,KY,1
+Mt. Juliet,8,TN,1
+Omaha PD,8,NE,0
+Rekor,8,OH,0
+Roseville Police Department,8,MN,1
+Sunset Valley,8,TX,0.75
+Trenton Police Department,8,MI,1
+Union City Police Department,8,TN,0
+UTTyler,8,TX,1
+Wegmans Food Markets,8,CT NY,0
+Westland Police Department,8,MI,1
+[Methuen Police],7,MA,0
+Ayer Police,7,MA,0.8571428571428571
+Beacon Falls Police Department,7,CT,1
+Bensenville Police Department,7,IL,1
+"Boulder City, NV",7,NV,0
+Bryan PD,7,OH,1
+City of Palmetto PD,7,GA,1
+"City of Perry, FL - Perry Police Department",7,FL,0
+Clinton Police Department,7,CT,1
+Converse,7,TX,1
+Dakota County Sheriff's Office,7,MN,1
+"Dayton, OH Police Dept",7,OH,1
+DHL,7,KY,1
+Douglas Police,7,MA,1
+Eagan,7,MN,0
+Hampton University Police Department,7,VA,0
+Lake County Sheriffs Office,7,FL IN,0.8571428571428571
+Leonardo,7,OH,0
+New Mexico State Police,7,NM,0
+North Castle/Westchester County Police RTC/Intelligence Regional and National Data Sharing,7,NY,0
+Norwalk Police Department,7,CT IA,1
+Oregon Police Department,7,OH,1
+Palms Casino Resort,7,NV,0
+"Panama City, FL",7,FL,1
+Paul Bunyan Drug Task Force,7,MN,0.7142857142857143
+Peabody Police,7,MA,1
+ProMedica,7,OH,1
+Sartell Police Department,7,MN,0.7142857142857143
+Sedona Police Department,7,AZ,1
+Sharon Police Department,7,MA,1
+Stamford Police Department,7,CT,0
+stonybrook university,7,NY,0
+Swainsboro GA,7,GA,1
+Wethersfield Police Department,7,CT,0
+White Plains/Westchester County RTC/Intelligence Regional and National Data Sharing,7,NY,0
+Windsor Locks Police Department,7,CT,1
+Addison Police Department,6,IL,0
+Anne Arundel County Police,6,MD,0.6666666666666666
+Beaver Dam,6,WI,0
+"Boerne TX, City of",6,TX,1
+Bristol Police Department,6,CT,1
+Buc-ee's,6,TX,1
+Caldwell County Sheriff,6,TX,1
+Centennial Park HOA,6,MI,1
+Chesterfield County Sheriff's Office,6,VA,1
+City of Athens Police Department,6,OH,1
+City of Beaver Dam,6,WI,0
+College of the Sequoias,6,CA,0.3333333333333333
+Crown Point Indiana Police,6,IN,0.6666666666666666
+Cuero,6,TX,0
+CVG Airport,6,KY,1
+Flock,6,FL GA NE NM TX WI,0.3333333333333333
+Fond Du Lac,6,WI,0
+Girard Police Department,6,OH,1
+GoldOller Real Estate Investments,6,OH,1
+Grafton Police Dept,6,WI,0
+Great Wolf Lodge,6,MN WI,1
+Greenwich Police Department,6,CT,0
+Harbour View HOA,6,VA,1
+Hartford Police Department,6,CT,0
+Idaho Falls Police Department,6,ID,1
+Inkster Police Department,6,MI,1
+Jacksonville Sheriffs Office,6,FL,1
+Jenks Police,6,OK,1
+Lake Delton Police Department,6,WI,1
+LAW ENFORCEMENT,6,OH,1
+Lewsiboro/Westchester County Police RTC/Intelligence Regional and National Data Sharing,6,NY,0
+Madison Police Department,6,CT,0
+Mahomet Police Department,6,IL,1
+Malden Police,6,MA,1
+Mequon,6,WI,0
+Mohegan Tribal Police Department,6,CT,0
+Muskogee Police,6,OK,1
+New Bedford Police,6,MA,1
+New Castle County PD,6,DE,1
+New London Police Department,6,CT,0
+New York State University Police,6,NY,0
+Norfolk Redevelopment and Housing Authority,6,VA,1
+North Canton Police Department,6,OH,0.5
+Onondaga Community Collage Public Safety (OCC PS),6,NY,1
+Portsmouth Police Department (Virginia),6,VA,0.6666666666666666
+Prospect Police Department,6,CT,0.8333333333333334
+QuikTrip Corporation,6,OK,0
+Richland Police,6,WA,1
+Selma,6,TX,1
+Sentry Insurance,6,WI,1
+Simsbury Police Department,6,CT,1
+South Fulton Police Department,6,TN,0
+Township of Buffalo,6,PA,0
+Tulia Police Dept,6,TX,1
+University of Fla.,6,FL,0
+University of Michigan-Dearborn Department of Public Safety,6,MI,1
+Volusia County Sheriff’s Office,6,FL,1
+Weldon Spring,6,MO,0
+Westfield Police,6,MA,0.3333333333333333
+Winghaven ROA,6,MO,1
+Winthrop Police,6,MA,1
+[LVMPD],5,NV,1
+[Marseilles City Police Department],5,IL,1
+[Marshall Police Department],5,TX,1
+[Rockton Police Department],5,IL,1
+[Roscoe Police Department],5,IL,1
+Academy Sports + Outdoors,5,TX,0.4
+AdventHealth,5,FL,0
+Akron Police Department,5,OH,1
+"Alamogordo, City of",5,NM,1
+BJ's Wholesale Club,5,CT,0.8
+Brentwood PD,5,MO,1
+Carmel/Putnam County Sheriff to Westchester Putnam/RTC,5,NY,0
+Chino Valley Police Department,5,AZ,1
+Cibolo,5,TX,1
+City of Willmar - Police,5,MN,1
+Cobb County Police Department,5,GA,0.4
+Colerain Township,5,OH,1
+Colerain Township PD,5,OH,1
+Collinsville Police,5,OK,1
+Coral Ridge Mall,5,IA,1
+Delaware State Police,5,DE,0
+East Haven Police Department,5,CT,0
+Ellijay Police Department,5,GA,1
+Enfield Police Department,5,CT,0
+FCIC,5,TX,1
+Forsyth County,5,NC,0
+Germantown Police Department,5,WI,0
+Gloucester County Sheriffs Office,5,VA,0
+Groton Police,5,MA,0.8
+Grottoes Police Department,5,VA,1
+Hennepin County Sheriff's Office,5,MN,1
+Jackson Housing Commission,5,MI,1
+Lenawee County Sheriff's Office,5,MI,1
+Lone Peak Police Department,5,UT,1
+Madison County Sheriffs Department,5,NC,0.6
+Marathon County Sheriff’s Office,5,WI,0.8
+"Mesquite, NV",5,NV,0
+Minnesota State Patrol / Paul Bunyan Task Force,5,MN,1
+Minnetonka Police Department,5,MN,0.8
+Monson Police,5,MA,0.6
+New Kent County Sheriff's Office,5,VA,0
+Newington Police Department,5,CT,0
+Nicholasville Police Department,5,KY,0
+North College Hill PD,5,OH,1
+Ocean City Police Department,5,MD,0
+Onondaga County Sheriff’s Office,5,NY,1
+Peekskill/Westchester County Police RTC/Intelligence Regional and National Data Sharing,5,NY,0
+Port of authority of New York and New Jersey,5,NY,0
+Pryor Police,5,OK,1
+Quincy Police,5,MA,1
+Readington Township Police Department,5,NJ,1
+Rocky Hill Police Department,5,CT,0
+Roswell Police,5,GA,1
+Sapulpa Police,5,OK,1
+Sharonville PD,5,OH,1
+Skamania County Sheriff's Department,5,WA,1
+St. Johns County Sheriff’s Office,5,FL,1
+State of Connecticut,5,CT,0
+Stephens County Sheriffs Office,5,GA,0.6
+Stratford Police Department,5,CT,0
+Sun Prairie Police Department,5,WI,0.2
+Target Corporation,5,NC OR,0.4
+Terrell Hills,5,TX,0
+Town of Huntington,5,NY,0
+University of Rhode Island,5,RI,0
+Village of Saint Johnsville Police Department,5,NY,0.4
+Wayne Police Department,5,MI,1
+West Bend,5,WI,0
+West Richland Police,5,WA,1
+West Springfield Police,5,MA,1
+Winton Woods City Schools,5,OH,1
+[Loves Park Police Department],4,IL,1
+Agawam Police,4,MA,1
+Alabama Department of Transportation,4,AL,0
+Allentown PD,4,PA,0
+Atlantic Beach Police Department,4,FL,1
+Auburn Police,4,MA,1
+Avon Police Department,4,CT,1
+Barron Co Sheriff,4,WI,1
+Barton Hills Village,4,MI,0
+Batavia Police Department,4,NY,0
+Beavercreek Police Dept.,4,OH,0
+Bellevue Police Department,4,NE PA,0
+Beverly Police,4,MA,1
+Bexley,4,OH,1
+Bonneville County Sheriff's Office,4,ID,1
+Bowlero,4,IL,1
+Boylston Police,4,MA,1
+Briarcliff Manor/Westchester County Police RTC/Intelligence Regional and National Data Sharing,4,NY,0
+Bristow Police,4,OK,1
+Broken Arrow PD,4,OK,0
+"Bryan County, GA",4,GA,1
+Byrnes Mill PD,4,MO,1
+Cambio Communities,4,MI,1
+Camp Jellystone LLC,4,WI,1
+CCSO,4,AZ VA,1
+Cedar City Police Department,4,UT,1
+Charlton Police,4,MA,1
+Chesterfield County Police Department,4,VA,0.75
+Christiansburg Police Department,4,VA,1
+City of Brunswick Police,4,OH,1
+City of Florence PD,4,SC,1
+City of Henderson,4,NC,1
+City of Wadsworth Police,4,OH,1
+Coweta County Sheriff,4,GA,1
+Creek County Sheriff,4,OK,1
+Cuyahoga Heights Police Department,4,OH,1
+Denison Police Department,4,TX,0
+Des Peres PD,4,MO,1
+East Lyme Police Department,4,CT,1
+ebm-papst,4,CT,1
+Farmers Branch Police Department,4,TX,1
+Fayetteville Police Department,4,NC,1
+Forest Preserve District of DuPage County,4,IL,1
+Fort Monroe Authority,4,VA,0
+Frisco Police Department,4,TX,1
+General Motors,4,MI,0
+Gilbert PD,4,AZ,1
+Grant County,4,WI,0
+Grosse Ile Police Department,4,MI,1
+Hamilton Township PD,4,OH,1
+Home Depot (retailer),4,MA,1
+Hybernia HOA,4,IL,1
+Itasca Police Department,4,IL,1
+Kaiser Permanente,4,CA,1
+Kirkwood Community College,4,IA,0
+Liberty Lake PD,4,WA,1
+M Resort,4,NV,0
+Mammoth Lakes Police Department,4,CA,1
+Marlborough Police,4,MA,1
+Maryland State Police,4,MD,0
+McKinley,4,MI,1
+Metropolis IL PD,4,IL,1
+Minnesota State Patrol,4,MN,1
+Minnetonka High School,4,MN,1
+Monroe County Sheriff's Office,4,MI,1
+Mount Vernon OH PD,4,OH,1
+New York City Department of environmental protection,4,NY,0
+New York State Police,4,NY,0
+New York State Thruway,4,NY,0
+Nolanville PD,4,TX,1
+Ochiltree County Sheriff,4,TX,1
+Petersburg Police Department,4,VA,0
+Pleasant Hill Police Department,4,IA,1
+Polk City Police Department,4,IA,1
+Pooler PD,4,GA,1
+Pulaski County Sheriff's Office,4,VA,1
+Radford Police Department,4,VA,1
+Ramsey County Police Department,4,MN,1
+Remington Police Department,4,VA,1
+Richland Hills Police Department,4,TX,1
+Roanoke Police Department,4,VA,1
+Rochester Police,4,MA,0.75
+Rocky Mount Police Department,4,VA,1
+San Marcos,4,TX,1
+Seneca Police Department,4,SC,1
+SGPD,4,UT,0
+Sheraton Detroit Metro Airport,4,MI,0
+Sherburne County Sheriffs Office,4,MN,1
+Spokane County Sheriff's Office,4,WA,1
+Springboro OH PD,4,OH,1
+Springdale PD,4,OH,1
+St. Charles City PD,4,MO,1
+Stonington Police Department,4,CT,1
+Storey County,4,NV,1
+Struthers Police Department,4,OH,1
+Swisher County Sheriff's Office,4,TX,1
+Table Mountain Casino,4,CA,0
+Target,4,MA MD NV,0.75
+Texas Department of Public Safety,4,TX,1
+The Beacon Group,4,AZ,1
+Town of Boonton,4,NJ,0
+Transylvania County Sheriff's Office,4,NC,1
+United States Border Patrol,4,AZ,0
+US Department of Veterans Affairs,4,VT,0
+Village of Kenmore Police Department,4,NY,0.25
+Village of Menomonee Falls,4,WI,0
+Walden Galeria,4,NY,1
+Warrick county sherriff,4,IN,0
+Warson Woods PD,4,MO,1
+Watauga Police Department,4,TX,1
+Waterford Police Department,4,CT,1
+West Union Police Department,4,SC,1
+Westminster Police Department,4,SC,1
+Wilson County,4,TX,1
+Wilton Police Department,4,CT,1
+Windham Police Department,4,OH,1
+Wisconsin State Capitol Police Department,4,WI,1
+WisDOT,4,WI,0
+XNA,4,AR,1
+York Police,4,ME,1
+(Clay County Sheriff's Office),3,FL,0.3333333333333333
+[Morris Police Department],3,IL,1
+[Winkler SO],3,TX,1
+ACSO,3,FL,0
+Airport Police Department,3,MN,0
+Arizona Mills,3,AZ,0
+Balcones Trails Apartment Complex,3,TX,1
+Ballwin PD,3,MO,1
+Barnstable Police,3,MA,1
+Baylor University Nursing School,3,TX,1
+Belpre Police Department,3,OH,1
+Berlin Police Department,3,CT,1
+Bixby Police,3,OK,1
+Blaine PD,3,MN,1
+Bloomfield Police Department,3,CT,0.3333333333333333
+Branford Police Department,3,CT,0
+Brookfield,3,WI,0
+Burnett County Sheriff,3,WI,1
+Carlisle Police Department,3,IA,1
+Carroll County Sheriff,3,GA,1
+Casino Security,3,OK,0
+Catoosa Police,3,OK,1
+Checotah Police,3,OK,1
+Chicopee Police,3,MA,1
+City of Boerne,3,TX,1
+City of Fairfield PD,3,OH,1
+City of Hampton,3,VA,0
+City of Norfolk,3,VA,0
+City of Windcrest TX,3,TX,1
+Colonial Beach Police Department,3,VA,1
+Cottleville PD,3,MO,1
+Culpeper Police Department,3,VA,1
+Dartmouth Police,3,MA,1
+DTE Energy,3,MI,1
+Dublin GA,3,GA,1
+Dublin Police Department,3,VA,1
+Fairhaven Police,3,MA,1
+Farmers Branch PD,3,TX,1
+Farmington Police,3,NM,1
+Fenton High School,3,IL,1
+Fleet Farm,3,WI,1
+Flock_Safety,3,MD,0
+Florence Police Department,3,OR,1
+Florida Highway Patrol,3,FL,1
+Fort Worth Police Department,3,TX,1
+Founders Parc HOA,3,TX,1
+Gallatin PD,3,TN,1
+Garden City PD,3,GA,1
+Georgetown Police Department,3,DE,0
+Grandview Heights,3,OH,1
+Haltom City Police Department,3,TX,1
+Hamilton Township,3,OH,1
+Harrah's Cherokee Casino,3,NC,0
+HOA,3,GA OK,1
+Holland Pointe HOA,3,OK,1
+Holyoke Police,3,MA,0.6666666666666666
+Jacksonville Beach Police Department,3,FL,1
+"Kading Properties, LLC",3,IA,1
+King George Sherrif's Office,3,VA,1
+Leander Police Department,3,TX,1
+Ledyard Police Department,3,CT,1
+Liberty Police Department,3,OH,1
+Littleton Police,3,MA,1
+Locust Grove Police,3,OK,1
+Lynnfield Police,3,MA,0.6666666666666666
+Menomonee Falls Police Department,3,WI,0
+Milan Police Department,3,MI,1
+Mille Lacs County Sheriffs Office,3,MN,1
+Morris Hills Regional High School District,3,NJ,0
+Mount Jackson Police Department,3,VA,1
+Nashua Housing Authority,3,NH,1
+National Park Service,3,FL TX,0.3333333333333333
+NAU PD,3,AZ,1
+Neptune Beach Police Department,3,FL,1
+New Berlin,3,WI,0.6666666666666666
+New Brighton Police Department,3,MN,1
+New Castle County Police Department,3,DE,0
+Oconomowoc,3,WI,0
+Orange PD,3,CT,0
+Ottawa Hills Local School District,3,OH,1
+PaducahPD,3,KY,1
+"Panama City Bch, FL",3,FL,1
+Patrick Henry Mall,3,VA,0
+Pittsburgh Parking Authority,3,PA,0
+Planned-Owensboro Police Dept.,3,KY,1
+Pleasantville/Westchester County Police RTC/Intelligence Regional and National Data Sharing,3,NY,0
+Poland Village Police Department,3,OH,1
+Police (Millis),3,MA,1
+Port Wentworth PD,3,GA,1
+Pulaski Police Department,3,VA,1
+Putnam Police Department,3,CT,1
+QuikTrip,3,OK,1
+Ramsey Police Department,3,MN,0.6666666666666666
+Redmond Police Department,3,OR,0
+ReNew Foundry Centre Apartments,3,MD,1
+Reno Police Department,3,NV,1
+Rhode Island State Police,3,RI,1
+Rio All-Suite Hotel and Casino,3,NV,0
+Riverside IL PD,3,IL,0.6666666666666666
+Round Rock Police Department,3,TX,1
+Saint Ursula Academy,3,OH,1
+Salem Police,3,MA,1
+Savannah PD,3,GA,1
+Schaumburg Police Department,3,IL,1
+Seaford Police Department,3,DE,0
+Sheriff's Office (martin county),3,FL,1
+Shively PD,3,KY,1
+Southern Illinois University Police Department,3,IL,1
+Southlake Residential Association,3,AL,1
+Spring Arbor University,3,MI,1
+Springfield Township PD,3,OH,1
+Stevens Point Police Department,3,WI,0.3333333333333333
+Stone Meadows HOA,3,MO,1
+Stonewall Ranch Municipal Utility District,3,TX,1
+Suffolk County Police Department,3,NY,1
+Swansea Police,3,MA,0.6666666666666666
+Tallmadge PD,3,OH,1
+Tanger Inc.,3,AL,1
+Town of Orange Police Department,3,VA,1
+Towne Properties,3,OH,1
+Transylvania County SO,3,NC,1
+Union PD,3,MO,1
+Union Township Police Department,3,OH,1
+Valparasio Police Department,3,IN,1
+Vanbrooke Owners Association,3,TX,1
+Vernon Police Department,3,CT,1
+Verra Mobility operated NYC DOT red light camera,3,NY,0
+WakeMed,3,NC,1
+Westchester County RTC/Intelligence Regional and National Data Sharing,3,NY,0
+Wickenburg Police Department,3,AZ,0
+Windcrest,3,TX,1
+'Dutchess County Sheriff's Office',2,NY,1
+(Haywood Co. Sheriff),2,NC,1
+[Camargo Club/Indian Hill],2,OH,1
+"[City of Farmington, NM]",2,NM,1
+[City of Walla Walla],2,WA,1
+[Enter operator name],2,NV TX,0.5
+[Hermiston School District],2,OR,0
+[HOME DEPOT],2,NM,1
+[KPD],2,TX,1
+[Lowes Home Improvement (Corporate Security],2,IL,1
+[LOWES],2,NM,1
+[Mecklenburg County],2,VA,1
+Abilene Police Department,2,TX,1
+Acushnet Police,2,MA,1
+Akron PD,2,OH,1
+AllentownPolice,2,PA,0
+Alpharetta Police,2,GA,1
+Amberley Village,2,OH,1
+Amherst Police Department,2,NY,1
+Anna Meadows Homeowners Association,2,MO,1
+Anne Arundel County Police (RTIC),2,MD,0
+Aransas County,2,TX,0
+Ardsley/Greenburgh Westchester County Police RTC/Intelligence Regional and National Data Sharing,2,NY,0
+Arlington County Police Department,2,VA,1
+Atlanta Police,2,GA,1
+Baltimore County (police?),2,MD,0.5
+Baraboo Police Department,2,WI,1
+Barnes-Jewish Hospital,2,MO,0
+Barre city police dept,2,VT,0
+Bayfield County Sheriffs Dept,2,WI,1
+Bell Station HOA,2,TX,1
+Binghamton University PD,2,NY,1
+Boerne,2,TX,1
+Boston Heights,2,OH,1
+Boston Police Department,2,MA,1
+Bretton Woods HOA,2,OK,1
+Briarcliff/Westchester County Police RTC/Intelligence Regional and National Data Sharing,2,NY,0
+Brillion,2,WI,1
+Brisotw Police,2,OK,1
+Brook Casino,2,NH,1
+Broome County Sheriffs Office,2,NY,0
+California Resources Corporation,2,CA,1
+Cambridge Police Department,2,OH,1
+Central Bank & Trust Co.,2,KY,1
+Chaminade College Preparatory School,2,MO,1
+Chantilly HOA,2,IL,0
+Chatham County PD,2,GA,1
+Chelmsford Police,2,MA,1
+Chesapeake Bay Bridge and Tunnel District,2,VA,0
+Chesterfield PD,2,MO,1
+Chincoteague Police Department,2,VA,0
+Chisago County Sheriff's Office,2,MN,1
+city of Boonville/Boonville police,2,IN,0
+City of Cleveland Police,2,OH,1
+City of Greenfield,2,WI,0
+City of Lebanon,2,OH,1
+City of West Allis,2,WI,0
+Clark Township Police Department,2,NJ,1
+Clean Express Auto Wash,2,MI,0
+Colleyville Police Department,2,TX,1
+Colonial Heights Police Department,2,VA,0
+Columbia County Sheriff's Office,2,WI,1
+Concordia University Ann Arbor,2,MI,1
+Cook County Sheriff's Office,2,IL,1
+Croton-On-Hudson/Westchester County Police RTC/Intelligence Regional and National Data Sharing,2,NY,0
+Danbury Park Manor/Green National,2,MI,1
+Decatur Police Department,2,AL TX,1
+Deleware State Police,2,DE,0
+Douglas County,2,NV,0.5
+Dublin Farms HOA,2,AL,1
+East Providence Police Department,2,RI,1
+Eastern Band of Cherokee Indians (EBCI),2,NC,0
+Elk Grove Village Police Department,2,IL,1
+Elk River PD,2,MN,1
+Embry Riddle Aeronautical University,2,AZ,1
+Embry-Riddle Aeronautical University,2,AZ,1
+ETSU,2,TN,1
+Everett Police,2,MA,1
+Fairfax County Police Department,2,VA,1
+Fort Lee Police Department,2,NJ,0
+Founders Pointe HOA,2,VA,0
+Franklin County Sheriff's Office,2,GA,1
+Franklin Police Department,2,VA,0
+froedtert,2,WI,1
+Gahanna,2,OH,1
+Georgia Tech,2,GA,0
+Germantown Police Department / Menonomee Falls Police Department,2,WI,0.5
+Gilmer County Sheriff's Office,2,GA,1
+Glenpool Police,2,OK,1
+Harlan County Sheriff,2,NE,1
+hays county sheriffs office,2,TX,1
+Hebron Police Department,2,OH,1
+Hernado County Sheriff's Office,2,FL,1
+Hicksville Police Department,2,OH,1
+Hillsbourough County Sheriff's Office,2,FL,1
+Holland PD,2,TX,1
+Hurst Police Department,2,TX,1
+Illiopolis Police Department,2,IL,1
+Iowa County,2,WI,0
+Jackson County Sheriff's Office,2,MI,1
+James City County,2,VA,0
+Jewish Federation of Greater Toledo,2,OH,1
+Kennison Creek Community Association,2,GA,1
+Killingworth Resident State Trooper Office,2,CT,1
+Kirk of the Hills Presbyterian Church,2,MO,1
+Lake City Police Department,2,MN,1
+Land Owner,2,TX,1
+Lebanon Division of Police,2,OH,1
+Lee County Sheriff's Office,2,FL,1
+Leesburg Police Department,2,AL VA,0.5
+Live Oak Creek HOA,2,TX,1
+LiveView Technologies,2,OR,0
+Lochhaven HOA,2,VA,0
+Lowe's (retailer),2,MA,1
+Lowe's Home Improvement Live Oak,2,FL,1
+Loyd Harbor Police Department,2,NY,0
+Marshall Park HOA,2,OK,1
+Marylander Condominiums,2,MD,0
+Mason PD,2,VA,1
+Melrose Police,2,MA,0.5
+Memorial Club Townhomes,2,TX,1
+Micro Center,2,OH,1
+Midlothian PD,2,TX,1
+Migration Path Estates,2,WI,1
+Nassau County Sheriff's Office,2,FL,1
+New Kent County,2,VA,0.5
+Newark Police Department,2,DE,0
+Niagara Frontier Transportation Authority,2,NY,1
+Nordam,2,OK,1
+North Haven Police Department,2,CT,0
+North Richland Hills Police Department,2,TX,1
+Northlake PD,2,TX,1
+Northlake Police Department,2,IL,1
+Northwestern Medicine,2,IL,0
+Norwalk PD,2,CT,1
+NYC DOT Red light Camera,2,NY,0
+NYPD,2,NY,0
+Old Brookville Police Department,2,NY,1
+Oshkosh,2,WI,1
+Owner,2,GA,1
+Palmyra Police Department,2,MO,1
+Pasco County Sheriff's Office,2,FL,1
+PCSO,2,SC,1
+Pennsylvania State Police,2,PA,0
+Pennsylvania State University,2,PA,1
+Pierce Township Police,2,OH,1
+Pinellas Park,2,FL,1
+Pleasanville Westchester County Police RTC/Intelligence Regional and National Data Sharing,2,NY,0
+Police (Grafton),2,MA,1
+Police (Medway),2,MA,1
+Police (Westwood),2,MA,1
+Polk County Police Department,2,GA,1
+Poquoson Police Department,2,VA,0
+Port Royal homeowners association,2,FL,0
+Portage,2,WI,0
+Portage County Sheriff's Office,2,WI,1
+Porter County Sheriffs Office,2,IN,1
+Prince George's County Police,2,MD,1
+Putnam Police Dept,2,CT,1
+Quincy Police Department,2,IL,1
+Rappahannock County Sheriffs Department,2,VA,1
+Redbud HOA,2,OK,1
+Reynolds,2,GA,1
+River Run Apartment Homes,2,SC,1
+ROCai,2,WV,0
+Rogers Police,2,AR,1
+Rosemont Police Department,2,IL,1
+Saint Francis de Sales School,2,OH,1
+Sand Springs Police,2,OK,1
+SarasotaPoliceDepartment,2,FL,1
+Schertz,2,TX,1
+Seminole County Sheriff's Office (Florida),2,FL,1
+Shakopee,2,MN,1
+Silverbrook Wood Condominium,2,MD,1
+Sioux City Police,2,IA,1
+Slinger Police Department,2,WI,0.5
+Soperton GA,2,GA,1
+South Lake Minnetonka Police Department,2,MN,1
+South Windsor Police Department,2,CT,1
+Souther Pines Police Department,2,NC,1
+Spring Arbor Township Police Department,2,MI,1
+St. Charles Community College,2,MO,1
+Stark County Sheriff,2,OH,0
+Stew Leonard's,2,CT,0
+Story County Sheriff's Department,2,IA,1
+Sugarcreek PD,2,OH,1
+Tarrytown Westchester County Police RTC/Intelligence Regional and National Data Sharing,2,NY,0
+Temple of Aaron,2,MN,1
+Texas Department of Transportation,2,TX,1
+The Vanguard Group,2,AZ,0
+The Vineyards HOA,2,MO,1
+Town of Amherst,2,NY,1
+Town of Gordonsville Police Department,2,VA,1
+Town of Mars Hill,2,NC,1
+Town of Woodstock,2,VA,1
+Tulsa Police,2,OK,1
+Tulsa Sheriff,2,OK,1
+Twin Chimneys Village HOA,2,MO,1
+U.S. Drug Enforcement Administration (U.S. Customs and Border Protection also has access to imagery),2,AZ,0
+University of Illinois Chicago,2,IL,1
+University of Illinois Police Department,2,IL,1
+University of Minnesota Police Department,2,MN,1
+US Department of Energy,2,VA,0
+Utah Department of Transportation,2,UT,0
+Valdosta Police Dept.,2,GA,1
+VCSO,2,FL,1
+Vermont State Police,2,VT,0
+Verra Mobility NYC DOT red light camera,2,NY,0
+VILLAGE GREEN HOMEOWNERS ASSOCIATION,2,TX,1
+Village of Briarcliff,2,TX,1
+Village of Wappigners PD/Village of Wappingers,2,NY,1
+Villages At Dardenne Prairie Village HOA,2,MO,1
+Virginia State Police,2,VA,0
+Wakefield Police,2,MA,0
+Wallingford Police Department,2,CT,0
+Walworth County Sheriff,2,WI,1
+Wapello County Sheriff's Department,2,IA,1
+Wapello County SO,2,IA,1
+Wareham Police,2,MA,1
+Washington City Police Department,2,UT,0
+Waukesha County Sheriff's Office,2,WI,1
+Webster Groves PD,2,MO,1
+West Chester PD,2,OH,1
+West Jordan Police Department,2,UT,1
+Westchester County Police RTC/Intelligence,2,NY,0
+Westchester County Public Safety Real Time Crime Center/Intel Center with National and Regional Data Sharing,2,NY,0
+Whittaker Village HOA,2,MI,1
+Wilderness Hotel & Golf Resort,2,WI,1
+Wildwood Police Department,2,FL,0
+Wind Castle HOA,2,MO,1
+Wise County Sheriff's Department,2,VA,1
+Woodstone Apartments,2,MO,1
+Wylie Police Department,2,TX,1
+Yorktown Heights/Westchester County RTC/Intelligence Regional and National Data Sharing,2,NY,0
+Yorktown HOA,2,OK,1
+Yuma County,2,AZ,0
+(Anchorage),1,KY,1
+(Cobb County PD),1,GA,1
+(Marathon County Sheriff's Department),1,WI,1
+(NETHOA/Owner),1,MO,0
+[ACSO],1,FL,0
+[Alachua County SO],1,FL,1
+[Bethlehem Township Police Department],1,PA,1
+[Farmington Police Dapertment],1,NM,1
+[Farmington Police Department],1,NM,1
+[Insight Public Sector Inc],1,VA,1
+[Insight Public Sector(contracted by FCPD],1,VA,1
+[Kermit PD],1,TX,1
+[Niles Police Department],1,IL,1
+[Pace Academy],1,GA,1
+[Seven Coves HOA],1,TX,0
+[uknown],1,OH,1
+[unknown],1,OH,1
+[Willaimson Place POA],1,AR,1
+[Williamson Place POA],1,AR,1
+[Winkler County Sheriff's Office],1,TX,1
+Ada County Sheriff’s Office,1,ID,1
+Ada County Sherriff’s Office,1,ID,0
+Adams County Sheriff's Office,1,IN,1
+Air Garage,1,OR,0
+Allen Park Police Department,1,MI,1
+Amarillo Police Depart,1,TX,1
+Amelia Place Homeowners Association,1,GA,1
+Anchorage PD,1,KY,1
+Anne Arundel County Police Real Time Information Center (RTIC),1,MD,1
+Anoka County Sheriff’s Office,1,MN,1
+Augusta County Sheriff's Office,1,VA,0
+Austin Ridge HOA,1,MO,1
+Baker County FL SO,1,FL,1
+Baldwin County Sheriff's Office,1,GA,1
+Barre City Poilce Dept,1,VT,0
+Barre City Police Department,1,VT,0
+Barrington Police,1,IL,1
+Bartlesville Police Department,1,OK,0
+Bayfield County Sheriff's Dept,1,WI,1
+Bayfield County Sherrif's Dept,1,WI,1
+Bellerive Country Club,1,MO,1
+Benbrook Lakeshore Neighbors Association,1,TX,1
+Bet Shalom Congregation,1,MN,1
+Bethlehem Township Police Department,1,PA,0
+binghamton university police department,1,NY,1
+BJs Wholesale Club,1,MA,1
+Blue Line Solutions,1,GA,0
+BOERNE INDEPENDENT SCHOOL DISTRICT,1,TX,1
+Boulder Ridge HOA,1,MO,1
+Boynton Beach,1,FL,1
+Bristol Police Dept,1,RI,1
+Bristol Tennessee Police Department,1,TN,0
+BrookhavenTown,1,NY,1
+BSU Department of Public Safety,1,MN,1
+Buffalo Grove Police Department,1,IL,1
+Bull River Bluff Condominium Association,1,GA,1
+Burlington Hyundai (likely),1,VT,1
+Burlington Subaru (likely),1,VT,1
+Burlington Subaru (probably),1,VT,1
+Caldwell County Constable Pct 2,1,TX,1
+Calvert County Sheriff,1,MD,0
+Cape Girardeau Police Department,1,MO,1
+Car Wash Depot,1,MD,0
+Carson City,1,NV,1
+Castroville,1,TX,1
+Catawba Nation Tribal Police Department,1,SC,1
+CEDAR HOLLOW ESTATES HOMEOWNERS ASSOC INC,1,NC,1
+Cedar Park Police,1,TX,1
+Champaingn County Sheriff,1,IL,1
+Chatham TWP PD,1,NJ,0
+Cherokee County SO,1,KS,1
+Chesapeake Bay Bridge Tunnel District,1,VA,0
+Cheshunt HOA,1,NC,1
+Chesterfield County,1,VA,1
+City of Alamogordo,1,NM,1
+City of Ashland KY Police,1,KY,1
+City of Brunswick Police Department,1,OH,1
+City of Columbus,1,OH,1
+City of Conroe,1,TX,1
+City of Dublin PD,1,OH,1
+City of Groton Police Department,1,CT,1
+City of Live Oak,1,TX,1
+City of Medina Police,1,OH,1
+City of Medina Police Department,1,OH,1
+City of Mount Pleasant,1,WI,1
+City Of Oxford PD,1,NC,1
+City of Ponce Inlet PD,1,FL,0
+City of Rogers MN,1,MN,1
+City of Selma,1,TX,1
+Cobb County Police,1,GA,1
+Cobb Parks,1,GA,1
+Coconino County Sheriff's Office,1,AZ,1
+College of Lake County,1,IL,0
+Connect Community Management,1,TX,1
+Cook County Serrif,1,IL,1
+Coral Gables,1,FL,0
+Coronado Mall,1,NM,1
+"Crown Point, IN Police",1,IN,1
+Cumberland Police,1,RI,1
+Dardenne Prairie,1,MO,1
+DC Metropolitan Police Department,1,DC,1
+Deerfield Township,1,OH,1
+DeKalb County Police,1,GA,1
+Delafield,1,WI,0
+Dennis Police,1,MA,0
+Dierbergs,1,MO,1
+Dwight Mini Mart,1,MA,0
+Dyersburg Police Department,1,TN,0
+East Tawakoni PD,1,TX,1
+Eden Prairie PD,1,MN,0
+El Reno Police,1,OK,1
+Elk River Sportsmans Club,1,MN,1
+Elmhurst Police Department,1,IL,0
+Elmsford/Greenburgh Westchester County Police RTC/Intelligence Regional and National Data Sharing,1,NY,0
+Emporia Police Department,1,VA,0
+Fairfax City VA PD,1,VA,1
+Fall River PD,1,MA,1
+Fall River Police Dept,1,MA,1
+Fannin County SO,1,TX,1
+Farmington PD,1,CT,1
+Fibd Du Lac County,1,WI,0
+Fleet Farm Muskego,1,WI,1
+Flock Safety (Development),1,TX,1
+Florida Int'l University,1,FL,0
+Florida Internationl University,1,FL,0
+Fort Worth,1,TX,1
+Franklin County,1,FL,1
+Fulton County Schools,1,GA,1
+Gadsden County Sheriffs Office / Gadsden County Board of County Commissioners,1,FL,1
+Gainesville Police Department,1,FL,0
+Garrard County KY SO,1,KY,1
+Gated Properties VIII LLC,1,OH,1
+Germantown,1,WI,0
+Glen Cove Police Department,1,NY,0
+Glendale PD,1,OH,1
+Glenn Ivey HOA,1,GA,1
+Glenrock Police Department,1,WY,1
+Gloucester County Sheriff's Office,1,VA,0
+"Grandview Lakes Homeowners Association, Inc.",1,MS,1
+Gray PD,1,GA,0
+Great Parks of Hamilton County,1,OH,1
+Green Township,1,OH,1
+Guadalupe County,1,TX,1
+Gustavus Adolphus College Campus Safety,1,MN,0
+Guthrie Police,1,OK,1
+Hadley Police,1,MA,1
+Halran County Sheriff,1,NE,1
+Hamlin Retail Partners li LLC,1,FL,1
+Hampden County Sheriff,1,MA,1
+Hannibal Police Department,1,MO,1
+Hanover County Sheriff's Office,1,VA,1
+Harlan County Sheriff Office,1,NE,1
+Harwood Heights Police,1,IL,1
+Haverhill Police Department,1,MA,1
+Highland Heights Police Department,1,KY,1
+Hillsborough County Sheriffs Office,1,FL,1
+Hoke County Sheriff,1,NC,1
+Hoke County Sheriff's Department,1,NC,1
+Holyoke Police or Holyoke Mall,1,MA,1
+HomeDepot,1,TX,1
+Hood County,1,TX,1
+Hoover Police Department,1,AL,1
+Houston Police Department,1,TX,1
+HPPD,1,IL,1
+IL DOT,1,IL,1
+Insight Public Sector (contracted by FCPD),1,VA,1
+INTERNATIONAL FALLS POLICE DEPARTMENT,1,MN,1
+Isle of White Sheriif's Office,1,VA,0
+Jackson Township Police,1,OH,1
+James City County Police,1,VA,1
+Jefferson county parks and rec,1,MO,0
+Jefferson County Parks Deptment,1,MO,1
+Jefferson County PD,1,MO,0
+Jefferson county SD,1,MO,0
+Johnson City Police Department,1,TN,1
+Joint Commission,1,IL,1
+Jones PC,1,OK,1
+Kent/Putnam County Sheriff,1,NY,0
+Kent/Putnam County Sheriff to Westchester Putnam/RTC,1,NY,0
+King and Gueen County Sheriff's Office,1,VA,0
+King and Queen County Sheriff's Office,1,VA,0
+King George Sheriff's Office,1,VA,1
+King William County SO,1,VA,1
+Lake County Sheriff,1,IN,0
+lakelandpolicedepartment,1,FL,1
+Landowner,1,TX,1
+"Lauderhill, FLA",1,FL,0
+Laurens County GA,1,GA,1
+Leinbach Company,1,KY,1
+Liberty Hill Police Department,1,TX,1
+Lisbon Resident State Trooper Office,1,CT,1
+Little Flock Police Department,1,AR,1
+Lodi,1,WI,0
+"Lowe's Companies, Inc",1,MA,1
+Lowes Home Improvement,1,FL,1
+LVT,1,MA,0
+Madison County Sheriff's Office,1,VA,1
+Mahoning County Sheriff's Office,1,OH,1
+Manchester PD,1,MO,1
+Manhattan Beach Civic Association,1,MD,0
+Marana Police,1,AZ,0
+Marana Police Department,1,AZ,0
+Marathon County Sheriff's Department,1,WI,1
+Marathon Petroleum Corporation,1,MI,1
+Marion County SO,1,MO,1
+Mark Allen Chevrolet,1,OK,1
+Marshall HOA,1,OK,1
+Mass Maritime,1,MA,0
+Mattapoisett Police,1,MA,1
+McDonald's,1,NY,1
+Medinah Police Department,1,IL,1
+Mellody Farms,1,IL,1
+Metro Transit,1,MN,0
+Metropolitan Police Department,1,DC,1
+Metropolitan Washington Airports Authority,1,VA,1
+Milford Police,1,CT,1
+Mille Lacs County Sheriff's Office,1,MN,1
+"Minneapolis, MN PD",1,MN,0
+Monmouth Police Department,1,OR,0
+Montecito Village Homeowners Association,1,MO,1
+Montgomery College Public Safety,1,MD,1
+Montgomery County Sheriff's Office,1,VA,1
+Montgomery Police,1,MA,1
+Montville Police Department,1,CT,1
+Morrow PD,1,OH,1
+Mounds View Police Department,1,MN,1
+Mountain Brook Police Department,1,AL,1
+Nahant Police,1,MA,1
+Naperville Police,1,IL,1
+neighborhood association,1,MA,1
+New Hampshire Department of Corrections,1,NH,1
+Newark Police,1,DE,0
+Niagara Falls Police Department,1,NY,1
+Niles Police Department,1,OH,1
+Niskayuna Police Department,1,NY,0
+North Andover PD,1,MA,0
+North Ridgeville Police Department,1,OH,0
+North Wilkesboro PD,1,NC,1
+Northampton County Sheriff's Department,1,VA,0
+Norwich Police Deparment,1,CT,1
+Norwood PD,1,OH,1
+oculens,1,AZ,0
+OKC PD,1,OK,1
+OKC Police,1,OK,1
+Oklahoma City Police Department,1,OK,1
+Olive Branch Police,1,MS,1
+Omaha Police Department,1,NE,0
+Oro Valley PD,1,AZ,1
+Orono Police Department,1,MN,1
+Ossining PD: Facial Recongnition? LPR?,1,NY,0
+Ovilla Police Department,1,TX,1
+Owasso Police Department,1,OK,1
+Palladium East Berry Apts/ FWPD,1,TX,1
+Palmyra PD,1,MO,1
+Patriot Series LLC?,1,MA,1
+Pawtucket Police Department,1,RI,1
+Pembroke Police Department,1,VA,1
+PHILLIP ALLEN WIEMANN,1,IA,0
+Pierce Township Police Department,1,OH,1
+Pleasantiville/Westchester County Police RTC/Intelligence Regional and National Data Sharing,1,NY,0
+Plover Police Department,1,WI,1
+Police (Norwood),1,MA,1
+Portland Bureau of Environmental Services,1,OR,0
+Princeton Police Department,1,MN,1
+Provo PD,1,UT,1
+Putnam County Sheriff/Kent,1,NY,0
+Putnam Valley/Putnam County Sheriff to Westchester Putnam/RTC,1,NY,0
+Q508358,1,VA,1
+Raleigh Police Department,1,NC,1
+Ralls County Sheriff's Office Missouri,1,MO,1
+Ramsey County Sheriff's Office,1,MN,1
+Redpoint Tallahassee,1,FL,1
+Reedley Police Department,1,CA,0
+Regent University Police Department,1,VA,0
+Reyes Coca-Cola Bottling,1,MI,0
+Rich Creek Police Department,1,VA,1
+"Richfield, MN PD",1,MN,1
+RichlandCountySheriffDepartment,1,SC,0
+Ridgefield Police Department,1,CT,1
+River Spirit Casino Security,1,OK,0
+Rivers Edge Campground,1,WI,1
+Riverside Court,1,NJ,0
+Rockford Police Department,1,IL,1
+Rollman Estates Subdivision,1,OH,1
+Romeoville Police Department,1,IL,1
+Russell Police,1,MA,1
+"Saint Charles, IL PD",1,IL,1
+Salisbury PD,1,MD,1
+Santa Rosa County Sheriff's Office,1,FL,0
+Saranac Lake Police Department,1,NY,1
+Shakopee Police,1,MN,1
+shenandoah co sheriff,1,VA,1
+sheriff's office (of martin county),1,FL,1
+Sheriffs Office (martin county),1,FL,0
+Sherrif's Office (martin county),1,FL,1
+Shiny Shell Carwash,1,UT,0
+Shrewsbury PD,1,MO,1
+Sioiux City Police,1,IA,1
+SLMPD,1,MN,1
+Smyrna Police Department,1,TN,1
+South Hadley Police,1,MA,1
+South Lake Minnetonka PD,1,MN,1
+South Orange Police Department,1,NJ,0
+South Tucson PD,1,AZ,1
+Southern Pines Police Department,1,NC,1
+Spanish Fork Police Department,1,UT,1
+Spartanburg Regional Medical Center,1,SC,1
+Spokane Co Sheriff,1,WA,1
+Spokane County SO,1,WA,1
+Spring Hill Police Department,1,TN,1
+St louis park PD,1,MN,1
+St. Louis County Sheriff's Department,1,MN,1
+Stadium Village Flats,1,MN,1
+Star City Council,1,ID,0
+Staunton Police Department,1,VA,1
+Stillwater Police Department,1,MN,0
+Stony Brook University,1,NY,0
+Storey County NV SO,1,NV,1
+Suffolk County Sheriff’s Office,1,NY,1
+Suffolk PD,1,VA,0
+Summit Police Department,1,IL,1
+Surry County Sheriff's Office,1,VA,0
+Swisher County Sheriffs Office,1,TX,1
+Sycamore Township,1,OH,1
+Tanyard Shores Homeowners Association,1,MD,0
+Ted Britt Chevrolet,1,VA,1
+The Church of Jesus Christ of Latter Day Saints,1,UT,0
+The Church of Jesus Christ of Latter-day Saints,1,OR,0
+The Corners of Brookfield,1,WI,1
+The Cove at Dardenne HOA,1,MO,1
+Tiverton Police Department,1,RI,1
+Tompkins County Sheriff,1,NY,1
+Tonawanda Police Department,1,NY,1
+Town of Hubbardston Chief of Police,1,MA,1
+Town of Newburgh,1,NY,0
+Town of Westport,1,CT,0
+Town of Windermere,1,FL,0
+Traffic,1,MI,1
+Tulsa County Sheriff,1,OK,1
+Tyler PD,1,TX,1
+U.S. Customs and Border Protection,1,AZ,0
+UMass Police,1,MA,0
+Union Police Department,1,MO,1
+United States Customs and Border Protection,1,AZ,0
+United States Park Police,1,MD,1
+Univeristy of Fla.,1,FL,0
+University of Illinois,1,IL,1
+Venetian Resort Las Vegas,1,NV,0
+Vernon Hills Police Department,1,IL,1
+Verra Mobility NYC DOT Speed camera,1,NY,0
+Verra Mobility Operated NYC DOT Speed Camera,1,NY,0
+vestal police department,1,NY,1
+Vigilant Solutions,1,NM,0
+Villa Park Police Department,1,IL,1
+Village of Buckeye Lake Police Department,1,OH,1
+Village of Marlborough,1,MO,1
+Village of River Forest,1,IL,0
+Volusia Sheriff's Office,1,FL,1
+Wagoner Co. Sheriff,1,OK,1
+Wagoner County Sheriff,1,OK,1
+Walla Walla Police Department,1,WA,1
+Walmart/Germantown Police Department,1,WI,0
+Warren Township,1,NJ,1
+Warrick county sheriff,1,IN,1
+Washburn County Sheriff,1,WI,1
+Watertown Police Department,1,CT,0
+Waukesha PD,1,WI,1
+Wave Hotel,1,FL,0
+West Chester Township PD,1,OH,1
+West Haven Police Department,1,CT,0
+West Hills HOA,1,MO,1
+Westborough Police,1,MA,1
+Westport Police,1,MA,1
+Westport Police Department,1,CT,0
+Westport Station Office Park,1,IA,1
+Wilbraham Police,1,MA,0
+Wilmington Police,1,MA,1
+Woodbridge Police Department,1,CT,0
+Woodbury County Sheriff's Department,1,IA,1
+Woodhill Country Club,1,MN,1
+Wright County Sheriff,1,MN,1
+WSU,1,WA,0
+Yarmouth Police,1,MA,1
+Yukon Police,1,OK,1
+{Farmington Police Department],1,NM,1
