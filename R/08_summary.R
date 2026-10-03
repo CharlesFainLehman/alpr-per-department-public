@@ -104,7 +104,7 @@ sprintf("- **Ownership is mostly unknown.** %s of cameras have no operator tag. 
 "- **Age of LEAIC (2012).** Place codes are old; new PDs are matched by name; mismatched codes are flagged.",
 "- **Population served** comes from FBI records (2020-2025); 761 agencies lack it.",
 "- **Mobile (car-mounted) ALPRs** are not in OSM.",
-"- **Court comparisons.** `density_cameras_per_agency_court_cutoff.png` shows camera counts from two court cases for reference only; those networks are defined differently (see the caption and `court_cases.md`).",
+"- **Court comparisons.** Camera counts in court cases (`court_cases.md`) describe differently defined networks and are not comparable to these counts.",
 "- No leaked or non-public Flock data were used."
 )
 writeLines(out, file.path(OUT, "summary.md"))
