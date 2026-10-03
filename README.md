@@ -44,7 +44,7 @@ Rscript R/05_method_b.R             # located: spatial assignment with per-camer
 Rscript R/06_combine_outputs.R      # cameras.csv, agencies.csv (tagged / located / attributed), summary_stats.csv, density plot
 Rscript R/07_validate.R             # historical comparison with N&O Flock portal counts
 Rscript R/08_summary.R              # output/summary.md
-Rscript R/09_density_stats.R        # density of located cameras with mean, median, 99th percentile lines
+Rscript R/09_hist_stats.R           # share of agencies by camera-count range, with mean, median, 99th percentile
 Rscript R/10_checks.R               # regression checks from the 2026-10-03 audit
 Rscript R/11_manifest.R             # output/run_manifest.txt: input checksums, OSM snapshot, package versions
 Rscript R/operator_counts.R         # optional: cameras per operator name (no agency matching)

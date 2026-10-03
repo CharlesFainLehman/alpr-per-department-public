@@ -1,0 +1,114 @@
+# Extended validation: publicly reported camera counts collected from the web
+# (agency websites, government documents, news quoting officials), one row per agency, in
+# data/validation_web/*.csv. Every row carries a URL and an exact quote.
+#
+# Compared with OSM counts for the same agency. Rows whose figure includes mobile readers or
+# shared/private cameras are kept in the table but excluded from the headline metrics.
+# The comparison is with the count as of the source date; OSM is as of the pull date.
+source("R/00_setup.R")
+library(ggplot2)
+library(stringdist)
+
+files <- list.files("data/validation_web", pattern = "\\.csv$", full.names = TRUE)
+stopifnot(length(files) > 0)
+w <- map_dfr(files, \(f) read_csv(f, col_types = cols(.default = "c")) |> mutate(file = basename(f)))
+n_log(w, "web-reported rows")
+w <- w |> mutate(reported = suppressWarnings(as.numeric(reported_cameras)),
+                 state = str_to_upper(str_trim(state)),
+                 mobile_or_shared = str_to_lower(coalesce(includes_mobile_or_shared, "")) %in% c("yes", "y", "true"),
+                 year = suppressWarnings(as.integer(substr(as_of_date, 1, 4))))
+message("  rows with non-numeric count (dropped): ", sum(is.na(w$reported)),
+        "; rows with no URL (dropped): ", sum(is.na(w$url) | w$url == ""))
+w <- w |> filter(!is.na(reported), !is.na(url), url != "", state %in% STATES$abbr)
+n_log(w, "rows with numeric count, URL and valid state")
+w <- w |> distinct(state, agency_name, .keep_all = TRUE)
+n_log(w, "after removing duplicate state+agency rows")
+
+# Match to the agency list (current agencies only), same parser as method A --------------------------
+src <- readLines("R/04_method_a.R")
+eval(parse(text = src[grep("^basic <- function", src):(grep("^# Agency side", src) - 1)]))
+ag <- readRDS(file.path(PROC, "agencies.rds")) |> filter(record_status != "historical")
+ag_p <- bind_cols(ag |> select(ori, name, state, agency_type), parse_name(ag$name)) |>
+  mutate(kind = if_else(agency_type == "Sheriff", "sheriff", "police"),
+         core2 = if_else(agency_type != "Municipal police", core, core2))
+w <- w |> mutate(hint = case_when(agency_type == "sheriff" ~ "sheriff", agency_type %in% c("municipal", "county_police") ~ "police", TRUE ~ "none"))
+pw <- parse_name(w$agency_name)
+w <- bind_cols(w, pw |> select(kind, core, core2, core_typed)) |>
+  mutate(kind = if_else(kind == "none", hint, kind),
+         core2 = if_else(str_detect(core, "\\b(county|parish)\\b"), core, core2))
+
+match_one <- function(state, kind, core, core2, core_typed) {
+  cand <- ag_p[ag_p$state %in% state & (kind == "none" | ag_p$kind == kind), ]
+  if (!nrow(cand)) return(tibble(ori = NA, basis = "no_candidates", cand_name = NA))
+  if (!is.na(core_typed)) { e0 <- cand[cand$core == core_typed, ]
+    if (nrow(e0) == 1) return(tibble(ori = e0$ori, basis = "exact_typed", cand_name = e0$name)) }
+  e1 <- cand[cand$core == core, ]
+  if (nrow(e1) == 1) return(tibble(ori = e1$ori, basis = "exact", cand_name = e1$name))
+  e2 <- cand[cand$core2 == core2, ]
+  if (nrow(e2) == 1) return(tibble(ori = e2$ori, basis = "exact_no_muni_word", cand_name = e2$name))
+  e3 <- cand[cand$core2 == paste(core2, "county"), ]
+  if (nrow(e3) == 1) return(tibble(ori = e3$ori, basis = "exact_county_added", cand_name = e3$name))
+  if (nrow(e1) > 1 || nrow(e2) > 1) return(tibble(ori = NA, basis = "ambiguous", cand_name = paste(e2$name, collapse = " | ")))
+  d <- stringdist(core2, cand$core2, method = "jw", p = 0.1); o <- order(d)
+  ok <- d[o[1]] <= 0.05 && (length(o) == 1 || d[o[2]] - d[o[1]] >= 0.05)
+  tibble(ori = if (ok) cand$ori[o[1]] else NA, basis = if (ok) "fuzzy" else "unmatched", cand_name = cand$name[o[1]])
+}
+w <- bind_cols(w, pmap_dfr(w |> select(state, kind, core, core2, core_typed), match_one))
+n_log(w, "rows after matching")
+print(count(w, basis))
+write_csv(w |> filter(is.na(ori)) |> select(state, agency_name, basis, cand_name, url), file.path(OUT, "validation_web_unmatched.csv"))
+
+# OSM counts: all-vendor measures, plus Flock-only when the source says the cameras are Flock --------
+cams <- readRDS(file.path(PROC, "cameras_assigned.rds"))
+cnt <- function(d, col, nm) d |> filter(!is.na(.data[[col]])) |> count(ori = .data[[col]], name = nm)
+osm <- ag |> select(ori, agency_type_fbi = agency_type, population_fbi) |>
+  left_join(cnt(cams, "b_ori", "located_all"), by = "ori") |>
+  left_join(cnt(cams, "attr_ori", "attributed_all"), by = "ori") |>
+  left_join(cnt(cams, "a_ori", "tagged_all"), by = "ori") |>
+  left_join(cnt(filter(cams, is_flock), "b_ori", "located_flock"), by = "ori") |>
+  left_join(cnt(filter(cams, is_flock), "attr_ori", "attributed_flock"), by = "ori") |>
+  mutate(across(c(located_all, attributed_all, tagged_all, located_flock, attributed_flock), \(z) coalesce(z, 0L)))
+v <- w |> filter(!is.na(ori)) |> left_join(osm, by = "ori") |>
+  mutate(flock_only = str_detect(str_to_lower(coalesce(vendor, "")), "flock") & !str_detect(str_to_lower(coalesce(vendor, "")), "and|,|/|\\+"),
+         osm_located = if_else(flock_only, located_flock, located_all),
+         osm_attributed = if_else(flock_only, attributed_flock, attributed_all))
+dupe <- v |> count(ori) |> filter(n > 1)
+if (nrow(dupe)) { message("  ORIs matched by >1 row (most recent kept): ", nrow(dupe))
+  v <- v |> arrange(ori, desc(as_of_date)) |> distinct(ori, .keep_all = TRUE) }
+n_log(v, "matched web-reported agencies")
+write_csv(v |> select(state, agency_name, ori, matched_name = cand_name, basis, agency_type_fbi, reported, mobile_or_shared,
+                      vendor, flock_only, as_of_date, source_type, osm_tagged = tagged_all, osm_located, osm_attributed,
+                      url, quote, notes),
+          file.path(OUT, "validation_web_comparison.csv"))
+
+metrics <- function(osm, rep) {
+  pos <- rep > 0; r <- osm[pos] / rep[pos]
+  tibble(n = length(rep), pearson_r_log1p = cor(log1p(osm), log1p(rep)), spearman_rho = cor(osm, rep, method = "spearman"),
+         median_ratio = median(r), within_2x = mean(r >= 0.5 & r <= 2),
+         below_half = mean(r < 0.5), above_double = mean(r > 2), median_abs_error = median(abs(osm - rep)))
+}
+core <- v |> filter(!mobile_or_shared)
+res <- bind_rows(
+  metrics(core$osm_located, core$reported) |> mutate(measure = "located", subset = "fixed, agency-operated", .before = 1),
+  metrics(core$osm_attributed, core$reported) |> mutate(measure = "attributed", subset = "fixed, agency-operated", .before = 1),
+  { d <- filter(core, year >= 2025); metrics(d$osm_located, d$reported) |> mutate(measure = "located", subset = "fixed, source dated 2025-2026", .before = 1) },
+  { d <- filter(core, agency_type_fbi == "Municipal police"); metrics(d$osm_located, d$reported) |> mutate(measure = "located", subset = "municipal police", .before = 1) },
+  { d <- filter(core, agency_type_fbi != "Municipal police"); metrics(d$osm_located, d$reported) |> mutate(measure = "located", subset = "sheriffs / county police", .before = 1) },
+  { d <- filter(v, mobile_or_shared); if (nrow(d) > 2) metrics(d$osm_located, d$reported) |> mutate(measure = "located", subset = "figures incl. mobile/shared", .before = 1) })
+print(res, width = Inf)
+write_csv(res, file.path(OUT, "validation_web_metrics.csv"))
+
+p <- ggplot(core, aes(reported, osm_located)) +
+  geom_abline(slope = 1, intercept = 0, colour = "#52514e", linewidth = 0.4, linetype = "dashed") +
+  geom_point(colour = "#2a78d6", alpha = 0.65, size = 2.2, stroke = 0) +
+  scale_x_continuous(trans = "log1p", breaks = c(0, 1, 3, 10, 30, 100, 300, 1000)) +
+  scale_y_continuous(trans = "log1p", breaks = c(0, 1, 3, 10, 30, 100, 300, 1000)) +
+  labs(x = "Publicly reported fixed ALPR cameras (log scale, +1)", y = "Mapped OSM cameras located in agency's area (log scale, +1)",
+       title = "Mapped OpenStreetMap counts vs. publicly reported camera counts",
+       subtitle = sprintf("%d agencies; sources dated %s-%s (agency sites, government documents, news). r(log) = %.2f; median ratio %.2f; within 2x: %.0f%%",
+                          nrow(core), min(core$year, na.rm = TRUE), max(core$year, na.rm = TRUE),
+                          res$pearson_r_log1p[1], res$median_ratio[1], 100 * res$within_2x[1])) +
+  theme_minimal(base_size = 11) +
+  theme(panel.grid.minor = element_blank(), panel.grid.major = element_line(colour = "#e6e5e0", linewidth = 0.3),
+        plot.background = element_rect(fill = "#fcfcfb", colour = NA), plot.subtitle = element_text(colour = "#52514e"))
+ggsave(file.path(OUT, "validation_web_scatter.png"), p, width = 9, height = 6, dpi = 150)
