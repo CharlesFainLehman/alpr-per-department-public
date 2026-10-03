@@ -187,32 +187,35 @@ Collected from agency websites, government documents and news articles quoting o
 
 | measure | subset | n | r_log | median_ratio | within_2x | below_half | above_double |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| located | core: current, fixed, agency-operated | 226 | 0.86 | 1.10 | 0.77 | 0.08 | 0.15 |
-| attributed | core: current, fixed, agency-operated | 226 | 0.86 | 1.08 | 0.77 | 0.08 | 0.15 |
-| located | fixed, source dated 2025-2026 | 214 | 0.86 | 1.09 | 0.77 | 0.08 | 0.15 |
-| located | municipal police | 190 | 0.87 | 1.06 | 0.81 | 0.07 | 0.12 |
-| located | sheriffs / county police |  36 | 0.80 | 1.50 | 0.56 | 0.11 | 0.33 |
-| located | figures incl. mobile/shared or unclear |  27 | 0.71 | 1.07 | 0.70 | 0.11 | 0.19 |
-| located | discontinued programs (last count) |  52 | 0.64 | 0.76 | 0.58 | 0.33 | 0.10 |
-| located | planned / contracted counts |  23 | 0.79 | 1.06 | 0.70 | 0.22 | 0.09 |
+| located | core: current, fixed, agency-operated | 322 | 0.79 | 1.13 | 0.76 | 0.07 | 0.17 |
+| attributed | core: current, fixed, agency-operated | 322 | 0.80 | 1.13 | 0.76 | 0.07 | 0.17 |
+| located | core, excluding agencies reporting zero | 313 | 0.85 | 1.13 | 0.76 | 0.07 | 0.17 |
+| located | fixed, source dated 2025-2026 | 300 | 0.79 | 1.13 | 0.75 | 0.08 | 0.17 |
+| located | municipal police | 263 | 0.79 | 1.11 | 0.79 | 0.07 | 0.14 |
+| located | sheriffs / county police |  59 | 0.82 | 1.40 | 0.63 | 0.07 | 0.30 |
+| located | figures incl. mobile/shared or unclear |  99 | 0.70 | 1.05 | 0.59 | 0.21 | 0.19 |
+| located | discontinued programs (last count) |  94 | 0.74 | 0.81 | 0.56 | 0.31 | 0.13 |
+| located | planned / contracted counts |  76 | 0.77 | 1.17 | 0.63 | 0.16 | 0.21 |
+
+Agencies that report owning **zero** fixed cameras (9 in the core set; e.g., Charlotte-Mecklenburg, Durham) often have dozens of mapped cameras in their area run by other parties (HOAs, businesses, neighboring agencies). The located measure cannot tell those apart, which is the largest source of disagreement.
 
 ### Reported counts as an independent estimate of camera density
 
-For the core agencies, reported counts and OSM give nearly the same per-capita picture (medians 4.4 vs 4.9 cameras per 10,000 residents). The OSM count runs higher for the largest agencies (median ratio about 2 for 250k+), where the located measure also picks up untagged cameras of other operators. The web sample is not random: it contains only agencies with cameras whose count was published, so it cannot estimate how many agencies have none, and it leans toward larger and contested programs.
+For the core agencies, reported counts and OSM give a similar per-capita picture (see table). The OSM count runs higher for the largest agencies (median ratio about 2 for 250k+), where the located measure also picks up untagged cameras of other operators. The web sample is not random: it contains only agencies with cameras whose count was published, so it cannot estimate how many agencies have none, and it leans toward larger and contested programs.
 
 | estimate | agencies | mean | median | p25 | p75 | p90 | max |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| reported count (web sources) | 226 | 45.1 | 19.5 | 9.0 | 47.8 | 99.5 | 553.0 |
-| OSM located, same agencies | 226 | 64.2 | 21.0 | 10.0 | 56.8 | 119.5 | 2,240.0 |
-| reported per 10,000 residents | 225 | 7.0 | 4.4 | 2.3 | 7.6 | 12.9 | 78.0 |
-| OSM located per 10,000 residents, same agencies | 225 | 7.0 | 4.9 | 2.8 | 7.4 | 13.0 | 73.0 |
+| reported count (web sources) | 322 | 38.7 | 17.0 | 7.0 | 37.8 | 86.8 | 553.0 |
+| OSM located, same agencies | 322 | 57.0 | 21.0 | 9.0 | 53.0 | 112.9 | 2,240.0 |
+| reported per 10,000 residents | 321 | 7.3 | 4.2 | 2.1 | 7.6 | 13.3 | 222.5 |
+| OSM located per 10,000 residents, same agencies | 321 | 7.0 | 4.9 | 2.7 | 8.4 | 14.0 | 73.0 |
 
 | size | agencies | median_reported | median_osm_located | median_reported_per10k | median_osm_per10k | median_ratio_osm_to_reported |
 | --- | --- | --- | --- | --- | --- | --- |
-| <10k | 26 | 6.50 | 6.00 | 14.34 | 12.11 | 0.90 |
-| 10k-50k | 96 | 11.00 | 13.50 | 4.75 | 4.93 | 1.00 |
-| 50k-250k | 77 | 34.00 | 46.00 | 3.92 | 4.51 | 1.24 |
-| 250k+ | 27 | 107.00 | 188.00 | 2.29 | 4.57 | 1.96 |
+| <10k |  40 | 7.00 | 6.00 | 14.34 | 11.36 | 0.85 |
+| 10k-50k | 135 | 11.00 | 14.00 | 4.87 | 5.26 | 1.00 |
+| 50k-250k | 111 | 30.00 | 41.00 | 3.38 | 3.98 | 1.27 |
+| 250k+ |  36 | 103.50 | 168.50 | 2.27 | 3.49 | 1.96 |
 
 ## 6. Limits
 

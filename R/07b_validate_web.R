@@ -107,6 +107,7 @@ n_log(core, "core comparison set (current program, fixed agency-operated count)"
 res <- bind_rows(
   metrics(core$osm_located, core$reported) |> mutate(measure = "located", subset = "core: current, fixed, agency-operated", .before = 1),
   metrics(core$osm_attributed, core$reported) |> mutate(measure = "attributed", subset = "core: current, fixed, agency-operated", .before = 1),
+  { d <- filter(core, reported > 0); metrics(d$osm_located, d$reported) |> mutate(measure = "located", subset = "core, excluding agencies reporting zero", .before = 1) },
   { d <- filter(core, year >= 2025); metrics(d$osm_located, d$reported) |> mutate(measure = "located", subset = "fixed, source dated 2025-2026", .before = 1) },
   { d <- filter(core, agency_type_fbi == "Municipal police"); metrics(d$osm_located, d$reported) |> mutate(measure = "located", subset = "municipal police", .before = 1) },
   { d <- filter(core, agency_type_fbi != "Municipal police"); metrics(d$osm_located, d$reported) |> mutate(measure = "located", subset = "sheriffs / county police", .before = 1) },
