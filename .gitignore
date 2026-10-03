@@ -5,3 +5,4 @@ data/raw/*
 !data/raw/.gitkeep
 .DS_Store
 data/derived/*.rds
+output/log_*.txt
