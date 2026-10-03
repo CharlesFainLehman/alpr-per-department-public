@@ -1,8 +1,6 @@
 county_fips,ori,name,agency_type,population_fbi
 13051,GA0250100,Chatham County Police Department,County police,0
 13051,GA0250000,Chatham County Sheriff's Office,Sheriff,NA
-13063,GA0310100,Clayton County Police Department,County police,234269
-13063,GA0310000,Clayton,County (type unclear),0
 13067,GA0330200,Cobb County Police Department,County police,581877
 13067,GA0330000,Cobb County Sheriff's Office,Sheriff,0
 13089,GA0440200,DeKalb County Police Department,County police,519559
@@ -39,11 +37,17 @@ county_fips,ori,name,agency_type,population_fbi
 24027,MD0140000,Howard County Sheriff's Office,Sheriff,0
 24031,MD0160400,Montgomery County Police Department,County police,924573
 24031,MD0160000,Montgomery County Sheriff's Office,Sheriff,0
+29183,MO0922400,St. Charles County Police Department,County police,120397
+29183,MO0920000,St. Charles County Sheriff's Office,Sheriff,0
 36103,NY0510100,Suffolk County Police Department,County police,1366793
 36103,NY0510000,Suffolk County Sheriff's Office,Sheriff,0
 37071,NC0360500,Gaston County Police Department,County police,84880
 37071,NC0360000,Gaston County Sheriff's Office,Sheriff,0
 42003,PA0022800,Allegheny County Police Department,County police,0
 42003,PA0020000,Allegheny County Sheriff's Office,Sheriff,0
+45029,SC0150000,Colleton County Sheriff's Office,Sheriff,32159
+45029,SC015AA0X,South Carolina Law Enforcement Division: Colleton County County Sheriff's Office,Sheriff,NA
 45051,SC0260400,Horry County Police Department,County police,314658
 45051,SC0260000,Horry County Sheriff's Office,Sheriff,0
+49035,UT0185200,Unified Police Department,County police,214605
+49035,UT0180000,Salt Lake County Sheriff's Office,Sheriff,0

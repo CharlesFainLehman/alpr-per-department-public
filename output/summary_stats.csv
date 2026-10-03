@@ -1,51 +1,115 @@
-method,set,group_var,group,agencies,cameras,mean,median,p10,p25,p75,p90,p99,max
-A,all agencies,overall,all,15126,13550,0.8958085415840275,0,0,0,0,0,19,591
-A,all agencies,agency_type,County (type unclear),2,0,0,0,0,0,0,0,0,0
-A,all agencies,agency_type,County police,46,359,7.804347826086956,0,0,0,2,12,139.89999999999978,175
-A,all agencies,agency_type,Municipal police,12093,11853,0.9801538079880923,0,0,0,0,0,22,591
-A,all agencies,agency_type,Sheriff,2985,1338,0.4482412060301508,0,0,0,0,0,12,91
-A,all agencies,population_bin,100k-250k,381,2670,7.0078740157480315,0,0,0,2,22,105.19999999999999,175
-A,all agencies,population_bin,10k-25k,2790,1717,0.6154121863799283,0,0,0,0,0,14,91
-A,all agencies,population_bin,2.5k-10k,4635,753,0.16245954692556636,0,0,0,0,0,5,30
-A,all agencies,population_bin,250k+,153,4046,26.444444444444443,0,0,0,12,76.80000000000001,386.55999999999875,591
-A,all agencies,population_bin,25k-50k,1390,2220,1.5971223021582734,0,0,0,0,5,24.1099999999999,78
-A,all agencies,population_bin,50k-100k,747,1987,2.6599732262382867,0,0,0,0,8,47.07999999999993,72
-A,all agencies,population_bin,<2.5k,4269,124,0.029046615132349497,0,0,0,0,0,0,8
-A,all agencies,population_bin,unknown,761,33,0.04336399474375821,0,0,0,0,0,1,13
-A,agencies with >=1 camera,overall,all,1064,13550,12.734962406015038,5,1,2,12,25,125.39999999999782,591
-A,agencies with >=1 camera,agency_type,County police,16,359,22.4375,4,2,2,15.25,58,163.29999999999998,175
-A,agencies with >=1 camera,agency_type,Municipal police,885,11853,13.39322033898305,5,1,2,12,26.600000000000023,138.31999999999994,591
-A,agencies with >=1 camera,agency_type,Sheriff,163,1338,8.208588957055214,3,1,1,9,16.80000000000001,81.55999999999995,91
-A,agencies with >=1 camera,population_bin,100k-250k,117,2670,22.82051282051282,10,1,3,32,68.60000000000002,160.84000000000017,175
-A,agencies with >=1 camera,population_bin,10k-25k,258,1717,6.655038759689923,4,1,2,7.75,15,41.58000000000004,91
-A,agencies with >=1 camera,population_bin,2.5k-10k,158,753,4.765822784810126,3,1,2,6,9.300000000000011,28,30
-A,agencies with >=1 camera,population_bin,250k+,69,4046,58.63768115942029,19,1.8000000000000007,4,63,143.60000000000005,495.11999999999904,591
-A,agencies with >=1 camera,population_bin,25k-50k,246,2220,9.024390243902438,6,1,2,13,20,47.00000000000023,78
-A,agencies with >=1 camera,population_bin,50k-100k,163,1987,12.190184049079754,7,1,2,15.5,32.60000000000002,61.139999999999986,72
-A,agencies with >=1 camera,population_bin,<2.5k,39,124,3.1794871794871793,2,1,1.5,4,6.400000000000006,8,8
-A,agencies with >=1 camera,population_bin,unknown,14,33,2.357142857142857,1,1,1,1,5.500000000000005,12.219999999999995,13
-B,all agencies,overall,all,15126,138845,9.179227819648288,1,0,0,7,21,121,2443
-B,all agencies,agency_type,County (type unclear),2,0,0,0,0,0,0,0,0,0
-B,all agencies,agency_type,County police,46,4325,94.02173913043478,46.5,0,8.25,131.25,218.5,603.4499999999994,711
-B,all agencies,agency_type,Municipal police,12093,104012,8.601008848093938,0,0,0,6,20,108.07999999999993,2443
-B,all agencies,agency_type,Sheriff,2985,30508,10.220435510887771,3,0,0,9,22,136,1111
-B,all agencies,population_bin,100k-250k,381,23782,62.41994750656168,52,11,27,86,126,206.19999999999987,289
-B,all agencies,population_bin,10k-25k,2790,19682,7.054480286738351,4,0,0,10,18,42.11000000000013,71
-B,all agencies,population_bin,2.5k-10k,4635,11040,2.381877022653722,0,0,0,3,7,20.659999999999854,59
-B,all agencies,population_bin,250k+,153,34006,222.26143790849673,143,46,80,242,474.40000000000003,1314.6799999999998,2443
-B,all agencies,population_bin,25k-50k,1390,20699,14.89136690647482,11,0,4,20.75,34,70.1099999999999,184
-B,all agencies,population_bin,50k-100k,747,21031,28.153949129852744,22,3,9,38,58,131.15999999999985,221
-B,all agencies,population_bin,<2.5k,4269,3269,0.7657531037713751,0,0,0,0,2,10,189
-B,all agencies,population_bin,unknown,761,5336,7.011826544021025,0,0,0,4,21,88.79999999999995,225
-B,agencies with >=1 camera,overall,all,8000,138845,17.355625,6,1,2,16,37,177.01000000000022,2443
-B,agencies with >=1 camera,agency_type,County police,39,4325,110.8974358974359,57,8,16.5,139,233.60000000000008,620.1799999999994,711
-B,agencies with >=1 camera,agency_type,Municipal police,5998,104012,17.34111370456819,6,1,2,16,37,160.20999999999822,2443
-B,agencies with >=1 camera,agency_type,Sheriff,1963,30508,15.541518084564443,6,1,3,15,31,163.2799999999993,1111
-B,agencies with >=1 camera,population_bin,100k-250k,377,23782,63.08222811671087,52,12.600000000000001,28,86,126.40000000000003,206.6400000000001,289
-B,agencies with >=1 camera,population_bin,10k-25k,2073,19682,9.494452484322238,7,1,3,13,20,46,71
-B,agencies with >=1 camera,population_bin,2.5k-10k,2176,11040,5.073529411764706,4,1,2,6,11,27.25,59
-B,agencies with >=1 camera,population_bin,250k+,151,34006,225.20529801324503,143,47,81.5,247,475,1315,2443
-B,agencies with >=1 camera,population_bin,25k-50k,1236,20699,16.746763754045308,13,3,6,22,35,71.65000000000009,184
-B,agencies with >=1 camera,population_bin,50k-100k,720,21031,29.209722222222222,23,5,11,39.25,59,132.23999999999978,221
-B,agencies with >=1 camera,population_bin,<2.5k,962,3269,3.398128898128898,2,1,1,4,6,21,189
-B,agencies with >=1 camera,population_bin,unknown,305,5336,17.495081967213114,6,1,2,21,48.60000000000002,128.27999999999963,225
+measure,set,group_var,group,agencies,cameras,mean,median,p10,p25,p75,p90,p99,max
+located,agencies with >=1 camera,overall,all,7944,136080,17.129909365558913,6,1,2,16,37,174.27999999999884,2442
+located,agencies with >=1 camera,agency_type,County police,41,4423,107.8780487804878,60,8,19,138,221,615.4000000000003,711
+located,agencies with >=1 camera,agency_type,Municipal police,5942,101518,17.084819925950857,6,1,2,16,37,157.1800000000003,2442
+located,agencies with >=1 camera,agency_type,Sheriff,1961,30139,15.369199388067313,6,1,3,15,31,163.80000000000064,1101
+located,agencies with >=1 camera,population_bin,100k-250k,380,23636,62.2,52,12,27,86,124,206.30999999999977,289
+located,agencies with >=1 camera,population_bin,10k-25k,2063,19498,9.45128453708192,7,1,3,13,20,45.37999999999988,71
+located,agencies with >=1 camera,population_bin,2.5k-10k,2157,10943,5.073249884098285,4,1,2,6,11,27.440000000000055,59
+located,agencies with >=1 camera,population_bin,250k+,151,32299,213.90066225165563,143,47,81.5,231,467,1178,2442
+located,agencies with >=1 camera,population_bin,25k-50k,1232,20543,16.67451298701299,13,3,6,22,35,71.69000000000005,184
+located,agencies with >=1 camera,population_bin,50k-100k,718,20748,28.89693593314763,22,5,11,38,58,132.32000000000016,221
+located,agencies with >=1 camera,population_bin,<2.5k,938,3119,3.3251599147121533,2,1,1,4,6,20,189
+located,agencies with >=1 camera,population_bin,unknown,305,5294,17.35737704918033,6,1,2,21,48,128.27999999999963,225
+located,agencies with usable geography,overall,all,14748,136080,9.227013832384053,1,0,0,7,21,121.53000000000065,2442
+located,agencies with usable geography,agency_type,County (type unclear),1,0,0,0,0,0,0,0,0,0
+located,agencies with usable geography,agency_type,County police,42,4423,105.30952380952381,58.5,8,15.25,136.25,219.2,613.0099999999991,711
+located,agencies with usable geography,agency_type,Municipal police,11743,101518,8.644979988078004,1,0,0,6,20,109.57999999999993,2442
+located,agencies with usable geography,agency_type,Sheriff,2962,30139,10.175219446320053,3,0,0,9,22,135.38999999999987,1101
+located,agencies with usable geography,population_bin,100k-250k,381,23636,62.036745406824146,52,12,27,86,124,206.19999999999987,289
+located,agencies with usable geography,population_bin,10k-25k,2747,19498,7.0979250091008375,4,0,1,10,18,41.07999999999993,71
+located,agencies with usable geography,population_bin,2.5k-10k,4549,10943,2.4055836447570895,0,0,0,3,7,20.519999999999527,59
+located,agencies with usable geography,population_bin,250k+,152,32299,212.4934210526316,141.5,46.1,80,231,465.4000000000001,1176.4600000000014,2442
+located,agencies with usable geography,population_bin,25k-50k,1376,20543,14.929505813953488,11,0,4,20,34,70.25,184
+located,agencies with usable geography,population_bin,50k-100k,743,20748,27.92462987886945,21,3,9.5,37,58,131.32000000000016,221
+located,agencies with usable geography,population_bin,<2.5k,4063,3119,0.7676593650012307,0,0,0,0,2,9.38000000000011,189
+located,agencies with usable geography,population_bin,unknown,737,5294,7.1831750339213025,0,0,0,4,21.399999999999977,89.27999999999997,225
+located,all current agencies,overall,all,14914,136080,9.124312726297438,1,0,0,7,21,120.86999999999898,2442
+located,all current agencies,agency_type,County (type unclear),1,0,0,0,0,0,0,0,0,0
+located,all current agencies,agency_type,County police,44,4423,100.52272727272727,53.5,3.1999999999999993,12.75,132.75,215.60000000000002,608.23,711
+located,all current agencies,agency_type,Municipal police,11883,101518,8.54312883951864,1,0,0,6,20,109,2442
+located,all current agencies,agency_type,Sheriff,2986,30139,10.093436034829203,3,0,0,9,22,135.1500000000001,1101
+located,all current agencies,population_bin,100k-250k,381,23636,62.036745406824146,52,12,27,86,124,206.19999999999987,289
+located,all current agencies,population_bin,10k-25k,2786,19498,6.998564249820531,4,0,0,10,18,40.30000000000018,71
+located,all current agencies,population_bin,2.5k-10k,4589,10943,2.3846153846153846,0,0,0,3,7,20.11999999999989,59
+located,all current agencies,population_bin,250k+,152,32299,212.4934210526316,141.5,46.1,80,231,465.4000000000001,1176.4600000000014,2442
+located,all current agencies,population_bin,25k-50k,1390,20543,14.779136690647482,11,0,4,20,34,70.1099999999999,184
+located,all current agencies,population_bin,50k-100k,745,20748,27.8496644295302,21,3,9,37,58,131.23999999999978,221
+located,all current agencies,population_bin,<2.5k,4110,3119,0.7588807785888078,0,0,0,0,2,9,189
+located,all current agencies,population_bin,unknown,761,5294,6.956636005256242,0,0,0,4,21,88.79999999999995,225
+attributed,agencies with >=1 camera,overall,all,7911,136092,17.202882062950323,6,1,2,16,37,175.49999999999818,2429
+attributed,agencies with >=1 camera,agency_type,County police,41,4554,111.07317073170732,60,9,19,140,221,616.2000000000003,711
+attributed,agencies with >=1 camera,agency_type,Municipal police,5913,101329,17.1366480635887,6,1,2,16,37,157.76000000000022,2429
+attributed,agencies with >=1 camera,agency_type,Sheriff,1957,30209,15.436382217680123,6,1,3,15,31,166.8800000000001,1098
+attributed,agencies with >=1 camera,population_bin,100k-250k,379,23850,62.928759894459105,53,12,27,86,125.39999999999998,206.41999999999967,289
+attributed,agencies with >=1 camera,population_bin,10k-25k,2060,19579,9.504368932038835,7,1,3,13,20,46,108
+attributed,agencies with >=1 camera,population_bin,2.5k-10k,2141,10933,5.106492293320878,4,1,2,6,11,27.59999999999991,59
+attributed,agencies with >=1 camera,population_bin,250k+,151,32371,214.3774834437086,140,47,80,234.5,467,1176.5,2429
+attributed,agencies with >=1 camera,population_bin,25k-50k,1230,20527,16.68861788617886,13,3,6,22,35.100000000000136,71.71000000000004,185
+attributed,agencies with >=1 camera,population_bin,50k-100k,718,20596,28.685236768802227,22,4,10,38,58,131.49000000000012,221
+attributed,agencies with >=1 camera,population_bin,<2.5k,930,3104,3.3376344086021503,2,1,1,4,6,20.710000000000036,176
+attributed,agencies with >=1 camera,population_bin,unknown,302,5132,16.99337748344371,6,1,2,19,46.900000000000034,110.99000000000001,225
+attributed,agencies with usable geography,overall,all,14748,136067,9.226132356929753,1,0,0,7,21,121.53000000000065,2429
+attributed,agencies with usable geography,agency_type,County (type unclear),1,0,0,0,0,0,0,0,0,0
+attributed,agencies with usable geography,agency_type,County police,42,4554,108.42857142857143,58,8.100000000000001,15.25,139.75,219.29999999999998,613.8299999999991,711
+attributed,agencies with usable geography,agency_type,Municipal police,11743,101305,8.626841522609213,1,0,0,6,20,109,2429
+attributed,agencies with usable geography,agency_type,Sheriff,2962,30208,10.198514517218095,3,0,0,9,22,135.38999999999987,1098
+attributed,agencies with usable geography,population_bin,100k-250k,381,23850,62.59842519685039,53,12,27,86,125,206.19999999999987,289
+attributed,agencies with usable geography,population_bin,10k-25k,2747,19560,7.12049508554787,4,0,0,10,18,41,108
+attributed,agencies with usable geography,population_bin,2.5k-10k,4549,10933,2.403385359419653,0,0,0,3,7,20,59
+attributed,agencies with usable geography,population_bin,250k+,152,32371,212.9671052631579,139.5,46.1,79.75,233.25,465.4000000000001,1174.9300000000014,2429
+attributed,agencies with usable geography,population_bin,25k-50k,1376,20522,14.914244186046512,11,0,4,20,34,70.25,185
+attributed,agencies with usable geography,population_bin,50k-100k,743,20596,27.720053835800808,21,3,9,37,57,130.74000000000012,221
+attributed,agencies with usable geography,population_bin,<2.5k,4063,3103,0.7637213881368446,0,0,0,0,2,9.38000000000011,176
+attributed,agencies with usable geography,population_bin,unknown,737,5132,6.963364993215739,0,0,0,4,20.399999999999977,89.27999999999997,225
+attributed,all current agencies,overall,all,14914,136092,9.125117339412633,1,0,0,7,21,120.86999999999898,2429
+attributed,all current agencies,agency_type,County (type unclear),1,0,0,0,0,0,0,0,0,0
+attributed,all current agencies,agency_type,County police,44,4554,103.5,53,3.1999999999999993,12.75,139.25,215.90000000000003,609.0900000000001,711
+attributed,all current agencies,agency_type,Municipal police,11883,101329,8.527223765042498,0,0,0,6,20,108.18000000000029,2429
+attributed,all current agencies,agency_type,Sheriff,2986,30209,10.11687876758205,2,0,0,9,21.5,135.1500000000001,1098
+attributed,all current agencies,population_bin,100k-250k,381,23850,62.59842519685039,53,12,27,86,125,206.19999999999987,289
+attributed,all current agencies,population_bin,10k-25k,2786,19579,7.027638190954774,4,0,0,10,18,41,108
+attributed,all current agencies,population_bin,2.5k-10k,4589,10933,2.3824362606232294,0,0,0,3,7,20,59
+attributed,all current agencies,population_bin,250k+,152,32371,212.9671052631579,139.5,46.1,79.75,233.25,465.4000000000001,1174.9300000000014,2429
+attributed,all current agencies,population_bin,25k-50k,1390,20527,14.767625899280576,11,0,4,20,34,70.1099999999999,185
+attributed,all current agencies,population_bin,50k-100k,745,20596,27.64563758389262,21,3,9,37,57,130.67999999999984,221
+attributed,all current agencies,population_bin,<2.5k,4110,3104,0.7552311435523115,0,0,0,0,2,9,176
+attributed,all current agencies,population_bin,unknown,761,5132,6.743758212877792,0,0,0,4,19,88.79999999999995,225
+tagged,agencies with >=1 camera,overall,all,1066,13577,12.73639774859287,5,1,2,12,25,124.99999999999818,591
+tagged,agencies with >=1 camera,agency_type,County police,16,359,22.4375,4,2,2,15.25,58,163.29999999999998,175
+tagged,agencies with >=1 camera,agency_type,Municipal police,887,11861,13.372040586245772,5,1,2,12,26.399999999999977,138.27999999999997,591
+tagged,agencies with >=1 camera,agency_type,Sheriff,163,1357,8.325153374233128,4,1,2,9.5,16.80000000000001,81.55999999999995,91
+tagged,agencies with >=1 camera,population_bin,100k-250k,117,2673,22.846153846153847,10,1,3,32,68.60000000000002,160.84000000000017,175
+tagged,agencies with >=1 camera,population_bin,10k-25k,258,1708,6.62015503875969,4,1,2,7,15,41.58000000000004,91
+tagged,agencies with >=1 camera,population_bin,2.5k-10k,158,753,4.765822784810126,3,1,2,6,9.300000000000011,28,30
+tagged,agencies with >=1 camera,population_bin,250k+,69,4046,58.63768115942029,19,1.8000000000000007,4,63,143.60000000000005,495.11999999999904,591
+tagged,agencies with >=1 camera,population_bin,25k-50k,248,2249,9.068548387096774,6,1,2,13,19.600000000000023,46.60000000000002,78
+tagged,agencies with >=1 camera,population_bin,50k-100k,163,1991,12.214723926380367,7,1,2,15.5,32.60000000000002,61.139999999999986,72
+tagged,agencies with >=1 camera,population_bin,<2.5k,39,124,3.1794871794871793,2,1,1.5,4,6.400000000000006,8,8
+tagged,agencies with >=1 camera,population_bin,unknown,14,33,2.357142857142857,1,1,1,1,5.500000000000005,12.219999999999995,13
+tagged,agencies with usable geography,overall,all,14748,13552,0.9189042582045023,0,0,0,0,0,20,591
+tagged,agencies with usable geography,agency_type,County (type unclear),1,0,0,0,0,0,0,0,0,0
+tagged,agencies with usable geography,agency_type,County police,42,359,8.547619047619047,0,0,0,2,14.399999999999991,143.0199999999997,175
+tagged,agencies with usable geography,agency_type,Municipal police,11743,11837,1.008004768798433,0,0,0,0,0,22,591
+tagged,agencies with usable geography,agency_type,Sheriff,2962,1356,0.4577987846049966,0,0,0,0,0,12,91
+tagged,agencies with usable geography,population_bin,100k-250k,381,2673,7.015748031496063,0,0,0,2,22,105.19999999999999,175
+tagged,agencies with usable geography,population_bin,10k-25k,2747,1689,0.6148525664361121,0,0,0,0,0,14,91
+tagged,agencies with usable geography,population_bin,2.5k-10k,4549,753,0.16553088590899098,0,0,0,0,0,5,30
+tagged,agencies with usable geography,population_bin,250k+,152,4046,26.61842105263158,0,0,0,12.5,76.9,387.7800000000011,591
+tagged,agencies with usable geography,population_bin,25k-50k,1376,2244,1.630813953488372,0,0,0,0,5,24.25,78
+tagged,agencies with usable geography,population_bin,50k-100k,743,1991,2.679676985195155,0,0,0,0,8,47.16000000000008,72
+tagged,agencies with usable geography,population_bin,<2.5k,4063,123,0.030273197144966773,0,0,0,0,0,0,8
+tagged,agencies with usable geography,population_bin,unknown,737,33,0.04477611940298507,0,0,0,0,0,1,13
+tagged,all current agencies,overall,all,14914,13577,0.9103526887488266,0,0,0,0,0,19,591
+tagged,all current agencies,agency_type,County (type unclear),1,0,0,0,0,0,0,0,0,0
+tagged,all current agencies,agency_type,County police,44,359,8.159090909090908,0,0,0,2,13.200000000000017,141.46000000000004,175
+tagged,all current agencies,agency_type,Municipal police,11883,11861,0.9981486156694438,0,0,0,0,0,22,591
+tagged,all current agencies,agency_type,Sheriff,2986,1357,0.45445411922304085,0,0,0,0,0,12,91
+tagged,all current agencies,population_bin,100k-250k,381,2673,7.015748031496063,0,0,0,2,22,105.19999999999999,175
+tagged,all current agencies,population_bin,10k-25k,2786,1708,0.6130653266331658,0,0,0,0,0,14,91
+tagged,all current agencies,population_bin,2.5k-10k,4589,753,0.16408803660928306,0,0,0,0,0,5,30
+tagged,all current agencies,population_bin,250k+,152,4046,26.61842105263158,0,0,0,12.5,76.9,387.7800000000011,591
+tagged,all current agencies,population_bin,25k-50k,1390,2249,1.6179856115107913,0,0,0,0,5,24.1099999999999,78
+tagged,all current agencies,population_bin,50k-100k,745,1991,2.67248322147651,0,0,0,0,8,47.11999999999989,72
+tagged,all current agencies,population_bin,<2.5k,4110,124,0.03017031630170316,0,0,0,0,0,0,8
+tagged,all current agencies,population_bin,unknown,761,33,0.04336399474375821,0,0,0,0,0,1,13

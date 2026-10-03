@@ -1,12 +1,22 @@
-# ALPRs per US police agency: summary
+# Mapped ALPRs per US local police agency: summary
 
-OSM pull: 2026-10-03 (Overpass; OSM base timestamps 2026-10-03 13:08:13 to 2026-10-03 15:24:51). Agencies: FBI CDE directory + FBI employee file (population served, latest year per ORI) + BJS LEAIC 2012. Boundaries: TIGER/Line 2025. Population: ACS 2020-2024 5-year.
+OSM pull 2026-10-03 (Overpass; OSM base timestamps 2026-10-03 13:08:13 to 2026-10-03 15:24:51). Agencies: FBI CDE directory + FBI employee file (population served) + BJS LEAIC 2012. Boundaries: TIGER/Line 2025. Population: ACS 2020-2024 5-year.
+
+**What these numbers are.** Counts of license plate reader cameras *mapped* in OpenStreetMap (the crowdsourced layer DeFlock maintains), tied to local agencies three ways. None is a verified inventory of cameras an agency owns, and none measures what an agency can *search*: through shared networks (e.g., Flock sharing and national lookup) an agency can query cameras far outside its own area. Neither the tagged nor the located measure is a lower or upper bound: both omit some cameras and include some wrongly.
+
+| Measure | Definition |
+| --- | --- |
+| **Located** | Cameras inside the agency's area (incorporated place, town/township, or the county outside them), excluding cameras whose operator tag names a private party or another public body (DOT, transit, state police, federal, university, school). Includes cameras with no operator tag. |
+| **Tagged** | Cameras whose `operator` tag names the agency (name match within the state). |
+| **Attributed** | Tagged cameras, plus cameras with no operator, a vendor-only tag ("Flock Safety"), or an unmatched police tag that are located in the agency's area (inferred). |
+
+Changes since the first version follow the 2026-10-03 audit; see `AUDIT_RESPONSE.md`.
 
 ## 1. Camera data
 
-- US ALPR nodes (`man_made=surveillance` + `surveillance:type=ALPR`), inside the 50 states + DC: **143,157**
-- With a non-empty `operator` tag: **23,450 (16.4%)**
-- By manufacturer (spelling variants grouped; full list in `osm_counts_by_manufacturer.csv`):
+- US ALPR nodes (`man_made=surveillance` + `surveillance:type=ALPR`), 50 states + DC: **143,157**. 2,391 rows share exact coordinates with another node (possible duplicates or multi-direction installs; flagged `n_same_coords`, not removed).
+- With an `operator` tag: **23,547 (16.4%)**.
+- By manufacturer (spelling variants grouped; full list `osm_counts_by_manufacturer.csv`):
 
 | manufacturer | cameras | share |
 | --- | --- | --- |
@@ -20,155 +30,165 @@ OSM pull: 2026-10-03 (Overpass; OSM base timestamps 2026-10-03 13:08:13 to 2026-
 | PlateSmart |     746 | 0.5% |
 | (no manufacturer tag) |  11,102 | 7.8% |
 
+- Operator class (rules in `R/04b_operator_class.R`; every string and its class in `operator_classes_for_review.csv`):
+
+| operator_class | cameras | share |
+| --- | --- | --- |
+| missing | 119,610 | 83.6% |
+| local_police |  12,549 | 8.8% |
+| private |   4,324 | 3.0% |
+| public_other |   2,560 | 1.8% |
+| vendor |   2,165 | 1.5% |
+| local_government |   1,028 | 0.7% |
+| unclassified |     523 | 0.4% |
+| police_unmatched |     398 | 0.3% |
+
 ## 2. Agency list
 
-- 15,126 local agencies: 12,093 municipal police, 2,985 sheriffs, 46 county police, 2 county agencies of unclear type.
-- 202 agencies have no LEAIC record (ORI created or changed after 2012). 761 have no FBI population.
+- 15,126 local agencies in the table: 12,089 municipal police, 2,989 sheriffs, 46 county police, 2 unclear.
+- 212 are **historical** records (not in the current FBI directory; last employee report before 2024). They stay in `agencies.csv`, flagged, but get no cameras and are excluded from the statistics below. 14,914 current agencies remain.
+- Geography: 14,748 current agencies have a usable place or county code; 166 do not (`geo_status`).
 
-## 3. Crosswalk
+## 3. How cameras were placed (located measure)
 
-### Method A: operator tag
-
-| a_basis | n |
+| b_status | cameras |
 | --- | --- |
-| (no operator tag, or unmatched) | 129,607 |
-| exact |  12,038 |
-| jurisdiction_only |   1,020 |
-| exact_no_muni_word |     383 |
-| exact_county_added |      82 |
-| fuzzy |      27 |
+| direct_place | 93,414 |
+| county_unincorporated | 30,394 |
+| direct_cousub |  6,166 |
+| excluded_private |  4,324 |
+| inferred_no_pd_in_place |  4,168 |
+| excluded_public_other |  2,560 |
+| inferred_countywide_pd |  1,076 |
+| direct_place_name_mismatch |    798 |
+| no_local_agency |    192 |
+| direct_cousub_name_mismatch |     64 |
+| unresolved_shared_code |      1 |
 
-- Fuzzy: 64 candidates written to `method_a_fuzzy_matches_for_review.csv`; 10 accepted (all spelling typos). Never across states.
-- `jurisdiction_only` = operator names a city or county without an agency word ("City of Beverly Hills"); assigned to that jurisdiction's PD or sheriff. Review these.
+- `direct_*_name_mismatch`: the PD's LEAIC code points to a Census entity with a different name. Mostly spelling (Middleboro/Middleborough) or consolidated governments (Metro Nashville, Lexington-Fayette); listed in `method_b_pd_code_name_mismatches.csv` for review.
+- `inferred_*`: assignment by rule, not verified (city with no PD in the list -> county agency; consolidated government or county with no county agency -> county-wide PD).
+- `unresolved_shared_code`: two PDs share a code and the name does not decide it; left unassigned.
+- `no_local_agency`: state-police areas (DE, PA, New England); correctly not assigned.
 
-### Method B: spatial join
+Attribution basis:
 
-| b_level | n |
+| attr_basis | cameras |
 | --- | --- |
-| place | 96,562 |
-| county | 30,803 |
-| county_subdivision |  6,376 |
-| excluded_private |  4,110 |
-| place_without_pd_to_county |  4,030 |
-| countywide_pd_no_county_agency |    641 |
-| consolidated_countywide_pd |    433 |
-| unassigned |    202 |
+| inferred_location_missing | 119,442 |
+| tagged |  13,577 |
+| (not attributed) |   7,065 |
+| inferred_location_vendor |   2,165 |
+| inferred_location_unclassified |     523 |
+| inferred_location_police_unmatched |     385 |
 
-- Excluded as private: **4,110 cameras** (surveillance=private: 177; operator:type private/business/university etc.: 1,920; operator name looks private (retailer, mall, HOA, school, hospital...): 3,870). Overlapping flags counted once in the total.
-- `place_without_pd_to_county` (4,030 cameras): inside a city with no PD in the agency list (mostly contract cities); assigned to the sheriff.
-- `county_subdivision`: town/township police in New England, NJ, PA, MI, NY, OH etc. (towns that are not Census places). Not in the original spec; without it these cameras would go to the sheriff.
-- County-wide municipal PDs (1,074 cameras): Louisville Metro, Athens-Clarke (consolidated governments), Charlotte-Mecklenburg, Las Vegas Metro, Metro Nashville, Honolulu, Los Alamos, Indianapolis (counties with no sheriff/county-police record).
-- 160 PDs had no usable LEAIC place code and were linked to a 2025 Census place by exact unique name (`method_b_pd_place_name_matches.csv`).
-- `unassigned`: areas policed by state police (DE, PA, CT, MA, RI, VT). Correctly not assigned to a local agency.
+Agencies with zero located cameras, by reason:
 
-### A vs. B
-
-| a_b_compare | n |
+| reason | agencies |
 | --- | --- |
-| B only | 125,335 |
-| agree |  12,363 |
-| neither |   4,272 |
-| disagree |   1,147 |
-| A only |      40 |
-
-Disagreements are mostly county agencies operating cameras inside city limits (e.g., St. Charles County PD inside St. Charles and O'Fallon, MO) and cities placing cameras just past their borders. Method B gives those to the city.
+| no mapped cameras in area | 6,798 |
+| historical record (not assigned) |   212 |
+| no usable geography: no_usable_place_code |   131 |
+| no usable geography: county_shared_other_agency_assigned |    26 |
+| no usable geography: place_code_shared_not_assigned |     9 |
+| no usable geography: countywide_only |     6 |
 
 ## 4. Cameras per agency
 
-### Method B (spatial join; the main estimate)
-
-Overall and by agency type:
+### Located (current agencies)
 
 | set | group | agencies | cameras | mean | median | p10 | p25 | p75 | p90 | p99 | max |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| agencies with >=1 camera | all |  8,000 | 138,845 | 17.4 | 6.0 | 1 | 2.0 | 16.0 | 37.0 | 177.0 | 2,443 |
-| all agencies | all | 15,126 | 138,845 | 9.2 | 1.0 | 0 | 0.0 | 7.0 | 21.0 | 121.0 | 2,443 |
-| agencies with >=1 camera | Municipal police |  5,998 | 104,012 | 17.3 | 6.0 | 1 | 2.0 | 16.0 | 37.0 | 160.2 | 2,443 |
-| agencies with >=1 camera | Sheriff |  1,963 |  30,508 | 15.5 | 6.0 | 1 | 3.0 | 15.0 | 31.0 | 163.3 | 1,111 |
-| agencies with >=1 camera | County police |     39 |   4,325 | 110.9 | 57.0 | 8 | 16.5 | 139.0 | 233.6 | 620.2 |   711 |
-| all agencies | Municipal police | 12,093 | 104,012 | 8.6 | 0.0 | 0 | 0.0 | 6.0 | 20.0 | 108.1 | 2,443 |
-| all agencies | Sheriff |  2,985 |  30,508 | 10.2 | 3.0 | 0 | 0.0 | 9.0 | 22.0 | 136.0 | 1,111 |
-| all agencies | County police |     46 |   4,325 | 94.0 | 46.5 | 0 | 8.2 | 131.2 | 218.5 | 603.4 |   711 |
-| all agencies | County (type unclear) |      2 |       0 | 0.0 | 0.0 | 0 | 0.0 | 0.0 | 0.0 | 0.0 |     0 |
-
-By population served (FBI):
+| agencies with >=1 camera | all |  7,944 | 136,080 | 17.1 | 6.0 | 1 | 2.0 | 16.0 | 37.0 | 174.3 | 2,442 |
+| agencies with >=1 camera | Municipal police |  5,942 | 101,518 | 17.1 | 6.0 | 1 | 2.0 | 16.0 | 37.0 | 157.2 | 2,442 |
+| agencies with >=1 camera | Sheriff |  1,961 |  30,139 | 15.4 | 6.0 | 1 | 3.0 | 15.0 | 31.0 | 163.8 | 1,101 |
+| agencies with >=1 camera | County police |     41 |   4,423 | 107.9 | 60.0 | 8 | 19.0 | 138.0 | 221.0 | 615.4 |   711 |
+| agencies with usable geography | all | 14,748 | 136,080 | 9.2 | 1.0 | 0 | 0.0 | 7.0 | 21.0 | 121.5 | 2,442 |
+| agencies with usable geography | Municipal police | 11,743 | 101,518 | 8.6 | 1.0 | 0 | 0.0 | 6.0 | 20.0 | 109.6 | 2,442 |
+| agencies with usable geography | Sheriff |  2,962 |  30,139 | 10.2 | 3.0 | 0 | 0.0 | 9.0 | 22.0 | 135.4 | 1,101 |
+| agencies with usable geography | County police |     42 |   4,423 | 105.3 | 58.5 | 8 | 15.2 | 136.2 | 219.2 | 613.0 |   711 |
+| agencies with usable geography | County (type unclear) |      1 |       0 | 0.0 | 0.0 | 0 | 0.0 | 0.0 | 0.0 | 0.0 |     0 |
 
 | set | group | agencies | cameras | mean | median | p10 | p25 | p75 | p90 | p99 | max |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| agencies with >=1 camera | <2.5k |   962 |  3,269 | 3.4 |   2 | 1.0 | 1.0 | 4.0 | 6.0 | 21.0 |   189 |
-| agencies with >=1 camera | 2.5k-10k | 2,176 | 11,040 | 5.1 |   4 | 1.0 | 2.0 | 6.0 | 11.0 | 27.2 |    59 |
-| agencies with >=1 camera | 10k-25k | 2,073 | 19,682 | 9.5 |   7 | 1.0 | 3.0 | 13.0 | 20.0 | 46.0 |    71 |
-| agencies with >=1 camera | 25k-50k | 1,236 | 20,699 | 16.7 |  13 | 3.0 | 6.0 | 22.0 | 35.0 | 71.7 |   184 |
-| agencies with >=1 camera | 50k-100k |   720 | 21,031 | 29.2 |  23 | 5.0 | 11.0 | 39.2 | 59.0 | 132.2 |   221 |
-| agencies with >=1 camera | 100k-250k |   377 | 23,782 | 63.1 |  52 | 12.6 | 28.0 | 86.0 | 126.4 | 206.6 |   289 |
-| agencies with >=1 camera | 250k+ |   151 | 34,006 | 225.2 | 143 | 47.0 | 81.5 | 247.0 | 475.0 | 1,315.0 | 2,443 |
-| agencies with >=1 camera | unknown |   305 |  5,336 | 17.5 |   6 | 1.0 | 2.0 | 21.0 | 48.6 | 128.3 |   225 |
-| all agencies | <2.5k | 4,269 |  3,269 | 0.8 |   0 | 0.0 | 0.0 | 0.0 | 2.0 | 10.0 |   189 |
-| all agencies | 2.5k-10k | 4,635 | 11,040 | 2.4 |   0 | 0.0 | 0.0 | 3.0 | 7.0 | 20.7 |    59 |
-| all agencies | 10k-25k | 2,790 | 19,682 | 7.1 |   4 | 0.0 | 0.0 | 10.0 | 18.0 | 42.1 |    71 |
-| all agencies | 25k-50k | 1,390 | 20,699 | 14.9 |  11 | 0.0 | 4.0 | 20.8 | 34.0 | 70.1 |   184 |
-| all agencies | 50k-100k |   747 | 21,031 | 28.2 |  22 | 3.0 | 9.0 | 38.0 | 58.0 | 131.2 |   221 |
-| all agencies | 100k-250k |   381 | 23,782 | 62.4 |  52 | 11.0 | 27.0 | 86.0 | 126.0 | 206.2 |   289 |
-| all agencies | 250k+ |   153 | 34,006 | 222.3 | 143 | 46.0 | 80.0 | 242.0 | 474.4 | 1,314.7 | 2,443 |
-| all agencies | unknown |   761 |  5,336 | 7.0 |   0 | 0.0 | 0.0 | 4.0 | 21.0 | 88.8 |   225 |
+| agencies with >=1 camera | <2.5k |   938 |  3,119 | 3.3 | 2.0 | 1.0 | 1.0 |   4 | 6.0 | 20.0 |   189 |
+| agencies with >=1 camera | 2.5k-10k | 2,157 | 10,943 | 5.1 | 4.0 | 1.0 | 2.0 |   6 | 11.0 | 27.4 |    59 |
+| agencies with >=1 camera | 10k-25k | 2,063 | 19,498 | 9.5 | 7.0 | 1.0 | 3.0 |  13 | 20.0 | 45.4 |    71 |
+| agencies with >=1 camera | 25k-50k | 1,232 | 20,543 | 16.7 | 13.0 | 3.0 | 6.0 |  22 | 35.0 | 71.7 |   184 |
+| agencies with >=1 camera | 50k-100k |   718 | 20,748 | 28.9 | 22.0 | 5.0 | 11.0 |  38 | 58.0 | 132.3 |   221 |
+| agencies with >=1 camera | 100k-250k |   380 | 23,636 | 62.2 | 52.0 | 12.0 | 27.0 |  86 | 124.0 | 206.3 |   289 |
+| agencies with >=1 camera | 250k+ |   151 | 32,299 | 213.9 | 143.0 | 47.0 | 81.5 | 231 | 467.0 | 1,178.0 | 2,442 |
+| agencies with >=1 camera | unknown |   305 |  5,294 | 17.4 | 6.0 | 1.0 | 2.0 |  21 | 48.0 | 128.3 |   225 |
+| agencies with usable geography | <2.5k | 4,063 |  3,119 | 0.8 | 0.0 | 0.0 | 0.0 |   0 | 2.0 | 9.4 |   189 |
+| agencies with usable geography | 2.5k-10k | 4,549 | 10,943 | 2.4 | 0.0 | 0.0 | 0.0 |   3 | 7.0 | 20.5 |    59 |
+| agencies with usable geography | 10k-25k | 2,747 | 19,498 | 7.1 | 4.0 | 0.0 | 1.0 |  10 | 18.0 | 41.1 |    71 |
+| agencies with usable geography | 25k-50k | 1,376 | 20,543 | 14.9 | 11.0 | 0.0 | 4.0 |  20 | 34.0 | 70.2 |   184 |
+| agencies with usable geography | 50k-100k |   743 | 20,748 | 27.9 | 21.0 | 3.0 | 9.5 |  37 | 58.0 | 131.3 |   221 |
+| agencies with usable geography | 100k-250k |   381 | 23,636 | 62.0 | 52.0 | 12.0 | 27.0 |  86 | 124.0 | 206.2 |   289 |
+| agencies with usable geography | 250k+ |   152 | 32,299 | 212.5 | 141.5 | 46.1 | 80.0 | 231 | 465.4 | 1,176.5 | 2,442 |
+| agencies with usable geography | unknown |   737 |  5,294 | 7.2 | 0.0 | 0.0 | 0.0 |   4 | 21.4 | 89.3 |   225 |
 
-### Method A (operator tag; a floor, not an estimate)
+### Attributed
 
 | set | group | agencies | cameras | mean | median | p10 | p25 | p75 | p90 | p99 | max |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| agencies with >=1 camera | all |  1,064 | 13,550 | 12.7 | 5 | 1 | 2 | 12.0 | 25.0 | 125.4 | 591 |
-| all agencies | all | 15,126 | 13,550 | 0.9 | 0 | 0 | 0 | 0.0 | 0.0 | 19.0 | 591 |
-| agencies with >=1 camera | Municipal police |    885 | 11,853 | 13.4 | 5 | 1 | 2 | 12.0 | 26.6 | 138.3 | 591 |
-| agencies with >=1 camera | Sheriff |    163 |  1,338 | 8.2 | 3 | 1 | 1 | 9.0 | 16.8 | 81.6 |  91 |
+| agencies with >=1 camera | all |  7,911 | 136,092 | 17.2 |  6 | 1.0 | 2.0 | 16.0 | 37.0 | 175.5 | 2,429 |
+| agencies with >=1 camera | Municipal police |  5,913 | 101,329 | 17.1 |  6 | 1.0 | 2.0 | 16.0 | 37.0 | 157.8 | 2,429 |
+| agencies with >=1 camera | Sheriff |  1,957 |  30,209 | 15.4 |  6 | 1.0 | 3.0 | 15.0 | 31.0 | 166.9 | 1,098 |
+| agencies with >=1 camera | County police |     41 |   4,554 | 111.1 | 60 | 9.0 | 19.0 | 140.0 | 221.0 | 616.2 |   711 |
+| agencies with usable geography | all | 14,748 | 136,067 | 9.2 |  1 | 0.0 | 0.0 | 7.0 | 21.0 | 121.5 | 2,429 |
+| agencies with usable geography | Municipal police | 11,743 | 101,305 | 8.6 |  1 | 0.0 | 0.0 | 6.0 | 20.0 | 109.0 | 2,429 |
+| agencies with usable geography | Sheriff |  2,962 |  30,208 | 10.2 |  3 | 0.0 | 0.0 | 9.0 | 22.0 | 135.4 | 1,098 |
+| agencies with usable geography | County police |     42 |   4,554 | 108.4 | 58 | 8.1 | 15.2 | 139.8 | 219.3 | 613.8 |   711 |
+| agencies with usable geography | County (type unclear) |      1 |       0 | 0.0 |  0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 |     0 |
+
+### Tagged
+
+| set | group | agencies | cameras | mean | median | p10 | p25 | p75 | p90 | p99 | max |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| agencies with >=1 camera | all |  1,066 | 13,577 | 12.7 | 5 | 1 | 2 | 12.0 | 25.0 | 125.0 | 591 |
+| agencies with >=1 camera | Municipal police |    887 | 11,861 | 13.4 | 5 | 1 | 2 | 12.0 | 26.4 | 138.3 | 591 |
+| agencies with >=1 camera | Sheriff |    163 |  1,357 | 8.3 | 4 | 1 | 2 | 9.5 | 16.8 | 81.6 |  91 |
 | agencies with >=1 camera | County police |     16 |    359 | 22.4 | 4 | 2 | 2 | 15.2 | 58.0 | 163.3 | 175 |
-| all agencies | Municipal police | 12,093 | 11,853 | 1.0 | 0 | 0 | 0 | 0.0 | 0.0 | 22.0 | 591 |
-| all agencies | Sheriff |  2,985 |  1,338 | 0.4 | 0 | 0 | 0 | 0.0 | 0.0 | 12.0 |  91 |
-| all agencies | County police |     46 |    359 | 7.8 | 0 | 0 | 0 | 2.0 | 12.0 | 139.9 | 175 |
-| all agencies | County (type unclear) |      2 |      0 | 0.0 | 0 | 0 | 0 | 0.0 | 0.0 | 0.0 |   0 |
+| agencies with usable geography | all | 14,748 | 13,552 | 0.9 | 0 | 0 | 0 | 0.0 | 0.0 | 20.0 | 591 |
+| agencies with usable geography | Municipal police | 11,743 | 11,837 | 1.0 | 0 | 0 | 0 | 0.0 | 0.0 | 22.0 | 591 |
+| agencies with usable geography | Sheriff |  2,962 |  1,356 | 0.5 | 0 | 0 | 0 | 0.0 | 0.0 | 12.0 |  91 |
+| agencies with usable geography | County police |     42 |    359 | 8.5 | 0 | 0 | 0 | 2.0 | 14.4 | 143.0 | 175 |
+| agencies with usable geography | County (type unclear) |      1 |      0 | 0.0 | 0 | 0 | 0 | 0.0 | 0.0 | 0.0 |   0 |
 
-| set | group | agencies | cameras | mean | median | p10 | p25 | p75 | p90 | p99 | max |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| agencies with >=1 camera | <2.5k |    39 |   124 | 3.2 |  2 | 1.0 | 1.5 | 4.0 | 6.4 | 8.0 |   8 |
-| agencies with >=1 camera | 2.5k-10k |   158 |   753 | 4.8 |  3 | 1.0 | 2.0 | 6.0 | 9.3 | 28.0 |  30 |
-| agencies with >=1 camera | 10k-25k |   258 | 1,717 | 6.7 |  4 | 1.0 | 2.0 | 7.8 | 15.0 | 41.6 |  91 |
-| agencies with >=1 camera | 25k-50k |   246 | 2,220 | 9.0 |  6 | 1.0 | 2.0 | 13.0 | 20.0 | 47.0 |  78 |
-| agencies with >=1 camera | 50k-100k |   163 | 1,987 | 12.2 |  7 | 1.0 | 2.0 | 15.5 | 32.6 | 61.1 |  72 |
-| agencies with >=1 camera | 100k-250k |   117 | 2,670 | 22.8 | 10 | 1.0 | 3.0 | 32.0 | 68.6 | 160.8 | 175 |
-| agencies with >=1 camera | 250k+ |    69 | 4,046 | 58.6 | 19 | 1.8 | 4.0 | 63.0 | 143.6 | 495.1 | 591 |
-| agencies with >=1 camera | unknown |    14 |    33 | 2.4 |  1 | 1.0 | 1.0 | 1.0 | 5.5 | 12.2 |  13 |
-| all agencies | <2.5k | 4,269 |   124 | 0.0 |  0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 |   8 |
-| all agencies | 2.5k-10k | 4,635 |   753 | 0.2 |  0 | 0.0 | 0.0 | 0.0 | 0.0 | 5.0 |  30 |
-| all agencies | 10k-25k | 2,790 | 1,717 | 0.6 |  0 | 0.0 | 0.0 | 0.0 | 0.0 | 14.0 |  91 |
-| all agencies | 25k-50k | 1,390 | 2,220 | 1.6 |  0 | 0.0 | 0.0 | 0.0 | 5.0 | 24.1 |  78 |
-| all agencies | 50k-100k |   747 | 1,987 | 2.7 |  0 | 0.0 | 0.0 | 0.0 | 8.0 | 47.1 |  72 |
-| all agencies | 100k-250k |   381 | 2,670 | 7.0 |  0 | 0.0 | 0.0 | 2.0 | 22.0 | 105.2 | 175 |
-| all agencies | 250k+ |   153 | 4,046 | 26.4 |  0 | 0.0 | 0.0 | 12.0 | 76.8 | 386.6 | 591 |
-| all agencies | unknown |   761 |    33 | 0.0 |  0 | 0.0 | 0.0 | 0.0 | 0.0 | 1.0 |  13 |
+Per-capita columns in `agencies.csv` use FBI population served. That population is not guaranteed to match the area the located measure uses (e.g., a sheriff's population is usually the unincorporated area only, while inferred rules can add contract cities).
 
-Cameras per 10,000 residents are in `agencies.csv` (`per10k_a`, `per10k_b`), using FBI population served. A sheriff's FBI population is usually only the unincorporated area, so method B counts for sheriffs are per that area.
+## 5. Historical comparison with agency-reported Flock counts
 
-## 5. Validation (N&O "Private Eyes", Flock transparency portals, 2024-04-26)
+N&O "Private Eyes" data, scraped from Flock transparency portals on 2024-04-26, vs. Flock-manufacturer cameras in OSM on the pull date (2.5 years later). This shows whether the measures rank agencies sensibly. It does **not** establish current per-agency accuracy: growth, removals, mapping gaps and attribution errors all move the ratio, and the portal sample is not representative (no county police; few sheriffs).
 
-- 336 rows after dropping Flock/Training/DNU rows and rows with no camera count; 314 matched to the agency list (unmatched are mostly universities, airports, DAs, tribal PDs).
-- Compared with OSM **Flock-manufacturer** cameras assigned to the agency.
-
-| method | n | pearson_r | spearman_rho | pearson_r_log1p | median_ratio | median_abs_error | share_osm_zero | share_osm_above_reported |
+| measure | n | r_log | spearman | median_ratio | within_2x | below_half | above_double | osm_zero |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| A | 314 | 0.19 | 0.33 | 0.34 | 0.00 | 9.50 | 0.63 | 0.08 |
-| B | 314 | 0.63 | 0.78 | 0.75 | 1.21 | 6.00 | 0.05 | 0.61 |
+| tagged | 314 | 0.34 | 0.33 | 0.00 | 0.20 | 0.78 | 0.01 | 0.63 |
+| located | 314 | 0.75 | 0.78 | 1.19 | 0.66 | 0.12 | 0.22 | 0.05 |
+| attributed | 314 | 0.76 | 0.78 | 1.20 | 0.66 | 0.11 | 0.23 | 0.05 |
 
-- Method A among the 116 agencies where it finds at least one camera: median ratio 0.60, r(log) 0.33.
-- OSM data are 2.5 years newer than the portal counts, so OSM counts above the 2024 figure are expected (method B: median ratio above 1). Method B also counts Flock cameras owned by other public bodies inside the city (e.g., county agencies, DOTs), which pushes it up; method A misses every untagged camera, which pushes it to zero for most agencies.
-- Plot: `validation_scatter.png`.
+Located measure by group:
 
-## 6. Limits of the data
+| group_var | group | n | median_ratio | within_2x | r_log |
+| --- | --- | --- | --- | --- | --- |
+| agency_type | Municipal police | 281 | 1.15 | 0.68 | 0.76 |
+| agency_type | Sheriff |  33 | 1.73 | 0.48 | 0.64 |
+| population_served | 10k-50k | 126 | 1.19 | 0.71 | 0.47 |
+| population_served | 250k+ |   8 | 2.14 | 0.25 | 0.47 |
+| population_served | 50k-250k |  95 | 1.64 | 0.61 | 0.73 |
+| population_served | <10k |  82 | 1.00 | 0.68 | 0.64 |
+| population_served | unknown |   3 | 1.10 | 1.00 | 0.98 |
 
-- **Untagged operators.** Only 16.4% of cameras have an operator tag, so method A is a floor. Method B infers the owner from location.
-- **Private cameras inside city limits.** Method B excludes only cameras tagged private or with an obviously private operator name. Untagged private cameras (HOAs, businesses, which Flock sells to heavily) are assigned to the local PD. Flock as `operator` (a vendor, not an owner) is not excluded.
-- **Overlapping jurisdictions.** Cameras run by sheriffs, county police, state police, DOTs, transit and university police inside a city are assigned to the city PD by method B. Where >1 PD or >1 county agency shares a code, the one with the largest FBI population gets the cameras (`method_b_places_with_multiple_pds.csv`, `method_b_counties_with_multiple_county_agencies.csv`).
-- **Uneven volunteer coverage.** DeFlock/OSM mapping is crowdsourced. Zero cameras means none mapped, not none installed. Coverage is denser where active mappers live; cross-agency comparisons reflect mapping effort as well as deployment.
-- **Age of LEAIC.** LEAIC is from 2012. 202 agencies have no LEAIC record; place codes for consolidated governments changed since (handled by the county-wide rule); new cities and new PDs are matched by name (160) or fall to the sheriff.
-- **Population served.** FBI figures (latest year 2020-2025). Missing for some agencies; per-capita values are NA there. Sheriffs with zero FBI population (no patrol area) have NA per-capita rates.
-- **Contract cities.** California contract cities (ORIs ending in X, e.g., Mission Viejo PD) are separate FBI agencies served by the sheriff; method B gives them their own cameras.
-- **Mobile ALPRs** (car-mounted) are not in OSM; these counts are fixed cameras only.
+Largest disagreements are in `validation_largest_residuals.csv` (e.g., San Diego PD: 528 reported vs 85 located; Puyallup WA PD: 2 vs 42). Plot: `validation_scatter.png`.
+
+## 6. Limits
+
+- **Ownership is mostly unknown.** 83.6% of cameras have no operator tag. The located and attributed measures put them with the local agency by location; some belong to HOAs, businesses, other agencies or vendors.
+- **Access is not measured.** Shared networks let agencies search cameras outside their area; nothing here counts that.
+- **Overlapping jurisdictions.** County, state, transit and university police operate inside cities. Cameras tagged to them are excluded from the city's located count, but untagged ones are not.
+- **Uneven volunteer coverage.** A zero means none mapped (or no usable geography; see `located_zero_type`), not none installed.
+- **Age of LEAIC (2012).** Place codes are old; new PDs are matched by name; mismatched codes are flagged.
+- **Population served** comes from FBI records (2020-2025); 761 agencies lack it.
+- **Mobile (car-mounted) ALPRs** are not in OSM.
+- **Court comparisons.** `density_cameras_per_agency_court_cutoff.png` shows camera counts from two court cases for reference only; those networks are defined differently (see the caption and `court_cases.md`).
 - No leaked or non-public Flock data were used.

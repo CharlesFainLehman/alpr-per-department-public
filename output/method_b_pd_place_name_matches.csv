@@ -9,6 +9,7 @@ AR0722000,Tontitown Police Department,AR,0569740
 AR0321100,Pleasant Plains Police Department,AR,0556270
 CA028090X,American Canyon Police Department,CA,0601640
 CA028100X,Yountville Police Department,CA,0686930
+CA0160800,Avenal Police Department,CA,0603302
 CA030350X,Mission Viejo Police Department,CA,0648256
 CA030360X,Dana Point Police Department,CA,0617946
 CA030390X,Laguna Niguel Police Department,CA,0639248
@@ -21,6 +22,7 @@ CA0491300,Windsor Police Department,CA,0685922
 CA001300X,Dublin Police Department,CA,0620018
 CA056140X,Moorpark Police Department,CA,0649138
 CA033A000,Jurupa Valley Police Department,CA,0637692
+CA0334900,Menifee Police Department,CA,0646842
 CA033300X,Lake Elsinore Police Department,CA,0639486
 CA033310X,La Quinta Police Department,CA,0640354
 CA033320X,Moreno Valley Police Department,CA,0649270
@@ -41,6 +43,7 @@ CA0392400,Lathrop Police Department,CA,0640704
 CA007230X,Danville Police Department,CA,0617988
 CA007260X,Orinda Police Department,CA,0654232
 CA007340X,Oakley Police Department,CA,0653070
+CA0074000,San Ramon Police Department,CA,0668378
 CA036200X,Big Bear Lake Police Department,CA,0606434
 CA036210X,Grand Terrace Police Department,CA,0630658
 CA036220X,Loma Linda Police Department,CA,0642370
@@ -94,6 +97,7 @@ MA0061000,Greenfield Police Department,MA,2527060
 MA0080500,Easthampton Police Department,MA,2519365
 MA0091800,Framingham Police Department,MA,2524960
 MA0094800,Watertown Police Department,MA,2573405
+MI3536400,East Tawas Police Department,MI,2624420
 MI0622500,Au Gres Police Department,MI,2604120
 MI631800X,Addison Township Police Department,MI,2600380
 MI631900X,Pontiac Police Department,MI,2665440
@@ -157,5 +161,6 @@ WA0171800,Duvall Police Department,WA,5319035
 WI0251200,Linden Police Department,WI,5544625
 WI0710900,Fox Crossing Police Department,WI,5526982
 WI0132900,Brooklyn Police Department,WI,5510075
+WI0561100,River Falls Police Department,WI,5568275
 PA0012500,Abbottstown,PA,4200116
 TX0071600,Charlotte,TX,4814404

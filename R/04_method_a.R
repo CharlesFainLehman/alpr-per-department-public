@@ -25,6 +25,7 @@ basic <- function(x) {
     str_replace(",[^,]* (county|parish)$", "") |>          # FBI: "Miami Township PD, Clermont County"
     str_replace_all("[^a-z0-9 ]", " ") |> str_squish() |> str_replace_all("\\bst\\b", "saint") |>
     str_replace_all("\\bco\\b", "county") |> str_replace_all("\\btwp\\b", "township") |>
+    str_replace_all("\\bsherr?iff?s?\\b", "sheriffs") |> str_replace_all("\\bmt\\b", "mount") |>
     # unambiguous big-city abbreviations
     str_replace_all(c("\\bnypd\\b" = "new york city police department", "\\blapd\\b" = "los angeles police department",
                       "\\bsfpd\\b" = "san francisco police department", "\\bnopd\\b" = "new orleans police department",
@@ -51,7 +52,11 @@ parse_name <- function(x) {
     str_replace_all("\\bpolice department\\b|\\bpolice dept\\b|\\bpolice dep\\b", " ") |>
     str_replace_all(ORG_WORDS, " ") |> str_squish()
   core2 <- core |> str_replace_all(MUNI_WORDS, " ") |> str_squish()
-  tibble(norm = b, kind = kind, prefix = prefix, core = core, core2 = core2)
+  # "Town of Groton" -> "groton town": lets a separate town/township agency win over the same-named city
+  muni_word <- str_match(b, "^(?:the )?(city|town|village|township|borough) of\\b")[, 2]
+  core_typed <- if_else(is.na(muni_word) | str_detect(core, paste0("\\b", coalesce(muni_word, "x"), "$")), NA,
+                        paste(core, muni_word))
+  tibble(norm = b, kind = kind, prefix = prefix, core = core, core2 = core2, core_typed = core_typed)
 }
 
 # Agency side: kind from FBI type, not from the name.
@@ -73,11 +78,18 @@ ops <- bind_cols(ops, parse_name(ops$operator))
 st_rx <- paste0("\\s(", str_to_lower(ops$state), "|", str_to_lower(STATES$name[match(ops$state, STATES$abbr)]), ")$")
 ops <- ops |> mutate(core = str_squish(str_remove(core, st_rx)), core2 = str_squish(str_remove(core2, st_rx)))
 
-# Step 2: exact on core
+# Step 2: exact on core ("Town of X" first tries the typed core "x town")
+ops <- ops |> left_join(k1 |> filter(n_ag == 1) |> select(state, kind, k, ori_typed = ori), by = c("state", "kind", "core_typed" = "k"))
+ops <- ops |> left_join(ag_p |> filter(!is_county) |> count(state, core, name = "n_t") |> filter(n_t == 1) |>
+                          left_join(ag_p |> select(state, core, ori_t2 = ori), by = c("state", "core")),
+                        by = c("state", "core_typed" = "core")) |>
+  mutate(ori_typed = coalesce(ori_typed, if_else(kind == "none", NA, ori_t2))) |> select(-n_t, -ori_t2)
+message("  operators matched on typed core (Town/Township/Village of X): ", sum(!is.na(ops$ori_typed)))
 m <- ops |> left_join(k1, by = c("state", "kind", "core" = "k"))
 n_log(m, "operators after exact join (core)")
-m <- m |> mutate(a_ori = if_else(n_ag == 1, ori, NA), a_basis = if_else(n_ag == 1, "exact", NA),
-                 ambiguous = !is.na(n_ag) & n_ag > 1) |> select(-ori, -n_ag)
+m <- m |> mutate(a_ori = case_when(!is.na(ori_typed) ~ ori_typed, n_ag == 1 ~ ori, TRUE ~ NA),
+                 a_basis = case_when(!is.na(ori_typed) ~ "exact_typed", n_ag == 1 ~ "exact", TRUE ~ NA),
+                 ambiguous = is.na(ori_typed) & !is.na(n_ag) & n_ag > 1) |> select(-ori, -n_ag, -ori_typed)
 message("  exact (core): ", sum(!is.na(m$a_ori)), "; ambiguous: ", sum(m$ambiguous))
 
 # Step 3: exact on core2

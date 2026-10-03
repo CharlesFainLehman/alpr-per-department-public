@@ -38,7 +38,7 @@ Research as of 2026-10-03. Quotes come from the opinions themselves unless marke
 | U.S. v. Porter, No. 25-60163 | 5th Cir., Mar. 17, 2026 | Gautier, MS, "no more than ten" cameras | Real-time hit plus earlier hits |
 | Commonwealth v. McCarthy, 484 Mass. 493 | Mass. SJC, Apr. 16, 2020 | 4 cameras on 2 bridges | ~2.5 months of crossings |
 
-The plot `density_cameras_per_agency_court_cutoff.png` draws a line at 1,636 (Sturdivant) and at 466 (Scholl). The two numbers measure different things:
+The plot `density_cameras_per_agency_court_cutoff.png` draws reference lines at 1,636 (Sturdivant) and 466 (Scholl) over the distribution of mapped cameras *located* in each agency's area. It is not a like-for-like comparison, and it does not show that agencies' networks are smaller (see `AUDIT_RESPONSE.md`, item 8). The two court numbers also measure different things:
 - **Sturdivant** is a criminal suppression ruling about *queries* of a county-wide, multi-owner network. Only 667 of its cameras are tied to law enforcement.
 - **Scholl** is a civil challenge to one agency's *collection*, on a motion to dismiss.
 

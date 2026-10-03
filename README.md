@@ -35,19 +35,25 @@ Status: complete run on the 2026-10-03 OSM pull. Results in `output/summary.md`.
 ## Run order (from the repo root)
 
 ```
-Rscript R/01_download_census.R   # TIGER/Line 2025 states, counties, places, county subdivisions; ACS 2020-24 B01003
-Rscript R/02_pull_osm.R          # Overpass, state by state -> data/raw/osm/<date>/, osm_alpr_raw_<date>.csv
-Rscript R/03_agencies.R          # FBI CDE agency directory + FBI employee file (population) + LEAIC FIPS
-Rscript R/04_method_a.R          # operator-tag name match
-Rscript R/05_method_b.R          # spatial join (needs LEAIC)
-Rscript R/06_combine_outputs.R   # cameras.csv, agencies.csv, summary_stats.csv, density plot
-Rscript R/07_validate.R          # comparison with N&O Flock transparency-portal counts
-Rscript R/08_summary.R           # output/summary.md
-Rscript R/09_density_court_cutoff.R   # density plot with lines at Scholl v. ISP (466) and U.S. v. Sturdivant (1,636); case review in output/court_cases.md
-Rscript R/operator_counts.R      # optional: cameras per operator name (no agency matching)
+Rscript R/01_download_census.R      # TIGER/Line 2025 states, counties, places, county subdivisions; ACS 2020-24 B01003
+Rscript R/02_pull_osm.R             # Overpass, state by state -> data/raw/osm/<date>/, osm_alpr_raw_<date>.csv
+Rscript R/03_agencies.R             # FBI CDE directory + FBI employee file + LEAIC; record_status, county fallback
+Rscript R/04_method_a.R             # tagged: operator-tag name match
+Rscript R/04b_operator_class.R      # operator class for every camera (private / public_other / local / vendor ...)
+Rscript R/05_method_b.R             # located: spatial assignment with per-camera b_status
+Rscript R/06_combine_outputs.R      # cameras.csv, agencies.csv (tagged / located / attributed), summary_stats.csv, density plot
+Rscript R/07_validate.R             # historical comparison with N&O Flock portal counts
+Rscript R/08_summary.R              # output/summary.md
+Rscript R/09_density_court_cutoff.R # reference plot with court-case camera counts (not like-for-like; see caption)
+Rscript R/10_checks.R               # regression checks from the 2026-10-03 audit
+Rscript R/11_manifest.R             # output/run_manifest.txt: input checksums, OSM snapshot, package versions
+Rscript R/operator_counts.R         # optional: cameras per operator name (no agency matching)
 ```
 
-R packages: sf, dplyr, readr, tidyr, stringr, purrr, jsonlite, httr2, stringdist, ggplot2.
+Measures and their limits are defined at the top of `output/summary.md`. Audit and response:
+`AUDIT_MEMO_2026-10-03.md`, `AUDIT_RESPONSE.md`. Court cases: `output/court_cases.md`.
+
+R packages: sf, dplyr, readr, tidyr, stringr, purrr, jsonlite, httr2, stringdist, ggplot2, digest.
 
 ## Manual download: LEAIC (needed for method B)
 

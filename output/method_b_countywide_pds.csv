@@ -54,7 +54,6 @@ county_fips,ori,name,population_fbi,county_pop
 08107,CO0540100,Steamboat Springs Police Department,13722,25084
 11001,DCMPD0000,Washington Police Department,693645,681294
 12001,FL0010100,Gainesville Police Department,150376,285492
-12031,FL0160200,Jacksonville,920508,1023153
 12073,FL0370300,Tallahassee Police Department,206918,297542
 12111,FL0560200,Port St. Lucie Police Department,273427,360500
 13017,GA0090100,Fitzgerald Police Department,8768,17089
@@ -194,7 +193,6 @@ county_fips,ori,name,population_fbi,county_pop
 27113,MN0570100,Thief River Falls Police Department,8764,13791
 27123,MN0620900,St. Paul Police Department,307657,542945
 27147,MN0740100,Owatonna Police Department,26680,37439
-27149,MN0750100,Morris,5319,9739
 27167,MN0840100,Breckenridge Police Department,3281,6371
 27169,MN0850200,Winona Police Department,26221,49779
 28025,MS0130100,West Point Police Department,9677,18383
@@ -367,6 +365,7 @@ county_fips,ori,name,population_fbi,county_pop
 48115,TX0580100,Lamesa Police Department,7972,12134
 48117,TX0590100,Hereford Police Department,14845,18460
 48125,TX0630100,Spur Police Department,1186,1747
+48127,TX0640500,Carrizo Springs Police Department,4518,8380
 48135,TX0680200,Odessa Police Department,121009,164654
 48141,TX0710200,El Paso Police Department,682310,870779
 48143,TX0720200,Stephenville Police Department,22414,43794

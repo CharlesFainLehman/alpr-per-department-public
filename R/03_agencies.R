@@ -56,12 +56,23 @@ n_log(ag, "agencies in 50 states + DC")
 ag <- ag |> filter(type_fbi %in% c("City", "County"))
 n_log(ag, "agencies with FBI type City or County")
 
+# Name is checked before FBI type: the FBI types some city sheriffs (Baltimore City, Richmond City...) as "City".
 ag <- ag |> mutate(agency_type = case_when(
-  type_fbi == "City" ~ "Municipal police",
   str_detect(name, regex("sheriff", ignore_case = TRUE)) ~ "Sheriff",
+  type_fbi == "City" ~ "Municipal police",
   str_detect(name, regex("police|public safety", ignore_case = TRUE)) ~ "County police",
   TRUE ~ "County (type unclear)"))   # LEE-only rows named just "<County>"
 print(count(ag, agency_type))
+
+# Record status. An ORI missing from the current CDE directory whose latest employee-file record is
+# before 2024 is treated as historical (e.g., FL0160200 "Jacksonville", last reported 2020, while the
+# current agency is the Jacksonville Sheriff's Office). Historical records stay in the table, flagged,
+# but are not used to assign cameras and are excluded from the summary distributions.
+ag <- ag |> mutate(record_status = case_when(
+  !is.na(cde_name) ~ "current_cde",
+  !is.na(pop_year) & pop_year >= 2024 ~ "employee_file_only_recent",
+  TRUE ~ "historical"))
+print(count(ag, record_status))
 
 # 4. LEAIC FIPS codes ------------------------------------------------------------------------------
 # ICPSR requires a login, so this file must be downloaded by hand (see README.md). Accepts the
@@ -102,5 +113,22 @@ n_log(ag, "agencies after LEAIC join")
 message("  agencies with no LEAIC record (ORI new since 2012 or changed): ", sum(is.na(ag$leaic_name)))
 message("  Municipal PDs with no place FIPS: ", sum(ag$agency_type == "Municipal police" & is.na(ag$place_fips)))
 message("  County agencies with no county FIPS: ", sum(ag$agency_type != "Municipal police" & is.na(ag$county_fips)))
+
+# County FIPS fallback: agencies with no LEAIC county get the county named in the FBI CDE directory
+# (e.g., St. Charles County PD, MO0922400, an ORI not in LEAIC). Exact name match within state.
+counties <- st_drop_geometry(readRDS(file.path(PROC, "counties.rds")))
+cnorm <- function(x) str_to_upper(x) |> str_replace_all("[^A-Z ]", "") |> str_replace_all("\\bSAINT\\b", "ST") |> str_squish()
+cty_keys <- bind_rows(
+  counties |> transmute(STATEFP, GEOID, key = cnorm(NAME)),
+  counties |> transmute(STATEFP, GEOID, key = cnorm(NAMELSAD))) |> distinct() |>
+  add_count(STATEFP, key) |> filter(n == 1) |> select(-n)
+ag <- ag |> mutate(STATEFP = STATES$fips[match(state, STATES$abbr)],
+                   cde_first_county = cnorm(str_split_i(cde_counties, ",", 1))) |>
+  left_join(cty_keys, by = c("STATEFP", "cde_first_county" = "key")) |>
+  mutate(county_source = case_when(!is.na(county_fips) ~ "leaic", !is.na(GEOID) ~ "cde_county_name", TRUE ~ NA),
+         county_fips = coalesce(county_fips, GEOID)) |>
+  select(-GEOID, -cde_first_county)
+message("  county FIPS filled from CDE county name: ", sum(ag$county_source == "cde_county_name", na.rm = TRUE),
+        "; still missing: ", sum(is.na(ag$county_fips)))
 
 saveRDS(ag, file.path(PROC, "agencies.rds"))
