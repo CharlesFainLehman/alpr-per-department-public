@@ -96,7 +96,8 @@ md_table(tab("tagged", SETS, c("overall", "agency_type"))), "",
 md_table(vt, 2), "",
 "Located measure by group:", "", md_table(vgt, 2), "",
 "Largest disagreements are in `validation_largest_residuals.csv` (e.g., San Diego PD: 528 reported vs 85 located; Puyallup WA PD: 2 vs 42). Plot: `validation_scatter.png`.", "",
-"## 5b. Comparison with publicly reported counts (web-collected, 2022-2026)", "",
+{ yy <- substr(read_csv(file.path(OUT, "validation_web_comparison.csv"), show_col_types = FALSE, col_types = cols(.default = "c"))$as_of_date, 1, 4)
+  sprintf("## 5b. Comparison with publicly reported counts (web-collected; sources dated %s-%s)", min(yy, na.rm = TRUE), max(yy, na.rm = TRUE)) }, "",
 "Collected from agency websites, government documents and news articles quoting officials (`data/validation_web/`, one row per agency with URL and quote). The Flock transparency portals themselves block automated access and were not used directly. Rows are flagged for discontinued programs, planned/contracted counts, and figures that include mobile or shared cameras; the core comparison uses only current programs with a fixed, agency-operated count.", "",
 md_table(read_csv(file.path(OUT, "validation_web_metrics.csv"), show_col_types = FALSE) |>
   transmute(measure, subset, n, r_log = pearson_r_log1p, median_ratio, within_2x, below_half, above_double), 2), "",
@@ -107,6 +108,15 @@ sprintf("Agencies that report owning **zero** fixed cameras (%s in the core set;
 md_table(read_csv(file.path(OUT, "validation_web_density.csv"), show_col_types = FALSE), 1), "",
 md_table(read_csv(file.path(OUT, "validation_web_density_by_size.csv"), show_col_types = FALSE) |>
   arrange(match(size, c("<10k", "10k-50k", "50k-250k", "250k+"))), 2), "",
+"## 5c. Minnesota BCA register of fixed LPR locations", "",
+"Minnesota agencies must report to the state Bureau of Criminal Apprehension where their stationary LPRs are; the BCA publishes the list (`data/validation_web/mn_bca_fixed_lpr_locations.csv`). This is a separate check: the register counts **locations, not cameras** (one location can hold several readers, e.g. one per direction), so a ratio above 1 is expected even with complete mapping. Agencies that withheld their locations (3) and non-local agencies (State Patrol, tribal, university and airport police) are left out. Compared with all-vendor OSM located counts. Note that `median_ratio` and `within_2x` use only agencies listing at least one location; the zero-listing agencies change only the correlations.", "",
+md_table(read_csv(file.path(OUT, "validation_mn_bca_metrics.csv"), show_col_types = FALSE) |>
+  transmute(subset, n, n_listing_zero, r_log = pearson_r_log1p, spearman = spearman_rho, median_ratio, within_2x, below_half, above_double), 2), "",
+{ z <- read_csv(file.path(OUT, "validation_mn_bca_comparison.csv"), show_col_types = FALSE) |>
+    filter(!non_local, !withheld, !is.na(ori), listed_locations == 0) |> arrange(desc(osm_located))
+  sprintf("Of the %d agencies that list no fixed locations, %d have no mapped cameras in their area and %d have some (largest: %s). Those are either cameras of other operators (HOAs, businesses, neighboring agencies) or gaps in the register.",
+          nrow(z), sum(z$osm_located == 0), sum(z$osm_located > 0),
+          paste(sprintf("%s %d", head(z$agency_name, 2), head(z$osm_located, 2)), collapse = "; ")) }, "",
 "## 6. Limits", "",
 sprintf("- **Ownership is mostly unknown.** %s of cameras have no operator tag. The located and attributed measures put them with the local agency by location; some belong to HOAs, businesses, other agencies or vendors.", pct(mean(cams$op_class == "missing"))),
 "- **Access is not measured.** Shared networks let agencies search cameras outside their area; nothing here counts that.",

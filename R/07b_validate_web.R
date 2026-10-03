@@ -46,7 +46,9 @@ w <- w |> mutate(hint = case_when(agency_type == "sheriff" ~ "sheriff", agency_t
 # reviewed name aliases (source name -> FBI agency name)
 ALIAS <- c("Indianapolis Metropolitan Police Department" = "Indianapolis Police Department",
            "North Attleborough Police Department" = "North Attleboro Police Department",
-           "York-Poquoson Sheriff's Office" = "York County Sheriff's Office")
+           "York-Poquoson Sheriff's Office" = "York County Sheriff's Office",
+           "Kansas City Missouri Police Department" = "Kansas City Police Department",
+           "Do\u00f1a Ana County Sheriff's Office" = "Dona Ana County Sheriff's Office")
 pw <- parse_name(coalesce(unname(ALIAS[w$agency_name]), w$agency_name))
 w <- bind_cols(w, pw |> select(kind, core, core2, core_typed)) |>
   mutate(kind = if_else(kind == "none", hint, kind),

@@ -181,23 +181,23 @@ Located measure by group:
 
 Largest disagreements are in `validation_largest_residuals.csv` (e.g., San Diego PD: 528 reported vs 85 located; Puyallup WA PD: 2 vs 42). Plot: `validation_scatter.png`.
 
-## 5b. Comparison with publicly reported counts (web-collected, 2022-2026)
+## 5b. Comparison with publicly reported counts (web-collected; sources dated 2016-2026)
 
 Collected from agency websites, government documents and news articles quoting officials (`data/validation_web/`, one row per agency with URL and quote). The Flock transparency portals themselves block automated access and were not used directly. Rows are flagged for discontinued programs, planned/contracted counts, and figures that include mobile or shared cameras; the core comparison uses only current programs with a fixed, agency-operated count.
 
 | measure | subset | n | r_log | median_ratio | within_2x | below_half | above_double |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| located | core: current, fixed, agency-operated | 353 | 0.80 | 1.13 | 0.76 | 0.07 | 0.16 |
-| attributed | core: current, fixed, agency-operated | 353 | 0.80 | 1.14 | 0.76 | 0.07 | 0.17 |
-| located | core, excluding agencies reporting zero | 341 | 0.85 | 1.13 | 0.76 | 0.07 | 0.16 |
-| located | fixed, source dated 2025-2026 | 329 | 0.79 | 1.13 | 0.76 | 0.08 | 0.17 |
-| located | municipal police | 287 | 0.80 | 1.12 | 0.79 | 0.07 | 0.14 |
-| located | sheriffs / county police |  66 | 0.79 | 1.35 | 0.63 | 0.08 | 0.28 |
-| located | figures incl. mobile/shared or unclear | 117 | 0.71 | 1.05 | 0.63 | 0.18 | 0.19 |
-| located | discontinued programs (last count) | 113 | 0.74 | 0.79 | 0.54 | 0.31 | 0.15 |
-| located | planned / contracted counts |  81 | 0.78 | 1.17 | 0.64 | 0.15 | 0.21 |
+| located | core: current, fixed, agency-operated | 374 | 0.81 | 1.14 | 0.77 | 0.07 | 0.16 |
+| attributed | core: current, fixed, agency-operated | 374 | 0.81 | 1.14 | 0.77 | 0.07 | 0.16 |
+| located | core, excluding agencies reporting zero | 356 | 0.85 | 1.14 | 0.77 | 0.07 | 0.16 |
+| located | fixed, source dated 2025-2026 | 350 | 0.81 | 1.13 | 0.77 | 0.07 | 0.16 |
+| located | municipal police | 306 | 0.82 | 1.12 | 0.80 | 0.07 | 0.14 |
+| located | sheriffs / county police |  68 | 0.78 | 1.36 | 0.64 | 0.08 | 0.28 |
+| located | figures incl. mobile/shared or unclear | 153 | 0.73 | 1.09 | 0.67 | 0.15 | 0.18 |
+| located | discontinued programs (last count) | 120 | 0.72 | 0.84 | 0.55 | 0.29 | 0.16 |
+| located | planned / contracted counts |  84 | 0.78 | 1.17 | 0.65 | 0.14 | 0.20 |
 
-Agencies that report owning **zero** fixed cameras (12 in the core set; e.g., Charlotte-Mecklenburg, Durham) often have dozens of mapped cameras in their area run by other parties (HOAs, businesses, neighboring agencies). The located measure cannot tell those apart, which is the largest source of disagreement.
+Agencies that report owning **zero** fixed cameras (18 in the core set; e.g., Charlotte-Mecklenburg, Durham) often have dozens of mapped cameras in their area run by other parties (HOAs, businesses, neighboring agencies). The located measure cannot tell those apart, which is the largest source of disagreement.
 
 ### Reported counts as an independent estimate of camera density
 
@@ -205,17 +205,28 @@ For the core agencies, reported counts and OSM give a similar per-capita picture
 
 | estimate | agencies | mean | median | p25 | p75 | p90 | max |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| reported count (web sources) | 353 | 38.3 | 17.0 | 7.0 | 37.0 | 85.0 | 553.0 |
-| OSM located, same agencies | 353 | 55.3 | 21.0 | 9.0 | 53.0 | 111.8 | 2,240.0 |
-| reported per 10,000 residents | 352 | 7.2 | 4.1 | 2.0 | 7.3 | 13.1 | 222.5 |
-| OSM located per 10,000 residents, same agencies | 352 | 6.9 | 4.7 | 2.6 | 8.1 | 13.5 | 73.9 |
+| reported count (web sources) | 374 | 37.3 | 16.0 | 7.0 | 34.8 | 84.7 | 553.0 |
+| OSM located, same agencies | 374 | 53.8 | 20.0 | 9.0 | 50.8 | 110.4 | 2,240.0 |
+| reported per 10,000 residents | 373 | 6.9 | 3.9 | 1.8 | 7.2 | 13.0 | 222.5 |
+| OSM located per 10,000 residents, same agencies | 373 | 6.8 | 4.7 | 2.5 | 8.0 | 13.4 | 73.9 |
 
 | size | agencies | median_reported | median_osm_located | median_reported_per10k | median_osm_per10k | median_ratio_osm_to_reported |
 | --- | --- | --- | --- | --- | --- | --- |
-| <10k |  45 |   7 |   6 | 12.79 | 11.29 | 0.85 |
-| 10k-50k | 144 |  11 |  13 | 4.75 | 5.25 | 1.00 |
-| 50k-250k | 123 |  29 |  39 | 3.09 | 4.17 | 1.25 |
-| 250k+ |  41 | 100 | 146 | 2.25 | 3.30 | 1.92 |
+| <10k |  51 | 6.00 | 5.00 | 10.92 | 10.42 | 0.88 |
+| 10k-50k | 152 | 11.00 | 13.00 | 4.53 | 5.15 | 1.03 |
+| 50k-250k | 129 | 28.00 | 37.00 | 3.02 | 3.98 | 1.25 |
+| 250k+ |  42 | 103.50 | 147.50 | 2.27 | 3.38 | 1.88 |
+
+## 5c. Minnesota BCA register of fixed LPR locations
+
+Minnesota agencies must report to the state Bureau of Criminal Apprehension where their stationary LPRs are; the BCA publishes the list (`data/validation_web/mn_bca_fixed_lpr_locations.csv`). This is a separate check: the register counts **locations, not cameras** (one location can hold several readers, e.g. one per direction), so a ratio above 1 is expected even with complete mapping. Agencies that withheld their locations (3) and non-local agencies (State Patrol, tribal, university and airport police) are left out. Compared with all-vendor OSM located counts. Note that `median_ratio` and `within_2x` use only agencies listing at least one location; the zero-listing agencies change only the correlations.
+
+| subset | n | n_listing_zero | r_log | spearman | median_ratio | within_2x | below_half | above_double |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| agencies listing >=1 fixed location |  83 |  0 | 0.53 | 0.58 | 1.16 | 0.65 | 0.14 | 0.20 |
+| including agencies listing zero fixed locations | 110 | 27 | 0.59 | 0.63 | 1.16 | 0.65 | 0.14 | 0.20 |
+
+Of the 27 agencies that list no fixed locations, 14 have no mapped cameras in their area and 13 have some (largest: St. Paul Police Department 47; Eden Prairie Police Department 36). Those are either cameras of other operators (HOAs, businesses, neighboring agencies) or gaps in the register.
 
 ## 6. Limits
 

@@ -124,8 +124,8 @@ reproduce exactly (143,157 cameras; 136,080 located; 7,944 agencies with >=1 loc
 - `transparency.flocksafety.com` (Cloudflare) and `web.archive.org` are blocked; do not try to get around them.
 - Put program status (removed / paused / planned / approved) in `notes`; `R/07b_validate_web.R` flags rows from keywords there, and `status_overrides.csv` holds reviewed corrections (`program_status`: current / discontinued / planned_or_contracted / changed / not_alpr).
 - Web searches are capped per session (`CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION`, default 200). Raise it in the environment settings before starting a session that will collect more. Give each parallel agent its own scratch folder.
-- Still thin (0-2 rows): MT, AK, ID, NM, HI, LA, DE, MS, PA, RI, VT, WV; several big cities (Memphis, Chicago, NYPD, Philadelphia, Pittsburgh, Omaha, Kansas City, San Antonio) have no published fixed-camera count.
-- `mn_bca_fixed_lpr_locations.csv` (Minnesota BCA register of fixed LPR locations) is collected but not yet used; it lists locations, not camera counts.
+- Still thin (0-3 rows, after round 3): AK and MT (0; Anchorage uses only car-mounted readers, Montana law limits police ALPRs on public roads), DC, VT, WY (1), NH (2), HI, ND, SD (3). Big cities with no published count of police-operated fixed readers: Chicago (only a 2022 figure mixing fixed and car-mounted), Omaha, Kansas City KS, Minneapolis (only "30 intersections"), Cincinnati (pilot, no contract), Pittsburgh, San Antonio (car-mounted only). NYPD has only a 2016 figure ("some 500", fixed and mobile not separated); Memphis's 200 includes private cameras shared with MPD. Philadelphia and Milwaukee have counts (round 1).
+- `mn_bca_fixed_lpr_locations.csv` (Minnesota BCA register of fixed LPR locations, checked against the live BCA page on 2026-10-03) is compared separately at the end of `R/07b_validate_web.R` (summary section 5c). It lists locations, not cameras.
 
 **5. Open items**
 - Review lists: `output/operator_classes_for_review.csv`, `method_a_fuzzy_matches_for_review.csv`, `method_b_pd_code_name_mismatches.csv`, `validation_web_unmatched.csv`.
