@@ -115,7 +115,7 @@ for s in 03_agencies 04_method_a 04b_operator_class 05_method_b 06_combine_outpu
 done
 ```
 `R/10_checks.R` must report all checks passed. With the 2026-10-03 snapshot the headline numbers should
-reproduce exactly (143,157 cameras; 136,080 located; 7,944 agencies with >=1 located camera).
+reproduce exactly (143,157 cameras; 136,080 located; 7,944 agencies with >=1 located camera); this was confirmed by a full rerun from the snapshot on 2026-10-03.
 
 **4. Adding more reported counts** (`data/validation_web/`)
 - One CSV per region and round, named `<northeast|midwest|south|west>[_N].csv` (the validation script reads only these names), header:
@@ -124,7 +124,7 @@ reproduce exactly (143,157 cameras; 136,080 located; 7,944 agencies with >=1 loc
 - `transparency.flocksafety.com` (Cloudflare) and `web.archive.org` are blocked; do not try to get around them.
 - Put program status (removed / paused / planned / approved) in `notes`; `R/07b_validate_web.R` flags rows from keywords there, and `status_overrides.csv` holds reviewed corrections (`program_status`: current / discontinued / planned_or_contracted / changed / not_alpr).
 - Web searches are capped per session (`CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION`, default 200). Raise it in the environment settings before starting a session that will collect more. Give each parallel agent its own scratch folder.
-- Still thin: AZ, UT, NV, NM, ID, MT, HI, AK, LA, DE, PA, CT, RI; several big cities (Memphis, Chicago, NYPD, Philadelphia, Pittsburgh, Omaha, Kansas City) have no published count.
+- Still thin (0-2 rows): MT, AK, ID, NM, HI, LA, DE, MS, PA, RI, VT, WV; several big cities (Memphis, Chicago, NYPD, Philadelphia, Pittsburgh, Omaha, Kansas City, San Antonio) have no published fixed-camera count.
 - `mn_bca_fixed_lpr_locations.csv` (Minnesota BCA register of fixed LPR locations) is collected but not yet used; it lists locations, not camera counts.
 
 **5. Open items**
