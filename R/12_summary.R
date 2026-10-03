@@ -13,7 +13,7 @@ f <- \(x) format(x, big.mark = ",")
 pct <- \(x) sprintf("%.1f%%", 100 * x)
 rd <- \(name, ...) read_csv(file.path(OUT, name), show_col_types = FALSE, ...)
 
-cams <- rd("cameras.csv", col_types = cols(.default = "c"))
+cams <- rd("cameras.csv.gz", col_types = cols(.default = "c"))
 ags  <- rd("agencies.csv")
 st   <- rd("summary_stats.csv")
 vm   <- rd("validation_metrics.csv")

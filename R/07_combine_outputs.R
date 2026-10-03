@@ -60,7 +60,7 @@ write_csv(x |> select(osm_id, lat, lon, state, manufacturer, brand, operator, op
                       a_ori, a_name, a_type, a_basis,
                       b_status, b_ori, b_name, b_type, place_geoid, cousub_geoid, county_geoid, n_polygon_overlaps,
                       attr_ori, attr_basis, a_b_compare),
-          file.path(OUT, "cameras.csv"))
+          gzfile(file.path(OUT, "cameras.csv.gz")))
 write_csv(x |> select(osm_id, all_tags), gzfile(file.path(OUT, "cameras_osm_tags.csv.gz")))
 
 # Agency table ----------------------------------------------------------------------------------------

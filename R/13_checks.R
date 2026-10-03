@@ -2,7 +2,7 @@
 # (docs/audit/AUDIT_MEMO_2026-10-03.md). The script stops on the first failure.
 source("R/00_setup.R")
 
-cam <- read_csv(file.path(OUT, "cameras.csv"), col_types = cols(.default = "c"))
+cam <- read_csv(file.path(OUT, "cameras.csv.gz"), col_types = cols(.default = "c"))
 a <- read_csv(file.path(OUT, "agencies.csv"), col_types = cols(.default = "c")) |>
   mutate(across(starts_with("cameras_"), as.integer))
 ok <- 0

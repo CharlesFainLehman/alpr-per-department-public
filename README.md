@@ -15,7 +15,7 @@ Work happens on branch `alpr-pipeline`.
 | `data/validation_web/` | publicly reported camera counts (one CSV per region and round), `status_overrides.csv`, Minnesota BCA register |
 | `data/raw/` | downloads (not in git, except the LEAIC file) |
 | `data/derived/` | cleaned and joined files |
-| `output/` | results: `summary.md`, `agencies.csv`, `cameras.csv`, validation tables, plots, `run_manifest.txt` |
+| `output/` | results: `summary.md`, `agencies.csv`, `cameras.csv.gz`, validation tables, plots, `run_manifest.txt` |
 | `output/review/` | diagnostic lists for manual review (match candidates, operator classes, name mismatches, unmatched rows) |
 | `docs/` | original task spec (`PROMPT.md`), court-case notes (`court_cases.md`); `audit/` holds the 2026-10-03 audit memo and the response |
 
@@ -47,7 +47,7 @@ Work happens on branch `alpr-pipeline`.
 | `04_method_a.R` | **tagged**: operator tag matched to an agency name |
 | `05_operator_class.R` | operator class per camera (private / public_other / local / vendor ...) |
 | `06_method_b.R` | **located**: spatial assignment, per-camera `b_status` |
-| `07_combine_outputs.R` | `cameras.csv`, `agencies.csv` (tagged / located / attributed), `summary_stats.csv` |
+| `07_combine_outputs.R` | `cameras.csv.gz`, `agencies.csv` (tagged / located / attributed), `summary_stats.csv` |
 | `08_validate_portal.R` | historical comparison with N&O Flock portal counts |
 | `09_validate_web.R` | comparison with web-collected reported counts; Minnesota BCA register check |
 | `10_hist_stats.R` | share of agencies by camera-count range |

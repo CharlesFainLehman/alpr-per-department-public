@@ -1,5 +1,5 @@
-Run manifest written 2026-10-03 21:34:00 UTC
-Git commit at run time: e9b786b0d6c30b21e6027f7af9f7f30c94d7c884
+Run manifest written 2026-10-03 21:38:00 UTC
+Git commit at run time: 58f7f5e7a7a3c80446ab028ebcba90aa4d272d89
 OSM pull date: 2026-10-03; Overpass osm_base timestamps 2026-10-03 13:08:13 to 2026-10-03 15:24:51; endpoints: https://maps.mail.ru/osm/tools/overpass/api/interpreter | https://maps.mail.ru/osm/tools/overpass/api/interpreter;https://overpass-api.de/api/interpreter
 Camera rows: 143157
 R: R version 4.6.1 (2026-06-24); GEOS/GDAL/PROJ: 3.12.1 / 3.8.4 / 9.4.0
