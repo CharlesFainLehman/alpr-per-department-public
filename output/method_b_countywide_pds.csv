@@ -1,0 +1,490 @@
+county_fips,ori,name,population_fbi,county_pop
+01001,AL0040100,Prattville Police Department,40736,59947
+01031,AL0190200,Enterprise Police Department,31224,54920
+01069,AL0380100,Dothan Police Department,71787,108140
+01089,AL0470100,Huntsville Police Department,234043,405718
+01097,AL0020100,Mobile Police Department,255927,412590
+01101,AL0030100,Montgomery Police Department,194775,226718
+01109,AL0550100,Troy Police Department,17752,32987
+01113,AL0570100,Phenix City Police Department,38435,58811
+02016,AK0013300,Unalaska Police Department,4448,5235
+02020,AK0010100,Anchorage Police Department,287385,288976
+02060,AK0014600,Bristol Bay Borough Police Department,892,918
+02100,AK0012100,Haines Police Department,2095,2086
+02110,AK0010300,Juneau Police Department,31211,31794
+02130,AK0010400,Ketchikan Police Department,8000,13768
+02185,AK0011800,North Slope Borough Police Department,10510,10810
+02198,AK0010700,Petersburg Police Department,3420,5715
+02220,AK0010900,Sitka Police Department,8281,8368
+02230,AK0011000,Skagway Police Department,1084,1244
+02275,AK0011100,Wrangell Police Department,2035,2088
+04005,AZ0030100,Flagstaff Police Department,77664,144508
+04019,AZ0100300,Tucson Police Department,556898,1060490
+05011,AR0060100,Warren Police Department,5122,10208
+05031,AR0160100,Jonesboro Police Department,83296,113249
+05039,AR0200100,Fordyce Police Department,3127,6242
+05045,AR0230100,Conway Police Department,72394,127717
+05055,AR0280100,Paragould Police Department,30940,46432
+05069,AR0350100,Pine Bluff Police Department,38257,64802
+05091,AR0460100,Texarkana Police Department,28778,42360
+05107,AR0540100,Helena-West Helena Police Department,8217,15450
+05119,AR0600200,Little Rock Police Department,205320,399818
+05123,AR0620100,Forrest City Police Department,12187,22400
+05131,AR0660100,Fort Smith Police Department,90848,128900
+06019,CA0100500,Fresno Police Department,551969,1016725
+06051,CA0260100,Mammoth Lakes Police Department,7097,13148
+06055,CA0280200,Napa Police Department,76328,134869
+06069,CA0350100,Hollister Police Department,45859,67290
+06075,CA0380100,San Francisco Police Department,815330,830235
+06085,CA0431300,San Jose Police Department,994435,1902047
+06089,CA0450200,Redding Police Department,93429,181436
+06101,CA0510200,Yuba City Police Department,68919,98857
+08003,CO0020100,Alamosa Police Department,9930,16581
+08005,CO0010100,Aurora Police Department,407319,659844
+08014,CO0640100,Broomfield Police Department,79451,76304
+08031,CODPD0000,Denver Police Department,733212,718877
+08041,CO0210100,Colorado Springs Police Department,496560,742999
+08071,CO0360100,Trinidad Police Department,8145,14413
+08075,CO0380100,Sterling Police Department,13040,20892
+08081,CO0410100,Craig Police Department,9052,13207
+08085,CO0430100,Montrose Police Department,21974,43807
+08095,CO0480100,Holyoke Police Department,2284,4496
+08099,CO0500100,Lamar Police Department,7626,11910
+08101,CO0510100,Pueblo Police Department,110981,169356
+08107,CO0540100,Steamboat Springs Police Department,13722,25084
+11001,DCMPD0000,Washington Police Department,693645,681294
+12001,FL0010100,Gainesville Police Department,150376,285492
+12031,FL0160200,Jacksonville,920508,1023153
+12073,FL0370300,Tallahassee Police Department,206918,297542
+12111,FL0560200,Port St. Lucie Police Department,273427,360500
+13017,GA0090100,Fitzgerald Police Department,8768,17089
+13051,GA0250300,Savannah Police Department,242372,300879
+13059,GA0290100,Athens-Clarke County Police Department,129208,129609
+13087,GA0430100,Bainbridge Police Department,14613,29195
+13095,GA0470100,Albany Police Department,66132,83091
+13153,GA0760200,Warner Robins Police Department,87667,169649
+13179,GA0890100,Hinesville Police Department,36972,67397
+13215,GA1060100,Columbus Police Department,200622,203711
+13261,GA1290100,Americus Police Department,15632,29061
+15003,HI0020000,Honolulu Police Department,987000,1001146
+16005,ID0030200,Pocatello Police Department,58690,89454
+16019,ID0100200,Idaho Falls Police Department,70454,129523
+16039,ID0200200,Mountain Home Police Department,17129,29321
+16053,ID0270100,Jerome Police Department,13776,25173
+16057,ID0290500,Moscow Police Department,27249,41049
+16065,ID0330100,Rexburg Police Department,40934,54618
+16069,ID0350200,Lewiston Police Department,34805,42697
+16077,ID0390100,American Falls Police Department,4940,8133
+16083,ID0420200,Twin Falls Police Department,56494,93734
+16087,ID0440100,Weiser Police Department,6230,11142
+17001,IL0010300,Quincy Police Department,38591,64754
+17031,ILCPD0000,Chicago Police Department,2715488,5182090
+17095,IL0480400,Galesburg Police Department,29128,49046
+17109,IL0550400,Macomb Police Department,14805,26920
+17115,IL0580200,Decatur Police Department,68221,101849
+17137,IL0690100,Jacksonville Police Department,17692,33021
+17143,IL0720700,Peoria Police Department,111389,179645
+17159,IL0800100,Olney Police Department,8367,15598
+17167,IL0840200,Springfield Police Department,112595,194947
+17177,IL0890100,Freeport Police Department,22888,43768
+17185,IL0930100,Mount Carmel Police Department,6720,11119
+17187,IL0940300,Monmouth Police Department,8571,16447
+17201,IL1010400,Rockford Police Department,147186,283292
+18003,IN0020100,Fort Wayne Police Department,275451,392378
+18005,IN0030100,Columbus Police Department,52346,83536
+18035,IN0180100,Muncie Police Department,65375,112280
+18067,IN0340100,Kokomo Police Department,60224,83752
+18097,INIPD0000,Indianapolis Police Department,903574,975809
+18105,IN0530100,Bloomington Police Department,79948,140965
+18163,IN0820100,Evansville Police Department,114905,180117
+18167,IN0840100,Terre Haute Police Department,58565,106109
+18177,IN0890100,Richmond Police Department,35520,66397
+19013,IA0070300,Waterloo Police Department,67531,131049
+19021,IA0110100,Storm Lake Police Department,11721,20753
+19029,IA0150100,Atlantic Police Department,6701,13096
+19033,IA0170200,Mason City Police Department,26866,42632
+19039,IA0200100,Osceola Police Department,5627,9662
+19041,IA0210100,Spencer Police Department,11447,16461
+19045,IA0230100,Clinton Police Department,24037,46268
+19047,IA0240100,Denison Police Department,8287,16277
+19057,IA0290100,Burlington Police Department,23555,38487
+19061,IA0310100,Dubuque Police Department,58822,99030
+19063,IA0320100,Estherville Police Department,5778,9262
+19079,IA0400100,Webster City Police Department,7750,14886
+19101,IA0510100,Fairfield Police Department,9527,15705
+19113,IA0570100,Cedar Rapids Police Department,137918,230004
+19123,IA0620100,Oskaloosa Police Department,11583,22021
+19127,IA0640100,Marshalltown Police Department,27964,40114
+19137,IA0690100,Red Oak Police Department,5377,10214
+19139,IA0700100,Muscatine Police Department,23185,42559
+19155,IA0780100,Council Bluffs Police Department,62635,93424
+19157,IA0790100,Grinnell Police Department,9485,18545
+19163,IA0820200,Davenport Police Department,100761,174608
+19169,IA0850100,Ames Police Department,69676,100466
+19175,IA0880100,Creston Police Department,7394,11993
+19179,IA0900100,Ottumwa Police Department,25696,35362
+19187,IA0940100,Fort Dodge Police Department,24892,36886
+19193,IA0970100,Sioux City Police Department,87125,106247
+20005,KS0030100,Atchison Police Department,10800,16208
+20009,KS0050200,Great Bend Police Department,14211,25097
+20011,KS0060100,Fort Scott Police Department,7570,14394
+20027,KS0140100,Clay Center Police Department,4038,8048
+20029,KS0150100,Concordia Police Department,4887,8898
+20037,KS0190100,Pittsburg Police Department,20525,39008
+20039,KS0200100,Oberlin Police Department,1606,2726
+20045,KS0230100,Lawrence Police Department,96636,120302
+20051,KS0260100,Hays Police Department,21011,28920
+20055,KS0280100,Garden City Police Department,27988,38084
+20057,KS0290100,Dodge City Police Department,27645,34074
+20061,KS0310100,Junction City Police Department,21835,35815
+20065,KS0330100,Hill City Police Department,1369,2389
+20067,KS0340100,Ulysses Police Department,5536,7229
+20079,KS0400100,Newton Police Department,18257,33756
+20109,KS0550100,Oakley Police Department,1987,2707
+20111,KS0560100,Emporia Police Department,24419,32186
+20123,KS0620100,Beloit Police Department,3402,5779
+20129,KS0650100,Elkhart Police Department,1690,2611
+20133,KS0670100,Chanute Police Department,8487,15656
+20145,KS0730100,Larned Police Department,3557,6144
+20151,KS0760100,Pratt Police Department,6587,9127
+20155,KS0780100,Hutchinson Police Department,39451,61553
+20167,KS0840100,Russell Police Department,4309,6679
+20169,KS0850100,Salina Police Department,45928,53668
+20171,KS0860100,Scott City Police Department,3886,5027
+20173,KS0870300,Wichita Police Department,401730,528226
+20175,KS0880100,Liberal Police Department,19048,21486
+20177,KS0890100,Topeka Police Department,125228,178025
+20181,KS0910100,Goodland Police Department,4375,5858
+20189,KS0950100,Hugoton Police Department,3543,5162
+20193,KS0970100,Colby Police Department,5578,7885
+20195,KS0980100,WaKeeney Police Department,1761,2777
+20209,KS1050200,Kansas City Police Department,153363,167654
+21005,KY0030100,Lawrenceburg Police Department,12306,24353
+21017,KY0090100,Paris Police Department,10183,20240
+21021,KY0110100,Danville Police Department,17623,30941
+21049,KY0250100,Winchester Police Department,19472,37192
+21059,KY0300100,Owensboro Police Department,60774,103648
+21067,KY0340200,Lexington Police Department,330994,323725
+21073,KY0370100,Frankfort Police Department,28610,51842
+21101,KY0510100,Henderson Police Department,27655,44280
+21111,KY0568000,Louisville Metro Police Department,691630,783022
+21113,KY0570100,Nicholasville Police Department,34067,54588
+21161,KY0810100,Maysville Police Department,8676,16956
+21209,KY1050100,Georgetown Police Department,41231,59536
+21213,KY1070100,Franklin Police Department,10605,19972
+21227,KY1140100,Bowling Green Police Department,80821,140918
+21239,KY1200100,Versailles Police Department,27922,27279
+22017,LA0090100,Shreveport Police Department,174114,230004
+22065,LA0330100,Tallulah Police Department,5542,9513
+22071,LANPD0000,New Orleans Police Department,360272,371853
+24510,MDBPD0000,Baltimore Police Department,562811,573243
+25019,MA0100100,Nantucket Police Department,14742,14483
+25025,MA0130100,Boston Police Department,671262,785121
+26111,MI5658300,Midland Police Department,42813,83757
+27013,MN0070100,Mankato Police Department,46927,69871
+27015,MN0080100,New Ulm Police Department,13931,25800
+27027,MN0140400,Moorhead Police Department,46027,66059
+27047,MN0240100,Albert Lea Police Department,18074,30623
+27067,MN0340100,Willmar Police Department,22110,44079
+27083,MN0420100,Marshall Police Department,14033,25503
+27091,MN0460100,Fairmont Police Department,10110,19780
+27099,MN0500100,Austin Police Department,26812,40343
+27105,MN0530100,Worthington Police Department,13721,22041
+27109,MN0550100,Rochester Police Department,124142,164498
+27113,MN0570100,Thief River Falls Police Department,8764,13791
+27123,MN0620900,St. Paul Police Department,307657,542945
+27147,MN0740100,Owatonna Police Department,26680,37439
+27149,MN0750100,Morris,5319,9739
+27167,MN0840100,Breckenridge Police Department,3281,6371
+27169,MN0850200,Winona Police Department,26221,49779
+28025,MS0130100,West Point Police Department,9677,18383
+28027,MS0140100,Clarksdale Police Department,13641,20540
+28035,MS0180100,Hattiesburg Police Department,48465,78272
+28043,MS0220100,Grenada Police Department,12012,21217
+28049,MS0250100,Jackson Police Department,138701,218533
+28083,MS0420100,Greenwood Police Department,13692,27141
+28151,MS0760100,Greenville Police Department,27309,42765
+29001,MO0010100,Kirksville Police Department,17923,25301
+29019,MO0100200,Columbia Police Department,132072,188043
+29021,MO0110100,St. Joseph Police Department,70918,83568
+29051,MO0260100,Jefferson City Police Department,42535,77032
+29077,MO0390300,Springfield Police Department,170958,303375
+29079,MO0400100,Trenton Police Department,5590,9787
+29095,MOKPD0000,Kansas City Police Department,518039,719976
+29117,MO0590100,Chillicothe Police Department,9246,14364
+29127,MO0640100,Hannibal Police Department,16762,28457
+29159,MO0800300,Sedalia Police Department,22454,43397
+29175,MO0880300,Moberly Police Department,13206,24365
+29195,MO0980100,Marshall Police Department,13790,23231
+29510,MOSPD0000,St. Louis Police Department,274819,288512
+30013,MT0070100,Great Falls Police Department,59904,84606
+30017,MT0090100,Miles City Police Department,8422,11961
+30021,MT0110100,Glendive Police Department,4734,8827
+30025,MT0130100,Baker Police Department,1761,2760
+30027,MT0140100,Lewistown Police Department,6264,11687
+30041,MT0210100,Havre Police Department,9174,16155
+30063,MT0320100,Missoula Police Department,79184,120672
+30067,MT0340100,Livingston Police Department,9161,17710
+30083,MT0420100,Sidney Police Department,5951,11235
+30111,MT0560100,Billings Police Department,122571,168957
+31001,NB0010100,Hastings Police Department,25158,31052
+31013,NB0070100,Alliance Police Department,8049,10714
+31019,NB0100100,Kearney Police Department,34959,50579
+31029,NB0150100,Imperial Police Department,1953,3671
+31033,NB0170100,Sidney Police Department,6448,9533
+31037,NB0190100,Schuyler Police Department,6754,10641
+31043,NB0220100,South Sioux City Police Department,13881,21354
+31045,NB0230100,Chadron Police Department,5074,8140
+31053,NB0270100,Fremont Police Department,28464,37351
+31055,NB0280200,Omaha Police Department,488395,590736
+31067,NB0340100,Beatrice Police Department,12307,21629
+31079,NB0400100,Grand Island Police Department,53307,62536
+31101,NB0510100,Ogallala Police Department,4722,8219
+31105,NB0530100,Kimball Police Department,2186,3248
+31109,NB0550100,Lincoln Police Department,302860,326696
+31111,NB0560100,North Platte Police Department,22363,33802
+31119,NB0600100,Norfolk Police Department,26231,35532
+31137,NB0690100,Holdrege Police Department,5549,9009
+31141,NB0710100,Columbus Police Department,25392,34716
+31145,NB0730100,McCook Police Department,7162,10557
+31147,NB0740100,Falls City Police Department,4022,7751
+31151,NB0760200,Crete Police Department,7584,14650
+31175,NB0880100,Ord Police Department,2086,4066
+31179,NB0900100,Wayne Police Department,6295,9844
+31185,NB0930100,York Police Department,8210,14286
+32003,NV0020100,Las Vegas Metropolitan Police Department,1712136,2329548
+32031,NV0160100,Reno Police Department,286060,497200
+35001,NM0010100,Albuquerque Police Department,559192,673930
+35005,NM0030100,Roswell Police Department,46866,64217
+35009,NM0050100,Clovis Police Department,37316,47638
+35013,NM0070100,Las Cruces Police Department,118356,224266
+35015,NM0080200,Carlsbad Police Department,31936,61105
+35019,NM0100100,Santa Rosa Police Department,2743,4381
+35023,NM0120100,Lordsburg Police Department,2229,4041
+35025,NM0130200,Hobbs Police Department,38972,73733
+35028,NM0150100,Los Alamos Police Department,19665,19435
+35029,NM0160100,Deming Police Department,15006,25611
+35037,NM0200100,Tucumcari Police Department,5078,8564
+35041,NM0220100,Portales Police Department,11706,18928
+35043,NM0230600,Rio Rancho Police Department,114641,153604
+35049,NM0260100,Santa Fe Police Department,89657,156105
+35051,NM0270100,Truth or Consequences Police Department,5917,11500
+35053,NM0280100,Socorro Police Department,8268,16200
+35059,NM0310100,Clayton Police Department,2537,4013
+36061,NY0303000,New York City Police Department,8496850,1629477
+37051,NC0260100,Fayetteville Police Department,209151,338545
+37063,NC0320100,Durham Police Department,307140,332353
+37067,NC0340200,Winston-Salem Police Department,257431,389977
+37081,NC0410200,Greensboro Police Department,310328,547940
+37105,NC0530100,Sanford Police Department,33695,65816
+37119,NC0600100,Charlotte-Mecklenburg Police Department,1035037,1154681
+37127,NC0330100,Rocky Mount Police Department,54581,96216
+37129,NC0650200,Wilmington Police Department,127752,235229
+37147,NC0740300,Greenville Police Department,96214,177193
+37195,NC0980100,Wilson Police Department,48609,79290
+38003,ND0020100,Valley City Police Department,6580,10773
+38015,ND0080100,Bismarck Police Department,78814,100600
+38017,ND0090200,Fargo Police Department,138990,193400
+38031,ND0160100,Carrington Police Department,2004,3358
+38035,ND0180100,Grand Forks Police Department,60024,72923
+38059,ND0300200,Mandan Police Department,24931,33777
+38069,ND0350100,Rugby Police Department,2403,3928
+38071,ND0360100,Devils Lake Police Department,7316,11556
+38089,ND0450100,Dickinson Police Department,25670,33302
+38093,ND0470100,Jamestown Police Department,15782,21549
+38101,ND0510200,Minot Police Department,47206,68973
+38105,ND0530200,Williston Police Department,28724,39555
+39047,OH0240100,Washington Court House Police Department,14447,28876
+39049,OHCOP0000,Columbus Police Department,915447,1333048
+39063,OH0320100,Findlay Police Department,40360,74866
+39095,OH0480700,Toledo Police Department,264490,428018
+39101,OH0510100,Marion Police Department,35373,65020
+40009,OK0050100,Elk City Police Department,11349,22148
+40019,OK0100100,Ardmore Police Department,25148,48555
+40031,OK0160100,Lawton Police Department,89942,121825
+40047,OK0240100,Enid Police Department,50360,62146
+40057,OK0290100,Hollis,1637,2406
+40065,OK0330100,Altus Police Department,18503,24678
+40071,OK0360300,Ponca City Police Department,24200,43625
+40101,OK0510100,Muskogee Police Department,36869,66444
+40109,OK0550600,Oklahoma City Police Department,720580,806199
+40119,OK0600200,Stillwater Police Department,50585,82972
+40137,OK0690200,Duncan Police Department,23306,43551
+40139,OK0700100,Guymon Police Department,12275,20774
+40143,OK0720500,Tulsa Police Department,415528,680794
+40147,OK0740100,Bartlesville Police Department,38600,53326
+40151,OK0760100,Alva Police Department,4954,8596
+40153,OK0770100,Woodward Police Department,11668,20158
+41001,OR0010100,Baker City Police Department,10135,16840
+41003,OR0020100,Corvallis Police Department,62971,96303
+41017,OR0090100,Bend Police Department,108819,206334
+41047,OR0240200,Salem Police Department,181534,349244
+41051,OR0260200,Portland Police Department,631483,801477
+41065,OR0330100,The Dalles Police Department,15860,26552
+42063,PAPEP0000,Philadelphia Police Department,1562379,83042
+46005,SD0020100,Huron Police Department,14579,19309
+46011,SD0050100,Brookings Police Department,24860,35353
+46013,SD0060100,Aberdeen Police Department,27791,37877
+46019,SD0090100,Belle Fourche Police Department,5908,10676
+46027,SD0130100,Vermillion Police Department,11916,15219
+46029,SD0140100,Watertown Police Department,23699,28767
+46035,SD0170100,Mitchell Police Department,15608,19952
+46047,SD0230200,Hot Springs Police Department,3663,7258
+46065,SD0320100,Pierre Police Department,13719,17664
+46079,SD0390100,Madison Police Department,6068,10972
+46081,SD0400300,Spearfish Police Department,14229,27233
+46099,SD0490200,Sioux Falls Police Department,213449,203289
+46103,SD0510100,Rapid City Police Department,81185,113512
+46123,SD0610100,Winner Police Department,2978,5611
+46129,SD0640100,Mobridge Police Department,3213,5271
+46135,SD0660100,Yankton Police Department,15732,23414
+47003,TN0020100,Shelbyville Police Department,26357,52237
+47037,TN0190100,Metropolitan Nashville Police Department,718499,715388
+47063,TN0320100,Morristown Police Department,33656,65669
+47065,TN0330100,Chattanooga Police Department,193881,376192
+47075,TN0380100,Brownsville Police Department,9229,17475
+47095,TN0480200,Tiptonville Police Department,3306,6579
+47113,TN0570100,Jackson Police Department,69583,99295
+47119,TN0600300,Spring Hill Police Department,61615,107791
+47125,TN0630100,Clarksville Police Department,190532,234153
+47157,TNMPD0000,Memphis Police Department,606629,919173
+47179,TN0900100,Johnson City Police Department,74280,136261
+48003,TX0020100,Andrews Police Department,13721,18610
+48017,TX0090100,Muleshoe Police Department,5247,6913
+48023,TX0120100,Seymour Police Department,2633,3485
+48029,TXSPD0000,San Antonio Police Department,1549306,2067341
+48041,TX0210200,College Station Police Department,129902,242311
+48043,TX0220100,Alpine Police Department,6040,9503
+48047,TX0240100,Falfurrias Police Department,4283,6943
+48057,TX0290200,Port Lavaca Police Department,11244,19868
+48069,TX0350100,Dimmitt Police Department,4118,7344
+48075,TX0380100,Childress Police Department,5672,6743
+48083,TX0420100,Coleman Police Department,4074,7833
+48091,TX0460100,New Braunfels Police Department,123668,183826
+48103,TX0520100,Crane Police Department,3351,4610
+48111,TX0560100,Dalhart Police Department,8450,7298
+48113,TXDPD0000,Dallas Police Department,1331217,2621179
+48115,TX0580100,Lamesa Police Department,7972,12134
+48117,TX0590100,Hereford Police Department,14845,18460
+48125,TX0630100,Spur Police Department,1186,1747
+48135,TX0680200,Odessa Police Department,121009,164654
+48141,TX0710200,El Paso Police Department,682310,870779
+48143,TX0720200,Stephenville Police Department,22414,43794
+48155,TX0780100,Crowell Police Department,726,991
+48163,TX0820100,Pearsall Police Department,9741,18582
+48179,TX0900200,Pampa Police Department,16399,21045
+48183,TX0920500,Longview Police Department,84150,125480
+48189,TX0950400,Plainview Police Department,19259,32131
+48191,TX0960100,Memphis Police Department,2044,2820
+48195,TX0980200,Spearman Police Department,2957,5119
+48207,TX1040100,Haskell Police Department,3061,5421
+48219,TX1100100,Levelland Police Department,12460,21363
+48227,TX1140100,Big Spring Police Department,21734,32290
+48233,TX1170100,Borger Police Department,11740,20184
+48237,TX1190100,Jacksboro Police Department,4787,8882
+48267,TX1340100,Junction Police Department,2504,4389
+48273,TX1370100,Kingsville Police Department,24776,30579
+48303,TX1520200,Lubbock Police Department,275713,318884
+48307,TX1540100,Brady Police Department,4925,7514
+48309,TX1551200,Waco Police Department,148165,266067
+48317,TX1590100,Stanton Police Department,2621,5218
+48329,TX1650100,Midland Police Department,146444,174801
+48341,TX1710100,Dumas Police Department,14938,21373
+48353,TX1770300,Sweetwater Police Department,10095,14454
+48355,TX1780200,Corpus Christi Police Department,317077,352955
+48357,TX1790100,Perryton Police Department,8169,9786
+48363,TX1820200,Mineral Wells Police Department,15911,29295
+48371,TX1860100,Fort Stockton Police Department,8069,14896
+48375,TX1880100,Amarillo Police Department,204528,115975
+48377,TX1890600,Presidio Police Department,2999,5930
+48389,TX1950200,Pecos Police Department,9650,12664
+48415,TX2080100,Snyder Police Department,11090,16488
+48421,TX2110100,Stratford Police Department,1969,2295
+48429,TX2150100,Breckenridge Police Department,5196,9351
+48435,TX2180100,Sonora Police Department,2405,3277
+48437,TX2190300,Tulia Police Department,4335,6937
+48441,TX2210100,Abilene Police Department,131854,145863
+48445,TX2230100,Brownfield Police Department,8627,11629
+48449,TX2250100,Mount Pleasant Police Department,16267,31363
+48451,TX2260100,San Angelo Police Department,100184,119577
+48453,TX2270100,Austin Police Department,1000639,1330015
+48463,TX2320100,Uvalde Police Department,15681,24881
+48465,TX2330100,Del Rio Police Department,34668,47741
+48469,TX2350100,Victoria Police Department,66142,91413
+48471,TX2360100,Huntsville Police Department,50457,80209
+48475,TX2380100,Monahans Police Department,7212,11144
+48477,TX2390100,Brenham Police Department,20368,36647
+48479,TX2400100,Laredo Police Department,262723,269294
+48485,TX2430500,Wichita Falls Police Department,102345,129996
+48487,TX2440100,Vernon Police Department,9650,12616
+48489,TX2450200,Raymondville Police Department,10080,20139
+48495,TX2480100,Kermit Police Department,5831,7454
+48501,TX2510100,Denver City Police Department,4345,7571
+48507,TX2540100,Crystal City Police Department,5927,9412
+49019,UT0100100,Moab Police Department,5211,9754
+49021,UT0110100,Cedar City Police Department,42365,62252
+49023,UT0120100,Nephi Police Department,7556,12586
+49025,UT0130200,Kanab Police Department,5448,8170
+49045,UT0230100,Tooele Police Department,40402,79347
+49051,UT0260100,Heber Police Department,19582,36642
+49053,UT0270100,St. George Police Department,109020,196431
+51510,VA0990000,Alexandria Police Department,159534,156976
+51520,VA1000000,Bristol Police Department,16121,16849
+51530,VA1010000,Buena Vista Police Department,6588,6593
+51540,VA1020000,Charlottesville Police Department,44478,45437
+51550,VA1030000,Chesapeake Police Department,257012,252583
+51570,VA1050000,Colonial Heights Police Department,18853,18352
+51580,VA1060000,Covington Police Department,5658,5680
+51590,VA1070000,Danville Police Department,41959,42214
+51595,VA0400100,Emporia Police Department,5345,5547
+51600,VA1075000,Fairfax City Police Department,26982,25026
+51610,VA1080000,Falls Church Police Department,15166,14710
+51620,VA1085000,Franklin Police Department,8452,8250
+51630,VA1090000,Fredericksburg Police Department,30595,28873
+51640,VA1100000,Galax Police Department,6763,6726
+51650,VA1110000,Hampton Police Department,138041,137557
+51660,VA1120000,Harrisonburg Police Department,51165,51392
+51670,VA1130000,Hopewell Police Department,23021,22959
+51678,VA0810200,Lexington Police Department,7950,7525
+51680,VA1140000,Lynchburg Police Department,80846,79497
+51683,VA0750100,Manassas Police Department,43966,42976
+51685,VA0750200,Manassas Park Police Department,16521,16798
+51690,VA1150000,Martinsville Police Department,13962,13658
+51700,VA1160000,Newport News Police Department,182798,184216
+51710,VA1170000,Norfolk Police Department,230068,233596
+51720,VA1180000,Norton Police Department,3438,3577
+51730,VA1190000,Petersburg Police Department,34318,33537
+51735,VA0980100,Poquoson Police Department,12986,12639
+51740,VA1200000,Portsmouth Police Department,96362,97190
+51750,VA1210000,Radford Police Department,17622,16726
+51760,VA1220000,Richmond Police Department,235995,229359
+51770,VA1230000,Roanoke Police Department,97682,98355
+51775,VA0800100,Salem Police Department,26107,25618
+51790,VA1260000,Staunton Police Department,26572,25948
+51800,VA1270000,Suffolk Police Department,105574,98796
+51810,VA1280000,Virginia Beach Police Department,454805,456349
+51820,VA1290000,Waynesboro Police Department,23877,22841
+51830,VA1300000,Williamsburg Police Department,16216,15798
+51840,VA1310000,Winchester Police Department,27824,27913
+53021,WA0110200,Pasco Police Department,82766,98902
+53071,WA0360100,Walla Walla Police Department,33809,62161
+53075,WA0380300,Pullman Police Department,33883,47003
+54029,WV0150200,Weirton Police Department,18123,28431
+54069,WV0350100,Wheeling Police Department,25851,41582
+55025,WI0130100,Madison Police Department,287992,572674
+55031,WI0160100,Superior Police Department,26577,44229
+55035,WI0180100,Eau Claire Police Department,73060,107116
+55059,WI0300100,Kenosha Police Department,99483,168438
+55079,WIMPD0000,Milwaukee Police Department,559717,926331
+56001,WY0010100,Laramie Police Department,33350,38249
+56005,WY0030100,Gillette Police Department,33936,47240
+56007,WY0040100,Rawlins Police Department,7887,14463
+56017,WY0090100,Thermopolis Police Department,2749,4620
+56019,WY0100100,Buffalo Police Department,4714,8686
+56021,WY0110100,Cheyenne Police Department,65811,101060
+56025,WY0130100,Casper Police Department,58701,79977
+56027,WY0140100,Lusk Police Department,1371,2368
+56033,WY0170100,Sheridan Police Department,20083,32055
+56037,WY0190200,Rock Springs Police Department,22837,41542
+56041,WY0210100,Evanston Police Department,11669,20644
+56043,WY0220100,Worland Police Department,4764,7703

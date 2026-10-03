@@ -1,0 +1,305 @@
+operator,operator_type,surveillance,n
+Lowe's,private,public,854
+The Home Depot,private,public,713
+Lowe's,NA,public,292
+Lowe's,NA,traffic,237
+Lowe's,NA,NA,166
+The Home Depot,NA,NA,118
+The Home Depot,NA,public,117
+NA,NA,private,97
+Simon Property Group,private,public,92
+The Home Depot,NA,traffic,80
+University of Florida,NA,public,40
+Lowe's,NA,outdoor,35
+Walmart,NA,NA,35
+Station Casinos,NA,NA,34
+NA,private,public,33
+Lowes,NA,public,32
+Lowe's,private,NA,27
+Lowe's,NA,camera,22
+Simon Property Group,NA,public,22
+The Home Depot,private,NA,22
+Lowes,NA,traffic,21
+The Home Depot,NA,camera,21
+Home Depot,NA,public,20
+Lowe's,NA,private,19
+Tufts University,NA,outdoor,19
+FedEx,NA,public,18
+Stanford University,NA,outdoor,17
+University Heights PD,NA,traffic,17
+Michigan State University Parking Services,NA,public,16
+Walmart,NA,outdoor,16
+Fashion Show Mall,NA,NA,15
+CVS,private,public,14
+Mayfair Mall / Brookfield Properties Retail Inc.,NA,public,14
+"Interlocken Owners' Association, Inc.",NA,public,13
+Lowe's,private,traffic,13
+Norfolk State University,NA,traffic,13
+Sam's Club,NA,NA,13
+Louisiana Tech University,NA,public,12
+Lowes,NA,outdoor,12
+Seneca Valley School District,NA,public,12
+Home Depot,NA,NA,11
+Florida International University,university,public,10
+Lowe's,private,outdoor,10
+Pebble Beach Company,NA,public,10
+College of William and Mary,NA,traffic,9
+Holmby Hills Homeowners Association,NA,public,9
+Home Depot,NA,traffic,9
+Lowe's Home Improvement,NA,camera,9
+The Home Depot,NA,outdoor,9
+Baylor Scott & White Health,NA,NA,8
+Premium Parking,private,public,8
+The Home Depot,business,public,8
+ThedaCare-Froedtert Health,NA,public,8
+Florida International University,NA,traffic,7
+Kroger,NA,camera,7
+Lakeshore Homes Association (LHA),private,public,7
+Mott Community College Department of Public Safety,NA,public,7
+Navy Federal Credit Union,private,public,7
+Palms Casino Resort,NA,NA,7
+The Home Depot,private,traffic,7
+University of Central Florida,NA,public,7
+Walmart,NA,public,7
+Bridge Valley HOA,NA,public,6
+Centennial Park HOA,NA,public,6
+FedEx,NA,outdoor,6
+Harbour View HOA,NA,camera,6
+Kroger,NA,outdoor,6
+Meijer,private,public,6
+New York State University Police,university,public,6
+QuikTrip Corporation,NA,camera,6
+Simon Property Group,business,public,6
+University of Central Florida,NA,NA,6
+University of Fla.,NA,public,6
+University of Michigan-Dearborn Department of Public Safety,NA,public,6
+stonybrook university,NA,camera,6
+NA,private,outdoor,6
+Florida International University,NA,public,5
+Launch Apartments,NA,public,5
+Lowe's Home Improvement,NA,traffic,5
+Lowes,NA,NA,5
+Meijer,NA,private,5
+North College Hill PD,NA,NA,5
+Simon Property Group,NA,NA,5
+UPS,NA,public,5
+Winton Woods City Schools,NA,NA,5
+Camp Jellystone LLC,NA,traffic,4
+College of the Sequoias,NA,traffic,4
+Coral Ridge Mall,NA,public,4
+FedEx,NA,NA,4
+Home Depot,NA,camera,4
+Home Depot (retailer),NA,public,4
+Hybernia HOA,NA,public,4
+Kirkwood Community College,NA,public,4
+Knollwood Village Apartments,NA,public,4
+Lowe's,private,private,4
+Lowe's Home Improvement,NA,public,4
+M Resort,NA,NA,4
+Manteca Police Department,NA,private,4
+Sentry Insurance,private,private,4
+St Francis Wood HOA,NA,traffic,4
+Table Mountain Casino,NA,NA,4
+"University of California, Santa Cruz",NA,public,4
+Valley Medical Center,NA,NA,4
+Wegmans Food Markets,NA,private,4
+Academy Sports + Outdoors,NA,traffic,3
+Balcones Trails Apartment Complex,NA,private,3
+Baylor University Nursing School,university,public,3
+Casino Security,NA,private,3
+Fenton High School,NA,public,3
+Fleet Farm,private,public,3
+Founders Parc HOA,NA,public,3
+Harrah's Cherokee Casino,private,public,3
+Holland Pointe HOA,NA,public,3
+Home Depot,NA,outdoor,3
+"Kading Properties, LLC",NA,Private,3
+Lowes,private,public,3
+Meijer,business,public,3
+Minnetonka High School,NA,camera,3
+Mississippi State University,NA,public,3
+Morris Hills Regional High School District,NA,public,3
+Northlake Ridge HOA,NA,public,3
+Ottawa Hills Local School District,NA,public,3
+Patrick Henry Mall,NA,traffic,3
+ReNew Foundry Centre Apartments,NA,public,3
+Regents of the University of California,NA,public,3
+Rio All-Suite Hotel and Casino,NA,NA,3
+Saint Ursula Academy,NA,public,3
+Simon Property Group,private,private,3
+Spring Arbor University,NA,public,3
+Stone Meadows HOA,NA,public,3
+Stonestown Galleria Mall,NA,public,3
+Tanger Inc.,private,public,3
+Target Corporation,NA,public,3
+Temple University Campus PA PD,NA,NA,3
+The Home Depot,private,private,3
+University of Rhode Island,NA,public,3
+Vanbrooke Owners Association,NA,public,3
+Walmart,private,public,3
+NA,community,public,3
+Abita Lakes Homeowner's Association,NA,NA,2
+Academy Sports + Outdoors,NA,NA,2
+Anna Meadows Homeowners Association,NA,public,2
+Barnes-Jewish Hospital,NA,NA,2
+Barre city police dept,NA,private,2
+Bell Station HOA,NA,public,2
+Binghamton University PD,NA,NA,2
+Bretton Woods HOA,NA,public,2
+Brighton Area Schools,government,outdoor,2
+Brook Casino,NA,public,2
+California Resources Corporation,private,public,2
+Chaminade College Preparatory School,NA,public,2
+Chantilly HOA,NA,public,2
+College of the Sequoias,NA,NA,2
+Colorado State University,NA,public,2
+Concordia University Ann Arbor,NA,public,2
+Dublin Farms HOA,NA,NA,2
+Embry Riddle Aeronautical University,NA,traffic,2
+FedEx,private,public,2
+Flock Safety,NA,private,2
+Founders Pointe HOA,NA,traffic,2
+Georgia Tech,university,public,2
+Gregory Meadows HOA,NA,public,2
+HOA,NA,public,2
+Imperial Valley College,NA,public,2
+Kennison Creek Community Association,NA,traffic,2
+Kirk of the Hills Presbyterian Church,NA,public,2
+Kroger,NA,public,2
+Live Oak Creek HOA,NA,public,2
+Lochhaven HOA,NA,private,2
+Lowe's (retailer),NA,public,2
+Lowe's Home Improvement Live Oak,NA,public,2
+Marshall Park HOA,NA,public,2
+Marylander Condominiums,NA,private,2
+Millcreek Mall,NA,camera,2
+Northwestern Medicine,private,public,2
+Pennsylvania State University,NA,NA,2
+Port Royal homeowners association,private,public,2
+Prometheus Apartments,private,public,2
+Redbud HOA,NA,outdoor,2
+Saint Francis de Sales School,NA,public,2
+Sentry Insurance,private,public,2
+Silverbrook Wood Condominium,NA,NA,2
+St. Charles Community College,NA,public,2
+Target,NA,NA,2
+Target Corporation,NA,camera,2
+Target Corporation,NA,NA,2
+The Gardens HOA,NA,NA,2
+The Hedges Homeowners Association,NA,NA,2
+The Vanguard Group,NA,private,2
+The Vineyards HOA,NA,public,2
+Tuscany Homeowners Association,NA,NA,2
+Twin Chimneys Village HOA,NA,public,2
+University of California Los Angeles,NA,public,2
+University of Colorado Boulder,NA,public,2
+University of Illinois Chicago,NA,public,2
+University of Rhode Island,NA,traffic,2
+VILLAGE GREEN HOMEOWNERS ASSOCIATION,community,public,2
+Van Buren Neighborhood Los Altos,private,public,2
+Villages At Dardenne Prairie Village HOA,NA,public,2
+Walmart,business,public,2
+Warren Manor Apartments,NA,public,2
+Whittaker Village HOA,NA,public,2
+Wilderness Hotel & Golf Resort,NA,public,2
+Wind Castle HOA,NA,public,2
+Woodstone Apartments,NA,public,2
+[HOME DEPOT],NA,outdoor,2
+[Hermiston School District],NA,public,2
+[LOWES],NA,NA,2
+[Lowes Home Improvement (Corporate Security],NA,public,2
+walmart,NA,public,2
+AdventHealth,private,NA,1
+Amelia Place Homeowners Association,NA,traffic,1
+Austin Ridge HOA,NA,NA,1
+BOERNE INDEPENDENT SCHOOL DISTRICT,government,public,1
+Barre City Poilce Dept,NA,private,1
+Barre City Police Department,NA,private,1
+Barrington Park HOA,NA,public,1
+Boulder Ridge HOA,private,public,1
+Brookside Lake HOA,NA,NA,1
+Bull River Bluff Condominium Association,NA,public,1
+CEDAR HOLLOW ESTATES HOMEOWNERS ASSOC INC,NA,public,1
+Cheshunt HOA,NA,camera,1
+College of Lake County,NA,public,1
+Connect Community Management,business,public,1
+Copper Mill HOA,NA,NA,1
+Coral Ridge Mall,NA,NA,1
+Coronado Mall,NA,traffic,1
+Dourdan Place HOA,NA,public,1
+Embry-Riddle Aeronautical University,NA,public,1
+Embry-Riddle Aeronautical University,NA,traffic,1
+Fedex,NA,public,1
+Florida Int'l University,NA,public,1
+Florida Internationl University,NA,public,1
+Fulton County Schools,NA,traffic,1
+Gated Properties VIII LLC,NA,NA,1
+Glenn Ivey HOA,NA,camera,1
+"Grandview Lakes Homeowners Association, Inc.",NA,public,1
+Gustavus Adolphus College Campus Safety,NA,public,1
+HOA,private,public,1
+HOA,NA,traffic,1
+HOME DEPOT,NA,NA,1
+Hamlin Retail Partners li LLC,private,public,1
+HoA,NA,public,1
+"Interlocken Owners' Association, Inc.",NA,traffic,1
+Land Owner,NA,private,1
+Land owner,NA,private,1
+Landowner,NA,private,1
+Leinbach Company,NA,NA,1
+Lowe's,private,camera,1
+Lowe's,private,indoor,1
+Lowe's,NA,"camera,traffic",1
+Lowe's,NA,"traffic,_camera",1
+"Lowe's Companies, Inc",NA,NA,1
+Lowes Home Improvement,NA,public,1
+Lynnfield Police,NA,private,1
+Marathon Petroleum Corporation,NA,public,1
+Marshall HOA,NA,public,1
+Mass State Police,NA,private,1
+Minnetonka High School,NA,NA,1
+Montecito Village Homeowners Association,NA,public,1
+Montgomery College Public Safety,NA,public,1
+Patriot Series LLC?,NA,public,1
+Premium Parking,private,private,1
+Rancho Conejo Home Owners Association,NA,traffic,1
+River Run Apartment Homes,NA,camera,1
+River Run Apartment Homes,NA,NA,1
+River Spirit Casino Security,NA,private,1
+Rivers Edge Campground,private,public,1
+Saddle Ridge HOA,NA,public,1
+Shiny Shell Carwash,NA,private,1
+Simon Property Group,private,NA,1
+Spartanburg Regional Medical Center,NA,private,1
+St Francis Wood HOA,NA,NA,1
+Stanford University,NA,NA,1
+Stony Brook University,NA,public,1
+Tanyard Shores Homeowners Association,NA,public,1
+Target,NA,camera,1
+Target,NA,public,1
+Temple University Campus PA PD,NA,public,1
+The Church of Jesus Christ of Latter Day Saints,religious,traffic,1
+The Church of Jesus Christ of Latter-day Saints,NA,NA,1
+The Cove at Dardenne HOA,NA,public,1
+The Home Depot,NA,private,1
+ThedaCare-Froedtert Health,NA,traffic,1
+University Heights PD,NA,public,1
+"University of California, Santa Cruz",NA,NA,1
+University of Florida,NA,NA,1
+University of Illinois,NA,public,1
+Venetian Resort Las Vegas,NA,private,1
+Wave Hotel,NA,NA,1
+West Hills HOA,NA,public,1
+Western Heights Apartments,NA,public,1
+Westport Station Office Park,NA,private,1
+Yorktown HOA,NA,camera;public,1
+Yorktown HOA,NA,traffic,1
+[Insight Public Sector Inc],NA,traffic,1
+[Pace Academy],NA,private,1
+[Seven Coves HOA],NA,public,1
+[Willaimson Place POA],NA,public,1
+[Williamson Place POA],NA,public,1
+stonybrook university,NA,public,1
+target,private,public,1
+target,NA,public,1
+NA,university,public,1

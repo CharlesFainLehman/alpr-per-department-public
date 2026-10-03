@@ -4,7 +4,7 @@ Estimate the number of automated license plate readers (ALPRs) per US police
 department. The method crosswalks crowdsourced OpenStreetMap camera data (the
 DeFlock layer) to law-enforcement agencies.
 
-Status: in progress. Task spec in `PROMPT.md`.
+Status: complete run on the 2026-10-03 OSM pull. Results in `output/summary.md`. Task spec in `PROMPT.md`.
 
 ## Layout
 
@@ -42,6 +42,8 @@ Rscript R/04_method_a.R          # operator-tag name match
 Rscript R/05_method_b.R          # spatial join (needs LEAIC)
 Rscript R/06_combine_outputs.R   # cameras.csv, agencies.csv, summary_stats.csv, density plot
 Rscript R/07_validate.R          # comparison with N&O Flock transparency-portal counts
+Rscript R/08_summary.R           # output/summary.md
+Rscript R/operator_counts.R      # optional: cameras per operator name (no agency matching)
 ```
 
 R packages: sf, dplyr, readr, tidyr, stringr, purrr, jsonlite, httr2, stringdist, ggplot2.

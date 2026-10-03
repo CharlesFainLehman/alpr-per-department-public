@@ -77,7 +77,7 @@ if (!length(leaic_files)) {
 }
 f <- leaic_files[1]
 if (grepl("\\.rda$", f)) { e <- new.env(); load(f, envir = e); leaic <- get(ls(e)[1], envir = e) } else
-  leaic <- read_tsv(f, col_types = cols(.default = "c"))
+  leaic <- read_tsv(f, col_types = cols(.default = "c"), locale = locale(encoding = "latin1"))
 leaic <- as_tibble(leaic) |> mutate(across(everything(), as.character))
 names(leaic) <- toupper(names(leaic))
 n_log(leaic, "LEAIC 2012 rows")
@@ -88,7 +88,8 @@ if (!all(need %in% names(leaic)))
 leaic <- leaic |> filter(!is.na(ORI9), ORI9 != "-1", nchar(ORI9) == 9) |>
   transmute(ori = ORI9, leaic_name = NAME,
             county_fips = paste0(str_pad(FIPS_ST, 2, pad = "0"), str_pad(FIPS_COUNTY, 3, pad = "0")),
-            place_fips = ifelse(is.na(FPLACE) | FPLACE %in% c("99999", "-1", ""), NA,
+            # 99xxx = county-level (sheriffs), 99991 = multi-jurisdiction, 99999 = none
+            place_fips = ifelse(is.na(FPLACE) | FPLACE %in% c("-1", "") | str_starts(str_pad(FPLACE, 5, pad = "0"), "99"), NA,
                                 paste0(str_pad(FIPS_ST, 2, pad = "0"), str_pad(FPLACE, 5, pad = "0")))) |>
   mutate(county_fips = ifelse(grepl("^-|999$", county_fips), NA, county_fips))
 dups <- leaic |> count(ori) |> filter(n > 1)
