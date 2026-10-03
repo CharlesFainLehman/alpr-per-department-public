@@ -48,6 +48,7 @@ Rscript R/08_summary.R              # output/summary.md
 Rscript R/09_hist_stats.R           # share of agencies by camera-count range, with mean, median, 99th percentile
 Rscript R/10_checks.R               # regression checks from the 2026-10-03 audit
 Rscript R/11_manifest.R             # output/run_manifest.txt: input checksums, OSM snapshot, package versions
+Rscript R/09b_hist_web_sample.R      # reported vs OSM camera counts for the web-validation agencies
 Rscript R/operator_counts.R         # optional: cameras per operator name (no agency matching)
 ```
 

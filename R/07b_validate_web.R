@@ -9,7 +9,7 @@ source("R/00_setup.R")
 library(ggplot2)
 library(stringdist)
 
-files <- list.files("data/validation_web", pattern = "^(northeast|midwest|south|west)\\.csv$", full.names = TRUE)
+files <- list.files("data/validation_web", pattern = "^(northeast|midwest|south|west)(_[0-9]+)?\\.csv$", full.names = TRUE)
 stopifnot(length(files) > 0)
 w <- map_dfr(files, \(f) read_csv(f, col_types = cols(.default = "c")) |> mutate(file = basename(f)))
 n_log(w, "web-reported rows")
