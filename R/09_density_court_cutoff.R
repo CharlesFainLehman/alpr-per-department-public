@@ -8,31 +8,48 @@
 source("R/00_setup.R")
 library(ggplot2)
 
-CUTOFF <- 466
+# Two reference networks, both held not to be a Fourth Amendment search:
+#  - United States v. Sturdivant, No. 1:22-cr-615 (N.D. Ohio June 9, 2025) (Calabrese, J.), Doc. 103 at 5:
+#    "There are 1,636 Flock cameras across Cuyahoga County, 667 of which are associated with law
+#    enforcement agencies." (Plus ~1,119 ELSAG cameras; the court puts the total at "approximately
+#    1,800 to 3,000 cameras".) Suppression ruling on police queries; largest network any upholding court described.
+#  - Scholl v. Illinois State Police (N.D. Ill. 2025): 466 ISP cameras; largest network whose collection
+#    itself was challenged in a civil suit and held not a search.
+CUTS <- tibble(n = c(466, 1636),
+               case = c("Scholl v. Illinois State Police\n(N.D. Ill. 2025): 466 cameras",
+                        "U.S. v. Sturdivant\n(N.D. Ohio 2025): 1,636 cameras"))
 ags <- read_csv(file.path(OUT, "agencies.csv"), show_col_types = FALSE)
 pos <- ags |> filter(cameras_b >= 1)
-below_all <- sum(ags$cameras_b < CUTOFF); below_pos <- sum(pos$cameras_b < CUTOFF)
-message(sprintf("Below %d cameras: %d of %d agencies (%.2f%%); of agencies with >=1 camera: %d of %d (%.2f%%). At or above: %d.",
-                CUTOFF, below_all, nrow(ags), 100 * below_all / nrow(ags), below_pos, nrow(pos),
-                100 * below_pos / nrow(pos), sum(ags$cameras_b >= CUTOFF)))
-
-lab <- sprintf("Scholl v. Illinois State Police\n(N.D. Ill. 2025): %d cameras,\nheld not a search\n\nBelow the line: %s of %s agencies (%.1f%%),\nor %.1f%% of all %s incl. zero mapped.\n%d agencies are at or above.",
-               CUTOFF, format(below_pos, big.mark = ","), format(nrow(pos), big.mark = ","), 100 * below_pos / nrow(pos),
-               100 * below_all / nrow(ags), format(nrow(ags), big.mark = ","), sum(ags$cameras_b >= CUTOFF))
+CUTS <- CUTS |> mutate(below_pos = map_int(n, \(k) sum(pos$cameras_b < k)), above = map_int(n, \(k) sum(ags$cameras_b >= k)),
+                       below_all = map_int(n, \(k) sum(ags$cameras_b < k)))
+for (i in seq_len(nrow(CUTS))) message(sprintf("Below %d: %d of %d agencies with >=1 camera (%.2f%%); %d of %d all (%.2f%%); at/above: %d",
+  CUTS$n[i], CUTS$below_pos[i], nrow(pos), 100 * CUTS$below_pos[i] / nrow(pos), CUTS$below_all[i], nrow(ags),
+  100 * CUTS$below_all[i] / nrow(ags), CUTS$above[i]))
+CUTS <- CUTS |> mutate(short = c("Scholl v. Illinois State Police (N.D. Ill. 2025): 466",
+                                  "U.S. v. Sturdivant (N.D. Ohio 2025): 1,636"))
+cap <- sprintf(paste0("Dashed lines: camera networks courts held were not a Fourth Amendment search. ",
+  "Below 466: %s of %s agencies (%.1f%%); %d at or above.\nBelow 1,636: %s of %s (%.2f%%); only Houston PD (2,443) is above.\n",
+  "Court counts are cameras in the network at issue; OSM counts are all mapped cameras in an agency's area."),
+  format(CUTS$below_pos[1], big.mark = ","), format(nrow(pos), big.mark = ","), 100 * CUTS$below_pos[1] / nrow(pos), CUTS$above[1],
+  format(CUTS$below_pos[2], big.mark = ","), format(nrow(pos), big.mark = ","), 100 * CUTS$below_pos[2] / nrow(pos))
+CUTS <- CUTS |> mutate(lab = sprintf("%s\nheld not a search.\n%s of %s agencies below (%.2f%%);\n%d at or above.",
+  case, format(below_pos, big.mark = ","), format(nrow(pos), big.mark = ","), 100 * below_pos / nrow(pos), above))
 
 p <- ggplot(pos, aes(cameras_b)) +
   geom_density(colour = "#eb6834", fill = "#eb6834", alpha = 0.15, linewidth = 0.8, adjust = 1.2) +
-  geom_vline(xintercept = CUTOFF, colour = "#0b0b0b", linewidth = 0.6, linetype = "dashed") +
-  annotate("text", x = CUTOFF * 0.85, y = Inf, label = lab, hjust = 1, vjust = 1.2, size = 3.1,
-           colour = "#52514e", lineheight = 1.05) +
-  scale_x_log10(breaks = c(1, 2, 5, 10, 20, 50, 100, 200, 466, 1000, 2000),
-                labels = c("1", "2", "5", "10", "20", "50", "100", "200", "466", "1,000", "2,000")) +
+  geom_vline(data = CUTS, aes(xintercept = n), colour = "#0b0b0b", linewidth = 0.6, linetype = "dashed") +
+  geom_text(data = CUTS, aes(x = n * 0.92, y = 0.68, label = short), angle = 90, hjust = 1, vjust = 0, size = 3.1,
+            colour = "#0b0b0b") +
+  scale_x_log10(breaks = c(1, 2, 5, 10, 20, 50, 100, 200, 466, 1636),
+                labels = c("1", "2", "5", "10", "20", "50", "100", "200", "466", "1,636")) +
   labs(x = "License plate reader cameras per agency, mapped in OpenStreetMap (log scale)", y = "Density",
-       title = "Almost every agency's camera network is smaller than one a court has upheld",
+       title = "Almost every agency's camera network is smaller than ones courts have upheld",
        subtitle = sprintf("Local police and sheriffs with at least one camera mapped in OpenStreetMap (OSM), the crowdsourced map\nused by DeFlock. Cameras assigned by location (n = %s agencies). Data pulled %s.",
                           format(nrow(pos), big.mark = ","), readLines(file.path(PROC, "osm_pull_date.txt")))) +
+  labs(caption = cap) +
   theme_minimal(base_size = 11) +
   theme(panel.grid.minor = element_blank(), panel.grid.major = element_line(colour = "#e6e5e0", linewidth = 0.3),
         plot.background = element_rect(fill = "#fcfcfb", colour = NA), plot.subtitle = element_text(colour = "#52514e"),
-        plot.title = element_text(colour = "#0b0b0b"))
-ggsave(file.path(OUT, "density_cameras_per_agency_court_cutoff.png"), p, width = 9, height = 5, dpi = 150)
+        plot.title = element_text(colour = "#0b0b0b"),
+        plot.caption = element_text(colour = "#52514e", hjust = 0, size = 8.5))
+ggsave(file.path(OUT, "density_cameras_per_agency_court_cutoff.png"), p, width = 10, height = 5.5, dpi = 150)

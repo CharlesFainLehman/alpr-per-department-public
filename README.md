@@ -43,7 +43,7 @@ Rscript R/05_method_b.R          # spatial join (needs LEAIC)
 Rscript R/06_combine_outputs.R   # cameras.csv, agencies.csv, summary_stats.csv, density plot
 Rscript R/07_validate.R          # comparison with N&O Flock transparency-portal counts
 Rscript R/08_summary.R           # output/summary.md
-Rscript R/09_density_court_cutoff.R   # density plot with reference line at Scholl v. ISP (466 cameras)
+Rscript R/09_density_court_cutoff.R   # density plot with lines at Scholl v. ISP (466) and U.S. v. Sturdivant (1,636); case review in output/court_cases.md
 Rscript R/operator_counts.R      # optional: cameras per operator name (no agency matching)
 ```
 
