@@ -1,7 +1,7 @@
 # Distribution of cameras per agency for the core web-validation agencies (current program, fixed,
 # agency-operated count): publicly reported count vs. OSM cameras located in the same agencies' areas.
 source("R/00_setup.R")
-library(ggplot2)
+source("R/theme_cf.R")
 
 v <- read_csv(file.path(OUT, "validation_web_comparison.csv"), show_col_types = FALSE) |>
   filter(program_status == "current", mobile_flag == "no")
@@ -9,7 +9,7 @@ message("core agencies: ", nrow(v))
 edges <- c(0, 1, 2, 5, 10, 20, 50, 100, 200, 500, Inf)
 rng <- tibble(lo = head(edges, -1), hi = tail(edges, -1)) |> mutate(i = row_number(),
   lab = case_when(hi == Inf ~ paste0(lo, "+"), hi - lo == 1 ~ as.character(lo), TRUE ~ paste0(lo, "-", hi - 1)))
-SER <- c("Publicly reported" = "#2a78d6", "Mapped in OSM (located in area)" = "#eb6834")
+SER <- c("Publicly reported" = cf_blue, "Mapped in OSM (located in area)" = cf_orange)
 d <- bind_rows(tibble(series = names(SER)[1], n = v$reported), tibble(series = names(SER)[2], n = v$osm_located)) |>
   mutate(i = findInterval(n, edges, rightmost.closed = FALSE)) |>
   count(series, i) |> group_by(series) |> mutate(share = n / sum(n)) |> ungroup() |>
@@ -28,21 +28,22 @@ st <- st |> mutate(x = map_dbl(value, pos_x), series = factor(series, levels = n
                    y = max(d$share) * c(1.30, 1.22, 1.14, 1.06)[row_number()])
 print(st)
 
+st <- st |> filter(stat == "median") |>
+  mutate(label = sprintf("%s median: %s", if_else(series == names(SER)[1], "Reported", "Mapped"), sprintf("%.0f", value)))
+ymax <- ceiling(max(d$share) * 1.25 * 20) / 20
+st$y <- ymax * c(0.97, 0.88)
 p <- ggplot(d) +
   geom_col(aes(x = x, y = share, fill = series), width = 0.4) +
-  geom_segment(data = st, aes(x = x, xend = x, y = 0, yend = y, colour = series), linetype = "dashed", linewidth = 0.5) +
-  geom_text(data = st, aes(x = x + 0.08, y = y, label = label), hjust = 0, vjust = 0.5, size = 3.1, colour = "#0b0b0b") +
-  scale_fill_manual(values = SER, name = NULL) + scale_colour_manual(values = SER, guide = "none") +
+  geom_segment(data = st, aes(x = x, xend = x, y = 0, yend = y, colour = series), linetype = "dashed", linewidth = 1) +
+  geom_text(data = st, aes(x = x + 0.1, y = y, label = label, colour = series), hjust = 0, vjust = 0.5,
+            family = "Liberation Sans", size = 21 / .pt) +
+  scale_fill_manual(values = SER, guide = "none") + scale_colour_manual(values = SER, guide = "none") +
   scale_x_continuous(breaks = rng$i, labels = rng$lab, expand = expansion(add = 0.3)) +
-  scale_y_continuous(labels = scales::label_percent(accuracy = 1), expand = expansion(mult = c(0, 0.04))) +
-  labs(x = "Fixed license plate reader cameras per agency", y = "Share of agencies",
-       title = sprintf("Cameras per agency, %d agencies with a publicly reported count", nrow(v)),
-       subtitle = sprintf("Reported: agency websites, government documents and news quoting officials (%s-%s); current programs, fixed\ncameras the agency operates. OSM: cameras mapped in OpenStreetMap inside the same agencies' areas (pulled %s).",
-                          min(substr(v$as_of_date, 1, 4)), max(substr(v$as_of_date, 1, 4)), readLines(file.path(PROC, "osm_pull_date.txt"))),
-       caption = "Not a random sample: only agencies with cameras whose count was published. Dashed lines are placed within their range on a log scale.") +
-  theme_minimal(base_size = 11) +
-  theme(legend.position = "top", legend.justification = "left", panel.grid.minor = element_blank(), panel.grid.major.x = element_blank(),
-        panel.grid.major.y = element_line(colour = "#e6e5e0", linewidth = 0.3),
-        plot.background = element_rect(fill = "#fcfcfb", colour = NA), plot.subtitle = element_text(colour = "#52514e"),
-        plot.caption = element_text(colour = "#52514e", hjust = 0, size = 8.5))
-ggsave(file.path(OUT, "hist_web_sample_reported_vs_osm.png"), p, width = 10, height = 6, dpi = 150)
+  scale_y_continuous(labels = label_percent(accuracy = 1), limits = c(0, ymax), expand = expansion(mult = c(0, 0))) +
+  labs(x = NULL, y = NULL,
+       title = "Reported and mapped camera counts look much alike",
+       subtitle = sprintf("Share of %d agencies by number of fixed license plate reader cameras: count reported by the agency (blue)\nand cameras mapped in OpenStreetMap in its area (orange). Not a random sample: all have a published count.", nrow(v)),
+       caption = cf_caption(sprintf("Agency websites, government documents and news reports (%s-%s); OpenStreetMap via Overpass, pulled %s.",
+                                    min(substr(v$as_of_date, 1, 4)), max(substr(v$as_of_date, 1, 4)), readLines(file.path(PROC, "osm_pull_date.txt"))))) +
+  theme_cf(title_size = 36)
+cf_save(p, file.path(OUT, "hist_web_sample_reported_vs_osm.png"))

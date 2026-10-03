@@ -10,14 +10,14 @@ Work happens on branch `alpr-pipeline`.
 
 | Path | Contents |
 |---|---|
-| `R/` | pipeline scripts `01`-`14`, `run_all.R`, shared `name_parser.R`, reviewed `operator_class_overrides.csv` |
+| `R/` | pipeline scripts `01`-`14`, `run_all.R`, shared `name_parser.R` and `theme_cf.R`, reviewed `operator_class_overrides.csv` |
 | `data/snapshots/` | committed OSM snapshot (`osm_alpr_raw_<date>.csv.gz`) and its Overpass query log |
 | `data/validation_web/` | publicly reported camera counts (one CSV per region and round), `status_overrides.csv`, Minnesota BCA register |
 | `data/raw/` | downloads (not in git, except the LEAIC file) |
 | `data/derived/` | cleaned and joined files |
 | `output/` | results: `summary.md`, `agencies.csv`, `cameras.csv.gz`, validation tables, plots, `run_manifest.txt` |
 | `output/review/` | diagnostic lists for manual review (match candidates, operator classes, name mismatches, unmatched rows) |
-| `docs/` | original task spec (`PROMPT.md`), court-case notes (`court_cases.md`); `audit/` holds the 2026-10-03 audit memo and the response |
+| `docs/` | method write-up (`METHODS.md`), original task spec (`PROMPT.md`), court-case notes (`court_cases.md`); `audit/` holds the 2026-10-03 audit memo and the response |
 
 ## Data sources
 
@@ -64,8 +64,10 @@ The container is ephemeral; only what is in git survives. Start on branch `alpr-
 add the r2u and CRAN apt sources first, see https://github.com/eddelbuettel/r2u):
 ```
 apt-get install -y r-base-core r-cran-sf r-cran-dplyr r-cran-readr r-cran-tidyr r-cran-stringr \
-  r-cran-purrr r-cran-jsonlite r-cran-httr2 r-cran-stringdist r-cran-ggplot2 r-cran-scales r-cran-digest
+  r-cran-purrr r-cran-jsonlite r-cran-httr2 r-cran-stringdist r-cran-ggplot2 r-cran-scales r-cran-digest \
+  r-cran-ragg fonts-liberation
 ```
+Charts use the Causal Fallacy house style in `R/theme_cf.R` (Liberation Sans, 1600x900 PNG via ragg).
 Package versions used are in `output/run_manifest.txt`.
 
 **2. Inputs.**

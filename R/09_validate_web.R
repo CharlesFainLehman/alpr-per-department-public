@@ -6,7 +6,7 @@
 # shared/private cameras are kept in the table but excluded from the headline metrics.
 # The comparison is with the count as of the source date; OSM is as of the pull date.
 source("R/00_setup.R")
-library(ggplot2)
+source("R/theme_cf.R")
 library(stringdist)
 
 files <- list.files("data/validation_web", pattern = "^(northeast|midwest|south|west)(_[0-9]+)?\\.csv$", full.names = TRUE)
@@ -121,20 +121,23 @@ res <- bind_rows(
 print(res, width = Inf)
 write_csv(res, file.path(OUT, "validation_web_metrics.csv"))
 
+BRK <- c(0, 1, 3, 10, 30, 100, 300, 1000, 3000)
+LIM <- c(0, 3000)
 p <- ggplot(core, aes(reported, osm_located)) +
-  geom_abline(slope = 1, intercept = 0, colour = "#52514e", linewidth = 0.4, linetype = "dashed") +
-  geom_point(colour = "#2a78d6", alpha = 0.65, size = 2.2, stroke = 0) +
-  scale_x_continuous(trans = "log1p", breaks = c(0, 1, 3, 10, 30, 100, 300, 1000)) +
-  scale_y_continuous(trans = "log1p", breaks = c(0, 1, 3, 10, 30, 100, 300, 1000)) +
-  labs(x = "Publicly reported fixed ALPR cameras (log scale, +1)", y = "Mapped OSM cameras located in agency's area (log scale, +1)",
-       title = "Mapped OpenStreetMap counts vs. publicly reported camera counts",
-       subtitle = sprintf("%d agencies with a current program and a fixed, agency-operated count; sources dated %s-%s\n(agency sites, government documents, news). r(log) = %.2f; median ratio %.2f; within 2x: %.0f%%. Dashed line = equal counts.",
-                          nrow(core), min(core$year, na.rm = TRUE), max(core$year, na.rm = TRUE),
-                          res$pearson_r_log1p[1], res$median_ratio[1], 100 * res$within_2x[1])) +
-  theme_minimal(base_size = 11) +
-  theme(panel.grid.minor = element_blank(), panel.grid.major = element_line(colour = "#e6e5e0", linewidth = 0.3),
-        plot.background = element_rect(fill = "#fcfcfb", colour = NA), plot.subtitle = element_text(colour = "#52514e"))
-ggsave(file.path(OUT, "validation_web_scatter.png"), p, width = 9, height = 6, dpi = 150)
+  geom_abline(slope = 1, intercept = 0, colour = cf_axis, linewidth = 0.6, linetype = "dashed") +
+  geom_point(colour = cf_orange, alpha = 0.7, size = 2.6, stroke = 0) +
+  annotate("text", x = 1800, y = 700, label = "Equal counts", hjust = 0.5, vjust = 0.5, family = "Liberation Sans",
+           size = 21 / .pt, colour = cf_axis) +
+  scale_x_continuous(trans = "log1p", breaks = BRK, labels = label_comma(), limits = LIM, expand = expansion(mult = 0.02)) +
+  scale_y_continuous(trans = "log1p", breaks = BRK, labels = label_comma(), limits = LIM, expand = expansion(mult = 0.02)) +
+  labs(x = NULL, y = NULL,
+       title = "Mapped camera counts mostly match what agencies report",
+       subtitle = sprintf("Fixed license plate reader cameras per agency, %d agencies (log scale). Across: count reported by the\nagency. Up: cameras mapped in OpenStreetMap in its area. %.0f%% of agencies are within a factor of two.",
+                          nrow(core), 100 * res$within_2x[1]),
+       caption = cf_caption(sprintf("Agency websites, government documents and news reports (%s-%s); OpenStreetMap via Overpass, pulled %s.",
+                                    min(core$year, na.rm = TRUE), max(core$year, na.rm = TRUE), readLines(file.path(PROC, "osm_pull_date.txt"))))) +
+  theme_cf(title_size = 36)
+cf_save(p, file.path(OUT, "validation_web_scatter.png"))
 
 # Reported counts as an independent estimate of cameras per agency -------------------------------------
 # The web sample is not random: it holds agencies that have cameras and whose count was published

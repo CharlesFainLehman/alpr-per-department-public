@@ -1,7 +1,7 @@
 # Validate against agency-reported Flock camera counts (N&O "Private Eyes", Flock transparency
 # portals scraped 2024-04-26; the file name says 2023 but the `updated` field is 2024-04-26).
 source("R/00_setup.R")
-library(ggplot2)
+source("R/theme_cf.R")
 library(stringdist)
 
 repo <- file.path(RAW, "private_eyes", "repo")
@@ -114,22 +114,22 @@ LABS <- c(tagged = "Tagged to agency", located = "Located in agency's area", att
 long <- bind_rows(lapply(names(MEAS), \(m) v |> transmute(measure = LABS[[m]], reported, osm = .data[[MEAS[[m]]]]))) |>
   mutate(measure = factor(measure, levels = unname(LABS)))
 lab <- res |> mutate(measure = factor(LABS[measure], levels = unname(LABS)),
-                     txt = sprintf("n = %d   r(log) = %.2f\nmedian ratio = %.2f   within 2x: %.0f%%",
-                                   n, pearson_r_log1p, median_ratio_osm_over_reported, 100 * share_within_factor_2))
-brks <- c(0, 1, 3, 10, 30, 100, 300, 1000)
+                     txt = sprintf("r(log) %.2f\nwithin 2x: %.0f%%", pearson_r_log1p, 100 * share_within_factor_2))
+brks <- c(0, 1, 10, 100, 1000)
 p <- ggplot(long, aes(reported, osm)) +
-  geom_abline(slope = 1, intercept = 0, colour = "#52514e", linewidth = 0.4, linetype = "dashed") +
-  geom_point(colour = "#2a78d6", alpha = 0.6, size = 2, stroke = 0) +
-  geom_text(data = lab, aes(x = 0, y = Inf, label = txt), hjust = 0, vjust = 1.3, size = 2.9, colour = "#52514e",
-            lineheight = 1, inherit.aes = FALSE) +
-  scale_x_continuous(trans = "log1p", breaks = brks) + scale_y_continuous(trans = "log1p", breaks = brks) +
+  geom_abline(slope = 1, intercept = 0, colour = cf_axis, linewidth = 0.6, linetype = "dashed") +
+  geom_point(colour = cf_orange, alpha = 0.6, size = 2.6, stroke = 0) +
+  geom_text(data = lab, aes(x = 0, y = 1000, label = txt), hjust = 0, vjust = 1, family = "Liberation Sans",
+            size = 18 / .pt, colour = cf_axis, lineheight = 1, inherit.aes = FALSE) +
+  scale_x_continuous(trans = "log1p", breaks = brks, labels = label_comma(), limits = c(0, 1000)) +
+  scale_y_continuous(trans = "log1p", breaks = brks, labels = label_comma(), limits = c(0, 1000)) +
   facet_wrap(~measure) +
-  labs(x = "Agency-reported Flock cameras, April 2024 (log scale, +1)",
-       y = "Mapped OSM Flock cameras, Oct. 2026 (log scale, +1)",
-       title = "Mapped OpenStreetMap counts vs. agency-reported Flock counts",
-       subtitle = "Historical comparison (2.5 years apart): shows ranking, not current accuracy. Dashed line = equal counts.") +
-  theme_minimal(base_size = 11) +
-  theme(panel.grid.minor = element_blank(), panel.grid.major = element_line(colour = "#e6e5e0", linewidth = 0.3),
-        plot.background = element_rect(fill = "#fcfcfb", colour = NA), text = element_text(colour = "#0b0b0b"),
-        plot.subtitle = element_text(colour = "#52514e"))
-ggsave(file.path(OUT, "validation_scatter.png"), p, width = 12, height = 5, dpi = 150)
+  labs(x = NULL, y = NULL,
+       title = "Location-based counts track agencies' own Flock figures; tags do not",
+       subtitle = sprintf("Flock cameras per agency, %d agencies (log scale). Across: count on the agency's Flock portal,\nApril 2024. Up: Flock cameras mapped in OpenStreetMap, %s. Dashed line = equal counts.",
+                          nrow(v), format(as.Date(readLines(file.path(PROC, "osm_pull_date.txt"))), "%B %Y")),
+       caption = cf_caption(sprintf("The News & Observer, \"Private Eyes\" (Flock transparency portals, 2024-04-26); OpenStreetMap via Overpass, pulled %s.",
+                                    readLines(file.path(PROC, "osm_pull_date.txt"))))) +
+  theme_cf(title_size = 32) +
+  theme(strip.text = element_text(size = 21, colour = cf_ink, hjust = 0), panel.spacing = unit(28, "pt"))
+cf_save(p, file.path(OUT, "validation_scatter.png"))

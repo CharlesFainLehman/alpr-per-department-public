@@ -1,7 +1,7 @@
 # Distribution of mapped cameras located in each agency's area, with labeled lines at the mean, median
 # and 99th percentile. Current agencies with at least one located camera.
 source("R/00_setup.R")
-library(ggplot2)
+source("R/theme_cf.R")
 
 ags <- read_csv(file.path(OUT, "agencies.csv"), show_col_types = FALSE) |> filter(record_status != "historical")
 pos <- ags |> filter(cameras_located >= 1)
@@ -25,25 +25,22 @@ pos_x <- function(v) { k <- max(which(bins$lo <= v)); b <- bins[k, ]
   hi <- if (is.finite(b$hi)) b$hi else max(pos$cameras_located) + 1
   k - 0.5 + (log(v) - log(b$lo)) / (log(hi) - log(b$lo)) }
 st <- st |> mutate(x = map_dbl(value, pos_x))
-ymax <- max(bins$share) * 1.2
+ymax <- ceiling(max(bins$share) * 1.3 * 20) / 20
 
+lab_y <- ymax * c(0.97, 0.88, 0.97)
 p <- ggplot(bins) +
-  geom_col(aes(x = i, y = share), fill = "#eb6834", width = 0.92) +
-  geom_text(aes(x = i, y = share, label = scales::percent(share, accuracy = 0.1)), vjust = -0.4, size = 3.1, colour = "#52514e") +
-  geom_vline(data = st, aes(xintercept = x), colour = "#0b0b0b", linewidth = 0.5, linetype = "dashed") +
-  geom_label(data = st, aes(x = x, y = ymax * 0.98, label = label), size = 3.2, colour = "#0b0b0b",
-             fill = "#fcfcfb", border.colour = NA, label.padding = unit(0.12, "lines")) +
+  geom_col(aes(x = i, y = share), fill = cf_orange, width = 0.8) +
+  geom_text(aes(x = i, y = share, label = if_else(share < 0.005, "<1%", percent(share, accuracy = 1))), vjust = -0.5, family = "Liberation Sans",
+            size = 19 / .pt, colour = cf_axis) +
+  geom_segment(data = st, aes(x = x, xend = x, y = 0, yend = lab_y - ymax * 0.03), colour = cf_ink, linewidth = 1, linetype = "dashed") +
+  geom_text(data = st, aes(x = x, y = lab_y, label = label), family = "Liberation Sans", size = 19 / .pt, colour = cf_ink) +
   scale_x_continuous(breaks = bins$i, labels = bins$lab, expand = expansion(add = 0.4)) +
-  scale_y_continuous(labels = scales::label_percent(accuracy = 1), limits = c(0, ymax), expand = expansion(mult = c(0, 0.02))) +
-  labs(x = "License plate reader cameras located in agency's area, mapped in OpenStreetMap",
-       y = "Share of agencies",
-       title = "Mapped license plate reader cameras per local police agency",
-       subtitle = sprintf("Local police and sheriffs with at least one camera mapped in OpenStreetMap (OSM), the crowdsourced map\nused by DeFlock. Cameras located in the agency's area, excluding other operators (n = %s agencies). Data pulled %s.",
-                          format(nrow(pos), big.mark = ","), readLines(file.path(PROC, "osm_pull_date.txt"))),
-       caption = "Counts of mapped cameras, not verified inventories. Dashed lines are placed within their range on a log scale.") +
-  theme_minimal(base_size = 11) +
-  theme(panel.grid.minor = element_blank(), panel.grid.major.x = element_blank(),
-        panel.grid.major.y = element_line(colour = "#e6e5e0", linewidth = 0.3),
-        plot.background = element_rect(fill = "#fcfcfb", colour = NA), plot.subtitle = element_text(colour = "#52514e"),
-        plot.caption = element_text(colour = "#52514e", hjust = 0, size = 8.5))
-ggsave(file.path(OUT, "hist_cameras_per_agency_stats.png"), p, width = 10, height = 5.5, dpi = 150)
+  scale_y_continuous(labels = label_percent(accuracy = 1), limits = c(0, ymax), expand = expansion(mult = c(0, 0))) +
+  labs(x = NULL, y = NULL,
+       title = "Most agencies have fewer than 10 mapped plate readers",
+       subtitle = sprintf("Share of %s local police and sheriff's offices with at least one camera, by cameras mapped in OpenStreetMap\nin the agency's area (cameras tagged to other operators excluded). Mapped cameras, not verified inventories.",
+                          format(nrow(pos), big.mark = ",")),
+       caption = cf_caption(sprintf("OpenStreetMap (DeFlock layer) via Overpass, pulled %s; FBI Crime Data Explorer; BJS LEAIC; Census TIGER/Line.",
+                                    readLines(file.path(PROC, "osm_pull_date.txt"))))) +
+  theme_cf(title_size = 34)
+cf_save(p, file.path(OUT, "hist_cameras_per_agency_stats.png"))
