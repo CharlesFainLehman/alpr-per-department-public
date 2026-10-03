@@ -108,12 +108,14 @@ cams <- cams |> filter(!is.na(state))
 n_log(cams, "US ALPR nodes (inside a state polygon)")
 
 write_csv(bind_rows(log_rows), file.path(odir, "query_log.csv"))
-write_csv(cams, file.path(RAW, "osm", sprintf("osm_alpr_raw_%s.csv", PULL_DATE)))
+dir.create("data/snapshots", showWarnings = FALSE)   # committed form, read by 02_load_osm_snapshot.R
+write_csv(cams, gzfile(file.path("data/snapshots", sprintf("osm_alpr_raw_%s.csv.gz", PULL_DATE))))
+file.copy(file.path(odir, "query_log.csv"), file.path("data/snapshots", sprintf("query_log_%s.csv", PULL_DATE)), overwrite = TRUE)
 saveRDS(cams, file.path(PROC, "osm_alpr.rds"))
 writeLines(PULL_DATE, file.path(PROC, "osm_pull_date.txt"))
 
 # Report -------------------------------------------------------------------------------------------
-message("\nTotal US ALPR nodes: ", nrow(cams), "   (OSM data as of ", bind_rows(log_rows)$osm_base[1], ")")
+message("\nTotal US ALPR nodes: ", nrow(cams), "   (OSM base timestamps ", min(bind_rows(log_rows)$osm_base), " to ", max(bind_rows(log_rows)$osm_base), ")")
 mf <- cams |> mutate(manufacturer = coalesce(manufacturer, "(none)")) |> count(manufacturer, sort = TRUE)
 print(mf, n = 30)
 message(sprintf("Share with non-empty operator tag: %.1f%% (%d of %d)",

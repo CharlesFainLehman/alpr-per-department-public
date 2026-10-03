@@ -1,4 +1,4 @@
-# Download Census TIGER/Line boundaries (states, counties, places) and ACS 5-year population.
+# Download Census TIGER/Line boundaries (states, counties, places, county subdivisions) and ACS 5-year population.
 source("R/00_setup.R")
 
 tdir <- file.path(RAW, "census", paste0("tiger", TIGER_YEAR))

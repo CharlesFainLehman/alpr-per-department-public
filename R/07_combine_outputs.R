@@ -21,21 +21,23 @@ geo  <- readRDS(file.path(PROC, "agency_geo_status.rds"))
 for (nm_ in c("a", "b", "cls")) {
   ids <- get(nm_)$osm_id
   if (!setequal(ids, cams$osm_id) || anyDuplicated(ids))
-    stop("Intermediate '", nm_, "' does not match the current OSM snapshot; rerun 04, 04b, 05.")
+    stop("Intermediate '", nm_, "' does not match the current OSM snapshot; rerun 04, 05, 06.")
 }
 
 n_log(cams, "cameras")
 x <- cams |> left_join(a, by = "osm_id"); n_log(x, "cameras + method A")
 x <- x |> left_join(cls, by = "osm_id");  n_log(x, "cameras + operator class")
+# a name match whose operator was classed (by override) as a private party or another public body is not a tag
+x <- x |> mutate(drop_a = !is.na(a_ori) & op_class %in% c("private", "public_other"),
+                 a_ori = if_else(drop_a, NA, a_ori), a_basis = if_else(drop_a, NA, a_basis)) |> select(-drop_a)
 x <- x |> left_join(b, by = "osm_id");    n_log(x, "cameras + method B")
 stopifnot(nrow(x) == nrow(cams))
-nm <- ag |> select(ori, name, agency_type, county_fips)
-x <- x |> left_join(nm |> rename(a_ori = ori, a_name = name, a_type = agency_type, a_county = county_fips), by = "a_ori") |>
-  left_join(nm |> select(-county_fips) |> rename(b_ori = ori, b_name = name, b_type = agency_type), by = "b_ori")
+nm <- ag |> select(ori, name, agency_type)
+x <- x |> left_join(nm |> rename(a_ori = ori, a_name = name, a_type = agency_type), by = "a_ori") |>
+  left_join(nm |> rename(b_ori = ori, b_name = name, b_type = agency_type), by = "b_ori")
 n_log(x, "cameras + agency names")
 x <- x |> add_count(lat, lon, name = "n_same_coords") |> mutate(
   is_flock = coalesce(str_detect(str_to_lower(paste(manufacturer, brand)), "flock"), FALSE),
-  a_in_agency_county = if_else(is.na(a_ori), NA, coalesce(a_county == county_geoid, FALSE)),
   attr_ori = case_when(op_class %in% c("local_police", "local_government") ~ a_ori,
                        op_class %in% c("missing", "vendor", "unclassified", "police_unmatched") ~ b_ori,
                        TRUE ~ NA),
@@ -47,7 +49,7 @@ x <- x |> add_count(lat, lon, name = "n_same_coords") |> mutate(
     is.na(a_ori) ~ "B only",
     is.na(b_ori) ~ "A only",
     a_ori == b_ori ~ "agree",
-    TRUE ~ "disagree")) |> select(-a_county)
+    TRUE ~ "disagree"))
 saveRDS(x, file.path(PROC, "cameras_assigned.rds"))
 message("A vs B comparison:"); print(count(x, a_b_compare))
 message("Attribution basis:"); print(count(x, attr_basis, sort = TRUE))
@@ -55,16 +57,15 @@ message("Cameras sharing exact coordinates with another camera: ", sum(x$n_same_
 
 write_csv(x |> select(osm_id, lat, lon, state, manufacturer, brand, operator, operator_type, surveillance,
                       surveillance_zone, last_edit, osm_version, is_flock, n_same_coords, op_class, op_class_source,
-                      a_ori, a_name, a_type, a_basis, a_in_agency_county,
+                      a_ori, a_name, a_type, a_basis,
                       b_status, b_ori, b_name, b_type, place_geoid, cousub_geoid, county_geoid, n_polygon_overlaps,
                       attr_ori, attr_basis, a_b_compare),
           file.path(OUT, "cameras.csv"))
 write_csv(x |> select(osm_id, all_tags), gzfile(file.path(OUT, "cameras_osm_tags.csv.gz")))
 
 # Agency table ----------------------------------------------------------------------------------------
-cnt <- function(col, flock_only = FALSE, filt = NULL) {
-  d <- if (flock_only) filter(x, is_flock) else x
-  if (!is.null(filt)) d <- d[filt(d), ]
+cnt <- function(col, filt = NULL) {
+  d <- if (is.null(filt)) x else x[filt(x), ]
   d |> filter(!is.na(.data[[col]])) |> count(ori = .data[[col]])
 }
 INFERRED_B <- c("inferred_no_pd_in_place", "inferred_countywide_pd", "direct_place_name_mismatch", "direct_cousub_name_mismatch")
@@ -76,15 +77,13 @@ agt <- ag |> left_join(geo, by = "ori") |>
   left_join(cnt("b_ori", filt = \(d) d$b_status %in% INFERRED_B) |> rename(located_via_inferred_rule = n), by = "ori") |>
   left_join(cnt("attr_ori") |> rename(cameras_attributed = n), by = "ori") |>
   left_join(cnt("attr_ori", filt = \(d) coalesce(d$attr_basis != "tagged", FALSE)) |> rename(attributed_inferred = n), by = "ori") |>
-  left_join(cnt("a_ori", TRUE) |> rename(flock_tagged = n), by = "ori") |>
-  left_join(cnt("b_ori", TRUE) |> rename(flock_located = n), by = "ori") |>
-  left_join(cnt("attr_ori", TRUE) |> rename(flock_attributed = n), by = "ori") |>
-  mutate(across(c(starts_with("cameras_"), starts_with("flock_"), located_via_inferred_rule, attributed_inferred), \(v) coalesce(v, 0L)),
+  mutate(across(c(starts_with("cameras_"), located_via_inferred_rule, attributed_inferred), \(v) coalesce(v, 0L)),
          located_zero_type = case_when(
            cameras_located > 0 ~ NA,
            record_status == "historical" ~ "historical record (not assigned)",
-           geo_status %in% c("place_code_resolved", "county_code_resolved") ~ "no mapped cameras in area",
+           geo_status %in% c("place_code_resolved", "county_code_resolved", "countywide_only") ~ "no mapped cameras in area",
            TRUE ~ paste0("no usable geography: ", geo_status)),
+         per10k_tagged = if_else(population_fbi > 0, 1e4 * cameras_tagged / population_fbi, NA),
          per10k_located = if_else(population_fbi > 0, 1e4 * cameras_located / population_fbi, NA),
          per10k_attributed = if_else(population_fbi > 0, 1e4 * cameras_attributed / population_fbi, NA))
 n_log(agt, "agency table (all local PDs + sheriffs, incl. zero cameras)")

@@ -4,5 +4,5 @@
 data/raw/*
 !data/raw/.gitkeep
 .DS_Store
-data/derived/*.rds
+data/derived/*
 output/log_*.txt

@@ -10,7 +10,7 @@
 #                    district attorneys, housing authorities
 #   private          retailers, malls, HOAs, businesses, hospitals, churches, private security,
 #                    plus surveillance=private or operator:type private/business
-#   unclassified     anything else (reviewed list: output/operator_classes_for_review.csv)
+#   unclassified     anything else (reviewed list: output/review/operator_classes_for_review.csv)
 #
 # Order matters: vendor/placeholder first, then a method-A match to a local agency (so "University
 # Heights PD" or "North College Hill PD" is not caught by "university"/"college"), then the
@@ -28,7 +28,7 @@ x <- cams |> select(osm_id, state, operator, operator_type, surveillance) |>
 n_log(x, "cameras after joining method A")
 
 VENDOR_RX  <- "^(the )?(flock|flock safety|flock group( inc\\.?)?|flock_safety|motorola( solutions)?|vigilant( solutions)?|rekor|genetec|leonardo|elsag|axon|ubicquia)$"
-GENERIC_PRIVATE_RX <- "^(private|hoa|land ?owner|business|residential|commercial)$"
+GENERIC_PRIVATE_RX <- "^\\[?(private|hoa|land ?owner|owner|business|residential|commercial|gated community)\\]?$"
 GENERIC_UNKNOWN_RX <- "^(unknown|police|law enforcement|government|city|county|n/?a|none)$"
 PUBLIC_OTHER_RX <- paste0(
   "department of transportation|\\bdot\\b|d\\.o\\.t|\\bdpw\\b|transportation authority|transit|\\bm\\.?t\\.?a\\b|",
@@ -54,13 +54,13 @@ PRIVATE_RX <- paste0(
   "parking|security\\b|storage|stadium|arena|great wolf|camp |jellystone|pultegroup|homes\\b|communities|",
   "estates|subdivision|neighborhood|hills homeowners|landlord|ranch\\b|safeway|scheels|fred meyer|",
   "home depo\\b|management\\b|destiny usa|park meadows|towne square")
-POLICE_RX <- "police|sheriff|\\bpd\\b|\\bso\\b|public safety|marshal|constable"
+POLICE_RX <- "police|sher+if+|serrif|\\bpd\\b|\\bso\\b|public safety|marshal|constable"
 
 x <- x |> left_join(ovr |> select(op = operator, ovr_class = op_class), by = "op") |>
   mutate(
     op_class = case_when(
       !is.na(ovr_class) ~ ovr_class,
-      coalesce(str_to_lower(surveillance) == "private", FALSE) & is.na(a_ori) ~ "private",
+      coalesce(str_to_lower(surveillance) == "private", FALSE) & is.na(a_ori) & !str_detect(op_l, POLICE_RX) ~ "private",
       op_l == "" ~ "missing",
       str_detect(op_l, VENDOR_RX) ~ "vendor",
       str_detect(op_l, GENERIC_PRIVATE_RX) ~ "private",
@@ -69,7 +69,7 @@ x <- x |> left_join(ovr |> select(op = operator, ovr_class = op_class), by = "op
       !is.na(a_ori) ~ "local_police",
       str_detect(op_l, PUBLIC_OTHER_RX) ~ "public_other",
       str_detect(op_l, PRIVATE_RX) ~ "private",
-      coalesce(str_to_lower(operator_type) %in% c("private", "business", "commercial"), FALSE) ~ "private",
+      str_to_lower(operator_type) %in% c("private", "business", "commercial") ~ "private",
       str_detect(op_l, POLICE_RX) ~ "police_unmatched",
       TRUE ~ "unclassified"),
     op_class_source = if_else(!is.na(ovr_class), "override", "rule"))

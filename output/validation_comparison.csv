@@ -14,7 +14,7 @@ id,agency,state,ori,reported,basis,osm_tagged,osm_located,osm_attributed,agency_
 2208,Rockport TX PD,TX,TX0040200,6,exact,0,7,7,Municipal police,11309,current_cde
 3480,Warrick County IN SO,IN,IN0870000,12,exact,5,27,28,Sheriff,60390,current_cde
 3921,Anoka County MN SO,MN,MN0020000,2,exact,1,15,15,Sheriff,88166,current_cde
-3954,Johnson County IN SO,IN,IN0410000,12,exact,0,20,20,Sheriff,47195,current_cde
+3954,Johnson County IN SO,IN,IN0410000,12,exact,0,19,19,Sheriff,47195,current_cde
 3965,Shelby County IN SO,IN,IN0730000,6,exact,0,17,17,Sheriff,24675,current_cde
 4222,Powell OH PD,OH,OH0210500,0,exact,0,5,5,Municipal police,14705,current_cde
 966,Fuquay-Varina NC PD,NC,NC0920400,11,exact,0,14,14,Municipal police,49846,current_cde
@@ -224,8 +224,8 @@ id,agency,state,ori,reported,basis,osm_tagged,osm_located,osm_attributed,agency_
 285,Bridgewater VA PD,VA,VA0820100,5,exact,0,4,4,Municipal police,6885,current_cde
 833,Fairfax City VA PD,VA,VA1075000,19,exact,1,35,35,Municipal police,26982,current_cde
 899,Folly Beach SC PD,SC,SC0100400,2,exact,0,2,2,Municipal police,2086,current_cde
-1120,Hampton VA PD,VA,VA1110000,54,exact,100,118,117,Municipal police,138041,current_cde
-1832,Newport News VA PD,VA,VA1160000,74,exact,96,108,109,Municipal police,182798,current_cde
+1120,Hampton VA PD,VA,VA1110000,54,exact,100,114,113,Municipal police,138041,current_cde
+1832,Newport News VA PD,VA,VA1160000,74,exact,96,106,107,Municipal police,182798,current_cde
 2171,Richmond VA PD,VA,VA1220000,97,exact,59,124,123,Municipal police,235995,current_cde
 23,Alameda CA PD,CA,CA0010100,33,exact,0,51,51,Municipal police,78978,current_cde
 203,Benicia CA PD,CA,CA0480100,50,exact,0,50,50,Municipal police,26322,current_cde
@@ -307,7 +307,7 @@ id,agency,state,ori,reported,basis,osm_tagged,osm_located,osm_attributed,agency_
 1125,Hanover Park IL PD,IL,IL0164200,9,exact,0,9,9,Municipal police,36523,current_cde
 2018,Paxton IL PD,IL,IL0270200,4,exact,0,1,1,Municipal police,4444,current_cde
 2221,Roselle IL PD,IL,IL0221600,11,exact,0,10,10,Municipal police,22859,current_cde
-2616,Vernon Hills IL PD,IL,IL0492600,34,exact,1,21,21,Municipal police,27046,current_cde
+2616,Vernon Hills IL PD,IL,IL0492600,34,exact,1,20,20,Municipal police,27046,current_cde
 2681,Wayzata MN PD,MN,MN0272300,10,exact,0,9,9,Municipal police,6275,current_cde
 241,Bluffton IN PD,IN,IN0900100,4,exact,4,4,4,Municipal police,10618,current_cde
 2487,Thomasville GA PD,GA,GA1360100,28,exact,0,23,23,Municipal police,18540,current_cde

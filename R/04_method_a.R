@@ -16,19 +16,18 @@ FUZZY_MAX <- 0.05
 FUZZY_GAP <- 0.05
 
 cams <- readRDS(file.path(PROC, "osm_alpr.rds"))
-ag   <- readRDS(file.path(PROC, "agencies_fbi.rds"))
+ag   <- readRDS(file.path(PROC, "agencies_fbi.rds")) |> filter(record_status != "historical")
 n_log(cams, "cameras in"); n_log(ag, "agencies in")
 
 source("R/name_parser.R")
 
 # Agency side: kind from FBI type, not from the name.
 ag_p <- bind_cols(ag |> select(ori, name, state, agency_type), parse_name(ag$name)) |>
-  mutate(kind = if_else(agency_type == "Municipal police", "police",
-                        if_else(agency_type == "Sheriff", "sheriff", "police")),
+  mutate(kind = if_else(agency_type == "Sheriff", "sheriff", "police"),
          is_county = agency_type != "Municipal police",
          core2 = if_else(is_county, core, core2))   # keep "county" etc. for county agencies
 
-uniq_key <- function(df, key) df |> group_by(state, kind, .data[[key]]) |>
+uniq_key <- function(df, key) df |> filter(.data[[key]] != "") |> group_by(state, kind, .data[[key]]) |>
   summarise(n_ag = n(), ori = first(ori), .groups = "drop") |> rename(k = all_of(key))
 k1 <- uniq_key(ag_p, "core"); k2 <- uniq_key(ag_p, "core2")
 
@@ -42,10 +41,10 @@ ops <- ops |> mutate(core = str_squish(str_remove(core, st_rx)), core2 = str_squ
 
 # Step 2: exact on core ("Town of X" first tries the typed core "x town")
 ops <- ops |> left_join(k1 |> filter(n_ag == 1) |> select(state, kind, k, ori_typed = ori), by = c("state", "kind", "core_typed" = "k"))
-ops <- ops |> left_join(ag_p |> filter(!is_county) |> count(state, core, name = "n_t") |> filter(n_t == 1) |>
-                          left_join(ag_p |> select(state, core, ori_t2 = ori), by = c("state", "core")),
-                        by = c("state", "core_typed" = "core")) |>
-  mutate(ori_typed = coalesce(ori_typed, if_else(kind == "none", NA, ori_t2))) |> select(-n_t, -ori_t2)
+muni_typed <- ag_p |> filter(!is_county, core != "") |> add_count(state, core, name = "n_t") |> filter(n_t == 1) |>
+  select(state, core, ori_t2 = ori)
+ops <- ops |> left_join(muni_typed, by = c("state", "core_typed" = "core")) |>
+  mutate(ori_typed = coalesce(ori_typed, if_else(kind == "none", NA, ori_t2))) |> select(-ori_t2)
 message("  operators matched on typed core (Town/Township/Village of X): ", sum(!is.na(ops$ori_typed)))
 m <- ops |> left_join(k1, by = c("state", "kind", "core" = "k"))
 n_log(m, "operators after exact join (core)")

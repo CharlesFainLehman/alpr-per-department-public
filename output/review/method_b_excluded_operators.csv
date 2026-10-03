@@ -18,6 +18,7 @@ private,Dierbergs Markets,50
 public_other,California Highway Patrol,50
 private,Home Depot,47
 public_other,University of Florida,41
+public_other,LSSC,39
 public_other,Michigan State University Department of Police and Public Safety,35
 private,Station Casinos,34
 public_other,Cherokee Indian Police Department,31
@@ -32,8 +33,8 @@ private,United Wholesale Mortgage,24
 public_other,Iowa State University Police Department,24
 public_other,Los Angeles County Metropolitan Transportation Authority,24
 public_other,Florida International University,22
+public_other,Mass State Police,22
 public_other,Washington State Department of Transportation,22
-public_other,Mass State Police,21
 private,Great Wolf Lodge,20
 private,Sun City Texas,20
 public_other,Maryland Transportation Authority,20
@@ -78,13 +79,14 @@ private,Rock Security,10
 private,Williamsburg Settlement Maintenance Association,10
 public_other,Saginaw Valley State University Police Department,10
 public_other,University of Chicago Police Department,10
+public_other,UoF,10
 public_other,WSDOT,10
 private,Holmby Hills Homeowners Association,9
+private,Navy Federal Credit Union,9
 private,Premium Parking,9
 private,ThedaCare-Froedtert Health,9
 public_other,College of William and Mary,9
 public_other,Massachusetts State Police,9
-public_other,Navy Federal Credit Union,9
 public_other,Port Authority of New York and New Jersey,9
 private,Baylor Scott & White Health,8
 private,Destiny USA,8
@@ -128,6 +130,7 @@ public_other,Norfolk Redevelopment and Housing Authority,6
 public_other,Onondaga Community Collage Public Safety (OCC PS),6
 public_other,University of Fla.,6
 public_other,University of Michigan-Dearborn Department of Public Safety,6
+private,Academy Sports + Outdoors,5
 private,AdventHealth,5
 private,BJ's Wholesale Club,5
 private,Coral Ridge Mall,5
@@ -138,7 +141,6 @@ private,Pennsylvania Real Estate Investment Trust,5
 private,St Francis Wood HOA,5
 private,UPS,5
 private,WestWind Management,5
-public_other,Academy Sports + Outdoors,5
 public_other,Delaware State Police,5
 public_other,Jackson Housing Commission,5
 public_other,King County Housing Authority,5
@@ -148,6 +150,7 @@ public_other,UC Merced Police Department,5
 public_other,"University of California, Santa Cruz",5
 public_other,University of Rhode Island,5
 public_other,Winton Woods City Schools,5
+private,Auburn Lake Trails,4
 private,Bowlero,4
 private,Camp Jellystone LLC,4
 private,General Motors,4
@@ -158,42 +161,53 @@ private,Knollwood Village Apartments,4
 private,Lake Wildwood Association,4
 private,M Resort,4
 private,PulteGroup,4
+private,Sheraton Detroit Metro Airport,4
 private,St. Francis Homes Association,4
 private,Table Mountain Casino,4
 private,Target,4
 private,The Beacon Group,4
 private,Valley Medical Center,4
+private,Walden Galeria,4
+private,ebm-papst,4
 public_other,Alabama Department of Transportation,4
 public_other,Forest Preserve District of DuPage County,4
+public_other,Fort Monroe Authority,4
 public_other,Kirkwood Community College,4
 public_other,Maryland State Police,4
 public_other,Minnesota State Patrol,4
 public_other,Minnetonka High School,4
+public_other,New York City Department of environmental protection,4
 public_other,New York State Police,4
 public_other,New York State Thruway,4
-public_other,Sheraton Detroit Metro Airport,4
 public_other,Temple University Campus PA PD,4
+public_other,Texas Department of Public Safety,4
 public_other,Transportation Corridor Agencies,4
 public_other,US Department of Veterans Affairs,4
 public_other,United States Border Patrol,4
 public_other,United States Customs and Border Protection,4
 public_other,WisDOT,4
 public_other,Wisconsin State Capitol Police Department,4
+public_other,XNA,4
+private,Arizona Mills,3
 private,Balcones Trails Apartment Complex,3
 private,Casino Security,3
 private,DTE Energy,3
 private,Fleet Farm,3
 private,Founders Parc HOA,3
 private,Freeway Security Network-Pittsburg Police Department,3
+private,Goldoller,3
 private,Harrah's Cherokee Casino,3
 private,Holland Pointe HOA,3
 private,Hope Ranch,3
 private,"Kading Properties, LLC",3
+private,LiveView Technologies,3
+private,Lockheed Martin,3
+private,North Hill Farms,3
 private,Northlake Ridge HOA,3
 private,Patrick Henry Mall,3
-private,Pittsburgh Parking Authority,3
 private,QuikTrip,3
 private,ReNew Foundry Centre Apartments,3
+private,Rincon Del Rio Young Enterprises LP,3
 private,Rio All-Suite Hotel and Casino,3
 private,Southlake Residential Association,3
 private,Stone Meadows HOA,3
@@ -212,6 +226,7 @@ public_other,NAU PD,3
 public_other,Nashua Housing Authority,3
 public_other,National Park Service,3
 public_other,Ottawa Hills Local School District,3
+public_other,Pittsburgh Parking Authority,3
 public_other,Port of authority of New York and New Jersey,3
 public_other,Regents of the University of California,3
 public_other,Rhode Island State Police,3
@@ -225,17 +240,19 @@ public_other,United States Air Force Security Forces,3
 private,Abita Lakes Homeowner's Association,2
 private,Anna Meadows Homeowners Association,2
 private,Barnes-Jewish Hospital,2
-private,Barre city police dept,2
 private,Bell Station HOA,2
 private,Bretton Woods HOA,2
 private,Brook Casino,2
 private,California Resources Corporation,2
 private,Central Bank & Trust Co.,2
 private,Chantilly HOA,2
+private,Danbury Park Manor/Green National,2
 private,Dublin Farms HOA,2
 private,Flock Safety,2
 private,Founders Pointe HOA,2
 private,Gregory Meadows HOA,2
+private,Guardian Industries,2
+private,Jewish Federation of Greater Toledo,2
 private,Kennison Creek Community Association,2
 private,Kirk of the Hills Presbyterian Church,2
 private,Live Oak Creek HOA,2
@@ -245,20 +262,27 @@ private,Lowe's Home Improvement Live Oak,2
 private,Marshall Park HOA,2
 private,Marylander Condominiums,2
 private,Maximum Exposures Security,2
+private,McDonald's,2
 private,Memorial Club Townhomes,2
+private,Micro Center,2
 private,Migration Path Estates,2
 private,Millcreek Mall,2
+private,Nordam,2
 private,Northwestern Medicine,2
+private,Owner,2
 private,Port Royal homeowners association,2
 private,Private,2
 private,Prometheus Apartments,2
 private,Redbud HOA,2
 private,River Run Apartment Homes,2
 private,Silverbrook Wood Condominium,2
+private,Stew Leonard's,2
+private,Temple of Aaron,2
 private,The Gardens HOA,2
 private,The Hedges Homeowners Association,2
 private,The Vanguard Group,2
 private,The Vineyards HOA,2
+private,Total Wine,2
 private,Tuscany Homeowners Association,2
 private,Twin Chimneys Village HOA,2
 private,VILLAGE GREEN HOMEOWNERS ASSOCIATION,2
@@ -273,6 +297,7 @@ private,Yorktown HOA,2
 private,[HOME DEPOT],2
 private,[LOWES],2
 private,[Lowes Home Improvement (Corporate Security],2
+private,froedtert,2
 private,private,2
 private,target,2
 private,walmart,2
@@ -281,14 +306,23 @@ public_other,Brighton Area Schools,2
 public_other,Butler Transit Authority,2
 public_other,Chaminade College Preparatory School,2
 public_other,Chehalis Tribal Law Enforcement,2
+public_other,Chesapeake Bay Bridge and Tunnel District,2
 public_other,Colorado State University,2
 public_other,Concordia University Ann Arbor,2
 public_other,Deleware State Police,2
+public_other,ETSU,2
+public_other,Eastern Band of Cherokee Indians (EBCI),2
+public_other,El Dorado Hills Community Services District,2
 public_other,Embry Riddle Aeronautical University,2
 public_other,Embry-Riddle Aeronautical University,2
+public_other,Georgia Tech,2
 public_other,Imperial Valley College,2
+public_other,JCPRD,2
 public_other,Killingworth Resident State Trooper Office,2
 public_other,Lakeshore Avenue Business Improvement District (LABID),2
+public_other,Los Angeles Union Station,2
+public_other,Mason PD,2
+public_other,Michigan Department of Natural Resources,2
 public_other,Missouri State Highway Patrol,2
 public_other,Niagara Frontier Transportation Authority,2
 public_other,Pennsylvania State Police,2
@@ -298,6 +332,7 @@ public_other,Saint Francis de Sales School,2
 public_other,St. Charles Community College,2
 public_other,Texas Department of Transportation,2
 public_other,U.S. Drug Enforcement Administration (U.S. Customs and Border Protection also has access to imagery),2
+public_other,US Department of Energy,2
 public_other,University of California Los Angeles,2
 public_other,University of Colorado Boulder,2
 public_other,University of Illinois Chicago,2
@@ -309,27 +344,37 @@ public_other,Verra Mobility operated NYC DOT red light camera,2
 public_other,Virginia State Police,2
 public_other,Washington State Patrol,2
 public_other,[Hermiston School District],2
+private,(NETHOA/Owner),1
+private,Air Garage,1
 private,Amelia Place Homeowners Association,1
+private,American Concrete Institute,1
 private,Austin Ridge HOA,1
 private,BJs Wholesale Club,1
-private,Barre City Poilce Dept,1
-private,Barre City Police Department,1
 private,Barrington Park HOA,1
 private,Bel-Air Association,1
+private,Bellerive Country Club,1
 private,Benbrook Lakeshore Neighbors Association,1
+private,Bet Shalom Congregation,1
 private,Boulder Ridge HOA,1
 private,Brookside Lake HOA,1
 private,Bull River Bluff Condominium Association,1
+private,Burlington Hyundai (likely),1
+private,Burlington Subaru (likely),1
+private,Burlington Subaru (probably),1
 private,CEDAR HOLLOW ESTATES HOMEOWNERS ASSOC INC,1
 private,Car Wash Depot,1
+private,Cascade crossings,1
 private,Cheshunt HOA,1
 private,Connect Community Management,1
 private,Copper Mill HOA,1
 private,Coronado Mall,1
 private,Dierbergs,1
 private,Dourdan Place HOA,1
+private,Dwight Mini Mart,1
 private,Elk River Sportsmans Club,1
 private,Fedex,1
+private,Fleet Farm Muskego,1
+private,Gated Community,1
 private,Gated Properties VIII LLC,1
 private,Glenn Ivey HOA,1
 private,"Grandview Lakes Homeowners Association, Inc.",1
@@ -337,23 +382,33 @@ private,HOME DEPOT,1
 private,Hamlin Retail Partners li LLC,1
 private,HoA,1
 private,Holyoke Police or Holyoke Mall,1
+private,HomeDepot,1
+private,Humane Society - Johnson County,1
+private,Impark,1
+private,Joint Commission,1
+private,LVT,1
 private,Land Owner,1
 private,Land owner,1
 private,Landowner,1
 private,Leinbach Company,1
+private,LiveView Technologies (LVT),1
 private,"Lowe's Companies, Inc",1
 private,Lowes Home Improvement,1
 private,Manhattan Beach Civic Association,1
 private,Marathon Petroleum Corporation,1
+private,Mark Allen Chevrolet,1
 private,Marshall HOA,1
-private,Mass State Police,1
+private,Mellody Farms,1
 private,Montecito Village Homeowners Association,1
-private,Pasadena Parking Enforcement,1
+private,PHILLIP ALLEN WIEMANN,1
 private,Patriot Series LLC?,1
 private,Rancho Conejo Home Owners Association,1
 private,Red Roof Inn Detroit - Royal Oak/Madison Heights,1
+private,Redpoint Tallahassee,1
+private,Reyes Coca-Cola Bottling,1
 private,River Spirit Casino Security,1
 private,Rivers Edge Campground,1
+private,Riverside Court,1
 private,Rodeway Inn Madison Heights - Detroit,1
 private,Rollman Estates Subdivision,1
 private,Saddle Ridge HOA,1
@@ -361,8 +416,10 @@ private,Shiny Shell Carwash,1
 private,Spartanburg Regional Medical Center,1
 private,Stadium Village Flats,1
 private,Tanyard Shores Homeowners Association,1
+private,Ted Britt Chevrolet,1
 private,The Church of Jesus Christ of Latter Day Saints,1
 private,The Church of Jesus Christ of Latter-day Saints,1
+private,The Corners of Brookfield,1
 private,The Cove at Dardenne HOA,1
 private,Travelodge Madison Heights,1
 private,Venetian Resort Las Vegas,1
@@ -373,21 +430,31 @@ private,West Hills HOA,1
 private,Western Heights Apartments,1
 private,Westport Station Office Park,1
 private,WinCo Foods,1
+private,Woodhill Country Club,1
 private,[Insight Public Sector Inc],1
+private,[Newport Yacht Club],1
 private,[Pace Academy],1
 private,[Seven Coves HOA],1
 private,[Willaimson Place POA],1
 private,[Williamson Place POA],1
 private,neighborhood association,1
 public_other,BOERNE INDEPENDENT SCHOOL DISTRICT,1
+public_other,BSU Department of Public Safety,1
 public_other,Catawba Nation Tribal Police Department,1
+public_other,Chesapeake Bay Bridge Tunnel District,1
 public_other,College of Lake County,1
+public_other,Fastrak,1
 public_other,Florida Int'l University,1
 public_other,Florida Internationl University,1
 public_other,Fulton County Schools,1
+public_other,Great Parks of Hamilton County,1
 public_other,Gustavus Adolphus College Campus Safety,1
 public_other,IL DOT,1
+public_other,Jefferson County Parks Deptment,1
+public_other,Jefferson county parks and rec,1
 public_other,Lisbon Resident State Trooper Office,1
+public_other,Maine National Guard,1
+public_other,Mass Maritime,1
 public_other,Metro Transit,1
 public_other,Metropolitan Washington Airports Authority,1
 public_other,Missouri Highway Patrol,1
@@ -396,13 +463,18 @@ public_other,NYC DOT Red light Camera,1
 public_other,NYC DOT Red light camera,1
 public_other,New Hampshire Department of Corrections,1
 public_other,Orange County Transportation Authority,1
+public_other,Portland Bureau of Environmental Services,1
 public_other,Regent University Police Department,1
 public_other,Stony Brook University,1
 public_other,U.S. Customs and Border Protection,1
+public_other,UMass Police,1
+public_other,United States Park Police,1
+public_other,Univeristy of Fla.,1
 public_other,University of Illinois,1
 public_other,Verra Mobility NYC  DOT red light camera,1
 public_other,Verra Mobility NYC DOT Speed camera,1
 public_other,Verra Mobility NYC DOT red light camera,1
 public_other,Verra Mobility Operated NYC DOT Speed Camera,1
 public_other,Verra Mobility operated NYC DOT Red Light Camera,1
+public_other,WSU,1
 public_other,binghamton university police department,1

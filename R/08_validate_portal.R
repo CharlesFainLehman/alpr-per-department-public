@@ -28,7 +28,7 @@ st_tok <- function(x) {
 }
 pe <- pe |> mutate(
   state = coalesce(unname(STATE_OVERRIDE[agency]), vapply(agency, st_tok, "")),
-  name_wo_state = str_squish(str_replace(agency, paste0("\\b", state, "\\b"), " ")),
+  name_wo_state = if_else(is.na(state), agency, str_squish(str_replace(agency, paste0("\\b", state, "\\b"), " "))),
   name_wo_state = str_replace(name_wo_state, "\\bTwp\\b", "Township"))
 message("  rows with no parseable state: ", sum(is.na(pe$state)))
 

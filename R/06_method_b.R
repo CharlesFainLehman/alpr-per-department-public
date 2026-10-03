@@ -55,7 +55,7 @@ message("  in an incorporated place: ", sum(!is.na(cams$place_geoid)), "; in an 
 
 # 2. Place code -> PD -------------------------------------------------------------------------------------
 cs_key <- function(g) paste0(substr(g, 1, 2), substr(g, 6, 10))   # cousub GEOID -> state + 5-digit code
-squash <- function(x) iconv(x, "UTF-8", "ASCII//TRANSLIT") |> str_to_lower() |>
+squash <- function(x) stringi::stri_trans_general(x, "Latin-ASCII") |> str_to_lower() |>
   str_replace_all("\\b(the|of|by|on|in)\\b", " ") |> str_replace_all("[^a-z]", "")
 MUNI_W <- "(city|town|village|township|borough)"
 geo_names <- bind_rows(

@@ -84,7 +84,7 @@ local_police,Little Rock Police Department,40
 local_police,Lowell Police,40
 local_police,Altoona Police Department,39
 local_police,Springfield Police,39
-unclassified,LSSC,39
+public_other,LSSC,39
 local_police,Newport Beach Police Department,38
 local_police,Pasco Sheriff’s Office,38
 local_government,City of Bakersfield,36
@@ -174,6 +174,7 @@ local_police,Beaumont Police Department,22
 local_police,Saint Johns County Sheriff's Office,22
 local_police,West Bloomfield Police Department,22
 public_other,Florida International University,22
+public_other,Mass State Police,22
 public_other,Washington State Department of Transportation,22
 local_government,Vidalia GA,21
 local_police,Fall River Police,21
@@ -184,7 +185,6 @@ local_police,Lucas County Sheriff's Office,21
 local_police,Oakland Police Department,21
 local_police,Odessa Police Department,21
 local_police,West Hartford Police Department,21
-public_other,Mass State Police,21
 local_government,Live Oak,20
 local_police,Forest Park PD,20
 local_police,Roseville Police Department,20
@@ -420,8 +420,8 @@ private,Rock Security,10
 private,Williamsburg Settlement Maintenance Association,10
 public_other,Saginaw Valley State University Police Department,10
 public_other,University of Chicago Police Department,10
+public_other,UoF,10
 public_other,WSDOT,10
-unclassified,UoF,10
 local_government,City of Fredericksburg,9
 local_government,City of Oxford,9
 local_government,County of Orange,9
@@ -455,11 +455,11 @@ local_police,Worthington PD,9
 local_police,anne arundel police department,9
 police_unmatched,Yorktown/Westchester County Police RTC/Intelligence Regional and National Data Sharing,9
 private,Holmby Hills Homeowners Association,9
+private,Navy Federal Credit Union,9
 private,Premium Parking,9
 private,ThedaCare-Froedtert Health,9
 public_other,College of William and Mary,9
 public_other,Massachusetts State Police,9
-public_other,Navy Federal Credit Union,9
 public_other,Port Authority of New York and New Jersey,9
 unclassified,Township of Middlesex,9
 local_government,Borough of Evans City,8
@@ -709,6 +709,7 @@ local_police,[Roscoe Police Department],5
 police_unmatched,Carmel/Putnam County Sheriff to Westchester Putnam/RTC,5
 police_unmatched,Peekskill/Westchester County Police RTC/Intelligence Regional and National Data Sharing,5
 police_unmatched,Pryor Police,5
+private,Academy Sports + Outdoors,5
 private,AdventHealth,5
 private,BJ's Wholesale Club,5
 private,Coral Ridge Mall,5
@@ -719,7 +720,6 @@ private,Pennsylvania Real Estate Investment Trust,5
 private,St Francis Wood HOA,5
 private,UPS,5
 private,WestWind Management,5
-public_other,Academy Sports + Outdoors,5
 public_other,Delaware State Police,5
 public_other,Jackson Housing Commission,5
 public_other,King County Housing Authority,5
@@ -820,7 +820,6 @@ local_police,Stonington Police Department,4
 local_police,Struthers Police Department,4
 local_police,Sunnyside Police,4
 local_police,Swisher County Sheriff's Office,4
-local_police,Texas Department of Public Safety,4
 local_police,Transylvania County Sheriff's Office,4
 local_police,Utica Police Department (Michigan),4
 local_police,Vacaville Police Department,4
@@ -837,6 +836,7 @@ police_unmatched,Briarcliff Manor/Westchester County Police RTC/Intelligence Reg
 police_unmatched,"Los Angeles County Sheriff's Department,City Of Palmdale",4
 police_unmatched,Ramsey County Police Department,4
 police_unmatched,San Juan Bautista Police Department,4
+private,Auburn Lake Trails,4
 private,Bowlero,4
 private,Camp Jellystone LLC,4
 private,General Motors,4
@@ -847,39 +847,39 @@ private,Knollwood Village Apartments,4
 private,Lake Wildwood Association,4
 private,M Resort,4
 private,PulteGroup,4
+private,Sheraton Detroit Metro Airport,4
 private,St. Francis Homes Association,4
 private,Table Mountain Casino,4
 private,Target,4
 private,The Beacon Group,4
 private,Valley Medical Center,4
+private,Walden Galeria,4
+private,ebm-papst,4
 public_other,Alabama Department of Transportation,4
 public_other,Forest Preserve District of DuPage County,4
+public_other,Fort Monroe Authority,4
 public_other,Kirkwood Community College,4
 public_other,Maryland State Police,4
 public_other,Minnesota State Patrol,4
 public_other,Minnetonka High School,4
+public_other,New York City Department of environmental protection,4
 public_other,New York State Police,4
 public_other,New York State Thruway,4
-public_other,Sheraton Detroit Metro Airport,4
 public_other,Temple University Campus PA PD,4
+public_other,Texas Department of Public Safety,4
 public_other,Transportation Corridor Agencies,4
 public_other,US Department of Veterans Affairs,4
 public_other,United States Border Patrol,4
 public_other,United States Customs and Border Protection,4
 public_other,WisDOT,4
 public_other,Wisconsin State Capitol Police Department,4
-unclassified,Auburn Lake Trails,4
+public_other,XNA,4
 unclassified,Barton Hills Village,4
 unclassified,"Bryan County, GA",4
 unclassified,CCSO,4
-unclassified,Fort Monroe Authority,4
 unclassified,McKinley,4
-unclassified,New York City Department of environmental protection,4
 unclassified,SGPD,4
 unclassified,Town of Boonton,4
-unclassified,Walden Galeria,4
-unclassified,XNA,4
-unclassified,ebm-papst,4
 local_government,City of Boerne,3
 local_government,City of Hampton,3
 local_government,City of Norfolk,3
@@ -986,21 +986,26 @@ police_unmatched,LA PD / UL PD,3
 police_unmatched,Planned-Owensboro Police Dept.,3
 police_unmatched,Pleasantville/Westchester County Police RTC/Intelligence Regional and National Data Sharing,3
 police_unmatched,Springfield Township PD,3
+private,Arizona Mills,3
 private,Balcones Trails Apartment Complex,3
 private,Casino Security,3
 private,DTE Energy,3
 private,Fleet Farm,3
 private,Founders Parc HOA,3
 private,Freeway Security Network-Pittsburg Police Department,3
+private,Goldoller,3
 private,Harrah's Cherokee Casino,3
 private,Holland Pointe HOA,3
 private,Hope Ranch,3
 private,"Kading Properties, LLC",3
+private,LiveView Technologies,3
+private,Lockheed Martin,3
+private,North Hill Farms,3
 private,Northlake Ridge HOA,3
 private,Patrick Henry Mall,3
-private,Pittsburgh Parking Authority,3
 private,QuikTrip,3
 private,ReNew Foundry Centre Apartments,3
+private,Rincon Del Rio Young Enterprises LP,3
 private,Rio All-Suite Hotel and Casino,3
 private,Southlake Residential Association,3
 private,Stone Meadows HOA,3
@@ -1019,6 +1024,7 @@ public_other,NAU PD,3
 public_other,Nashua Housing Authority,3
 public_other,National Park Service,3
 public_other,Ottawa Hills Local School District,3
+public_other,Pittsburgh Parking Authority,3
 public_other,Port of authority of New York and New Jersey,3
 public_other,Regents of the University of California,3
 public_other,Rhode Island State Police,3
@@ -1030,19 +1036,13 @@ public_other,Stonewall Ranch Municipal Utility District,3
 public_other,Studio City Property & Business Improvement District,3
 public_other,United States Air Force Security Forces,3
 unclassified,ACSO,3
-unclassified,Arizona Mills,3
 unclassified,Brookfield,3
 unclassified,City of Fremont Hills,3
-unclassified,Goldoller,3
 unclassified,Hamilton Township,3
-unclassified,LiveView Technologies,3
-unclassified,Lockheed Martin,3
-unclassified,North Hill Farms,3
 unclassified,Oconomowoc,3
 unclassified,PaducahPD,3
 unclassified,"Panama City Bch, FL",3
 unclassified,Prosper Gulfport,3
-unclassified,Rincon Del Rio Young Enterprises LP,3
 unclassified,Westchester County RTC/Intelligence Regional and National Data Sharing,3
 vendor,Flock_Safety,3
 local_government,Amberley Village,2
@@ -1092,6 +1092,7 @@ local_police,Arlington County Police Department,2
 local_police,Atlanta Police,2
 local_police,Baltimore County (police?),2
 local_police,Baraboo Police Department,2
+local_police,Barre city police dept,2
 local_police,Bayfield County Sheriffs Dept,2
 local_police,Boston Police Department,2
 local_police,Brewer Police,2
@@ -1219,7 +1220,6 @@ police_unmatched,Germantown Police Department / Menonomee Falls Police Departmen
 police_unmatched,Hernado County Sheriff's Office,2
 police_unmatched,Hillsbourough County Sheriff's Office,2
 police_unmatched,Illiopolis Police Department,2
-police_unmatched,Mason PD,2
 police_unmatched,Pleasanville Westchester County Police RTC/Intelligence Regional and National Data Sharing,2
 police_unmatched,SarasotaPoliceDepartment,2
 police_unmatched,Tarrytown Westchester County Police RTC/Intelligence Regional and National Data Sharing,2
@@ -1230,17 +1230,19 @@ police_unmatched,city of Boonville/Boonville police,2
 private,Abita Lakes Homeowner's Association,2
 private,Anna Meadows Homeowners Association,2
 private,Barnes-Jewish Hospital,2
-private,Barre city police dept,2
 private,Bell Station HOA,2
 private,Bretton Woods HOA,2
 private,Brook Casino,2
 private,California Resources Corporation,2
 private,Central Bank & Trust Co.,2
 private,Chantilly HOA,2
+private,Danbury Park Manor/Green National,2
 private,Dublin Farms HOA,2
 private,Flock Safety,2
 private,Founders Pointe HOA,2
 private,Gregory Meadows HOA,2
+private,Guardian Industries,2
+private,Jewish Federation of Greater Toledo,2
 private,Kennison Creek Community Association,2
 private,Kirk of the Hills Presbyterian Church,2
 private,Live Oak Creek HOA,2
@@ -1250,20 +1252,27 @@ private,Lowe's Home Improvement Live Oak,2
 private,Marshall Park HOA,2
 private,Marylander Condominiums,2
 private,Maximum Exposures Security,2
+private,McDonald's,2
 private,Memorial Club Townhomes,2
+private,Micro Center,2
 private,Migration Path Estates,2
 private,Millcreek Mall,2
+private,Nordam,2
 private,Northwestern Medicine,2
+private,Owner,2
 private,Port Royal homeowners association,2
 private,Private,2
 private,Prometheus Apartments,2
 private,Redbud HOA,2
 private,River Run Apartment Homes,2
 private,Silverbrook Wood Condominium,2
+private,Stew Leonard's,2
+private,Temple of Aaron,2
 private,The Gardens HOA,2
 private,The Hedges Homeowners Association,2
 private,The Vanguard Group,2
 private,The Vineyards HOA,2
+private,Total Wine,2
 private,Tuscany Homeowners Association,2
 private,Twin Chimneys Village HOA,2
 private,VILLAGE GREEN HOMEOWNERS ASSOCIATION,2
@@ -1278,6 +1287,7 @@ private,Yorktown HOA,2
 private,[HOME DEPOT],2
 private,[LOWES],2
 private,[Lowes Home Improvement (Corporate Security],2
+private,froedtert,2
 private,private,2
 private,target,2
 private,walmart,2
@@ -1286,14 +1296,23 @@ public_other,Brighton Area Schools,2
 public_other,Butler Transit Authority,2
 public_other,Chaminade College Preparatory School,2
 public_other,Chehalis Tribal Law Enforcement,2
+public_other,Chesapeake Bay Bridge and Tunnel District,2
 public_other,Colorado State University,2
 public_other,Concordia University Ann Arbor,2
 public_other,Deleware State Police,2
+public_other,ETSU,2
+public_other,Eastern Band of Cherokee Indians (EBCI),2
+public_other,El Dorado Hills Community Services District,2
 public_other,Embry Riddle Aeronautical University,2
 public_other,Embry-Riddle Aeronautical University,2
+public_other,Georgia Tech,2
 public_other,Imperial Valley College,2
+public_other,JCPRD,2
 public_other,Killingworth Resident State Trooper Office,2
 public_other,Lakeshore Avenue Business Improvement District (LABID),2
+public_other,Los Angeles Union Station,2
+public_other,Mason PD,2
+public_other,Michigan Department of Natural Resources,2
 public_other,Missouri State Highway Patrol,2
 public_other,Niagara Frontier Transportation Authority,2
 public_other,Pennsylvania State Police,2
@@ -1303,6 +1322,7 @@ public_other,Saint Francis de Sales School,2
 public_other,St. Charles Community College,2
 public_other,Texas Department of Transportation,2
 public_other,U.S. Drug Enforcement Administration (U.S. Customs and Border Protection also has access to imagery),2
+public_other,US Department of Energy,2
 public_other,University of California Los Angeles,2
 public_other,University of Colorado Boulder,2
 public_other,University of Illinois Chicago,2
@@ -1314,32 +1334,12 @@ public_other,Verra Mobility operated NYC DOT red light camera,2
 public_other,Virginia State Police,2
 public_other,Washington State Patrol,2
 public_other,[Hermiston School District],2
-unclassified,Chesapeake Bay Bridge and Tunnel District,2
 unclassified,Columbia Electric,2
-unclassified,Danbury Park Manor/Green National,2
-unclassified,ETSU,2
-unclassified,Eastern Band of Cherokee Indians (EBCI),2
-unclassified,El Dorado Hills Community Services District,2
-unclassified,Georgia Tech,2
-unclassified,Guardian Industries,2
-unclassified,JCPRD,2
-unclassified,Jenoptik,2
-unclassified,Jewish Federation of Greater Toledo,2
-unclassified,Los Angeles Union Station,2
-unclassified,McDonald's,2
-unclassified,Michigan Department of Natural Resources,2
-unclassified,Micro Center,2
-unclassified,Nordam,2
 unclassified,Novoa,2
-unclassified,Owner,2
 unclassified,PCSO,2
 unclassified,ROCai,2
-unclassified,Stew Leonard's,2
-unclassified,Temple of Aaron,2
-unclassified,Total Wine,2
 unclassified,"Town of Harrisburg, Mo",2
 unclassified,UCANN,2
-unclassified,US Department of Energy,2
 unclassified,VCSO,2
 unclassified,Village of Briarcliff,2
 unclassified,Winter Park,2
@@ -1349,7 +1349,7 @@ unclassified,[ACSO],2
 unclassified,[Camargo Club/Indian Hill],2
 unclassified,[Enter operator name],2
 unclassified,[KPD],2
-unclassified,froedtert,2
+vendor,Jenoptik,2
 local_government,(Anchorage),1
 local_government,Boynton Beach,1
 local_government,Castroville,1
@@ -1377,6 +1377,7 @@ local_government,Hood County,1
 local_government,Lodi,1
 local_government,Mission Viejo,1
 local_government,"Parkville, MO",1
+local_government,Pasadena Parking Enforcement,1
 local_government,Piedmont,1
 local_government,Rancho Santa Margarita,1
 local_government,Santa Clarita,1
@@ -1400,6 +1401,8 @@ local_police,Arvada Police Department,1
 local_police,Augusta County Sheriff's Office,1
 local_police,Baker County FL SO,1
 local_police,Baldwin County Sheriff's Office,1
+local_police,Barre City Poilce Dept,1
+local_police,Barre City Police Department,1
 local_police,Barrington Police,1
 local_police,Bartlesville Police Department,1
 local_police,Battle Creek City Police,1
@@ -1661,9 +1664,9 @@ police_unmatched,Amarillo Police Depart,1
 police_unmatched,Anne Arundel County Police (RTIC),1
 police_unmatched,Anne Arundel County Police Real Time Information Center  (RTIC),1
 police_unmatched,Anne Arundel county Police (RTIC),1
-police_unmatched,BSU Department of Public Safety,1
 police_unmatched,Caldwell County Constable Pct 2,1
 police_unmatched,Champaingn County Sheriff,1
+police_unmatched,Cook County Serrif,1
 police_unmatched,DC Metropolitan Police Department,1
 police_unmatched,Elmsford/Greenburgh Westchester County Police RTC/Intelligence Regional and National Data Sharing,1
 police_unmatched,Gadsden County Sheriffs Office / Gadsden County Board of County Commissioners,1
@@ -1687,31 +1690,39 @@ police_unmatched,Putnam Valley/Putnam County Sheriff to Westchester Putnam/RTC,1
 police_unmatched,RichlandCountySheriffDepartment,1
 police_unmatched,Riley County Sheriff,1
 police_unmatched,Town of Hubbardston Chief of Police,1
-police_unmatched,UMass Police,1
-police_unmatched,United States Park Police,1
 police_unmatched,[Farmington Police Dapertment],1
 police_unmatched,lakelandpolicedepartment,1
+private,(NETHOA/Owner),1
+private,Air Garage,1
 private,Amelia Place Homeowners Association,1
+private,American Concrete Institute,1
 private,Austin Ridge HOA,1
 private,BJs Wholesale Club,1
-private,Barre City Poilce Dept,1
-private,Barre City Police Department,1
 private,Barrington Park HOA,1
 private,Bel-Air Association,1
+private,Bellerive Country Club,1
 private,Benbrook Lakeshore Neighbors Association,1
+private,Bet Shalom Congregation,1
 private,Boulder Ridge HOA,1
 private,Brookside Lake HOA,1
 private,Bull River Bluff Condominium Association,1
+private,Burlington Hyundai (likely),1
+private,Burlington Subaru (likely),1
+private,Burlington Subaru (probably),1
 private,CEDAR HOLLOW ESTATES HOMEOWNERS ASSOC INC,1
 private,Car Wash Depot,1
+private,Cascade crossings,1
 private,Cheshunt HOA,1
 private,Connect Community Management,1
 private,Copper Mill HOA,1
 private,Coronado Mall,1
 private,Dierbergs,1
 private,Dourdan Place HOA,1
+private,Dwight Mini Mart,1
 private,Elk River Sportsmans Club,1
 private,Fedex,1
+private,Fleet Farm Muskego,1
+private,Gated Community,1
 private,Gated Properties VIII LLC,1
 private,Glenn Ivey HOA,1
 private,"Grandview Lakes Homeowners Association, Inc.",1
@@ -1719,23 +1730,33 @@ private,HOME DEPOT,1
 private,Hamlin Retail Partners li LLC,1
 private,HoA,1
 private,Holyoke Police or Holyoke Mall,1
+private,HomeDepot,1
+private,Humane Society - Johnson County,1
+private,Impark,1
+private,Joint Commission,1
+private,LVT,1
 private,Land Owner,1
 private,Land owner,1
 private,Landowner,1
 private,Leinbach Company,1
+private,LiveView Technologies (LVT),1
 private,"Lowe's Companies, Inc",1
 private,Lowes Home Improvement,1
 private,Manhattan Beach Civic Association,1
 private,Marathon Petroleum Corporation,1
+private,Mark Allen Chevrolet,1
 private,Marshall HOA,1
-private,Mass State Police,1
+private,Mellody Farms,1
 private,Montecito Village Homeowners Association,1
-private,Pasadena Parking Enforcement,1
+private,PHILLIP ALLEN WIEMANN,1
 private,Patriot Series LLC?,1
 private,Rancho Conejo Home Owners Association,1
 private,Red Roof Inn Detroit - Royal Oak/Madison Heights,1
+private,Redpoint Tallahassee,1
+private,Reyes Coca-Cola Bottling,1
 private,River Spirit Casino Security,1
 private,Rivers Edge Campground,1
+private,Riverside Court,1
 private,Rodeway Inn Madison Heights - Detroit,1
 private,Rollman Estates Subdivision,1
 private,Saddle Ridge HOA,1
@@ -1743,8 +1764,10 @@ private,Shiny Shell Carwash,1
 private,Spartanburg Regional Medical Center,1
 private,Stadium Village Flats,1
 private,Tanyard Shores Homeowners Association,1
+private,Ted Britt Chevrolet,1
 private,The Church of Jesus Christ of Latter Day Saints,1
 private,The Church of Jesus Christ of Latter-day Saints,1
+private,The Corners of Brookfield,1
 private,The Cove at Dardenne HOA,1
 private,Travelodge Madison Heights,1
 private,Venetian Resort Las Vegas,1
@@ -1755,21 +1778,31 @@ private,West Hills HOA,1
 private,Western Heights Apartments,1
 private,Westport Station Office Park,1
 private,WinCo Foods,1
+private,Woodhill Country Club,1
 private,[Insight Public Sector Inc],1
+private,[Newport Yacht Club],1
 private,[Pace Academy],1
 private,[Seven Coves HOA],1
 private,[Willaimson Place POA],1
 private,[Williamson Place POA],1
 private,neighborhood association,1
 public_other,BOERNE INDEPENDENT SCHOOL DISTRICT,1
+public_other,BSU Department of Public Safety,1
 public_other,Catawba Nation Tribal Police Department,1
+public_other,Chesapeake Bay Bridge Tunnel District,1
 public_other,College of Lake County,1
+public_other,Fastrak,1
 public_other,Florida Int'l University,1
 public_other,Florida Internationl University,1
 public_other,Fulton County Schools,1
+public_other,Great Parks of Hamilton County,1
 public_other,Gustavus Adolphus College Campus Safety,1
 public_other,IL DOT,1
+public_other,Jefferson County Parks Deptment,1
+public_other,Jefferson county parks and rec,1
 public_other,Lisbon Resident State Trooper Office,1
+public_other,Maine National Guard,1
+public_other,Mass Maritime,1
 public_other,Metro Transit,1
 public_other,Metropolitan Washington Airports Authority,1
 public_other,Missouri Highway Patrol,1
@@ -1778,87 +1811,53 @@ public_other,NYC DOT Red light Camera,1
 public_other,NYC DOT Red light camera,1
 public_other,New Hampshire Department of Corrections,1
 public_other,Orange County Transportation Authority,1
+public_other,Portland Bureau of Environmental Services,1
 public_other,Regent University Police Department,1
 public_other,Stony Brook University,1
 public_other,U.S. Customs and Border Protection,1
+public_other,UMass Police,1
+public_other,United States Park Police,1
+public_other,Univeristy of Fla.,1
 public_other,University of Illinois,1
 public_other,Verra Mobility NYC  DOT red light camera,1
 public_other,Verra Mobility NYC DOT Speed camera,1
 public_other,Verra Mobility NYC DOT red light camera,1
 public_other,Verra Mobility Operated NYC DOT Speed Camera,1
 public_other,Verra Mobility operated NYC DOT Red Light Camera,1
+public_other,WSU,1
 public_other,binghamton university police department,1
-unclassified,(NETHOA/Owner),1
-unclassified,Air Garage,1
-unclassified,American Concrete Institute,1
 unclassified,"Angle was recently turned. Unknown if intentional by Flock, or an adversary of.",1
 unclassified,BCSO,1
-unclassified,Bellerive Country Club,1
-unclassified,Bet Shalom Congregation,1
-unclassified,Blue Line Solutions,1
 unclassified,BrookhavenTown,1
-unclassified,Burlington Hyundai (likely),1
-unclassified,Burlington Subaru (likely),1
-unclassified,Burlington Subaru (probably),1
 unclassified,Carson City,1
-unclassified,Cascade crossings,1
-unclassified,Chesapeake Bay Bridge Tunnel District,1
 unclassified,City of Muskegon,1
 unclassified,Cobb Parks,1
-unclassified,Cook County Serrif,1
 unclassified,Dardenne Prairie,1
 unclassified,Deerfield Township,1
-unclassified,Dwight Mini Mart,1
-unclassified,Fastrak,1
 unclassified,Fibd Du Lac County,1
-unclassified,Fleet Farm Muskego,1
-unclassified,Flock Safety (Development),1
-unclassified,Gated Community,1
-unclassified,Great Parks of Hamilton County,1
 unclassified,HPPD,1
-unclassified,HomeDepot,1
-unclassified,Humane Society - Johnson County,1
-unclassified,Impark,1
-unclassified,Insight Public Sector (contracted by FCPD),1
 unclassified,Isle of White Sheriif's Office,1
-unclassified,Jefferson County Parks Deptment,1
 unclassified,Jefferson county SD,1
-unclassified,Jefferson county parks and rec,1
-unclassified,Joint Commission,1
 unclassified,Jones PC,1
-unclassified,LVT,1
 unclassified,"Lauderhill, FLA",1
 unclassified,Laurens County GA,1
-unclassified,LiveView Technologies (LVT),1
 unclassified,MBPD,1
-unclassified,Maine National Guard,1
-unclassified,Mark Allen Chevrolet,1
-unclassified,Mass Maritime,1
-unclassified,Mellody Farms,1
-unclassified,PHILLIP ALLEN WIEMANN,1
 unclassified,Palladium East Berry Apts/ FWPD,1
-unclassified,Portland Bureau of Environmental Services,1
 unclassified,Q508358,1
-unclassified,Redpoint Tallahassee,1
-unclassified,Reyes Coca-Cola Bottling,1
-unclassified,Riverside Court,1
 unclassified,SLMPD,1
 unclassified,"Some sort of a white, boxy, ALPR bullet,  underneath a Solar panel, facing the on ramp.",1
 unclassified,Star City Council,1
 unclassified,Sycamore Township,1
-unclassified,Ted Britt Chevrolet,1
-unclassified,The Corners of Brookfield,1
 unclassified,Town of Newburgh,1
 unclassified,Traffic,1
-unclassified,Univeristy of Fla.,1
 unclassified,Village of Marlborough,1
-unclassified,WSU,1
-unclassified,Woodhill Country Club,1
-unclassified,[Insight Public Sector(contracted by FCPD],1
-unclassified,[Newport Yacht Club],1
 unclassified,[uknown],1
 unclassified,[unknown],1
 unclassified,oculens,1
 unclassified,turing,1
 unclassified,uknown,1
+vendor,Blue Line Solutions,1
+vendor,Flock Safety (Development),1
+vendor,Insight Public Sector (contracted by FCPD),1
 vendor,Vigilant Solutions,1
+vendor,[Insight Public Sector(contracted by FCPD],1

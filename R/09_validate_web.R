@@ -14,8 +14,8 @@ stopifnot(length(files) > 0)
 w <- map_dfr(files, \(f) read_csv(f, col_types = cols(.default = "c")) |> mutate(file = basename(f)))
 n_log(w, "web-reported rows")
 # Program status from the collector's notes (keyword rules) plus reviewed overrides
-DISC_RX <- regex("remov|turned off|turn off|shut (off|down)|deactivat|disabl|terminat|cancel|suspend|paus|lapse|inactive|\\bended\\b|discontinu|\\bending\\b|dropped|switch(ing)? off", ignore_case = TRUE)
-PLAN_RX <- regex("planned|approved|not confirmed|installing|to be installed|will install|proposed|pilot|contracted|grant-funded|not yet installed|replacing|replace", ignore_case = TRUE)
+DISC_RX <- regex("remov|turned off|turn off|shut (off|down)|deactivat|disabl|terminat|cancel|suspend|paus|lapse|inactive|\\bended\\b|discontinu|\\bending\\b|dropped|switch(ing)? off|expir|not renew|decommission|phas(ed|ing) out", ignore_case = TRUE)
+PLAN_RX <- regex("planned|approved|not confirmed|installing|to be installed|will install|proposed|pilot|contracted|grant-funded|not yet installed|replac", ignore_case = TRUE)
 ovr <- read_csv("data/validation_web/status_overrides.csv", col_types = cols(.default = "c"))
 w <- w |> mutate(reported = suppressWarnings(as.numeric(reported_cameras)),
                  state = str_to_upper(str_trim(state)),
@@ -47,6 +47,9 @@ ALIAS <- c("Indianapolis Metropolitan Police Department" = "Indianapolis Police 
            "North Attleborough Police Department" = "North Attleboro Police Department",
            "York-Poquoson Sheriff's Office" = "York County Sheriff's Office",
            "Kansas City Missouri Police Department" = "Kansas City Police Department",
+           "Carson City Sheriff's Office" = "Carson City County Sheriff's Office",
+           "Lakeside Park-Crestview Hills Police Authority" = "Lakeside Park-Crestview Hills Police Department",
+           "Metro Nashville Police Department" = "Metropolitan Nashville Police Department",
            "Do\u00f1a Ana County Sheriff's Office" = "Dona Ana County Sheriff's Office")
 pw <- parse_name(coalesce(unname(ALIAS[w$agency_name]), w$agency_name))
 w <- bind_cols(w, pw |> select(kind, core, core2, core_typed)) |>
@@ -85,7 +88,7 @@ osm <- ag |> select(ori, agency_type_fbi = agency_type, population_fbi) |>
   left_join(cnt(filter(cams, is_flock), "attr_ori", "attributed_flock"), by = "ori") |>
   mutate(across(c(located_all, attributed_all, tagged_all, located_flock, attributed_flock), \(z) coalesce(z, 0L)))
 v <- w |> filter(!is.na(ori)) |> left_join(osm, by = "ori") |>
-  mutate(flock_only = str_detect(str_to_lower(coalesce(vendor, "")), "flock") & !str_detect(str_to_lower(coalesce(vendor, "")), "and|,|/|\\+"),
+  mutate(flock_only = str_detect(str_to_lower(coalesce(vendor, "")), "flock") & !str_detect(str_to_lower(coalesce(vendor, "")), "and|,|;|/|\\+|other"),
          osm_located = if_else(flock_only, located_flock, located_all),
          osm_attributed = if_else(flock_only, attributed_flock, attributed_all))
 dupe <- v |> count(ori) |> filter(n > 1)

@@ -33,7 +33,8 @@ fetch_lee <- function(dest) {
 lee_path <- fetch_lee(file.path(RAW, "fbi", LEE_FILE))
 lee <- read_csv(lee_path, col_types = cols(.default = "c"))
 n_log(lee, "LEE file, all years")
-lee <- lee |> mutate(data_year = as.integer(data_year), population = as.numeric(na_if(population, "NULL")))
+lee <- lee |> mutate(data_year = as.integer(data_year), population = as.numeric(na_if(population, "NULL")),
+                     state_abbr = if_else(state_abbr == "NB", "NE", state_abbr))   # the LEE file codes Nebraska as NB
 lee_latest <- lee |> filter(data_year >= 2020) |> arrange(ori, desc(data_year)) |> distinct(ori, .keep_all = TRUE) |>
   transmute(ori, lee_name = pub_agency_name, lee_unit = na_if(pub_agency_unit, "NULL"), lee_type = agency_type_name,
             lee_state = state_abbr, lee_county = county_name, pop_year = data_year, population_fbi = population,
@@ -80,7 +81,6 @@ print(count(ag, record_status))
 leaic_files <- list.files(file.path(RAW, "leaic"), pattern = "35158-0001-Data\\.(tsv|rda)$",
                           recursive = TRUE, full.names = TRUE)
 saveRDS(ag, file.path(PROC, "agencies_fbi.rds"))   # usable by method A without LEAIC
-write_csv(ag, file.path(PROC, "agencies_fbi.csv"))
 
 if (!length(leaic_files)) {
   stop("LEAIC not found. Download ICPSR 35158 DS1 (Delimited or R format) and place ",
@@ -114,9 +114,15 @@ message("  agencies with no LEAIC record (ORI new since 2012 or changed): ", sum
 message("  Municipal PDs with no place FIPS: ", sum(ag$agency_type == "Municipal police" & is.na(ag$place_fips)))
 message("  County agencies with no county FIPS: ", sum(ag$agency_type != "Municipal police" & is.na(ag$county_fips)))
 
+# County codes that no longer exist in TIGER (Connecticut counties, split or renamed counties) are dropped
+# so the CDE-name fallback below applies; otherwise a camera could never fall in that county.
+counties <- st_drop_geometry(readRDS(file.path(PROC, "counties.rds")))
+defunct <- !is.na(ag$county_fips) & !ag$county_fips %in% counties$GEOID
+message("  LEAIC county codes not in TIGER ", TIGER_YEAR, " (dropped): ", sum(defunct))
+ag$county_fips[defunct] <- NA
+
 # County FIPS fallback: agencies with no LEAIC county get the county named in the FBI CDE directory
 # (e.g., St. Charles County PD, MO0922400, an ORI not in LEAIC). Exact name match within state.
-counties <- st_drop_geometry(readRDS(file.path(PROC, "counties.rds")))
 cnorm <- function(x) str_to_upper(x) |> str_replace_all("[^A-Z ]", "") |> str_replace_all("\\bSAINT\\b", "ST") |> str_squish()
 cty_keys <- bind_rows(
   counties |> transmute(STATEFP, GEOID, key = cnorm(NAME)),

@@ -37,7 +37,8 @@ p <- ggplot(d) +
   scale_y_continuous(labels = scales::label_percent(accuracy = 1), expand = expansion(mult = c(0, 0.04))) +
   labs(x = "Fixed license plate reader cameras per agency", y = "Share of agencies",
        title = sprintf("Cameras per agency, %d agencies with a publicly reported count", nrow(v)),
-       subtitle = "Reported: agency websites, government documents and news quoting officials (2022-2026); current programs, fixed\ncameras the agency operates. OSM: cameras mapped in OpenStreetMap inside the same agencies' areas (pulled 2026-10-03).",
+       subtitle = sprintf("Reported: agency websites, government documents and news quoting officials (%s-%s); current programs, fixed\ncameras the agency operates. OSM: cameras mapped in OpenStreetMap inside the same agencies' areas (pulled %s).",
+                          min(substr(v$as_of_date, 1, 4)), max(substr(v$as_of_date, 1, 4)), readLines(file.path(PROC, "osm_pull_date.txt"))),
        caption = "Not a random sample: only agencies with cameras whose count was published. Dashed lines are placed within their range on a log scale.") +
   theme_minimal(base_size = 11) +
   theme(legend.position = "top", legend.justification = "left", panel.grid.minor = element_blank(), panel.grid.major.x = element_blank(),

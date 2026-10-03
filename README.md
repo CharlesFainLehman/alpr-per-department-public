@@ -10,14 +10,14 @@ Work happens on branch `alpr-pipeline`.
 
 | Path | Contents |
 |---|---|
-| `R/` | pipeline scripts `01`-`14`, `run_all.R`, shared `name_parser.R`, reviewed `operator_aliases.csv` / `operator_class_overrides.csv` |
+| `R/` | pipeline scripts `01`-`14`, `run_all.R`, shared `name_parser.R`, reviewed `operator_class_overrides.csv` |
 | `data/snapshots/` | committed OSM snapshot (`osm_alpr_raw_<date>.csv.gz`) and its Overpass query log |
 | `data/validation_web/` | publicly reported camera counts (one CSV per region and round), `status_overrides.csv`, Minnesota BCA register |
 | `data/raw/` | downloads (not in git, except the LEAIC file) |
 | `data/derived/` | cleaned and joined files |
 | `output/` | results: `summary.md`, `agencies.csv`, `cameras.csv`, validation tables, plots, `run_manifest.txt` |
 | `output/review/` | diagnostic lists for manual review (match candidates, operator classes, name mismatches, unmatched rows) |
-| `docs/` | original task spec (`PROMPT.md`); `audit/` holds the 2026-10-03 audit memo and the response |
+| `docs/` | original task spec (`PROMPT.md`), court-case notes (`court_cases.md`); `audit/` holds the 2026-10-03 audit memo and the response |
 
 ## Data sources
 
@@ -85,7 +85,7 @@ export LC_ALL=C.UTF-8     # some regexes use non-ASCII characters
 Rscript R/run_all.R       # or --pull for a new OSM snapshot; --from 03 to skip downloads
 ```
 Logs go to `output/log_<script>.txt`. With the 2026-10-03 snapshot the headline numbers reproduce exactly
-(143,157 cameras; 136,080 located; 7,944 agencies with >=1 located camera); last confirmed by a full rebuild on 2026-10-03.
+(143,157 cameras; 135,907 located; 7,941 agencies with >=1 located camera; asserted by `13_checks.R`); last confirmed by a full rebuild on 2026-10-03.
 
 Access notes: Overpass tries `overpass-api.de`, then the `maps.mail.ru` mirror (endpoint and timestamp per state in
 the query log). The Census API now needs a key, so ACS comes from the summary-file download.
@@ -96,14 +96,14 @@ the query log). The Census API now needs a key, so ACS comes from the summary-fi
   `state,agency_name,agency_type,reported_cameras,includes_mobile_or_shared,vendor,as_of_date,source_type,url,quote,notes`
 - One row per agency; skip agencies already in any file. Every row needs a URL and an exact quote checked against the page.
   Public sources only (agency sites, government documents, news quoting officials). Never crowdsourced maps
-  (DeFlock / OSM / flockcameralocations), which are what is being validated, and never leaked data. AI-generated meeting summaries are not sources.
+  (DeFlock / OSM / flockcameralocations / Atlas of Surveillance), which are what is being validated, and never leaked data. AI-generated meeting summaries (citizenportal.ai) are not sources. A news report that relays a figure from an agency's Flock transparency portal is accepted; say so in `notes` (about 30 rows).
 - `transparency.flocksafety.com` (Cloudflare) and `web.archive.org` are blocked; do not try to get around them.
 - Put program status (removed / paused / planned / approved) in `notes`. `09_validate_web.R` flags rows from keywords there;
-  `status_overrides.csv` holds reviewed corrections (`current` / `discontinued` / `planned_or_contracted` / `changed` / `not_alpr`).
+  `status_overrides.csv` holds reviewed corrections (`current` / `discontinued` / `planned_or_contracted` / `changed` / `locations_not_cameras` / `not_alpr`); only `current` rows with `includes_mobile_or_shared = no` enter the core comparison.
   Name aliases (source name -> FBI name) are in `ALIAS` in `09_validate_web.R`; unmatched rows go to `output/review/validation_web_unmatched.csv`.
 - Web searches are capped per session (`CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION`). Give each parallel agent its own scratch folder.
 - Still thin (0-3 rows, after round 3): AK and MT (0; Anchorage uses only car-mounted readers, Montana law limits police
-  ALPRs on public roads), DC, VT, WY (1), NH (2), HI, ND, SD (3). Big cities with no published count of police-operated
+  ALPRs on public roads), DC, VT, WY (1), NH (2), HI, ND, SD (3). LA has 6 after the 2026-10-03 review removed 8 rows sourced from an Atlas of Surveillance list. Big cities with no published count of police-operated
   fixed readers: Chicago (only a 2022 figure mixing fixed and car-mounted), Omaha, Kansas City KS, Minneapolis
   (only "30 intersections"), Cincinnati (pilot, no contract), Pittsburgh, San Antonio (car-mounted only). NYPD has only a
   2016 figure ("some 500", fixed and mobile not separated); Memphis's 200 includes private cameras shared with MPD.
@@ -114,4 +114,3 @@ the query log). The Census API now needs a key, so ACS comes from the summary-fi
 
 - Review lists in `output/review/`.
 - Not done (see `docs/audit/AUDIT_RESPONSE.md`): package lockfile; per-capita denominators matched to the located area.
-- Court cases: `output/court_cases.md`.

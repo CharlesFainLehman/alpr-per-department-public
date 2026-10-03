@@ -1,5 +1,7 @@
 # Response to the 2026-10-03 adversarial audit
 
+> File names below are as they were when this was written. Since then the scripts were renumbered (`04b_operator_class` -> `05_operator_class`, `06_combine_outputs` -> `07_combine_outputs`, `10_checks` -> `13_checks`), the review CSVs moved to `output/review/`, the court-case chart was withdrawn entirely (only `docs/court_cases.md` remains), and `a_in_agency_county` was dropped from `cameras.csv`.
+
 This responds to `AUDIT_MEMO_2026-10-03.md`, which audited commit `53de8da`. Each finding was reproduced against the saved outputs before any change. All of the memo's counts reproduced exactly.
 
 The full pipeline (`03` through `11`) was rerun after the changes. `R/10_checks.R` turns each named case from the memo into a regression check; all 16 checks pass.

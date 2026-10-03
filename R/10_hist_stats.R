@@ -31,7 +31,7 @@ p <- ggplot(bins) +
   geom_col(aes(x = i, y = share), fill = "#eb6834", width = 0.92) +
   geom_text(aes(x = i, y = share, label = scales::percent(share, accuracy = 0.1)), vjust = -0.4, size = 3.1, colour = "#52514e") +
   geom_vline(data = st, aes(xintercept = x), colour = "#0b0b0b", linewidth = 0.5, linetype = "dashed") +
-  geom_label(data = st, aes(x = x, y = ymax * c(0.98, 0.98, 0.98), label = label), size = 3.2, colour = "#0b0b0b",
+  geom_label(data = st, aes(x = x, y = ymax * 0.98, label = label), size = 3.2, colour = "#0b0b0b",
              fill = "#fcfcfb", border.colour = NA, label.padding = unit(0.12, "lines")) +
   scale_x_continuous(breaks = bins$i, labels = bins$lab, expand = expansion(add = 0.4)) +
   scale_y_continuous(labels = scales::label_percent(accuracy = 1), limits = c(0, ymax), expand = expansion(mult = c(0, 0.02))) +
