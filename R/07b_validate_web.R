@@ -153,3 +153,39 @@ dens_size <- core |> mutate(size = coalesce(as.character(popbin(population_fbi))
 print(dens, width = Inf); print(dens_size, width = Inf)
 write_csv(dens, file.path(OUT, "validation_web_density.csv"))
 write_csv(dens_size, file.path(OUT, "validation_web_density_by_size.csv"))
+
+# Minnesota BCA register of fixed LPR locations: a separate check ---------------------------------------
+# The BCA publishes, per agency, the locations of stationary LPRs (Minn. Stat. 13.824). The register lists
+# LOCATIONS, not cameras: one location can hold several readers (e.g. one per direction), and some entries
+# give a device count in parentheses. Agencies that withheld their locations are left out. Agencies listing
+# no fixed locations (mobile readers only) are kept in a separate "with zeros" comparison.
+# Compared with all-vendor OSM located counts (the register is not vendor-specific).
+mn <- read_csv("data/validation_web/mn_bca_fixed_lpr_locations.csv", col_types = cols(.default = "c")) |>
+  mutate(state = "MN", listed = as.integer(listed_locations),
+         withheld = str_detect(coalesce(locations, ""), regex("withheld", ignore_case = TRUE)),
+         non_local = str_detect(agency_name, regex("State Patrol|Tribal|University|Airport", ignore_case = TRUE)),
+         hint = if_else(str_detect(agency_name, regex("sheriff", ignore_case = TRUE)), "sheriff", "police"))
+n_log(mn, "MN BCA register agencies")
+pm <- parse_name(mn$agency_name)
+mn <- bind_cols(mn, pm |> select(kind, core, core2, core_typed)) |>
+  mutate(kind = if_else(kind == "none", hint, kind),
+         core2 = if_else(str_detect(core, "\\b(county|parish)\\b"), core, core2))
+mn <- bind_cols(mn, pmap_dfr(mn |> select(state, kind, core, core2, core_typed), match_one))
+print(count(mn, non_local, withheld, basis))
+mv <- mn |> filter(!non_local, !withheld, !is.na(ori)) |> left_join(osm |> select(ori, population_fbi, located_all), by = "ori")
+n_log(mv, "MN BCA agencies matched, local, locations not withheld")
+write_csv(mn |> left_join(osm |> select(ori, osm_located = located_all), by = "ori") |>
+            select(agency_name, ori, matched_name = cand_name, basis, non_local, withheld, listed_locations = listed,
+                   device_estimate, osm_located),
+          file.path(OUT, "validation_mn_bca_comparison.csv"))
+mmet <- function(d, nm) {
+  pos <- d$listed > 0; r <- d$located_all[pos] / d$listed[pos]
+  tibble(subset = nm, n = nrow(d), n_listing_zero = sum(!pos), pearson_r_log1p = cor(log1p(d$located_all), log1p(d$listed)),
+         spearman_rho = cor(d$located_all, d$listed, method = "spearman"), median_ratio = median(r),
+         within_2x = mean(r >= 0.5 & r <= 2), below_half = mean(r < 0.5), above_double = mean(r > 2),
+         median_osm_where_zero_listed = if (any(!pos)) median(d$located_all[!pos]) else NA_real_)
+}
+mres <- bind_rows(mmet(filter(mv, listed > 0), "agencies listing >=1 fixed location"),
+                  mmet(mv, "including agencies listing zero fixed locations"))
+print(mres, width = Inf)
+write_csv(mres, file.path(OUT, "validation_mn_bca_metrics.csv"))
