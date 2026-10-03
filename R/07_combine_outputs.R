@@ -1,4 +1,4 @@
-# Combine the camera-level results; write cameras.csv, agencies.csv, summary tables, density plot.
+# Combine the camera-level results; write cameras.csv, agencies.csv, summary tables.
 #
 # Three per-agency measures, kept separate (none is an ownership inventory or a bound):
 #   tagged     (method A) the camera's operator tag names the agency. Can include wrong matches.
@@ -9,7 +9,6 @@
 # None measures what an agency can SEARCH: shared networks (e.g., Flock sharing / national lookup)
 # extend access far beyond cameras in its area.
 source("R/00_setup.R")
-library(ggplot2)
 
 cams <- readRDS(file.path(PROC, "osm_alpr.rds"))
 a    <- readRDS(file.path(PROC, "method_a.rds"))
@@ -123,21 +122,3 @@ for (m in names(MEASURES)) {
 summ <- bind_rows(summ) |> relocate(group_var, group, .after = set)
 write_csv(summ, file.path(OUT, "summary_stats.csv"))
 print(summ |> filter(group_var == "overall"), width = Inf)
-
-# Density plot -----------------------------------------------------------------------------------------
-LAB <- c(located = "Located in agency's area", attributed = "Attributed (tagged + inferred)", tagged = "Tagged to agency")
-dd <- bind_rows(lapply(names(MEASURES), \(m) cur |> transmute(measure = LAB[[m]], n = .data[[MEASURES[[m]]]]))) |>
-  filter(n >= 1) |> mutate(measure = factor(measure, levels = unname(LAB)))
-p <- ggplot(dd, aes(n, colour = measure)) +
-  geom_density(linewidth = 0.8, adjust = 1.2) +
-  scale_x_log10(breaks = c(1, 2, 5, 10, 20, 50, 100, 200, 500, 1000, 2000)) +
-  scale_colour_manual(values = setNames(c("#eb6834", "#1baf7a", "#2a78d6"), unname(LAB)), name = NULL) +
-  labs(x = "Mapped ALPR cameras per agency (log scale)", y = "Density",
-       title = "Mapped license plate reader cameras per local police agency",
-       subtitle = sprintf("Current agencies with at least one camera under each measure. OpenStreetMap (OSM) data pulled %s.\nCounts of mapped cameras, not verified inventories; whole-number counts make the curves bumpy at 1-3.",
-                          readLines(file.path(PROC, "osm_pull_date.txt")))) +
-  theme_minimal(base_size = 11) +
-  theme(legend.position = "top", legend.justification = "left", panel.grid.minor = element_blank(),
-        panel.grid.major = element_line(colour = "#e6e5e0", linewidth = 0.3),
-        plot.background = element_rect(fill = "#fcfcfb", colour = NA), plot.subtitle = element_text(colour = "#52514e"))
-ggsave(file.path(OUT, "density_cameras_per_agency.png"), p, width = 9, height = 5, dpi = 150)

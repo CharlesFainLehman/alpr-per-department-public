@@ -1,10 +1,12 @@
 # Write output/run_manifest.txt: input checksums, OSM snapshot, package versions, git commit.
 # Raw inputs are not in git (size); the checksums identify the exact files a run used.
+# The committed OSM snapshot (data/snapshots/) is included so a snapshot-based run is identified too.
 source("R/00_setup.R")
 library(digest)
 
 raw_files <- list.files(RAW, recursive = TRUE, full.names = TRUE)
 raw_files <- raw_files[!str_detect(raw_files, "/private_eyes/repo/\\.git/|\\.rds$")]
+raw_files <- c(raw_files, list.files(file.path(ROOT, "data", "snapshots"), full.names = TRUE))   # committed OSM snapshot
 sums <- tibble(file = str_remove(raw_files, paste0("^", ROOT, "/")),
                bytes = file.size(raw_files),
                sha256 = vapply(raw_files, \(f) digest(file = f, algo = "sha256"), ""))

@@ -32,9 +32,7 @@ pe <- pe |> mutate(
   name_wo_state = str_replace(name_wo_state, "\\bTwp\\b", "Township"))
 message("  rows with no parseable state: ", sum(is.na(pe$state)))
 
-# Reuse method A's parser.
-src <- readLines("R/04_method_a.R")
-eval(parse(text = src[grep("^basic <- function", src):(grep("^# Agency side", src) - 1)]))
+source("R/name_parser.R")
 ag <- readRDS(file.path(PROC, "agencies_fbi.rds"))
 ag_p <- bind_cols(ag |> select(ori, name, state, agency_type), parse_name(ag$name)) |>
   mutate(kind = if_else(agency_type == "Sheriff", "sheriff", "police"),
@@ -60,7 +58,7 @@ pe <- bind_cols(pe, mm)
 n_log(pe, "validation agencies after matching")
 print(count(pe, basis))
 write_csv(pe |> select(id, agency, state, kind, reported, basis, dist, matched_ori = ori, cand_name),
-          file.path(OUT, "validation_agency_matches.csv"))
+          file.path(REVIEW, "validation_agency_matches.csv"))
 
 # Camera counts by measure (Flock only) --------------------------------------------------------------
 # This is a HISTORICAL comparison: portal counts are from 2024-04-26, OSM from the pull date. It shows

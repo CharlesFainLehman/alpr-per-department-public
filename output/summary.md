@@ -10,7 +10,7 @@ OSM pull 2026-10-03 (Overpass; OSM base timestamps 2026-10-03 13:08:13 to 2026-1
 | **Tagged** | Cameras whose `operator` tag names the agency (name match within the state). |
 | **Attributed** | Tagged cameras, plus cameras with no operator, a vendor-only tag ("Flock Safety"), or an unmatched police tag that are located in the agency's area (inferred). |
 
-Changes since the first version follow the 2026-10-03 audit; see `AUDIT_RESPONSE.md`.
+Changes since the first version follow the 2026-10-03 audit; see `docs/audit/AUDIT_RESPONSE.md`.
 
 ## 1. Camera data
 
@@ -30,7 +30,7 @@ Changes since the first version follow the 2026-10-03 audit; see `AUDIT_RESPONSE
 | PlateSmart |     746 | 0.5% |
 | (no manufacturer tag) |  11,102 | 7.8% |
 
-- Operator class (rules in `R/04b_operator_class.R`; every string and its class in `operator_classes_for_review.csv`):
+- Operator class (rules in `R/05_operator_class.R`; every string and its class in `review/operator_classes_for_review.csv`):
 
 | operator_class | cameras | share |
 | --- | --- | --- |
@@ -65,7 +65,7 @@ Changes since the first version follow the 2026-10-03 audit; see `AUDIT_RESPONSE
 | direct_cousub_name_mismatch |     64 |
 | unresolved_shared_code |      1 |
 
-- `direct_*_name_mismatch`: the PD's LEAIC code points to a Census entity with a different name. Mostly spelling (Middleboro/Middleborough) or consolidated governments (Metro Nashville, Lexington-Fayette); listed in `method_b_pd_code_name_mismatches.csv` for review.
+- `direct_*_name_mismatch`: the PD's LEAIC code points to a Census entity with a different name. Mostly spelling (Middleboro/Middleborough) or consolidated governments (Metro Nashville, Lexington-Fayette); listed in `review/method_b_pd_code_name_mismatches.csv` for review.
 - `inferred_*`: assignment by rule, not verified (city with no PD in the list -> county agency; consolidated government or county with no county agency -> county-wide PD).
 - `unresolved_shared_code`: two PDs share a code and the name does not decide it; left unassigned.
 - `no_local_agency`: state-police areas (DE, PA, New England); correctly not assigned.

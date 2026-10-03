@@ -1,4 +1,4 @@
-# Distribution of cameras per agency for the 226 core web-validation agencies (current program, fixed,
+# Distribution of cameras per agency for the core web-validation agencies (current program, fixed,
 # agency-operated count): publicly reported count vs. OSM cameras located in the same agencies' areas.
 source("R/00_setup.R")
 library(ggplot2)

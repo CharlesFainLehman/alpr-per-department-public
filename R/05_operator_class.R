@@ -78,5 +78,5 @@ print(count(x, op_class, sort = TRUE))
 
 # Review file: every distinct operator string with its class
 rev <- x |> filter(op_l != "") |> count(op_class, operator, sort = TRUE)
-write_csv(rev, file.path(OUT, "operator_classes_for_review.csv"))
+write_csv(rev, file.path(REVIEW, "operator_classes_for_review.csv"))
 saveRDS(x |> select(osm_id, op_class, op_class_source), file.path(PROC, "operator_class.rds"))

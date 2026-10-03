@@ -1,6 +1,6 @@
 # Method B: cameras LOCATED in each agency's area (a geographic measure, not ownership).
 #
-# Cameras whose operator is classified private or public_other (04b_operator_class.R) are excluded:
+# Cameras whose operator is classified private or public_other (05_operator_class.R) are excluded:
 # location in a city does not make a DOT, CHP, university or retailer camera the city PD's.
 # Every remaining camera gets a status (b_status) saying how it was placed:
 #
@@ -36,9 +36,7 @@ stopifnot(!anyNA(cams$op_class))
 ag <- ag_all |> filter(record_status != "historical")
 n_log(ag, "agencies eligible for assignment (historical ORIs dropped)")
 
-# Name normalizer shared with method A
-src <- readLines("R/04_method_a.R")
-eval(parse(text = src[grep("^basic <- function", src):(grep("^# Agency side", src) - 1)]))
+source("R/name_parser.R")
 
 # 1. Point-in-polygon, keeping the number of candidate polygons -----------------------------------------
 inc_places <- places |> filter(CLASSFP %in% c("C1", "C2", "C5", "C6", "C7", "C8"))   # incorporated; DC is FUNCSTAT N
@@ -81,7 +79,7 @@ nm <- muni_all |> filter(!ori %in% muni$ori) |> mutate(STATEFP = STATES$fips[mat
   add_count(STATEFP, akey, name = "n_ag") |> filter(n_ag == 1) |>
   inner_join(pl_names, by = c("STATEFP", "akey" = "pkey")) |> filter(!GEOID %in% muni$place_fips)
 message("  + matched by exact unique name to a ", TIGER_YEAR, " place (flagged): ", nrow(nm))
-write_csv(nm |> select(ori, name, state, matched_place_geoid = GEOID), file.path(OUT, "method_b_pd_place_name_matches.csv"))
+write_csv(nm |> select(ori, name, state, matched_place_geoid = GEOID), file.path(REVIEW, "method_b_pd_place_name_matches.csv"))
 muni <- bind_rows(muni, nm |> mutate(place_fips = GEOID, place_source = "name_match_tiger") |> select(names(muni)))
 
 # check the PD name against the Census name of its code; resolve shared codes by name only
@@ -102,28 +100,28 @@ write_csv(shared |> mutate(resolution = case_when(ori %in% resolved_shared$ori ~
                                                   place_fips %in% unresolved_codes ~ "unresolved",
                                                   TRUE ~ "not assigned (name does not match code)")) |>
             select(place_fips, geo_name, ori, name, population_fbi, resolution) |> arrange(place_fips),
-          file.path(OUT, "method_b_places_with_multiple_pds.csv"))
+          file.path(REVIEW, "method_b_places_with_multiple_pds.csv"))
 place_to_pd <- bind_rows(muni |> add_count(place_fips, name = "n_code") |> filter(n_code == 1),
                          resolved_shared) |> transmute(geo = place_fips, pd_ori = ori, pd_name_ok = coalesce(name_matches_code, FALSE))
 stopifnot(!anyDuplicated(place_to_pd$geo))
 message("  single-PD codes whose PD name does not match the Census name (kept, flagged): ",
         sum(!coalesce(muni$name_matches_code[!muni$place_fips %in% shared$place_fips], FALSE)))
 write_csv(muni |> filter(!coalesce(name_matches_code, FALSE)) |> select(ori, name, state, place_fips, geo_name, place_source),
-          file.path(OUT, "method_b_pd_code_name_mismatches.csv"))
+          file.path(REVIEW, "method_b_pd_code_name_mismatches.csv"))
 
 # 3. County -> county agency; county-wide PDs ------------------------------------------------------------
 cty <- ag |> filter(agency_type != "Municipal police", !is.na(county_fips))
 multi_cty <- cty |> count(county_fips) |> filter(n > 1)
 message("Counties with >1 sheriff/county police agency (largest FBI population kept): ", nrow(multi_cty))
 write_csv(cty |> semi_join(multi_cty, by = "county_fips") |> select(county_fips, ori, name, agency_type, population_fbi) |>
-            arrange(county_fips, desc(population_fbi)), file.path(OUT, "method_b_counties_with_multiple_county_agencies.csv"))
+            arrange(county_fips, desc(population_fbi)), file.path(REVIEW, "method_b_counties_with_multiple_county_agencies.csv"))
 county_to_ag <- cty |> arrange(county_fips, desc(coalesce(population_fbi, -1))) |> distinct(county_fips, .keep_all = TRUE) |>
   select(geo = county_fips, cty_ori = ori)
 
 cty_pop <- st_drop_geometry(counties) |> select(county_fips = GEOID, county_pop = pop_acs)
 cw <- muni_all |> filter(!is.na(county_fips)) |> left_join(cty_pop, by = "county_fips") |>
   filter(population_fbi >= 0.5 * county_pop) |> arrange(county_fips, desc(population_fbi)) |> distinct(county_fips, .keep_all = TRUE)
-write_csv(cw |> select(county_fips, ori, name, population_fbi, county_pop), file.path(OUT, "method_b_countywide_pds.csv"))
+write_csv(cw |> select(county_fips, ori, name, population_fbi, county_pop), file.path(REVIEW, "method_b_countywide_pds.csv"))
 countywide <- cw |> select(geo = county_fips, cw_ori = ori)
 c8 <- inc_places$GEOID[inc_places$CLASSFP == "C8"]
 
@@ -160,7 +158,7 @@ stopifnot(all(b$b_ori %in% c(NA, ag$ori)))
 saveRDS(b |> select(osm_id, b_excluded, b_status, b_ori, place_geoid, cousub_geoid, county_geoid, n_polygon_overlaps),
         file.path(PROC, "method_b.rds"))
 write_csv(cams |> filter(op_class %in% c("private", "public_other")) |> count(op_class, operator, sort = TRUE),
-          file.path(OUT, "method_b_excluded_operators.csv"))
+          file.path(REVIEW, "method_b_excluded_operators.csv"))
 
 # 5. Agency geography status (lets agencies.csv separate "zero mapped" from "no usable geography") --------
 geo_status <- ag_all |> transmute(ori, agency_type, record_status) |>

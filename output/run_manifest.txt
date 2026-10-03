@@ -1,5 +1,5 @@
-Run manifest written 2026-10-03 21:06:18 UTC
-Git commit at run time: d019d18e145d129bc148ee99c6c5a058d56a4a88
+Run manifest written 2026-10-03 21:10:20 UTC
+Git commit at run time: 2e35a019e0e98d6c7a586754b56d976edbf05ee7
 OSM pull date: 2026-10-03; Overpass osm_base timestamps 2026-10-03 13:08:13 to 2026-10-03 15:24:51; endpoints: https://maps.mail.ru/osm/tools/overpass/api/interpreter | https://maps.mail.ru/osm/tools/overpass/api/interpreter;https://overpass-api.de/api/interpreter
 Camera rows: 143157
 R: R version 4.6.1 (2026-06-24); GEOS/GDAL/PROJ: 3.12.1 / 3.8.4 / 9.4.0
@@ -189,3 +189,5 @@ Input files (sha256):
   dfb8069c54b7f11d26a2448f1c94af6121909373926e4a3f243613520e5b29e0    2,973,654  data/raw/private_eyes/repo/images/flock_tel_013024.jpg
   c5771c7b461c67ea50ddf020fc9687f0cdbae923314f71b3e48694fdb47b8871        1,086  data/raw/private_eyes/repo/LICENSE
   c540dc84aa2826f75a7d838551f510d9f56219bf9c3a84820b58e71800071f78       15,000  data/raw/private_eyes/repo/readme.md
+  6a36faf803440f090c6791b770a4e8ade1a527cfdc05bc8108806e64d3e890d6    4,298,822  data/snapshots/osm_alpr_raw_2026-10-03.csv.gz
+  3a2bde413cd9497ad7f4fd1dc04f89dc3b00b1c3ebef7a1efe518c10544068ec        4,437  data/snapshots/query_log_2026-10-03.csv

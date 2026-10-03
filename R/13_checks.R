@@ -1,5 +1,5 @@
 # Regression checks. Each case below was a confirmed error in the 2026-10-03 audit memo
-# (AUDIT_MEMO_2026-10-03.md). The script stops on the first failure.
+# (docs/audit/AUDIT_MEMO_2026-10-03.md). The script stops on the first failure.
 source("R/00_setup.R")
 
 c <- read_csv(file.path(OUT, "cameras.csv"), col_types = cols(.default = "c"))

@@ -36,8 +36,7 @@ w <- w |> distinct(state, agency_name, .keep_all = TRUE)
 n_log(w, "after removing duplicate state+agency rows")
 
 # Match to the agency list (current agencies only), same parser as method A --------------------------
-src <- readLines("R/04_method_a.R")
-eval(parse(text = src[grep("^basic <- function", src):(grep("^# Agency side", src) - 1)]))
+source("R/name_parser.R")
 ag <- readRDS(file.path(PROC, "agencies.rds")) |> filter(record_status != "historical")
 ag_p <- bind_cols(ag |> select(ori, name, state, agency_type), parse_name(ag$name)) |>
   mutate(kind = if_else(agency_type == "Sheriff", "sheriff", "police"),
@@ -73,7 +72,7 @@ match_one <- function(state, kind, core, core2, core_typed) {
 w <- bind_cols(w, pmap_dfr(w |> select(state, kind, core, core2, core_typed), match_one))
 n_log(w, "rows after matching")
 print(count(w, basis))
-write_csv(w |> filter(is.na(ori)) |> select(state, agency_name, basis, cand_name, url), file.path(OUT, "validation_web_unmatched.csv"))
+write_csv(w |> filter(is.na(ori)) |> select(state, agency_name, basis, cand_name, url), file.path(REVIEW, "validation_web_unmatched.csv"))
 
 # OSM counts: all-vendor measures, plus Flock-only when the source says the cameras are Flock --------
 cams <- readRDS(file.path(PROC, "cameras_assigned.rds"))

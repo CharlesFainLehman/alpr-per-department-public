@@ -1,7 +1,7 @@
 # Alternative to 02_pull_osm.R: rebuild the camera table from the committed snapshot instead of
 # querying Overpass (a new pull gives a new snapshot and slightly different counts).
-#   Rscript R/02b_load_osm_snapshot.R            # newest snapshot in data/snapshots/
-#   Rscript R/02b_load_osm_snapshot.R 2026-10-03 # a specific date
+#   Rscript R/02_load_osm_snapshot.R            # newest snapshot in data/snapshots/
+#   Rscript R/02_load_osm_snapshot.R 2026-10-03 # a specific date
 source("R/00_setup.R")
 args <- commandArgs(trailingOnly = TRUE)
 snaps <- sort(list.files("data/snapshots", "^osm_alpr_raw_.*\\.csv\\.gz$"), decreasing = TRUE)
