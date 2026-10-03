@@ -20,21 +20,59 @@ cams$state <- vapply(st_intersects(pts, states), \(j) if (length(j)) states$STUS
 cams <- filter(cams, !is.na(state))
 n_log(cams, "unique nodes inside a US state")
 
-# Group operators case/space-insensitively; show the most common spelling.
-cams <- cams |> mutate(op = str_squish(operator), op_key = str_to_lower(op))
-by_op <- cams |> filter(!is.na(op), op != "") |>
-  group_by(op_key) |>
+# Group operator names -----------------------------------------------------------------------------
+# 1. Deterministic normalization (case, punctuation, possessives, "PD", "Dept", "Sheriff's Office",
+#    "Saint"/"St", trailing state name or abbreviation, "X City of" -> "City of X").
+# 2. Hand-made aliases (R/operator_aliases.csv) for abbreviations and typos. No fuzzy matching:
+#    it pairs different agencies (Santa Clara / Santa Maria PD).
+# 3. Agency/government-like names are grouped WITHIN a state (Farmington PD exists in NM, CT, MI...);
+#    other names (chains, vendors, federal) are grouped nationally.
+st_names <- setNames(str_to_lower(STATES$name), STATES$abbr)
+norm_op <- function(x, st) {
+  s <- str_to_lower(x) |> str_replace_all("[\u2019`]", "'") |> str_replace_all("'s\\b", "s") |>
+    str_replace_all("&", " and ") |> str_replace_all("[^a-z0-9 ]", " ") |> str_squish() |>
+    str_replace("^the ", "") |>
+    str_replace_all(c("\\bsaint\\b" = "st", "\\bbch\\b" = "beach", "\\btwp\\b" = "township",
+                      "\\bco\\b" = "county", "\\bsherr?iff?s?\\b" = "sheriff", "\\bdept\\b" = "department",
+                      "\\bpd$" = "police", "\\bso$" = "sheriff"))
+  # trailing state abbreviation / name matching the camera's state
+  # (not after "of": "University of Florida" keeps its state name)
+  s <- str_squish(str_remove(s, paste0("(?<! of)\\s(", str_to_lower(st), "|", st_names[st], ")$")))
+  s <- str_replace(s, "^(.*) (city|town|village) of$", "\\2 of \\1")
+  s <- str_replace_all(s, "\\bpolice (department|dep|division|services)\\b", "police")
+  s <- str_replace_all(s, "\\bsheriff (office|department|dep)\\b", "sheriff")
+  s
+}
+AGENCY_RX <- "police|sheriff|public safety|marshal|constable|\\bcity\\b|\\btown\\b|village|township|county|parish|borough"
+
+aliases <- read_csv("R/operator_aliases.csv", col_types = cols(.default = "c")) |> mutate(state = coalesce(state, ""))
+cams <- cams |> mutate(op = str_squish(operator)) |> filter(!is.na(op), op != "") |> bind_rows(
+  cams |> mutate(op = str_squish(operator)) |> filter(is.na(op) | op == "") |> mutate(op = NA))
+cams <- cams |> mutate(k = if_else(is.na(op), NA, norm_op(op, state)))
+# apply aliases: state-specific first, then national
+cams <- cams |> left_join(aliases |> filter(state != "") |> select(state, from_key, a1 = to_key), by = c("state", "k" = "from_key")) |>
+  left_join(aliases |> filter(state == "") |> select(from_key, a2 = to_key), by = c("k" = "from_key")) |>
+  mutate(k = coalesce(a1, a2, k), scope = if_else(str_detect(k, AGENCY_RX), state, "US")) |> select(-a1, -a2)
+n_log(cams, "cameras after name normalization (row count unchanged)")
+
+by_op <- cams |> filter(!is.na(k)) |>
+  group_by(scope, k) |>
   summarise(operator = names(sort(table(op), decreasing = TRUE))[1], cameras = n(),
+            n_spellings = n_distinct(op), spellings = paste(sort(unique(op)), collapse = " | "),
             states = paste(sort(unique(state)), collapse = " "),
             flock_share = mean(str_detect(coalesce(manufacturer, ""), regex("flock", ignore_case = TRUE))),
             .groups = "drop") |>
-  arrange(desc(cameras)) |> select(-op_key)
+  mutate(operator = if_else(scope == "US", operator, paste0(operator, " (", scope, ")"))) |>
+  arrange(desc(cameras)) |> select(operator, cameras, scope, states, n_spellings, spellings, flock_share)
+write_csv(by_op |> filter(n_spellings > 1), file.path(OUT, "operator_merges_for_review.csv"))
+message("Groups that merged >1 spelling: ", sum(by_op$n_spellings > 1),
+        " (", sum(by_op$cameras[by_op$n_spellings > 1]), " cameras) -> output/operator_merges_for_review.csv")
 
-tot <- nrow(cams); tagged <- sum(!is.na(cams$op) & cams$op != "")
+tot <- nrow(cams); tagged <- sum(!is.na(cams$k))
 message(sprintf("Cameras: %d; with operator tag: %d (%.1f%%); distinct operators: %d",
                 tot, tagged, 100 * tagged / tot, nrow(by_op)))
 write_csv(by_op, file.path(OUT, "cameras_per_operator.csv"))
-print(by_op |> mutate(flock_share = round(flock_share, 2)), n = 40, width = 140)
+print(by_op |> select(operator, cameras, n_spellings, flock_share) |> mutate(flock_share = round(flock_share, 2)), n = 40, width = 140)
 
 # Distribution of cameras per operator name ---------------------------------------------------------
 library(ggplot2)
@@ -55,7 +93,7 @@ p <- ggplot(by_op, aes(cameras, fill = group)) +
   facet_wrap(~group, ncol = 1, scales = "free_y") +
   labs(x = "Cameras per operator name (log scale)", y = "Operator names",
        title = "OSM ALPR cameras per operator tag",
-       subtitle = sprintf("%d states cached; %d tagged cameras of %d; exact names, case-insensitive", length(fs), tagged, tot)) +
+       subtitle = sprintf("%d states cached; %d tagged cameras of %d; spelling variants merged", length(fs), tagged, tot)) +
   theme_minimal(base_size = 11) +
   theme(legend.position = "none", panel.grid.minor = element_blank(),
         panel.grid.major = element_line(colour = "#e6e5e0", linewidth = 0.3),

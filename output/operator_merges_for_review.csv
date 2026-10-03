@@ -1,0 +1,117 @@
+operator,cameras,scope,states,n_spellings,spellings,flock_share
+Flock Safety,2067,US,AL CA FL GA IA IL IN KY LA MD MI MN MO NC NE NJ NM OH OK OR PA RI SC TN TX UT VA WI,3,Flock | Flock Safety | Flock_Safety,0.09288824383164006
+Lowe's,1597,US,AK AL AR AZ CA CT DE FL GA HI IA ID IL IN KY LA MA MD MI MN MO MS MT NC ND NJ NM NV NY OH OK OR PA RI SC TN TX UT VA VT WA WI WV WY,5,[LOWES] | Lowe's | Lowe's Home Improvement | Lowes | Lowes Home Improvement,0.9329993738259236
+The Home Depot,1019,US,AL AR AZ CA CT DC DE FL GA IA IL IN KY MA MD MI MN MO MT NC NJ NM NV NY OH OK OR PA RI SC TN TX UT VA WA WI,6,[HOME DEPOT] | Home Depot | HOME DEPOT | Home Depot (retailer) | The Home Depo | The Home Depot,0.985279685966634
+NYC Department of Transportation,641,US,NY,3,New York City Department of Transportation | NYC D.O.T | NYC Department of Transportation,0
+California Highway Patrol (CHP),452,US,CA,2,California Highway Patrol | California Highway Patrol (CHP),0.9977876106194691
+New York City Police Department (NY),270,NY,NY,3,New York City Police Department | New York Police Department | NYPD,0
+Las Vegas Metropolitan Police Department (NV),162,NV,NV,2,[LVMPD] | Las Vegas Metropolitan Police Department,0.5925925925925926
+Albuquerque Police Department (NM),138,NM,NM,2,Albuqueque Police Department | Albuquerque Police Department,0.014492753623188406
+Metropolitan Transportation Authority,107,US,NY,3,Metropolitan Transit Authority | Metropolitan Transportation Authority | NYC M.T.A,0
+Sacramento Police Department (CA),99,CA,CA,2,Sacramento PD | Sacramento Police Department,0
+Tulsa Police Department (OK),99,OK,OK,2,Tulsa Police | Tulsa Police Department,0.42424242424242425
+Customs and Border Protection,90,US,AZ CA NM TX,2,Customs and Border Protection | United States Customs and Border Protection,0
+Volusia County Sheriff's Office (FL),88,FL,FL,2,Volusia County Sheriff's Office | Volusia County Sheriff’s Office,0.9204545454545454
+St. Johns County Sheriff (FL),77,FL,FL,3,Saint Johns County Sheriff's Office | St. Johns County Sheriff | St. Johns County Sheriff’s Office,1
+Clay County Sheriff's Office (FL),71,FL,FL,2,(Clay County Sheriff's Office) | Clay County Sheriff's Office,0.8732394366197183
+Walmart,60,US,AR AZ CA FL MA OK PA WA,2,walmart | Walmart,0.05
+Portsmouth Police Department (VA),60,VA,VA,2,Portsmouth Police Department | Portsmouth Police Department (Virginia),0.1
+Pasco Sheriff’s Office (FL),54,FL,FL,2,Pasco Sheriff's Office | Pasco Sheriff’s Office,0.7592592592592593
+Westchester County Police RTC/Intelligence Regional and National Data Sharing (NY),51,NY,NY,2,Westchester County Police RTC/Intelligence Regional and National Data Sharing | Westchester County RTC/Intelligence Regional and National Data Sharing,0
+JCPD,50,US,TN,2,jcpd | JCPD,0.8
+Suffolk Police Department (VA),49,VA,VA,2,Suffolk PD | Suffolk Police Department,0.7755102040816326
+University of Florida,47,US,FL,2,University of Fla. | University of Florida,0
+San Mateo Police Department (CA),43,CA,CA,2,San Mateo PD | San Mateo Police Department,0.9767441860465116
+Los Angeles Police Department (CA),38,CA,CA,2,LAPD | Los Angeles Police Department,0.07894736842105263
+Methuen Police (MA),38,MA,MA,2,[Methuen Police] | Methuen Police,0.4473684210526316
+Riverside County Sheriff’s Department (CA),36,CA,CA,3,Riverside County Sheriff's Department | Riverside County Sheriff’s Department | Riverside County Sheriff's Office,1
+Lake of the Pines Association,36,US,CA,2,Lake of the Pines Association | Lake Of The Pines Association,0
+Lompoc Police Department (CA),34,CA,CA,3,Lompoc police Department | Lompoc Police Department | Lompoc POlice Department,1
+LASD (CA),31,CA,CA,6,"LASD | Los Angeles County Sheriff | Los Angeles County Sheriff's Department | Los Angeles County Sheriff’s Department | Los Angeles County Sheriff's Department,City Of Palmdale | Los Angeles County Sheriff's Department,Santa Clarita",0.5806451612903226
+Atlanta Police Department (GA),30,GA,GA,2,Atlanta Police | Atlanta Police Department,0.9666666666666667
+FedEx,29,US,CT MA MI MO TX WI,2,Fedex | FedEx,1
+San Bernardino County Sheriff's Department (CA),28,CA,CA,2,San Bernardino County Sheriff | San Bernardino County Sheriff's Department,0
+Northampton County Sheriff's Office (VA),28,VA,VA,2,Northampton County Sheriff's Department | Northampton County Sheriff's Office,0
+PANYNJ,27,US,NJ NY,4,PANYNJ | Port Authority of New York and New Jersey | Port of authority of New York and New Jersey | Port of Authority of New York and New Jersey,0
+Orange County Sheriff (CA),26,CA,CA,2,Orange County Sheriff | Orange County Sheriff Dept,0.2692307692307692
+Owasso Police (OK),26,OK,OK,2,Owasso Police | Owasso Police Department,0.9615384615384616
+San Marino Police Department (CA),24,CA,CA,2,San Marino PD | San Marino Police Department,0.9166666666666666
+[City of Florence PD] (SC),24,SC,SC,2,[City of Florence PD] | City of Florence PD,0.9166666666666666
+The Colony Police Department (TX),24,TX,TX,2,The Colony PD | The Colony Police Department,1
+Fall River Police (MA),23,MA,MA,3,Fall River PD | Fall River Police | Fall River Police Dept,0.9130434782608695
+Milford Police Department (CT),22,CT,CT,2,Milford Police | Milford Police Department,1
+Boston Police (MA),20,MA,MA,2,Boston Police | Boston Police Department,0.85
+Unknown,20,US,CA MA OH OK TN VA,3,[unknown] | unknown | Unknown,0.75
+Oro Valley Police Department (AZ),19,AZ,AZ,2,Oro Valley PD | Oro Valley Police Department,1
+Kyle Police Department (TX),19,TX,TX,4,kyle police department | Kyle police department | Kyle Police department | Kyle Police Department,1
+Haverhill Police (MA),17,MA,MA,2,Haverhill Police | Haverhill Police Department,1
+Elk River Police Department (MN),16,MN,MN,2,Elk River PD | Elk River Police Department,1
+Grand Traverse County Sheriff's Office (MI),15,MI,MI,2,Grand Traverse County Sheriff's Department | Grand Traverse County Sheriff's Office,1
+Wright County Sheriffs Office (MN),15,MN,MN,2,Wright County Sheriff | Wright County Sheriffs Office,1
+Midlothian Police Department (TX),15,TX,TX,2,Midlothian PD | Midlothian Police Department,1
+Barron County Sheriff (WI),15,WI,WI,2,Barron Co Sheriff | Barron County Sheriff,1
+North Andover Police (MA),14,MA,MA,2,North Andover PD | North Andover Police,0.6428571428571429
+Ottawa County Sheriff's Office (MI),14,MI,MI,2,Ottawa County Sheriff's Office | Ottawa County Sheriffs Office,0.8571428571428571
+Alameda County Sheriff's Office (CA),13,CA,CA,2,Alameda County Sheriff's Department | Alameda County Sheriff's Office,0.07692307692307693
+Burlingame Police Department (CA),13,CA,CA,2,Burlingame PD | Burlingame Police Department,0.15384615384615385
+Nevada County Sheriff’s Office (CA),13,CA,CA,3,Nevada County Sheriff's Office | Nevada County Sheriff’s Office | Nevada county Sheriffs office,1
+Target Corporation,13,US,CA MA MD NC NV OR,3,target | Target | Target Corporation,0.6923076923076923
+James City County Police Department (VA),13,VA,VA,2,James City County Police | James City County Police Department,0.38461538461538464
+King George Sherrifs Office (VA),12,VA,VA,3,King George Sheriff's Office | King George Sherrif's Office | King George Sherrifs Office,1
+Rogers Police Department (AR),11,AR,AR,2,Rogers Police | Rogers Police Department,0.18181818181818182
+Colleyville PD (TX),11,TX,TX,2,Colleyville PD | Colleyville Police Department,0.45454545454545453
+Seminole County Sheriff's Office (FL),10,FL,FL,2,Seminole County Sheriff's Office | Seminole County Sheriff's Office (Florida),1
+anne arundel police department (MD),10,MD,MD,2,anne arundel police department | Anne Arundel Police Department,1
+New Castle County PD (DE),9,DE,DE,2,New Castle County PD | New Castle County Police Department,0.6666666666666666
+Omaha PD (NE),9,NE,NE,2,Omaha PD | Omaha Police Department,0
+GoldOller Real Estate Investments,9,US,MI OH,2,Goldoller | GoldOller Real Estate Investments,1
+QuikTrip Corporation,9,US,OK,2,QuikTrip | QuikTrip Corporation,0.3333333333333333
+Farmington Police Department (CT),8,CT,CT,2,Farmington PD | Farmington Police Department,0.875
+Norwalk Police Department (CT),8,CT,CT,2,Norwalk PD | Norwalk Police Department,1
+Cobb County Police Department (GA),7,GA,GA,3,(Cobb County PD) | Cobb County Police | Cobb County Police Department,0.5714285714285714
+Transylvania County Sheriff's Office (NC),7,NC,NC,2,Transylvania County Sheriff's Office | Transylvania County SO,1
+Akron Police Department (OH),7,OH,OH,2,Akron PD | Akron Police Department,1
+Farmers Branch Police Department (TX),7,TX,TX,2,Farmers Branch PD | Farmers Branch Police Department,1
+Marathon County Sheriff’s Office (WI),7,WI,WI,3,(Marathon County Sheriff's Department) | Marathon County Sheriff's Department | Marathon County Sheriff’s Office,0.8571428571428571
+"Alamogordo, City of (NM)",6,NM,NM,2,"Alamogordo, City of | City of Alamogordo",1
+Farmington Police (NM),6,NM,NM,4,[Farmington Police Department] | {Farmington Police Department] | Farmington Police | Farmington Police Department,1
+Caldwell County Sheriff (TX),6,TX,TX,2,Caldwell County sheriff | Caldwell County Sheriff,1
+BJ's Wholesale Club,6,US,CT MA,2,BJ's Wholesale Club | BJs Wholesale Club,0.8333333333333334
+Gloucester County Sheriffs Office (VA),6,VA,VA,2,Gloucester County Sheriff's Office | Gloucester County Sheriffs Office,0
+Spokane County Sheriff's Office (WA),6,WA,WA,3,Spokane Co Sheriff | Spokane County Sheriff's Office | Spokane County SO,1
+Putnam Police Department (CT),5,CT,CT,2,Putnam Police Department | Putnam Police Dept,1
+Sheriff's Office (martin county) (FL),5,FL,FL,3,Sheriff's Office (martin county) | Sheriffs Office (martin county) | Sherrif's Office (martin county),0.8
+Warrick county sherriff (IN),5,IN,IN,2,Warrick county sheriff | Warrick county sherriff,0.2
+City of Brunswick Police (OH),5,OH,OH,2,City of Brunswick Police | City of Brunswick Police Department,1
+Swisher County Sheriff's Office (TX),5,TX,TX,2,Swisher County Sheriff's Office | Swisher County Sheriffs Office,1
+ACSO,5,US,FL MI,2,[ACSO] | ACSO,0.2
+HOA,5,US,CA GA MI OK,2,HoA | HOA,1
+Wapello County Sheriff's Department (IA),4,IA,IA,2,Wapello County Sheriff's Department | Wapello County SO,1
+Mille Lacs County Sheriffs Office (MN),4,MN,MN,2,Mille Lacs County Sheriff's Office | Mille Lacs County Sheriffs Office,1
+Union PD (MO),4,MO,MO,2,Union PD | Union Police Department,1
+Embry Riddle Aeronautical University,4,US,AZ,2,Embry Riddle Aeronautical University | Embry-Riddle Aeronautical University,1
+private,4,US,CA,2,private | Private,0
+Bayfield County Sheriffs Dept (WI),4,WI,WI,3,Bayfield County Sheriff's Dept | Bayfield County Sheriffs Dept | Bayfield County Sherrif's Dept,1
+Newark Police Department (DE),3,DE,DE,2,Newark Police | Newark Police Department,0
+South Lake Minnetonka Police Department (MN),3,MN,MN,2,South Lake Minnetonka PD | South Lake Minnetonka Police Department,1
+Palmyra Police Department (MO),3,MO,MO,2,Palmyra PD | Palmyra Police Department,1
+Harlan County Sheriff (NE),3,NE,NE,2,Harlan County Sheriff | Harlan County Sheriff Office,1
+Binghamton University PD (NY),3,NY,NY,2,Binghamton University PD | binghamton university police department,1
+Pierce Township Police (OH),3,OH,OH,2,Pierce Township Police | Pierce Township Police Department,1
+Verra Mobility operated NYC DOT red light camera,3,US,NY,2,Verra Mobility operated NYC DOT red light camera | Verra Mobility operated NYC DOT Red Light Camera,0
+Barre city police dept (VT),3,VT,VT,2,Barre City Police Department | Barre city police dept,0
+Marana Police (AZ),2,AZ,AZ,2,Marana Police | Marana Police Department,0
+Placer County Sheriff (CA),2,CA,CA,2,Placer County Sheriff | Placer County Sheriff’s Office,1
+Ada County Sheriff’s Office (ID),2,ID,ID,2,Ada County Sheriff’s Office | Ada County Sherriff’s Office,0.5
+Lake County Sheriff (IN),2,IN,IN,2,Lake County Sheriff | Lake County Sheriffs Office,0
+Anne Arundel county Police (RTIC) (MD),2,MD,MD,2,Anne Arundel county Police (RTIC) | Anne Arundel County Police (RTIC),0
+Hoke County Sheriff (NC),2,NC,NC,2,Hoke County Sheriff | Hoke County Sheriff's Department,1
+City of Medina Police (OH),2,OH,OH,2,City of Medina Police | City of Medina Police Department,1
+Glenpool police (OK),2,OK,OK,2,Glenpool police | Glenpool Police,1
+OKC PD (OK),2,OK,OK,2,OKC PD | OKC Police,1
+Wagoner Co. Sheriff (OK),2,OK,OK,2,Wagoner Co. Sheriff | Wagoner County Sheriff,1
+[Bethlehem Township Police Department] (PA),2,PA,PA,2,[Bethlehem Township Police Department] | Bethlehem Township Police Department,0.5
+The Church of Jesus Christ of Latter Day Saints,2,US,OR UT,2,The Church of Jesus Christ of Latter Day Saints | The Church of Jesus Christ of Latter-day Saints,0
+[Insight Public Sector(contracted by FCPD],2,US,VA,2,[Insight Public Sector(contracted by FCPD] | Insight Public Sector (contracted by FCPD),1
+Land owner,2,US,TX,2,Land owner | Land Owner,1
+NYC DOT Red light camera,2,US,NY,2,NYC DOT Red light camera | NYC DOT Red light Camera,0
