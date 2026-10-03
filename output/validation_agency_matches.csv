@@ -1,0 +1,337 @@
+id,agency,state,kind,reported,basis,dist,matched_ori,cand_name
+119,Avon IN PD,IN,police,6,exact,0,IN0321100,Avon Police Department
+2421,Sterling Heights MI PD,MI,police,20,exact,0,MI5076500,Sterling Heights Police Department
+2459,Sylvania OH PD,OH,police,15,exact,0,OH0480500,Sylvania Police Department
+1170,Hendricks County IN SO,IN,sheriff,12,exact,0,IN0320000,Hendricks County Sheriff's Office
+1182,Hesston KS PD,KS,police,2,exact,0,KS0400200,Hesston Police Department
+2008,Parsons KS PD,KS,police,5,exact,0,KS0500100,Parsons Police Department
+2066,Pittsburg KS PD,KS,police,14,exact,0,KS0190100,Pittsburg Police Department
+765,East Providence RI PD,RI,police,14,exact,0,RI0040400,East Providence Police Department
+921,Fort Smith AR PD,AR,police,28,exact,0,AR0660100,Fort Smith Police Department
+778,Edmond OK PD,OK,police,10,exact,0,OK0550300,Edmond Police Department
+1454,Lawton OK PD,OK,police,13,exact,0,OK0160100,Lawton Police Department
+1062,Green Bay WI PD,WI,police,43,exact,0,WI0050200,Green Bay Police Department
+2208,Rockport TX PD,TX,police,6,exact,0,TX0040200,Rockport Police Department
+3480,Warrick County IN SO,IN,sheriff,12,exact,0,IN0870000,Warrick County Sheriff's Office
+3921,Anoka County MN SO,MN,sheriff,2,exact,0,MN0020000,Anoka County Sheriff's Office
+3954,Johnson County IN SO,IN,sheriff,12,exact,0,IN0410000,Johnson County Sheriff's Office
+3965,Shelby County IN SO,IN,sheriff,6,exact,0,IN0730000,Shelby County Sheriff's Office
+4222,Powell OH PD,OH,police,0,exact,0,OH0210500,Powell Police Department
+966,Fuquay-Varina NC PD,NC,police,11,exact,0,NC0920400,Fuquay-Varina Police Department
+1117,Hamlet NC PD,NC,police,2,exact,0,NC0770200,Hamlet Police Department
+529,Cleveland County NC SO,NC,sheriff,14,exact,0,NC0230000,Cleveland County Sheriff's Office
+4099,Granby CO PD,CO,police,2,exact,0,CO0250100,Granby Police Department
+1396,Lafayette IN PD,IN,police,22,exact,0,IN0790100,Lafayette Police Department
+3796,Lockney TX PD,TX,police,2,exact,0,TX0770200,Lockney
+1990,Palm Springs CA PD,CA,police,13,exact,0,CA0331100,Palm Springs Police Department
+2334,Shrewsbury MO PD,MO,police,8,exact,0,MO0956900,Shrewsbury Police Department
+102,Aubrey TX PD,TX,police,34,exact,0,TX0611400,Aubrey Police Department
+3612,Oroville CA PD,CA,police,35,exact,0,CA0040400,Oroville Police Department
+4358,Los Altos CA PD,CA,police,10,exact,0,CA0430500,Los Altos Police Department
+4652,Maple Grove MN PD,MN,police,1,exact,0,MN0272700,Maple Grove Police Department
+4654,Margaret AL PD,AL,police,3,exact,0,AL0580800,Margaret Police Department
+4689,Montgomery TWP NJ PD,NJ,police,5,exact,0,NJ0181300,Montgomery Township Police Department
+4694,Moundville AL PD,AL,police,2,exact,0,AL0360200,Moundville Police Department
+4825,Seelyville IN PD,IN,police,1,unmatched,0.08454545454545459,NA,Shelbyville Police Department
+4860,St. Louis County MN SO,MN,sheriff,7,exact,0,MN0690000,St. Louis County Sheriff's Office
+4913,Wells County IN SO,IN,sheriff,6,exact,0,IN0900000,Wells County Sheriff's Office
+783,El Cerrito CA PD,CA,police,40,exact,0,CA0070500,El Cerrito Police Department
+1055,Grass Valley CA PD,CA,police,28,exact,0,CA0290100,Grass Valley Police Department
+2269,San Rafael CA PD,CA,police,15,exact,0,CA0210900,San Rafael Police Department
+2275,Santa Barbara PD CA,CA,police,12,exact,0,CA0420300,Santa Barbara Police Department
+2065,Pittsboro IN PD,IN,police,7,exact,0,IN0320800,Pittsboro Police Department
+1107,Hall County NE SO,NE,sheriff,6,exact,0,NB0400000,Hall County Sheriff's Office
+771,Eatonville WA PD,WA,police,11,exact,0,WA0270500,Eatonville Police Department
+3034,Pittsboro NC PD,NC,police,5,exact,0,NC0190200,Pittsboro Police Department
+3337,Roanoke VA PD,VA,police,3,exact,0,VA1230000,Roanoke Police Department
+3488,Grand Island NE PD,NE,police,5,exact,0,NB0400100,Grand Island Police Department
+3959,Mooresville IN PD,IN,police,4,exact,0,IN0550200,Mooresville Police Department
+1761,Mount Holly NC PD,NC,police,4,exact,0,NC0360900,Mount Holly Police Department
+4141,Coronado CA PD,CA,police,2,exact,0,CA0370300,Coronado Police Department
+4144,San Diego CA PD,CA,police,528,exact,0,CA0371100,San Diego Police Department
+4171,Marine City MI PD,MI,police,9,exact,0,MI7455600,Marine City Police Department
+4174,Muskegon MI PD,MI,police,7,exact,0,MI6160300,Muskegon Police Department
+4200,Edgewater CO PD,CO,police,6,exact,0,CO0300300,Edgewater Police Department
+4216,Puyallup WA PD,WA,police,2,exact,0,WA0270100,Puyallup Police Department
+4220,Mount Vernon OH PD,OH,police,5,exact,0,OH0420100,Mount Vernon Police Department
+4263,Wytheville VA PD,VA,police,4,exact,0,VA0970100,Wytheville Police Department
+4290,Rossville GA PD,GA,police,2,exact,0,GA1460200,Rossville Police Department
+325,Buena Park CA PD,CA,police,8,exact,0,CA0300300,Buena Park Police Department
+496,Dixon CA PD,CA,police,23,exact,0,CA0480200,Dixon Police Department
+1501,Lodi CA PD,CA,police,14,exact,0,CA0390200,Lodi Police Department
+1517,Los Gatos Monte Sereno PD - CA,CA,police,17,unmatched,0.11818181818181821,NA,Los Gatos Police Department
+2278,Santa Clara CA PD,CA,police,17,exact,0,CA0431400,Santa Clara Police Department
+2816,Yuba County Sheriffs Office,CA,sheriff,30,exact,0,CA0580000,Yuba County Sheriff's Office
+3317,El Cajon CA PD,CA,police,40,exact,0,CA0370500,El Cajon Police Department
+3442,Troy MI PD,MI,police,25,exact,0,MI6378400,Troy Police Department
+3503,Worthington OH PD,OH,police,10,exact,0,OH0251200,Worthington Police Department
+3985,Grand Traverse County MI SO,MI,sheriff,28,exact,0,MI2812800,Grand Traverse County Sheriff's Office
+4085,Rhode Island College Campus RI PD,RI,police,3,unmatched,0.3637345679012346,NA,Providence Police Department
+4106,Elmira City NY PD,NY,police,41,ambiguous,0,NA,Elmira Town Police Department | Elmira Police Department
+4332,Cedar Lake IN PD,IN,police,4,exact,0,IN0450100,Cedar Lake Police Department
+4601,Lafayette CO PD,CO,police,30,exact,0,CO0070300,Lafayette Police Department
+5163,University of Louisiana at Lafayette PD,NA,police,50,no_candidates,NA,NA,NA
+3391,Lakewood WA PD,WA,police,31,exact,0,WA0272300,Lakewood Police Department
+3423,Rossford OH PD,OH,police,19,exact,0,OH0870400,Rossford Police Department
+4104,Cheshire CT PD,CT,police,12,exact,0,CT0002500,Cheshire Police Department
+2550,Ukiah CA PD,CA,police,14,exact,0,CA0230300,Ukiah Police Department
+2339,Simi Valley CA PD,CA,police,23,exact,0,CA0560900,Simi Valley Police Department
+907,Forest Heights MD PD,MD,police,11,exact,0,MD0171200,Forest Heights Police Department
+3371,Dublin OH PD,OH,police,19,exact,0,OH0250300,Dublin Police Department
+3439,Portage MI PD,MI,police,27,exact,0,MI3967800,Portage Police Department
+3724,Franklin MA PD,MA,police,2,exact,0,MA0111000,Franklin Police Department
+3997,Milan MI PD,MI,police,4,exact,0,MI8158400,Milan Police Department
+4013,Sumpter Twp MI PD,MI,police,2,exact,0,MI8277000,Sumpter Township Police Department
+4020,Wolverine Lake MI PD,MI,police,3,exact,0,MI6382900,Wolverine Lake Police Department
+2069,Placer County CA SO,CA,sheriff,35,exact,0,CA0310000,Placer County Sheriff's Office
+1072,Greenfield IN PD,IN,police,13,exact,0,IN0300100,Greenfield Police Department
+460,Chase City VA PD,VA,police,1,exact,0,VA0580200,Chase City Police Department
+739,Dublin VA PD,VA,police,4,exact,0,VA0770200,Dublin Police Department
+2286,Sarpy County NE SO,NE,sheriff,15,exact,0,NB0770000,Sarpy County Sheriff's Office
+2300,Scottsbluff NE PD,NE,police,5,exact,0,NB0790100,Scottsbluff Police Department
+3267,Polkton NC PD,NC,police,1,exact,0,NC0040400,Polkton Police Department
+3321,Culver City CA PD,CA,police,52,exact,0,CA0191800,Culver City Police Department
+3326,Watsonville CA PD,CA,police,20,exact,0,CA0440300,Watsonville Police Department
+3342,Woodstock VA PD,VA,police,10,exact,0,VA0850300,Woodstock Police Department
+3349,Jupiter Inlet Colony FL PD,FL,police,2,exact,0,FL0501800,Jupiter Inlet Colony Police Department
+3407,Elgin SC PD,SC,police,2,exact,0,SC0280400,Elgin Police Department
+3424,Sheffield Village OH PD,OH,police,8,exact,0,OH0471400,Sheffield Village Police Department
+3432,Highland Park MI PD,MI,police,14,exact,0,MI8247100,Highland Park Police Department
+3536,Lander University SC PD,SC,police,8,unmatched,0.1579831932773109,NA,Landrum Police Department
+3547,Cayuga Heights Village NY PD,NY,police,1,exact,0,NY0542500,Cayuga Heights Village Police Department
+3569,Jackson MI PD,MI,police,10,exact,0,MI3849700,Jackson Police Department
+3627,Ferndale MI PD,MI,police,16,exact,0,MI6339400,Ferndale Police Department
+3647,Blairsville GA PD,GA,police,2,exact,0,GA1440100,Blairsville Police Department
+3670,Huntsville Airport AL PD,AL,police,2,unmatched,0.08888888888888895,NA,Huntsville Police Department
+3720,Edison NJ PD,NJ,police,14,exact_no_muni_word,0,NJ0120500,Edison Township Police Department
+3812,Morgan's Point PD TX,TX,police,3,exact,0,TX1011400,Morgan's Point Police Department
+3813,Morgan's Point Resort TX PD,TX,police,4,exact,0,TX0141000,Morgan's Point Resort Police Department
+3820,Odessa TX PD,TX,police,30,exact,0,TX0680200,Odessa Police Department
+3858,Trophy Club TX PD,TX,police,10,exact,0,TX0613100,Trophy Club Police Department
+3880,Maple Bluff WI PD,WI,police,7,exact,0,WI0137100,Maple Bluff Police Department
+3935,Temple GA PD,GA,police,4,exact,0,GA0220400,Temple Police Department
+1367,Kings County CA DAs Office,CA,none,6,unmatched,0.050000000000000024,NA,Kings County Sheriff's Office
+1786,Napa CA PD,CA,police,15,exact,0,CA0280200,Napa Police Department
+2149,Redwood City CA PD,CA,police,25,exact,0,CA0411300,Redwood City Police Department
+2405,St. Helena CA PD,CA,police,2,exact,0,CA0280300,St. Helena Police Department
+2553,Union City CA PD,CA,police,20,exact,0,CA0011300,Union City Police Department
+2302,Seaside CA PD,CA,police,24,exact,0,CA0271000,Seaside Police Department
+1319,Johnston RI PD,RI,police,3,exact,0,RI0040500,Johnston Police Department
+2530,Truckee CA PD,CA,police,23,exact,0,CA0290800,Truckee Police Department
+1981,Pacific Grove CA PD,CA,police,11,exact,0,CA0270700,Pacific Grove Police Department
+478,Chesterfield MO PD,MO,police,8,exact,0,MO0959A00,Chesterfield Police Department
+36,Alexandria VA PD,VA,police,18,exact,0,VA0990000,Alexandria Police Department
+2345,Smithfield RI PD,RI,police,2,exact,0,RI0041100,Smithfield Police Department
+676,Dayton OH PD,OH,police,72,exact,0,OH0570200,Dayton Police Department
+647,Culpeper VA PD,VA,police,10,exact,0,VA0240100,Culpeper Police Department
+1312,Jemison AL PD,AL,police,3,exact,0,AL0140300,Jemison Police Department
+187,Belle Isle FL PD,FL,police,14,exact,0,FL0489300,Belle Isle Police Department
+2260,San Leandro CA PD,CA,police,51,exact,0,CA0011200,San Leandro Police Department
+53,Amberley Village OH PD,OH,police,9,exact,0,OH0310200,Amberley Village Police Department
+169,Baytown TX PD,TX,police,62,exact,0,TX1010100,Baytown Police Department
+1991,Palo Alto CA PD,CA,police,21,exact,0,CA0431200,Palo Alto Police Department
+2090,Pontiac IL PD,IL,police,4,exact,0,IL0530200,Pontiac Police Department
+2053,Pierce Township OH PD,OH,police,2,exact,0,OH0131700,Pierce Township Police Department
+347,Butler County KS SO,KS,sheriff,9,exact,0,KS0080000,Butler County Sheriff's Office
+1355,Kent WA PD,WA,police,12,exact,0,WA0170700,Kent Police Department
+1240,Huntersville PD NC,NC,police,10,exact,0,NC0600600,Huntersville Police Department
+2677,Waxhaw NC PD,NC,police,6,exact,0,NC0900300,Waxhaw Police Department
+793,Elizabethtown NC PD,NC,police,10,exact,0,NC0090300,Elizabethtown Police Department
+219,Bessemer City NC PD,NC,police,9,exact,0,NC0360200,Bessemer City Police Department
+43,Allen Park PD MI,MI,police,13,exact,0,MI8221200,Allen Park Police Department
+96,Atherton CA PD,CA,police,49,exact,0,CA0410100,Atherton Police Department
+151,Barstow CA PD,CA,police,33,exact,0,CA0360100,Barstow Police Department
+269,Brawley CA PD,CA,police,26,exact,0,CA0130100,Brawley Police Department
+379,Calistoga CA PD,CA,police,6,exact,0,CA0280100,Calistoga Police Department
+425,Cathedral City CA PD,CA,police,20,exact,0,CA0332500,Cathedral City Police Department
+502,City of Riverside CA PD,CA,police,118,exact,0,CA0331300,Riverside Police Department
+570,Colma CA PD,CA,police,10,exact,0,CA0410500,Colma Police Department
+593,Contra Costa County CA SO,CA,sheriff,37,exact,0,CA0070000,Contra Costa County Sheriff's Office
+667,Danville CA PD,CA,police,47,exact,0,CA007230X,Danville Police Department
+974,Galt CA PD,CA,police,25,exact,0,CA0340200,Galt Police Department
+1007,Gilroy CA PD,CA,police,39,exact,0,CA0430400,Gilroy Police Department
+1092,Grover Beach CA PD,CA,police,12,exact,0,CA0400200,Grover Beach Police Department
+1357,Kern County CA SO,CA,sheriff,30,exact,0,CA0150000,Kern County Sheriff's Office
+1720,Monrovia CA PD,CA,police,15,exact,0,CA0194600,Monrovia Police Department
+1723,Monterey Park CA PD,CA,police,9,exact,0,CA0194800,Monterey Park Police Department
+1787,Napa County CA SO,CA,sheriff,5,exact,0,CA0280000,Napa County Sheriff's Office
+2095,Port Hueneme CA PD,CA,police,16,exact,0,CA0560500,Port Hueneme Police Department
+2164,Richmond CA PD,CA,police,116,exact,0,CA0071000,Richmond Police Department
+2257,San Joaquin County CA SO,CA,sheriff,35,exact,0,CA0390000,San Joaquin County Sheriff's Office
+2267,San Mateo County CA SO,CA,sheriff,66,exact,0,CA0410000,San Mateo County Sheriff's Office
+2590,Upland CA PD,CA,police,12,exact,0,CA0361100,Upland Police Department
+2725,Westminster CA PD,CA,police,9,exact,0,CA0302400,Westminster Police Department
+16,Akron OH PD,OH,police,145,exact,0,OH0770100,Akron Police Department
+55,Amherst OH PD,OH,police,12,exact,0,OH0470100,Amherst Police Department
+190,Bellefontaine OH PD,OH,police,14,exact,0,OH0460100,Bellefontaine Police Department
+825,Evendale OH PD,OH,police,20,exact,0,OH0311000,Evendale Police Department
+839,Fairfield OH PD,OH,police,44,exact,0,OH0090100,Fairfield Police Department
+911,Forest Park OH PD,OH,police,35,exact,0,OH0311200,Forest Park Police Department
+994,Genoa Township OH PD,OH,police,3,exact,0,OH0210800,Genoa Township Police Department
+1193,Hilliard OH PD,OH,police,18,exact,0,OH0250700,Hilliard Police Department
+1207,Holland OH PD,OH,police,4,exact,0,OH0481000,Holland Police Department
+1232,Hubbard OH PD,OH,police,6,exact,0,OH0780200,Hubbard Police Department
+1290,Jackson Township OH PD (Mahoning County),OH,police,0,unmatched,0.15625000000000006,NA,"Jackson Township Police Department, Stark County"
+1511,Lorain OH PD,OH,police,40,exact,0,OH0470500,Lorain Police Department
+1586,Marion OH PD,OH,police,0,exact,0,OH0510100,Marion Police Department
+1644,Mentor on the Lake OH PD,OH,police,3,exact,0,OH0430700,Mentor-on-the-Lake Police Department
+1900,Oberlin OH PD,OH,police,4,exact,0,OH0470600,Oberlin Police Department
+1939,Olmsted Falls OH PD,OH,police,3,exact,0,OH0183900,Olmsted Falls Police Department
+2094,Port Clinton OH PD,OH,police,8,exact,0,OH0620200,Port Clinton Police Department
+2162,Richland County OH SO,OH,sheriff,9,exact,0,OH0700000,Richland County Sheriff's Office
+2636,Wadsworth OH PD,OH,police,12,exact,0,OH0520300,Wadsworth Police Department
+2709,West Milton OH PD,OH,police,2,exact,0,OH0551200,West Milton Police Department
+2720,Westerville OH PD,OH,police,21,exact,0,OH0251000,Westerville Police Department
+1441,Largo FL PD,FL,police,2,exact,0,FL0520800,Largo Police Department
+1760,Mount Dora FL PD,FL,police,0,exact,0,FL0351000,Mount Dora Police Department
+183,Beecher IL PD,IL,police,12,exact,0,IL0990100,Beecher Police Department
+1844,Normal IL PD,IL,police,27,exact,0,IL0570200,Normal Police Department
+2705,West Lafayette IN PD,IN,police,3,exact,0,IN0790200,West Lafayette Police Department
+2315,Sequoias Community College District CA PD,CA,police,20,unmatched,0.2485714285714285,NA,Suisun City Police Department
+48,Altoona IA PD,IA,police,20,exact,0,IA0770800,Altoona Police Department
+1782,Muskogee OK PD,OK,police,10,exact,0,OK0510100,Muskogee Police Department
+2684,Webster Groves MO PD,MO,police,6,exact,0,MO0958000,Webster Groves Police Department
+2700,West Des Moines IA PD,IA,police,56,exact,0,IA0770500,West Des Moines Police Department
+2518,Town of Woodside CA (SMCSO),CA,none,17,unmatched,0.20357142857142857,NA,Woodland Police Department
+2385,Spokane County WA SO,WA,sheriff,39,exact,0,WA0320000,Spokane County Sheriff's Office
+78,Arcanum OH PD,OH,police,5,exact,0,OH0190300,Arcanum Police Department
+127,Bainbridge Township OH PD,OH,police,2,exact,0,OH0281200,Bainbridge Township Police Department
+707,Derby KS PD,KS,police,15,exact,0,KS0870100,Derby Police Department
+1328,Junction City KS PD,KS,police,19,exact,0,KS0310100,Junction City Police Department
+2688,Wellington KS PD,KS,police,4,exact,0,KS0960100,Wellington Police Department
+423,Castle Rock CO PD,CO,police,32,exact,0,CO0180100,Castle Rock Police Department
+614,Council Bluffs IA PD,IA,police,25,exact,0,IA0780100,Council Bluffs Police Department
+2017,Pawtucket RI PD,RI,police,20,exact,0,RI0040800,Pawtucket Police Department
+2142,Rantoul IL PD,IL,police,34,exact,0,IL0100400,Rantoul Police Department
+84,Arlington PD (WA),WA,police,14,exact,0,WA0310100,Arlington Police Department
+1629,Medina WA PD,WA,police,15,exact,0,WA0172000,Medina Police Department
+543,Clive IA PD,IA,police,20,exact,0,IA0770200,Clive Police Department
+777,Edina MN PD,MN,police,19,exact,0,MN0270600,Edina Police Department
+538,Clinton IA PD,IA,police,8,exact,0,IA0230100,Clinton Police Department
+2034,Peotone IL PD,IL,police,3,exact,0,IL0991000,Peotone Police Department
+2593,Urbandale IA PD,IA,police,21,exact,0,IA0770400,Urbandale Police Department
+268,Bratenahl OH PD,OH,police,10,exact,0,OH0180700,Bratenahl Police Department
+819,Euclid OH PD,OH,police,26,exact,0,OH0181800,Euclid Police Department
+1059,Great Parks of Hamilton County OH PD,OH,police,9,unmatched,0.2518518518518518,NA,Gratis Police Department
+1656,Miami County OH SO,OH,sheriff,10,exact,0,OH0550000,Miami County Sheriff's Office
+2389,Springdale OH PD,OH,police,10,exact,0,OH0313300,Springdale Police Department
+2651,Warren County OH SO,OH,sheriff,10,exact,0,OH0830000,Warren County Sheriff's Office
+141,Barling AR PD,AR,police,5,exact,0,AR0660300,Barling Police Department
+358,Cabot AR PD,AR,police,8,exact,0,AR0430200,Cabot Police Department
+1742,Mooresville NC PD,NC,police,48,exact,0,NC0490100,Mooresville Police Department
+2537,Tulsa OK PD,OK,police,114,exact,0,OK0720500,Tulsa Police Department
+2622,Village of Bloomingdale IL PD,IL,police,16,exact,0,IL0220300,Bloomingdale Police Department
+692,Del City OK PD,OK,police,10,exact,0,OK0550200,Del City Police Department
+1964,Osage County OK SO,OK,sheriff,17,exact,0,OK0570000,Osage County Sheriff's Office
+324,Buda TX PD,TX,police,6,exact,0,TX1051200,Buda Police Department
+1877,Northlake TX PD,TX,police,38,exact,0,TX0613900,Northlake Police Department
+424,Catawba Nation Tribal SC PD,SC,police,6,unmatched,0.30714285714285716,NA,Clinton Police Department
+1695,Mint Hill NC PD,NC,police,10,exact,0,NC0602900,Mint Hill Police Department
+2063,Pineville NC PD,NC,police,8,exact,0,NC0600300,Pineville Police Department
+2454,Surfside Beach SC PD,SC,police,9,exact,0,SC0260800,Surfside Beach Police Department
+945,Franklinton NC PD,NC,police,0,exact,0,NC0350200,Franklinton Police Department
+196,Belmont NC PD,NC,police,3,exact,0,NC0360100,Belmont Police Department
+1471,Lexington SC PD,SC,police,4,exact,0,SC0320400,Lexington Police Department
+475,Chester County SC SO,SC,sheriff,25,exact,0,SC0120000,Chester County Sheriff's Office
+2138,Raleigh NC PD,NC,police,26,exact,0,NC0920100,Raleigh Police Department
+285,Bridgewater VA PD,VA,police,5,exact,0,VA0820100,Bridgewater Police Department
+833,Fairfax City VA PD,VA,police,19,exact,0,VA1075000,Fairfax City Police Department
+899,Folly Beach SC PD,SC,police,2,exact,0,SC0100400,Folly Beach Police Department
+1120,Hampton VA PD,VA,police,54,exact,0,VA1110000,Hampton Police Department
+1832,Newport News VA PD,VA,police,74,exact,0,VA1160000,Newport News Police Department
+2171,Richmond VA PD,VA,police,97,exact,0,VA1220000,Richmond Police Department
+23,Alameda CA PD,CA,police,33,exact,0,CA0010100,Alameda Police Department
+203,Benicia CA PD,CA,police,50,exact,0,CA0480100,Benicia Police Department
+392,Campbell CA PD,CA,police,22,exact,0,CA0430200,Campbell Police Department
+522,Clearlake CA PD,CA,police,31,exact,0,CA0170200,Clearlake Police Department
+611,Costa Mesa CA PD,CA,police,30,exact,0,CA0300400,Costa Mesa Police Department
+836,Fairfield CA PD,CA,police,56,exact,0,CA0480300,Fairfield Police Department
+927,Foster City CA PD,CA,police,20,exact,0,CA0412000,Foster City Police Department
+1165,Hemet CA PD,CA,police,47,exact,0,CA0330800,Hemet Police Department
+1177,Hercules CA PD,CA,police,25,exact,0,CA0070600,Hercules Police Department
+1195,Hillsborough CA PD,CA,police,22,exact,0,CA0410800,Hillsborough Police Department
+1405,Lake County CA SO,CA,sheriff,26,exact,0,CA0170000,Lake County Sheriff's Office
+1481,Lincoln CA PD,CA,police,21,exact,0,CA0310300,Lincoln Police Department
+1640,Menifee CA PD,CA,police,28,ambiguous,0,NA,Menifee Police Department | Menifee
+1750,Morgan Hill CA PD,CA,police,49,exact,0,CA0431000,Morgan Hill Police Department
+1778,Murrieta CA PD,CA,police,38,exact,0,CA0334200,Murrieta Police Department
+1809,Nevada County CA SO,CA,sheriff,12,exact,0,CA0290000,Nevada County Sheriff's Office
+1884,Novato CA PD,CA,police,6,exact,0,CA0210600,Novato Police Department
+1897,Oakley CA PD,CA,police,5,exact,0,CA007340X,Oakley Police Department
+2052,Piedmont CA PD,CA,police,53,exact,0,CA0011000,Piedmont Police Department
+2176,Rio Vista CA PD,CA,police,5,exact,0,CA0480400,Rio Vista Police Department
+2258,San Jose CA PD,CA,police,241,exact,0,CA0431300,San Jose Police Department
+2265,San Marino CA PD,CA,police,41,exact,0,CA0196300,San Marino Police Department
+2266,San Mateo CA PD,CA,police,31,exact,0,CA0411600,San Mateo Police Department
+2276,Santa Clara County CA SO,CA,sheriff,80,exact,0,CA0430000,Santa Clara County Sheriff's Office
+2374,South San Francisco CA PD,CA,police,28,exact,0,CA0411700,South San Francisco Police Department
+2519,Tracy CA PD,CA,police,46,exact,0,CA0390600,Tracy Police Department
+2599,Vacaville CA PD,CA,police,195,exact,0,CA0480600,Vacaville Police Department
+2602,Vallejo CA PD,CA,police,131,exact,0,CA0480700,Vallejo Police Department
+2699,West Covina CA PD,CA,police,40,exact,0,CA0197500,West Covina Police Department
+1043,Grandview Heights OH PD,OH,police,8,exact,0,OH0250500,Grandview Heights Police Department
+1162,Heath OH PD,OH,police,10,exact,0,OH0450700,Heath Police Department
+1256,Indian Hill OH PD,OH,police,30,exact,0,OH0311700,Indian Hill Police Department
+1527,Loveland OH PD,OH,police,10,exact,0,OH0312000,Loveland Police Department
+1569,Mansfield OH PD,OH,police,29,exact,0,OH0700100,Mansfield Police Department
+1585,Marion County OH SO,OH,sheriff,34,exact,0,OH0510000,Marion County Sheriff's Office
+1662,Miami Township OH PD (Clermont),OH,police,25,unmatched,0.12857142857142856,NA,"Miami Township Police Department, Clermont County"
+1253,Indialantic FL PD,FL,police,4,exact,0,FL0050500,Indialantic Police Department
+449,Champaign IL PD,IL,police,46,exact,0,IL0100100,Champaign Police Department
+2326,Shelby County TN SO,TN,sheriff,169,exact,0,TN0790000,Shelby County Sheriff's Office
+2749,Wichita KS PD,KS,police,167,exact,0,KS0870300,Wichita Police Department
+2807,Wright City MO PD,MO,police,2,exact,0,MO1100400,Wright City Police Department
+184,Bel Aire KS PD,KS,police,0,exact,0,KS0871800,Bel Aire Police Department
+1346,Kearney NE PD,NE,police,28,exact,0,NB0100100,Kearney Police Department
+2001,Park City KS PD,KS,police,11,exact,0,KS0871600,Park City Police Department
+2691,Wentzville MO PD,MO,police,25,exact,0,MO0920500,Wentzville Police Department
+1523,Louisville CO PD,CO,police,20,exact,0,CO0070600,Louisville Police Department
+1549,Madison SD PD,SD,police,25,exact,0,SD0390100,Madison Police Department
+437,Centralia PD (WA),WA,police,20,exact,0,WA0210100,Centralia Police Department
+2163,Richland PD WA,WA,police,10,exact,0,WA0030200,Richland Police Department
+2535,Tukwila WA PD,WA,police,27,exact,0,WA0172300,Tukwila Police Department
+2811,Yakima WA PD,WA,police,42,exact,0,WA0390500,Yakima Police Department
+626,Cranston RI PD,RI,police,27,exact,0,RI0040200,Cranston Police Department
+2118,Providence RI PD,RI,police,25,exact,0,RI0040900,Providence Police Department
+2658,Warwick RI PD,RI,police,10,exact,0,RI0020300,Warwick Police Department
+2392,Springfield IL PD,IL,police,94,exact,0,IL0840200,Springfield Police Department
+2804,Woonsocket RI PD,RI,police,15,exact,0,RI0041200,Woonsocket Police Department
+2229,Round Rock TX PD,TX,police,33,exact,0,TX2460500,Round Rock Police Department
+2740,Whitehall OH PD,OH,police,25,exact,0,OH0251100,Whitehall Police Department
+1892,Oak Park IL PD,IL,police,8,exact,0,IL0168100,Oak Park Police Department
+49,Altoona WI PD,WI,police,11,exact,0,WI0180200,Altoona Police Department
+2046,Pflugerville TX PD,TX,police,28,exact,0,TX2270900,Pflugerville Police Department
+71,App State University NC PD,NC,police,3,unmatched,0.29333333333333333,NA,Apex Police Department
+582,Columbus NC PD,NC,police,3,exact,0,NC0750300,Columbus Police Department
+627,Craven County ABC Board (NC),NC,none,4,unmatched,0.08695652173913049,NA,Craven County Sheriff's Office
+1166,Henderson County NC SO,NC,sheriff,10,exact,0,NC0450000,Henderson County Sheriff's Office
+1206,Hoke County NC SO,NC,sheriff,3,exact,0,NC0470000,Hoke County Sheriff's Office
+2231,Roxboro NC PD,NC,police,6,exact,0,NC0730100,Roxboro Police Department
+2398,St Pauls NC PD,NC,police,6,exact,0,NC0780400,St. Pauls Police Department
+2460,Tabor City NC PD,NC,police,0,exact,0,NC0240400,Tabor City Police Department
+2744,Whiteville NC PD,NC,police,2,exact,0,NC0240500,Whiteville Police Department
+673,Davie County NC SO,NC,sheriff,10,exact,0,NC0300000,Davie County Sheriff's Office
+439,Chadbourn NC PD,NC,police,15,exact,0,NC0240200,Chadbourn Police Department
+1234,Hudson NC PD,NC,police,2,exact,0,NC0140400,Hudson Police Department
+1794,Nashville NC PD,NC,police,3,exact,0,NC0640100,Nashville Police Department
+2325,Sharpsburg NC PD,NC,police,3,exact,0,NC0640600,Sharpsburg Police Department
+2514,Town of Connelly Springs/Burke Co Sheriff's Office (BCSO) NC,NC,sheriff,3,unmatched,0.3130819507290096,NA,Columbus County Sheriff's Office
+1075,Greensboro NC PD,NC,police,25,exact,0,NC0410200,Greensboro Police Department
+75,Aransas Pass TX PD,TX,police,10,exact,0,TX0040100,Aransas Pass Police Department
+404,Carmel CA PD,CA,police,17,exact,0,CA0270100,Carmel Police Department
+1558,Mahoning Twp PA PD,PA,police,5,ambiguous,0,NA,"Mahoning Township Police Department, Carbon County | Mahoning Township Police Department, Montour County | Mahoning Township Police Department, Lawrence County"
+1854,North College Hill OH PD,OH,police,5,exact,0,OH0312700,North College Hill Police Department
+823,Evanston IL PD,IL,police,19,exact,0,IL0163200,Evanston Police Department
+1099,Gurnee IL PD,IL,police,12,exact,0,IL0490600,Gurnee Police Department
+1125,Hanover Park IL PD,IL,police,9,exact,0,IL0164200,Hanover Park Police Department
+2018,Paxton IL PD,IL,police,4,exact,0,IL0270200,Paxton Police Department
+2221,Roselle IL PD,IL,police,11,exact,0,IL0221600,Roselle Police Department
+2616,Vernon Hills IL PD,IL,police,34,exact,0,IL0492600,Vernon Hills Police Department
+2573,University of Iowa PD (IA),IA,police,30,unmatched,0.10666666666666669,NA,University Heights Police Department
+2681,Wayzata MN PD,MN,police,10,exact,0,MN0272300,Wayzata Police Department
+241,Bluffton IN PD,IN,police,4,exact,0,IN0900100,Bluffton Police Department
+504,Claflin University SC PD,SC,police,4,unmatched,0.23703703703703702,NA,Clover Police Department
+2293,SC - College of Charleston Department of Public Safety,SC,police,0,unmatched,0.2533333333333334,NA,Charleston Police Department
+2487,Thomasville GA PD,GA,police,28,exact,0,GA1360100,Thomasville Police Department
+2802,Woodstock GA PD,GA,police,7,exact,0,GA0280500,Woodstock Police Department
+4628,Lone Peak UT PD,UT,police,7,exact,0,UT0250900,Lone Peak Police Department

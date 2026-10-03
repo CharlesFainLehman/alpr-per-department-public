@@ -1,0 +1,65 @@
+state,operator,n_cameras,op_core,best_ori,best_name,best_dist,second_name,second_dist,best_core2,last_word_dist,accepted
+NM,Albuqueque Police Department,13,albuqueque,NM0010100,Albuquerque Police Department,0.018181818181818167,Jal Police Department,0.37777777777777777,albuquerque,0.018181818181818167,TRUE
+PA,New Britian Township Police,1,new britian,PA0093200,New Britain Township Police Department,0.018181818181818167,New Brighton Police Department,0.08636363636363635,new britain,0.028571428571428602,TRUE
+VA,King and Gueen County Sheriff's Office,1,king and gueen county,VA0480000,King and Queen County Sheriff's Office,0.019047619047619112,King George County Sheriff's Office,0.14380952380952383,king and queen county,0,TRUE
+IN,Valparasio Police Department,3,valparasio,IN0640300,Valparaiso Police Department,0.02000000000000006,Alexandria Police Department,0.3222222222222223,valparaiso,0.02000000000000006,TRUE
+NE,Halran County Sheriff,1,halran county,NB0420000,Harlan County Sheriff's Office,0.02051282051282044,Hall County Sheriff's Office,0.13339160839160843,harlan county,0,TRUE
+NY,Loyd Harbor Police Department,2,loyd harbor,NY0513700,Lloyd Harbor Village Police Department,0.025000000000000112,Sag Harbor Village Police Department,0.2212121212121212,lloyd harbor,0,TRUE
+OK,Brisotw Police,2,brisotw,OK0190100,Bristow Police Department,0.028571428571428602,Broken Bow Police Department,0.2742857142857143,bristow,0.028571428571428602,TRUE
+WA,Cylde Hill PD,1,cylde hill,WA0172500,Clyde Hill Police Department,0.030000000000000093,Cle Elum Police Department,0.26250000000000007,clyde hill,0,TRUE
+IA,Sioiux City Police,1,sioiux,IA0970100,Sioux City Police Department,0.0388888888888889,Sioux Center Police Department,0.175,sioux,0.0388888888888889,TRUE
+NC,Souther Pines Police Department,2,souther pines,NC0630400,Southern Pines Police Department,0.04505494505494509,Southern Shores Police Department,0.12046620046620053,southern pines,0,TRUE
+OH,Jackson Township Police,1,jackson,OH0762400,"Jackson Township Police Department, Stark County",0,Jackson Police Department,0,jackson,0,FALSE
+OH,Springfield Township PD,3,springfield,OH0120200,Springfield Police Department,0,"Springfield Township Police Department, Summit County",0,springfield,0,FALSE
+VT,Barre City Police Department,1,barre,VT0120500,Barre Town Police Department,0,Barre Police Department,0,barre,0,FALSE
+VT,Barre city police dept,2,barre,VT0120500,Barre Town Police Department,0,Barre Police Department,0,barre,0,FALSE
+MD,Anne Arundel County Police (RTIC),1,anne arundel county rtic,MD0020200,Anne Arundel County Police Department,0.04166666666666671,Annapolis Police Department,0.29166666666666674,anne arundel county,1,FALSE
+MD,Anne Arundel county Police (RTIC),1,anne arundel county rtic,MD0020200,Anne Arundel County Police Department,0.04166666666666671,Annapolis Police Department,0.29166666666666674,anne arundel county,1,FALSE
+VA,Virginia Tech Police Department,13,virginia tech,VA1280000,Virginia Beach Police Department,0.043956043956043994,Victoria Police Department,0.26410256410256416,virginia beach,0.21666666666666667,FALSE
+IL,Champaingn County Sheriff,1,champaingn county,IL0100000,Champaign County Sheriff's Office,0.055514705882352945,Hamilton County Sheriff's Office,0.2063725490196079,champaign county,0,FALSE
+NY,Putnam County Sheriff/Kent,1,putnam county kent,NY0390000,Putnam County Sheriff's Office,0.05555555555555553,Steuben County Sheriff's Office,0.2767195767195768,putnam county,0.38888888888888895,FALSE
+FL,Hillsbourough County Sheriff's Office,2,hillsbourough county,FL0290000,Hillsborough County Sheriff's Office,0.057368421052631555,Highlands County Sheriff's Office,0.22538461538461546,hillsborough county,0,FALSE
+FL,Hernado County Sheriff's Office,2,hernado county,FL0270000,Hernando County Sheriff's Office,0.0633333333333333,Hendry County Sheriff's Office,0.12527472527472536,hernando county,0,FALSE
+CA,"Los Angeles County Sheriff's Department,City Of Palmdale",4,los angeles county palmdale,CA0190000,Los Angeles County Sheriff's Office,0.0666666666666667,Lassen County Sheriff's Office,0.22478632478632482,los angeles county,1,FALSE
+IL,University of Illinois Police Department,2,university,IL0992000,University Park Police Department,0.0666666666666667,Riverside Police Department,0.24444444444444446,university park,0.55,FALSE
+MA,Town of Hubbardston Chief of Police,1,hubbardston chief,MA0142200,Hubbardston Police Department,0.07058823529411766,Hudson Police Department,0.17254901960784313,hubbardston,0.5696969696969697,FALSE
+IN,LaPorte County Sheriffs Office,1,laporte county,IN0640000,Porter County Sheriff's Office,0.07326007326007333,La Porte County Sheriff's Office,0.07492063492063492,porter county,0,FALSE
+MI,Hazel Park Police Department/Warren Police Department,1,hazel park warren,MI6346500,Hazel Park Police Department,0.08235294117647056,Allen Park Police Department,0.28480392156862755,hazel park,0.38888888888888895,FALSE
+MI,Schoolcraft College Police Department,8,schoolcraft college,MI3973600,Schoolcraft Police Department,0.08421052631578946,Scottville,0.28651629072681706,schoolcraft,0.4329004329004329,FALSE
+DE,Delaware State Police,5,delaware state,DE0020900,Delaware City Police Department,0.0857142857142858,Delmar Police Department,0.18888888888888883,delaware,0.6166666666666667,FALSE
+MI,Blackman-Leoni Township Department of Public Safety,13,blackman leoni,MI3889000,Blackman Township Police Department,0.0857142857142858,Mancelona Police Department,0.2671957671957672,blackman,0.5583333333333333,FALSE
+NY,New York State Police,4,new york state,NY0303000,New York City Police Department,0.0857142857142858,New York Mills Village Police Department,0.11428571428571427,new york,1,FALSE
+CA,"Los Angeles County Sheriff's Department,Santa Clarita",11,los angeles county santa clarita,CA0190000,Los Angeles County Sheriff's Office,0.08750000000000002,Lassen County Sheriff's Office,0.24735576923076924,los angeles county,0.4142857142857143,FALSE
+MO,Jefferson County PD,1,jefferson county,MO0260100,Jefferson City Police Department,0.08750000000000002,Ironton Police Department,0.32440476190476186,jefferson,1,FALSE
+IA,University of Iowa Police Department,19,university,IA0520600,University Heights Police Department,0.08888888888888895,Winterset Police Department,0.30000000000000004,university heights,0.5095238095238095,FALSE
+TX,Amarillo Police Depart,1,amarillo depart,TX1880100,Amarillo Police Department,0.09333333333333341,Alamo Police Department,0.26000000000000006,amarillo,0.4722222222222223,FALSE
+PA,Northern Regional Police Department of Allegheny County,35,northern regional allegheny county,PA0021B00,Northern Regional Police Department,0.10000000000000005,Northern Lancaster County Regional Police Department,0.12415966386554624,northern regional,0.4722222222222223,FALSE
+MD,Montgomery College Public Safety,1,montgomery college,MD0160400,Montgomery County Police Department,0.10261437908496733,Mount Airy Police Department,0.30010582010582015,montgomery county,0.3682539682539683,FALSE
+VA,Virginia State Police,2,virginia state,VA1280000,Virginia Beach Police Department,0.10389610389610397,Victoria Police Department,0.27142857142857146,virginia beach,0.5333333333333334,FALSE
+NM,[Farmington Police Dapertment],1,farmington dapertment,NM0240200,Farmington Police Department,0.10476190476190479,Springer Police Department,0.3214285714285715,farmington,0.43333333333333335,FALSE
+NY,Binghamton University PD,2,binghamton university,NY0030100,Binghamton Police Department,0.10476190476190479,Huntington Bay Village Police Department,0.32106782106782106,binghamton,0.5777777777777778,FALSE
+NY,binghamton university police department,1,binghamton university,NY0030100,Binghamton Police Department,0.10476190476190479,Huntington Bay Village Police Department,0.32106782106782106,binghamton,0.5777777777777778,FALSE
+IN,city of Boonville/Boonville police,2,boonville boonville,IN0870100,Boonville Police Department,0.10526315789473684,Brookville Police Department,0.23368421052631572,boonville,0,FALSE
+IL,University of Chicago Police Department,10,university chicago,IL0992000,University Park Police Department,0.10666666666666669,North Chicago Police Department,0.2415177415177414,university park,1,FALSE
+MN,Ramsey County Police Department,4,ramsey county,MN0021300,Ramsey Police Department,0.10769230769230771,Rosemount Police Department,0.20496794871794877,ramsey,0.5555555555555556,FALSE
+KS,Riley County Sheriff,1,riley county,KS0800000,Rice County Sheriff's Office,0.10868686868686872,Greeley County Sheriff's Office,0.12950937950937957,rice county,0,FALSE
+OK,Pryor Police,5,pryor,OK0490200,Pryor Creek Police Department,0.10909090909090913,Perry Police Department,0.23999999999999994,pryor creek,0.5333333333333334,FALSE
+CA,San Juan Bautista Police Department,4,san juan bautista,CA0301800,San Juan Capistrano Police Department,0.10935426802299876,San Jacinto Police Department,0.1638146167557932,san juan capistrano,0.3916666666666667,FALSE
+CT,Norwich Police Deparment,1,norwich deparment,CT0010400,Norwich Police Department,0.11764705882352945,Norwalk Police Department,0.19831932773109245,norwich,0.5820105820105821,FALSE
+OH,University of Toledo Police Department,29,university toledo,OH0185200,University Heights Police Department,0.11799899446958266,Uniontown Police Department,0.2684095860566449,university heights,0.5634920634920635,FALSE
+CA,Los Gatos/Monte Sereno Police Department,12,los gatos monte sereno,CA0430700,Los Gatos Police Department,0.11818181818181821,Los Altos Police Department,0.14949494949494946,los gatos,0.5444444444444445,FALSE
+VA,Hampton University Police Department,7,hampton university,VA1110000,Hampton Police Department,0.12222222222222223,Haymarket Police Department,0.31111111111111106,hampton,0.5857142857142857,FALSE
+WI,Germantown Police Department / Menonomee Falls Police Department,2,germantown menonomee falls,WI0670100,Germantown Police Department,0.1230769230769231,Menomonee Falls Police Department,0.2632478632478632,germantown,0.5666666666666667,FALSE
+MI,Franklin-Bingham Farms Police Department,2,franklin bingham farms,MI6340800,Franklin Police Department,0.1272727272727273,Frankenmuth Police Department,0.20681818181818182,franklin,0.40750000000000003,FALSE
+MD,Anne Arundel County Police Real Time Information Center  (RTIC),1,anne arundel county real time information center rtic,MD0020200,Anne Arundel County Police Department,0.1283018867924529,Annapolis Police Department,0.28770090845562546,anne arundel county,1,FALSE
+FL,"City of Perry, FL - Perry Police Department",7,perry fl perry,FL0620100,Perry Police Department,0.12857142857142856,Pembroke Park Police Department,0.31355311355311366,perry,0,FALSE
+NY,Village of Wappigners PD/Village of Wappingers,2,wappigners wappingers,NY0132400,Wappingers Falls Village Police Department,0.12907509157509164,Warsaw Village Police Department,0.23492063492063497,wappingers falls,0.5666666666666667,FALSE
+DE,Deleware State Police,2,deleware state,DE0020900,Delaware City Police Department,0.12916666666666674,Delmar Police Department,0.18888888888888883,delaware,0.6166666666666667,FALSE
+VA,York-Poquoson Sheriff's Office,23,york poquoson,VA0980000,York County Sheriff's Office,0.13146853146853155,Clarke County Sheriff's Office,0.35897435897435903,york county,0.4722222222222223,FALSE
+WI,Wisconsin State Capitol Police Department,4,wisconsin state capitol,WI0720300,Wisconsin Rapids Police Department,0.131832298136646,Wisconsin Dells Police Department,0.13670011148272027,wisconsin rapids,0.3571428571428572,FALSE
+NY,New York State University Police,6,new york state university,NY0303000,New York City Police Department,0.13599999999999995,New York Mills Village Police Department,0.17303896103896105,new york,0.55,FALSE
+MA,Holyoke Police or Holyoke Mall,1,holyoke or holyoke mall,MA0071000,Holyoke Police Department,0.13913043478260873,Holbrook Police Department,0.24148550724637685,holyoke,0.5357142857142858,FALSE
+VA,Mason PD,2,mason,VA0860100,Marion Police Department,0.14222222222222225,Manassas Police Department,0.2533333333333334,marion,0.14222222222222225,FALSE
+IL,Southern Illinois University Police Department,3,southern illinois university,IL0841500,Southern View Police Department,0.14633699633699634,South Elgin Police Department,0.18675324675324678,southern view,0.4277777777777778,FALSE
+FL,Gadsden County Sheriffs Office / Gadsden County Board of County Commissioners,1,gadsden county gadsden county board county commissioners,FL0200000,Gadsden County Sheriff's Office,0.15,Glades County Sheriff's Office,0.3462912087912088,gadsden county,0.40341880341880343,FALSE
+NY,Ossining PD: Facial Recongnition? LPR?,1,ossining facial recongnition lpr,NY0590500,Ossining Village Police Department,0.15,Oswego City Police Department,0.3227777777777778,ossining,1,FALSE

@@ -1,0 +1,315 @@
+id,agency,state,ori,reported,basis,osm_a,osm_b
+119,Avon IN PD,IN,IN0321100,6,exact,0,0
+2421,Sterling Heights MI PD,MI,MI5076500,20,exact,23,0
+2459,Sylvania OH PD,OH,OH0480500,15,exact,16,0
+1170,Hendricks County IN SO,IN,IN0320000,12,exact,0,0
+1182,Hesston KS PD,KS,KS0400200,2,exact,0,0
+2008,Parsons KS PD,KS,KS0500100,5,exact,0,0
+2066,Pittsburg KS PD,KS,KS0190100,14,exact,0,0
+765,East Providence RI PD,RI,RI0040400,14,exact,2,0
+921,Fort Smith AR PD,AR,AR0660100,28,exact,0,0
+778,Edmond OK PD,OK,OK0550300,10,exact,13,0
+1454,Lawton OK PD,OK,OK0160100,13,exact,0,0
+1062,Green Bay WI PD,WI,WI0050200,43,exact,0,0
+2208,Rockport TX PD,TX,TX0040200,6,exact,0,0
+3480,Warrick County IN SO,IN,IN0870000,12,exact,1,0
+3921,Anoka County MN SO,MN,MN0020000,2,exact,1,0
+3954,Johnson County IN SO,IN,IN0410000,12,exact,0,0
+3965,Shelby County IN SO,IN,IN0730000,6,exact,0,0
+4222,Powell OH PD,OH,OH0210500,0,exact,0,0
+966,Fuquay-Varina NC PD,NC,NC0920400,11,exact,0,0
+1117,Hamlet NC PD,NC,NC0770200,2,exact,0,0
+529,Cleveland County NC SO,NC,NC0230000,14,exact,0,0
+4099,Granby CO PD,CO,CO0250100,2,exact,0,0
+1396,Lafayette IN PD,IN,IN0790100,22,exact,0,0
+3796,Lockney TX PD,TX,TX0770200,2,exact,0,0
+1990,Palm Springs CA PD,CA,CA0331100,13,exact,0,0
+2334,Shrewsbury MO PD,MO,MO0956900,8,exact,1,0
+102,Aubrey TX PD,TX,TX0611400,34,exact,0,0
+3612,Oroville CA PD,CA,CA0040400,35,exact,0,0
+4358,Los Altos CA PD,CA,CA0430500,10,exact,22,0
+4652,Maple Grove MN PD,MN,MN0272700,1,exact,0,0
+4654,Margaret AL PD,AL,AL0580800,3,exact,0,0
+4689,Montgomery TWP NJ PD,NJ,NJ0181300,5,exact,0,0
+4694,Moundville AL PD,AL,AL0360200,2,exact,0,0
+4860,St. Louis County MN SO,MN,MN0690000,7,exact,1,0
+4913,Wells County IN SO,IN,IN0900000,6,exact,5,0
+783,El Cerrito CA PD,CA,CA0070500,40,exact,0,0
+1055,Grass Valley CA PD,CA,CA0290100,28,exact,1,0
+2269,San Rafael CA PD,CA,CA0210900,15,exact,0,0
+2275,Santa Barbara PD CA,CA,CA0420300,12,exact,10,0
+2065,Pittsboro IN PD,IN,IN0320800,7,exact,0,0
+1107,Hall County NE SO,NE,NB0400000,6,exact,0,0
+771,Eatonville WA PD,WA,WA0270500,11,exact,0,0
+3034,Pittsboro NC PD,NC,NC0190200,5,exact,0,0
+3337,Roanoke VA PD,VA,VA1230000,3,exact,4,0
+3488,Grand Island NE PD,NE,NB0400100,5,exact,0,0
+3959,Mooresville IN PD,IN,IN0550200,4,exact,0,0
+1761,Mount Holly NC PD,NC,NC0360900,4,exact,0,0
+4141,Coronado CA PD,CA,CA0370300,2,exact,6,0
+4144,San Diego CA PD,CA,CA0371100,528,exact,0,0
+4171,Marine City MI PD,MI,MI7455600,9,exact,0,0
+4174,Muskegon MI PD,MI,MI6160300,7,exact,0,0
+4200,Edgewater CO PD,CO,CO0300300,6,exact,0,0
+4216,Puyallup WA PD,WA,WA0270100,2,exact,9,0
+4220,Mount Vernon OH PD,OH,OH0420100,5,exact,4,0
+4263,Wytheville VA PD,VA,VA0970100,4,exact,0,0
+4290,Rossville GA PD,GA,GA1460200,2,exact,0,0
+325,Buena Park CA PD,CA,CA0300300,8,exact,0,0
+496,Dixon CA PD,CA,CA0480200,23,exact,23,0
+1501,Lodi CA PD,CA,CA0390200,14,exact,0,0
+2278,Santa Clara CA PD,CA,CA0431400,17,exact,36,0
+2816,Yuba County Sheriffs Office,CA,CA0580000,30,exact,0,0
+3317,El Cajon CA PD,CA,CA0370500,40,exact,1,0
+3442,Troy MI PD,MI,MI6378400,25,exact,25,0
+3503,Worthington OH PD,OH,OH0251200,10,exact,9,0
+3985,Grand Traverse County MI SO,MI,MI2812800,28,exact,15,0
+4332,Cedar Lake IN PD,IN,IN0450100,4,exact,0,0
+4601,Lafayette CO PD,CO,CO0070300,30,exact,1,0
+3391,Lakewood WA PD,WA,WA0272300,31,exact,41,0
+3423,Rossford OH PD,OH,OH0870400,19,exact,19,0
+4104,Cheshire CT PD,CT,CT0002500,12,exact,9,0
+2550,Ukiah CA PD,CA,CA0230300,14,exact,7,0
+2339,Simi Valley CA PD,CA,CA0560900,23,exact,1,0
+907,Forest Heights MD PD,MD,MD0171200,11,exact,0,0
+3371,Dublin OH PD,OH,OH0250300,19,exact,1,0
+3439,Portage MI PD,MI,MI3967800,27,exact,23,0
+3724,Franklin MA PD,MA,MA0111000,2,exact,0,0
+3997,Milan MI PD,MI,MI8158400,4,exact,3,0
+4013,Sumpter Twp MI PD,MI,MI8277000,2,exact,0,0
+4020,Wolverine Lake MI PD,MI,MI6382900,3,exact,3,0
+2069,Placer County CA SO,CA,CA0310000,35,exact,2,0
+1072,Greenfield IN PD,IN,IN0300100,13,exact,0,0
+460,Chase City VA PD,VA,VA0580200,1,exact,0,0
+739,Dublin VA PD,VA,VA0770200,4,exact,3,0
+2286,Sarpy County NE SO,NE,NB0770000,15,exact,0,0
+2300,Scottsbluff NE PD,NE,NB0790100,5,exact,0,0
+3267,Polkton NC PD,NC,NC0040400,1,exact,0,0
+3321,Culver City CA PD,CA,CA0191800,52,exact,4,0
+3326,Watsonville CA PD,CA,CA0440300,20,exact,19,0
+3342,Woodstock VA PD,VA,VA0850300,10,exact,2,0
+3349,Jupiter Inlet Colony FL PD,FL,FL0501800,2,exact,0,0
+3407,Elgin SC PD,SC,SC0280400,2,exact,0,0
+3424,Sheffield Village OH PD,OH,OH0471400,8,exact,0,0
+3432,Highland Park MI PD,MI,MI8247100,14,exact,16,0
+3547,Cayuga Heights Village NY PD,NY,NY0542500,1,exact,0,0
+3569,Jackson MI PD,MI,MI3849700,10,exact,12,0
+3627,Ferndale MI PD,MI,MI6339400,16,exact,0,0
+3647,Blairsville GA PD,GA,GA1440100,2,exact,0,0
+3720,Edison NJ PD,NJ,NJ0120500,14,exact_no_muni_word,0,0
+3812,Morgan's Point PD TX,TX,TX1011400,3,exact,0,0
+3813,Morgan's Point Resort TX PD,TX,TX0141000,4,exact,0,0
+3820,Odessa TX PD,TX,TX0680200,30,exact,21,0
+3858,Trophy Club TX PD,TX,TX0613100,10,exact,9,0
+3880,Maple Bluff WI PD,WI,WI0137100,7,exact,0,0
+3935,Temple GA PD,GA,GA0220400,4,exact,0,0
+1786,Napa CA PD,CA,CA0280200,15,exact,0,0
+2149,Redwood City CA PD,CA,CA0411300,25,exact,0,0
+2405,St. Helena CA PD,CA,CA0280300,2,exact,3,0
+2553,Union City CA PD,CA,CA0011300,20,exact,2,0
+2302,Seaside CA PD,CA,CA0271000,24,exact,28,0
+1319,Johnston RI PD,RI,RI0040500,3,exact,0,0
+2530,Truckee CA PD,CA,CA0290800,23,exact,7,0
+1981,Pacific Grove CA PD,CA,CA0270700,11,exact,11,0
+478,Chesterfield MO PD,MO,MO0959A00,8,exact,2,0
+36,Alexandria VA PD,VA,VA0990000,18,exact,0,0
+2345,Smithfield RI PD,RI,RI0041100,2,exact,0,0
+676,Dayton OH PD,OH,OH0570200,72,exact,7,0
+647,Culpeper VA PD,VA,VA0240100,10,exact,15,0
+1312,Jemison AL PD,AL,AL0140300,3,exact,0,0
+187,Belle Isle FL PD,FL,FL0489300,14,exact,0,0
+2260,San Leandro CA PD,CA,CA0011200,51,exact,44,0
+53,Amberley Village OH PD,OH,OH0310200,9,exact,2,0
+169,Baytown TX PD,TX,TX1010100,62,exact,0,0
+1991,Palo Alto CA PD,CA,CA0431200,21,exact,11,0
+2090,Pontiac IL PD,IL,IL0530200,4,exact,0,0
+2053,Pierce Township OH PD,OH,OH0131700,2,exact,3,0
+347,Butler County KS SO,KS,KS0080000,9,exact,0,0
+1355,Kent WA PD,WA,WA0170700,12,exact,8,0
+1240,Huntersville PD NC,NC,NC0600600,10,exact,0,0
+2677,Waxhaw NC PD,NC,NC0900300,6,exact,0,0
+793,Elizabethtown NC PD,NC,NC0090300,10,exact,0,0
+219,Bessemer City NC PD,NC,NC0360200,9,exact,0,0
+43,Allen Park PD MI,MI,MI8221200,13,exact,1,0
+96,Atherton CA PD,CA,CA0410100,49,exact,14,0
+151,Barstow CA PD,CA,CA0360100,33,exact,25,0
+269,Brawley CA PD,CA,CA0130100,26,exact,9,0
+379,Calistoga CA PD,CA,CA0280100,6,exact,0,0
+425,Cathedral City CA PD,CA,CA0332500,20,exact,0,0
+502,City of Riverside CA PD,CA,CA0331300,118,exact,2,0
+570,Colma CA PD,CA,CA0410500,10,exact,2,0
+593,Contra Costa County CA SO,CA,CA0070000,37,exact,0,0
+667,Danville CA PD,CA,CA007230X,47,exact,0,0
+974,Galt CA PD,CA,CA0340200,25,exact,0,0
+1007,Gilroy CA PD,CA,CA0430400,39,exact,6,0
+1092,Grover Beach CA PD,CA,CA0400200,12,exact,0,0
+1357,Kern County CA SO,CA,CA0150000,30,exact,0,0
+1720,Monrovia CA PD,CA,CA0194600,15,exact,0,0
+1723,Monterey Park CA PD,CA,CA0194800,9,exact,0,0
+1787,Napa County CA SO,CA,CA0280000,5,exact,0,0
+2095,Port Hueneme CA PD,CA,CA0560500,16,exact,0,0
+2164,Richmond CA PD,CA,CA0071000,116,exact,22,0
+2257,San Joaquin County CA SO,CA,CA0390000,35,exact,0,0
+2267,San Mateo County CA SO,CA,CA0410000,66,exact,2,0
+2590,Upland CA PD,CA,CA0361100,12,exact,0,0
+2725,Westminster CA PD,CA,CA0302400,9,exact,4,0
+16,Akron OH PD,OH,OH0770100,145,exact,7,0
+55,Amherst OH PD,OH,OH0470100,12,exact,0,0
+190,Bellefontaine OH PD,OH,OH0460100,14,exact,0,0
+825,Evendale OH PD,OH,OH0311000,20,exact,0,0
+839,Fairfield OH PD,OH,OH0090100,44,exact,3,0
+911,Forest Park OH PD,OH,OH0311200,35,exact,20,0
+994,Genoa Township OH PD,OH,OH0210800,3,exact,0,0
+1193,Hilliard OH PD,OH,OH0250700,18,exact,0,0
+1207,Holland OH PD,OH,OH0481000,4,exact,0,0
+1232,Hubbard OH PD,OH,OH0780200,6,exact,0,0
+1511,Lorain OH PD,OH,OH0470500,40,exact,0,0
+1586,Marion OH PD,OH,OH0510100,0,exact,0,0
+1644,Mentor on the Lake OH PD,OH,OH0430700,3,exact,0,0
+1900,Oberlin OH PD,OH,OH0470600,4,exact,0,0
+1939,Olmsted Falls OH PD,OH,OH0183900,3,exact,0,0
+2094,Port Clinton OH PD,OH,OH0620200,8,exact,0,0
+2162,Richland County OH SO,OH,OH0700000,9,exact,0,0
+2636,Wadsworth OH PD,OH,OH0520300,12,exact,4,0
+2709,West Milton OH PD,OH,OH0551200,2,exact,0,0
+2720,Westerville OH PD,OH,OH0251000,21,exact,0,0
+1441,Largo FL PD,FL,FL0520800,2,exact,0,0
+1760,Mount Dora FL PD,FL,FL0351000,0,exact,0,0
+183,Beecher IL PD,IL,IL0990100,12,exact,0,0
+1844,Normal IL PD,IL,IL0570200,27,exact,0,0
+2705,West Lafayette IN PD,IN,IN0790200,3,exact,2,0
+48,Altoona IA PD,IA,IA0770800,20,exact,39,0
+1782,Muskogee OK PD,OK,OK0510100,10,exact,6,0
+2684,Webster Groves MO PD,MO,MO0958000,6,exact,2,0
+2700,West Des Moines IA PD,IA,IA0770500,56,exact,48,0
+2385,Spokane County WA SO,WA,WA0320000,39,exact,41,0
+78,Arcanum OH PD,OH,OH0190300,5,exact,0,0
+127,Bainbridge Township OH PD,OH,OH0281200,2,exact,0,0
+707,Derby KS PD,KS,KS0870100,15,exact,0,0
+1328,Junction City KS PD,KS,KS0310100,19,exact,0,0
+2688,Wellington KS PD,KS,KS0960100,4,exact,0,0
+423,Castle Rock CO PD,CO,CO0180100,32,exact,6,0
+614,Council Bluffs IA PD,IA,IA0780100,25,exact,0,0
+2017,Pawtucket RI PD,RI,RI0040800,20,exact,1,0
+2142,Rantoul IL PD,IL,IL0100400,34,exact,0,0
+84,Arlington PD (WA),WA,WA0310100,14,exact,0,0
+1629,Medina WA PD,WA,WA0172000,15,exact,0,0
+543,Clive IA PD,IA,IA0770200,20,exact,19,0
+777,Edina MN PD,MN,MN0270600,19,exact,8,0
+538,Clinton IA PD,IA,IA0230100,8,exact,0,0
+2034,Peotone IL PD,IL,IL0991000,3,exact,0,0
+2593,Urbandale IA PD,IA,IA0770400,21,exact,24,0
+268,Bratenahl OH PD,OH,OH0180700,10,exact,0,0
+819,Euclid OH PD,OH,OH0181800,26,exact,0,0
+1656,Miami County OH SO,OH,OH0550000,10,exact,0,0
+2389,Springdale OH PD,OH,OH0313300,10,exact,4,0
+2651,Warren County OH SO,OH,OH0830000,10,exact,0,0
+141,Barling AR PD,AR,AR0660300,5,exact,0,0
+358,Cabot AR PD,AR,AR0430200,8,exact,0,0
+1742,Mooresville NC PD,NC,NC0490100,48,exact,0,0
+2537,Tulsa OK PD,OK,OK0720500,114,exact,98,0
+2622,Village of Bloomingdale IL PD,IL,IL0220300,16,exact,0,0
+692,Del City OK PD,OK,OK0550200,10,exact,0,0
+1964,Osage County OK SO,OK,OK0570000,17,exact,0,0
+324,Buda TX PD,TX,TX1051200,6,exact,0,0
+1877,Northlake TX PD,TX,TX0613900,38,exact,2,0
+1695,Mint Hill NC PD,NC,NC0602900,10,exact,0,0
+2063,Pineville NC PD,NC,NC0600300,8,exact,0,0
+2454,Surfside Beach SC PD,SC,SC0260800,9,exact,0,0
+945,Franklinton NC PD,NC,NC0350200,0,exact,0,0
+196,Belmont NC PD,NC,NC0360100,3,exact,0,0
+1471,Lexington SC PD,SC,SC0320400,4,exact,0,0
+475,Chester County SC SO,SC,SC0120000,25,exact,0,0
+2138,Raleigh NC PD,NC,NC0920100,26,exact,1,0
+285,Bridgewater VA PD,VA,VA0820100,5,exact,0,0
+833,Fairfax City VA PD,VA,VA1075000,19,exact,1,0
+899,Folly Beach SC PD,SC,SC0100400,2,exact,0,0
+1120,Hampton VA PD,VA,VA1110000,54,exact,100,0
+1832,Newport News VA PD,VA,VA1160000,74,exact,96,0
+2171,Richmond VA PD,VA,VA1220000,97,exact,59,0
+23,Alameda CA PD,CA,CA0010100,33,exact,0,0
+203,Benicia CA PD,CA,CA0480100,50,exact,0,0
+392,Campbell CA PD,CA,CA0430200,22,exact,0,0
+522,Clearlake CA PD,CA,CA0170200,31,exact,0,0
+611,Costa Mesa CA PD,CA,CA0300400,30,exact,16,0
+836,Fairfield CA PD,CA,CA0480300,56,exact,0,0
+927,Foster City CA PD,CA,CA0412000,20,exact,13,0
+1165,Hemet CA PD,CA,CA0330800,47,exact,0,0
+1177,Hercules CA PD,CA,CA0070600,25,exact,0,0
+1195,Hillsborough CA PD,CA,CA0410800,22,exact,0,0
+1405,Lake County CA SO,CA,CA0170000,26,exact,0,0
+1481,Lincoln CA PD,CA,CA0310300,21,exact,0,0
+1750,Morgan Hill CA PD,CA,CA0431000,49,exact,0,0
+1778,Murrieta CA PD,CA,CA0334200,38,exact,0,0
+1809,Nevada County CA SO,CA,CA0290000,12,exact,13,0
+1884,Novato CA PD,CA,CA0210600,6,exact,0,0
+1897,Oakley CA PD,CA,CA007340X,5,exact,0,0
+2052,Piedmont CA PD,CA,CA0011000,53,exact,44,0
+2176,Rio Vista CA PD,CA,CA0480400,5,exact,1,0
+2258,San Jose CA PD,CA,CA0431300,241,exact,1,0
+2265,San Marino CA PD,CA,CA0196300,41,exact,22,0
+2266,San Mateo CA PD,CA,CA0411600,31,exact,43,0
+2276,Santa Clara County CA SO,CA,CA0430000,80,exact,0,0
+2374,South San Francisco CA PD,CA,CA0411700,28,exact,8,0
+2519,Tracy CA PD,CA,CA0390600,46,exact,0,0
+2599,Vacaville CA PD,CA,CA0480600,195,exact,4,0
+2602,Vallejo CA PD,CA,CA0480700,131,exact,0,0
+2699,West Covina CA PD,CA,CA0197500,40,exact,2,0
+1043,Grandview Heights OH PD,OH,OH0250500,8,exact,3,0
+1162,Heath OH PD,OH,OH0450700,10,exact,8,0
+1256,Indian Hill OH PD,OH,OH0311700,30,exact,0,0
+1527,Loveland OH PD,OH,OH0312000,10,exact,0,0
+1569,Mansfield OH PD,OH,OH0700100,29,exact,0,0
+1585,Marion County OH SO,OH,OH0510000,34,exact,0,0
+1253,Indialantic FL PD,FL,FL0050500,4,exact,0,0
+449,Champaign IL PD,IL,IL0100100,46,exact,57,0
+2326,Shelby County TN SO,TN,TN0790000,169,exact,0,0
+2749,Wichita KS PD,KS,KS0870300,167,exact,6,0
+2807,Wright City MO PD,MO,MO1100400,2,exact,0,0
+184,Bel Aire KS PD,KS,KS0871800,0,exact,0,0
+1346,Kearney NE PD,NE,NB0100100,28,exact,0,0
+2001,Park City KS PD,KS,KS0871600,11,exact,0,0
+2691,Wentzville MO PD,MO,MO0920500,25,exact,17,0
+1523,Louisville CO PD,CO,CO0070600,20,exact,0,0
+1549,Madison SD PD,SD,SD0390100,25,exact,0,0
+437,Centralia PD (WA),WA,WA0210100,20,exact,8,0
+2163,Richland PD WA,WA,WA0030200,10,exact,7,0
+2535,Tukwila WA PD,WA,WA0172300,27,exact,1,0
+2811,Yakima WA PD,WA,WA0390500,42,exact,57,0
+626,Cranston RI PD,RI,RI0040200,27,exact,14,0
+2118,Providence RI PD,RI,RI0040900,25,exact,0,0
+2658,Warwick RI PD,RI,RI0020300,10,exact,9,0
+2392,Springfield IL PD,IL,IL0840200,94,exact,0,0
+2804,Woonsocket RI PD,RI,RI0041200,15,exact,0,0
+2229,Round Rock TX PD,TX,TX2460500,33,exact,3,0
+2740,Whitehall OH PD,OH,OH0251100,25,exact,0,0
+1892,Oak Park IL PD,IL,IL0168100,8,exact,0,0
+49,Altoona WI PD,WI,WI0180200,11,exact,0,0
+2046,Pflugerville TX PD,TX,TX2270900,28,exact,0,0
+582,Columbus NC PD,NC,NC0750300,3,exact,0,0
+1166,Henderson County NC SO,NC,NC0450000,10,exact,0,0
+1206,Hoke County NC SO,NC,NC0470000,3,exact,2,0
+2231,Roxboro NC PD,NC,NC0730100,6,exact,0,0
+2398,St Pauls NC PD,NC,NC0780400,6,exact,0,0
+2460,Tabor City NC PD,NC,NC0240400,0,exact,0,0
+2744,Whiteville NC PD,NC,NC0240500,2,exact,0,0
+673,Davie County NC SO,NC,NC0300000,10,exact,0,0
+439,Chadbourn NC PD,NC,NC0240200,15,exact,0,0
+1234,Hudson NC PD,NC,NC0140400,2,exact,0,0
+1794,Nashville NC PD,NC,NC0640100,3,exact,0,0
+2325,Sharpsburg NC PD,NC,NC0640600,3,exact,0,0
+1075,Greensboro NC PD,NC,NC0410200,25,exact,0,0
+75,Aransas Pass TX PD,TX,TX0040100,10,exact,0,0
+404,Carmel CA PD,CA,CA0270100,17,exact,8,0
+1854,North College Hill OH PD,OH,OH0312700,5,exact,5,0
+823,Evanston IL PD,IL,IL0163200,19,exact,0,0
+1099,Gurnee IL PD,IL,IL0490600,12,exact,0,0
+1125,Hanover Park IL PD,IL,IL0164200,9,exact,0,0
+2018,Paxton IL PD,IL,IL0270200,4,exact,0,0
+2221,Roselle IL PD,IL,IL0221600,11,exact,0,0
+2616,Vernon Hills IL PD,IL,IL0492600,34,exact,1,0
+2681,Wayzata MN PD,MN,MN0272300,10,exact,0,0
+241,Bluffton IN PD,IN,IN0900100,4,exact,4,0
+2487,Thomasville GA PD,GA,GA1360100,28,exact,0,0
+2802,Woodstock GA PD,GA,GA0280500,7,exact,0,0
+4628,Lone Peak UT PD,UT,UT0250900,7,exact,5,0

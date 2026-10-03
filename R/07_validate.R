@@ -7,7 +7,7 @@ library(stringdist)
 repo <- file.path(RAW, "private_eyes", "repo")
 if (!dir.exists(repo))
   system2("git", c("clone", "--depth", "1", "https://github.com/mcclatchy-southeast/private_eyes", repo))
-writeLines(system2("git", c("-C", repo, "log", "-1", "--format=%H %cd"), stdout = TRUE),
+writeLines(system2("git", c("-C", repo, "log", "-1", shQuote("--format=%H %cd")), stdout = TRUE),
            file.path(RAW, "private_eyes", "commit.txt"))
 
 pe <- read_csv(file.path(repo, "data", "latest_usage04262023.csv"), col_types = cols(.default = "c"))

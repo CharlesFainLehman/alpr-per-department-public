@@ -22,7 +22,8 @@ n_log(cams, "cameras in"); n_log(ag, "agencies in")
 basic <- function(x) {
   x |> str_to_lower() |> str_replace_all("[’`]", "'") |> str_replace_all("'s\\b", "s") |>
     str_replace_all("&", " and ") |> str_replace_all("\\bst\\.\\s", "saint ") |>
-    str_replace_all("[^a-z0-9 ]", " ") |> str_squish() |>
+    str_replace(",[^,]* (county|parish)$", "") |>          # FBI: "Miami Township PD, Clermont County"
+    str_replace_all("[^a-z0-9 ]", " ") |> str_squish() |> str_replace_all("\\bst\\b", "saint") |>
     str_replace_all("\\bco\\b", "county") |> str_replace_all("\\btwp\\b", "township") |>
     # unambiguous big-city abbreviations
     str_replace_all(c("\\bnypd\\b" = "new york city police department", "\\blapd\\b" = "los angeles police department",
@@ -68,6 +69,9 @@ k1 <- uniq_key(ag_p, "core"); k2 <- uniq_key(ag_p, "core2")
 ops <- cams |> filter(!is.na(operator), str_squish(operator) != "") |> count(state, operator, name = "n_cameras")
 n_log(ops, "unique (state, operator) strings")
 ops <- bind_cols(ops, parse_name(ops$operator))
+# Drop the camera's own state name/abbreviation at the end of the core ("Bristol TN PD", "Troy PD (Michigan)").
+st_rx <- paste0("\\s(", str_to_lower(ops$state), "|", str_to_lower(STATES$name[match(ops$state, STATES$abbr)]), ")$")
+ops <- ops |> mutate(core = str_squish(str_remove(core, st_rx)), core2 = str_squish(str_remove(core2, st_rx)))
 
 # Step 2: exact on core
 m <- ops |> left_join(k1, by = c("state", "kind", "core" = "k"))
@@ -85,6 +89,15 @@ m <- m |> mutate(take = is.na(a_ori) & !is.na(n_ag) & n_ag == 1 & kind != "none"
                  ambiguous = ambiguous | (is.na(a_ori) & !is.na(n_ag) & n_ag > 1)) |>
   select(-ori, -n_ag, -take)
 message("  + exact (core2): ", sum(m$a_basis == "exact_no_muni_word", na.rm = TRUE))
+
+# Step 3b: county word omitted ("Pasco Sheriff's Office" -> Pasco County Sheriff's Office)
+m <- m |> mutate(core_cty = if_else(is.na(a_ori) & kind != "none" & !str_detect(core2, "\\b(county|parish)\\b"),
+                                    paste(core2, "county"), NA)) |>
+  left_join(k2 |> filter(n_ag == 1) |> select(state, kind, k, ori_c = ori), by = c("state", "kind", "core_cty" = "k"))
+n_log(m, "operators after exact join (county word added)")
+m <- m |> mutate(a_basis = if_else(is.na(a_ori) & !is.na(ori_c), "exact_county_added", a_basis),
+                 a_ori = coalesce(a_ori, ori_c)) |> select(-ori_c, -core_cty)
+message("  + exact (county word added): ", sum(m$a_basis == "exact_county_added", na.rm = TRUE))
 
 # Step 4: jurisdiction only ("City of X", "County of Y", "X County", bare "X")
 juris <- m |> filter(is.na(a_ori), kind == "none") |>
@@ -111,7 +124,12 @@ fuzzy <- pmap_dfr(fz |> select(state, operator, kind, core2, n_cameras), \(state
          best_ori = cand$ori[o[1]], best_name = cand$name[o[1]], best_dist = d[o[1]],
          second_name = if (length(o) > 1) cand$name[o[2]] else NA, second_dist = if (length(o) > 1) d[o[2]] else NA)
 })
-fuzzy <- fuzzy |> mutate(accepted = best_dist <= FUZZY_MAX & (is.na(second_dist) | second_dist - best_dist >= FUZZY_GAP)) |>
+# Last word must also agree (blocks "Virginia Tech" -> "Virginia Beach").
+last_tok <- function(x) str_extract(x, "\\S+$")
+fuzzy <- fuzzy |> left_join(ag_p |> select(best_ori = ori, best_core2 = core2), by = "best_ori") |>
+  mutate(last_word_dist = stringdist(last_tok(op_core), last_tok(best_core2), method = "jw", p = 0.1),
+         accepted = best_dist <= FUZZY_MAX & (is.na(second_dist) | second_dist - best_dist >= FUZZY_GAP) &
+                    last_word_dist <= 0.1) |>
   arrange(desc(accepted), best_dist)
 write_csv(fuzzy |> filter(best_dist <= 0.15), file.path(OUT, "method_a_fuzzy_matches_for_review.csv"))
 message("  fuzzy candidates (dist <= 0.15) written for review: ", sum(fuzzy$best_dist <= 0.15),

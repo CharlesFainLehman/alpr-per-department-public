@@ -1,7 +1,7 @@
 operator,cameras,scope,states,n_spellings,spellings,flock_share
-Flock Safety,2067,US,AL CA FL GA IA IL IN KY LA MD MI MN MO NC NE NJ NM OH OK OR PA RI SC TN TX UT VA WI,3,Flock | Flock Safety | Flock_Safety,0.09288824383164006
-Lowe's,1597,US,AK AL AR AZ CA CT DE FL GA HI IA ID IL IN KY LA MA MD MI MN MO MS MT NC ND NJ NM NV NY OH OK OR PA RI SC TN TX UT VA VT WA WI WV WY,5,[LOWES] | Lowe's | Lowe's Home Improvement | Lowes | Lowes Home Improvement,0.9329993738259236
-The Home Depot,1019,US,AL AR AZ CA CT DC DE FL GA IA IL IN KY MA MD MI MN MO MT NC NJ NM NV NY OH OK OR PA RI SC TN TX UT VA WA WI,6,[HOME DEPOT] | Home Depot | HOME DEPOT | Home Depot (retailer) | The Home Depo | The Home Depot,0.985279685966634
+Flock Safety,2151,US,AL CA CO FL GA IA IL IN KS KY LA MD MI MN MO NC NE NJ NM OH OK OR PA RI SC TN TX UT VA WA WI,3,Flock | Flock Safety | Flock_Safety,0.09483960948396095
+Lowe's,1777,US,AK AL AR AZ CA CO CT DE FL GA HI IA ID IL IN KS KY LA MA MD MI MN MO MS MT NC ND NJ NM NV NY OH OK OR PA RI SC TN TX UT VA VT WA WI WV WY,5,[LOWES] | Lowe's | Lowe's Home Improvement | Lowes | Lowes Home Improvement,0.9307822172200337
+The Home Depot,1166,US,AL AR AZ CA CO CT DC DE FL GA IA IL IN KS KY LA MA MD MI MN MO MT NC NJ NM NV NY OH OK OR PA RI SC TN TX UT VA WA WI,6,[HOME DEPOT] | Home Depot | HOME DEPOT | Home Depot (retailer) | The Home Depo | The Home Depot,0.9862778730703259
 NYC Department of Transportation,641,US,NY,3,New York City Department of Transportation | NYC D.O.T | NYC Department of Transportation,0
 San Diego Police Department (CA),591,CA,CA,1,San Diego Police Department,0
 California Highway Patrol (CHP),452,US,CA,2,California Highway Patrol | California Highway Patrol (CHP),0.9977876106194691
@@ -15,7 +15,7 @@ Las Vegas Metropolitan Police Department (NV),162,NV,NV,2,[LVMPD] | Las Vegas Me
 St. Louis City PD (MO),158,MO,MO,1,St. Louis City PD,0
 Irvine Police Department (CA),140,CA,CA,1,Irvine Police Department,0.8785714285714286
 Albuquerque Police Department (NM),138,NM,NM,2,Albuqueque Police Department | Albuquerque Police Department,0.014492753623188406
-Simon Property Group,122,US,AZ CA CT DC FL GA IL LA MD MI MO NC NJ NY OH OK OR PA TN TX UT VA WI WV,1,Simon Property Group,0.8852459016393442
+Simon Property Group,129,US,AZ CA CO CT DC FL GA IL LA MD MI MO NC NJ NY OH OK OR PA TN TX UT VA WI WV,1,Simon Property Group,0.8914728682170543
 Hampton Police Division (VA),115,VA,VA,1,Hampton Police Division,0.008695652173913044
 Metropolitan Transportation Authority,107,US,NY,3,Metropolitan Transit Authority | Metropolitan Transportation Authority | NYC M.T.A,0
 Salinas Police Department (CA),106,CA,CA,1,Salinas Police Department,0.32075471698113206
@@ -28,10 +28,10 @@ Newport News Police Department (VA),96,VA,VA,1,Newport News Police Department,0.
 Toledo Police Department (OH),93,OH,OH,1,Toledo Police Department,1
 Stockton Police Department (CA),92,CA,CA,1,Stockton Police Department,0.7282608695652174
 Oakland County Sheriff's Office (MI),91,MI,MI,1,Oakland County Sheriff's Office,0.978021978021978
+Meijer,91,US,IN MI OH,1,Meijer,0.06593406593406594
 Customs and Border Protection,90,US,AZ CA NM TX,2,Customs and Border Protection | United States Customs and Border Protection,0
 Volusia County Sheriff's Office (FL),88,FL,FL,2,Volusia County Sheriff's Office | Volusia County Sheriff’s Office,0.9204545454545454
 West University Place Police Dept (TX),88,TX,TX,1,West University Place Police Dept,0
-Meijer,81,US,MI OH,1,Meijer,0.07407407407407407
 City of Beverly Hills (CA),78,CA,CA,1,City of Beverly Hills,0.07692307692307693
 St. Johns County Sheriff (FL),77,FL,FL,3,Saint Johns County Sheriff's Office | St. Johns County Sheriff | St. Johns County Sheriff’s Office,1
 Tucson Police Department (AZ),76,AZ,AZ,1,Tucson Police Department,0
@@ -45,14 +45,16 @@ Clay County Sheriff's Office (FL),71,FL,FL,2,(Clay County Sheriff's Office) | Cl
 Kaiser Permanente,70,US,CA,1,Kaiser Permanente,1
 El Centro Police Department (CA),68,CA,CA,1,El Centro Police Department,0.9411764705882353
 City of Buckeye (AZ),67,AZ,AZ,1,City of Buckeye,0.8208955223880597
+Walmart,65,US,AR AZ CA CO FL KS MA OK PA WA,2,walmart | Walmart,0.046153846153846156
 University of Arizona Police Department (AZ),64,AZ,AZ,1,University of Arizona Police Department,0.90625
 Champaign Police Department (IL),63,IL,IL,1,Champaign Police Department,0.5555555555555556
 Dallas Police Department (TX),63,TX,TX,1,Dallas Police Department,1
 Lexington Police Department (KY),60,KY,KY,1,Lexington Police Department,0.13333333333333333
-Walmart,60,US,AR AZ CA FL MA OK PA WA,2,walmart | Walmart,0.05
 Portsmouth Police Department (VA),60,VA,VA,2,Portsmouth Police Department | Portsmouth Police Department (Virginia),0.1
 Richmond Police Department (VA),59,VA,VA,1,Richmond Police Department,1
 Louisville Metro Police Department (KY),58,KY,KY,1,Louisville Metro Police Department,0.9482758620689655
+City of Yakima (WA),57,WA,WA,1,City of Yakima,1
+Township of Cranberry (PA),56,PA,PA,1,Township of Cranberry,0
 Pasco Sheriff’s Office (FL),54,FL,FL,2,Pasco Sheriff's Office | Pasco Sheriff’s Office,0.7592592592592593
 Hempstead Police Department (NY),52,NY,NY,1,Hempstead Police Department,0.9615384615384616
 New Hampshire Bureau of Turnpikes,52,US,NH,1,New Hampshire Bureau of Turnpikes,0
@@ -69,12 +71,16 @@ Shelby Township Police Department (MI),46,MI,MI,1,Shelby Township Police Departm
 Minneapolis Police Department (MN),45,MN,MN,1,Minneapolis Police Department,0
 City of Piedmont (CA),44,CA,CA,1,City of Piedmont,0.9772727272727273
 San Leandro Police Department (CA),44,CA,CA,1,San Leandro Police Department,0.8409090909090909
+Federal Way Police (WA),44,WA,WA,1,Federal Way Police,0.11363636363636363
 San Mateo Police Department (CA),43,CA,CA,2,San Mateo PD | San Mateo Police Department,0.9767441860465116
 Berkeley Police Department (CA),42,CA,CA,1,Berkeley Police Department,1
 Youngstown Police Department (OH),42,OH,OH,1,Youngstown Police Department,1
+Spokane County Sheriff's Office (WA),42,WA,WA,4,Spokane Co Sheriff | Spokane County Sheriff's Office | Spokane County Sherrif | Spokane County SO,0.9761904761904762
+Lakewood Police Department (WA),41,WA,WA,1,Lakewood Police Department,1
 Little Rock Police Department (AR),40,AR,AR,1,Little Rock Police Department,1
 Lowell Police (MA),40,MA,MA,1,Lowell Police,0.975
 Farmington Hills Police Department (MI),40,MI,MI,1,Farmington Hills Police Department,1
+Everett Police Department (WA),40,WA,WA,2,Everett Police | Everett Police Department,1
 Altoona Police Department (IA),39,IA,IA,1,Altoona Police Department,1
 Springfield Police (MA),39,MA,MA,1,Springfield Police,0.9743589743589743
 LSSC,39,US,FL,1,LSSC,0
@@ -90,27 +96,31 @@ Lake of the Pines Association,36,US,CA,2,Lake of the Pines Association | Lake Of
 Chesapeake Police Department (VA),36,VA,VA,1,Chesapeake Police Department,0.1111111111111111
 Culver City (CA),35,CA,CA,1,Culver City,0.11428571428571428
 Michigan State University Department of Police and Public Safety (MI),35,MI,MI,1,Michigan State University Department of Police and Public Safety,0
+Northern Regional Police Department of Allegheny County (PA),35,PA,PA,1,Northern Regional Police Department of Allegheny County,0
 Lompoc Police Department (CA),34,CA,CA,3,Lompoc police Department | Lompoc Police Department | Lompoc POlice Department,1
 Station Casinos,34,US,NV,1,Station Casinos,0
 Maricopa PD (AZ),33,AZ,AZ,1,Maricopa PD,0.9696969696969697
 Daly City Police Department (CA),33,CA,CA,1,Daly City Police Department,1
 Flint Police Department (MI),33,MI,MI,1,Flint Police Department,1
+Boulder Police Department (CO),32,CO,CO,1,Boulder Police Department,0.1875
 Saginaw Police Department (MI),32,MI,MI,1,Saginaw Police Department,0.1875
 Virginia Beach Police Department (VA),32,VA,VA,1,Virginia Beach Police Department,0.25
 Prescott Police Department (AZ),31,AZ,AZ,1,Prescott Police Department,1
 LASD (CA),31,CA,CA,6,"LASD | Los Angeles County Sheriff | Los Angeles County Sheriff's Department | Los Angeles County Sheriff’s Department | Los Angeles County Sheriff's Department,City Of Palmdale | Los Angeles County Sheriff's Department,Santa Clarita",0.5806451612903226
 O'Fallon PD (MO),31,MO,MO,1,O'Fallon PD,0.967741935483871
 Cherokee Indian Police Department (NC),31,NC,NC,1,Cherokee Indian Police Department,0
+FedEx,31,US,CT MA MI MO TX WA WI,2,Fedex | FedEx,1
 Prescott Valley Police Department (AZ),30,AZ,AZ,1,Prescott Valley Police Department,1
 Chula Vista Police Department (CA),30,CA,CA,1,Chula Vista Police Department,0.8333333333333334
 Metro Police Department (DC),30,DC,DC,1,Metro Police Department,1
 Atlanta Police Department (GA),30,GA,GA,2,Atlanta Police | Atlanta Police Department,0.9666666666666667
 Marshalltown Police Department (IA),30,IA,IA,1,Marshalltown Police Department,1
+Lawrence Police Department (KS),30,KS,KS,1,Lawrence Police Department,0
 Mount Pleasant/Westchester County Police RTC/Intelligence Regional and National Data Sharing (NY),30,NY,NY,1,Mount Pleasant/Westchester County Police RTC/Intelligence Regional and National Data Sharing,0
 Sutherlin Police Department (OR),30,OR,OR,1,Sutherlin Police Department,0.03333333333333333
 Macomb County Sheriff's Office (MI),29,MI,MI,1,Macomb County Sheriff's Office,1
+City of Columbia (MO),29,MO,MO,1,City of Columbia,1
 University of Toledo Police Department (OH),29,OH,OH,1,University of Toledo Police Department,1
-FedEx,29,US,CT MA MI MO TX WI,2,Fedex | FedEx,1
 San Bernardino County Sheriff's Department (CA),28,CA,CA,2,San Bernardino County Sheriff | San Bernardino County Sheriff's Department,0
 Seaside Police Department (CA),28,CA,CA,1,Seaside Police Department,0
 Wood Dale Police Department (IL),28,IL,IL,1,Wood Dale Police Department,1
@@ -165,21 +175,24 @@ West Bloomfield Police Department (MI),22,MI,MI,1,West Bloomfield Police Departm
 Beaumont Police Department (TX),22,TX,TX,1,Beaumont Police Department,1
 Burbank,22,US,CA,1,Burbank,1
 Florida International University,22,US,FL,1,Florida International University,0
+Washington State Department of Transportation,22,US,WA,1,Washington State Department of Transportation,0
 Oakland Police Department (CA),21,CA,CA,1,Oakland Police Department,1
+Larimer County Sheriff's Office (CO),21,CO,CO,1,Larimer County Sheriff's Office,0.9523809523809523
 West Hartford Police Department (CT),21,CT,CT,1,West Hartford Police Department,0.8095238095238095
 Lawrence Police (MA),21,MA,MA,1,Lawrence Police,0.9523809523809523
 Lincoln Park Police Department (MI),21,MI,MI,1,Lincoln Park Police Department,1
 Lucas County Sheriff's Office (OH),21,OH,OH,1,Lucas County Sheriff's Office,1
 Odessa Police Department (TX),21,TX,TX,1,Odessa Police Department,1
+Unknown,21,US,CA KS MA OH OK TN VA,3,[unknown] | unknown | Unknown,0.7142857142857143
 Vidalia GA,21,US,GA,1,Vidalia GA,1
 Boston Police (MA),20,MA,MA,2,Boston Police | Boston Police Department,0.85
 Michigan State Police (MI),20,MI,MI,1,Michigan State Police,1
 Forest Park PD (OH),20,OH,OH,1,Forest Park PD,1
 Sun City Texas (TX),20,TX,TX,1,Sun City Texas,1
 CCPD,20,US,VA,1,CCPD,1
+Great Wolf Lodge,20,US,MI MN WA WI,1,Great Wolf Lodge,1
 Live Oak,20,US,TX,1,Live Oak,1
 Maryland Transportation Authority,20,US,MD VA,1,Maryland Transportation Authority,0
-Unknown,20,US,CA MA OH OK TN VA,3,[unknown] | unknown | Unknown,0.75
 Oro Valley Police Department (AZ),19,AZ,AZ,2,Oro Valley PD | Oro Valley Police Department,1
 Alhambra Police Department (CA),19,CA,CA,1,Alhambra Police Department,1
 Watsonville Police Department (CA),19,CA,CA,1,Watsonville Police Department,1
@@ -205,8 +218,10 @@ Bloomfield Township Police Department (MI),18,MI,MI,1,Bloomfield Township Police
 Warren Police Department (MI),18,MI,MI,1,Warren Police Department,1
 University Heights PD (OH),18,OH,OH,1,University Heights PD,1
 Roseburg Police Department (OR),18,OR,OR,1,Roseburg Police Department,0.8888888888888888
+Township of Butler (PA),18,PA,PA,1,Township of Butler,0
 Stanford University,18,US,CA,1,Stanford University,1
 West Allis,18,US,WI,1,West Allis,0
+Auburn Police (WA),18,WA,WA,1,Auburn Police,1
 East Palo Alto Police Department (CA),17,CA,CA,1,East Palo Alto Police Department,1
 Marina Department of Public Safety (CA),17,CA,CA,1,Marina Department of Public Safety,0.058823529411764705
 Glastonbury Police Department (CT),17,CT,CT,1,Glastonbury Police Department,1
@@ -217,6 +232,7 @@ Dearborn Heights Police Department (MI),17,MI,MI,1,Dearborn Heights Police Depar
 Eastpointe Police Department (MI),17,MI,MI,1,Eastpointe Police Department,1
 Livingston County Sheriff's Office (MI),17,MI,MI,1,Livingston County Sheriff's Office,0.23529411764705882
 Wentzville PD (MO),17,MO,MO,1,Wentzville PD,0.9411764705882353
+Township of Adams (PA),17,PA,PA,1,Township of Adams,0
 Kenwood Towne Center,17,US,OH,1,Kenwood Towne Center,1
 Costa Mesa Police Department (CA),16,CA,CA,1,Costa Mesa Police Department,1
 San Gabriel Police Department (CA),16,CA,CA,1,San Gabriel Police Department,0.6875
@@ -239,6 +255,7 @@ Windsor Police Department (CT),15,CT,CT,1,Windsor Police Department,1
 Lantana Police Department (FL),15,FL,FL,1,Lantana Police Department,1
 Johnston Police Department (IA),15,IA,IA,1,Johnston Police Department,1
 Highland Park Police Department (IL),15,IL,IL,1,Highland Park Police Department,1
+Adams County Sheriff's Office (IN),15,IN,IN,1,Adams County Sheriff's Office,1
 Saugus Police (MA),15,MA,MA,1,Saugus Police,1
 Burton Police Department (MI),15,MI,MI,1,Burton Police Department,1
 Grand Traverse County Sheriff's Office (MI),15,MI,MI,2,Grand Traverse County Sheriff's Department | Grand Traverse County Sheriff's Office,1
@@ -252,21 +269,26 @@ West Fargo Police Department (ND),15,ND,ND,1,West Fargo Police Department,1
 Bristol TN Police Department (TN),15,TN,TN,1,Bristol TN Police Department,0
 Midlothian Police Department (TX),15,TX,TX,2,Midlothian PD | Midlothian Police Department,1
 Fashion Show Mall,15,US,NV,1,Fashion Show Mall,1
+Kroger,15,US,OR TX WA,1,Kroger,0.13333333333333333
 Clark County Sheriff's Office (WA),15,WA,WA,1,Clark County Sheriff's Office,0
+Lynnwood Police (WA),15,WA,WA,1,Lynnwood Police,1
 Barron County Sheriff (WI),15,WI,WI,2,Barron Co Sheriff | Barron County Sheriff,1
 Oak Creek Police Department (WI),15,WI,WI,1,Oak Creek Police Department,0.9333333333333333
 Atherton Police Department (CA),14,CA,CA,1,Atherton Police Department,0.8571428571428571
 Sunnyvale Department of Public Safety (CA),14,CA,CA,1,Sunnyvale Department of Public Safety,1
 Ankeny Police Department (IA),14,IA,IA,1,Ankeny Police Department,1
 North Andover Police (MA),14,MA,MA,2,North Andover PD | North Andover Police,0.6428571428571429
+Lewiston Police (ME),14,ME,ME,2,Lewiston Police | Lewiston Police Department,1
 Huron Township Police Department (MI),14,MI,MI,1,Huron Township Police Department,1
 Melvindale Police Department (MI),14,MI,MI,1,Melvindale Police Department,1
 Ottawa County Sheriff's Office (MI),14,MI,MI,2,Ottawa County Sheriff's Office | Ottawa County Sheriffs Office,0.8571428571428571
 UNC Chapel Hill Police Department (NC),14,NC,NC,1,UNC Chapel Hill Police Department,0
 City of Strongsville Police (OH),14,OH,OH,1,City of Strongsville Police,1
 Cranston Police Department (RI),14,RI,RI,1,Cranston Police Department,1
+"Interlocken Owners' Association, Inc.",14,US,CO,1,"Interlocken Owners' Association, Inc.",1
 Mayfair Mall / Brookfield Properties Retail Inc.,14,US,WI,1,Mayfair Mall / Brookfield Properties Retail Inc.,1
 BYU PD (UT),14,UT,UT,1,BYU PD,0
+Des Moines Police (WA),14,WA,WA,1,Des Moines Police,0.7142857142857143
 Alameda County Sheriff's Office (CA),13,CA,CA,2,Alameda County Sheriff's Department | Alameda County Sheriff's Office,0.07692307692307693
 Burlingame Police Department (CA),13,CA,CA,2,Burlingame PD | Burlingame Police Department,0.15384615384615385
 Foster City Police Department (CA),13,CA,CA,1,Foster City Police Department,1
@@ -281,6 +303,7 @@ Edmond Police Department (OK),13,OK,OK,1,Edmond Police Department,0.307692307692
 Mount Pleasant Police Department (SC),13,SC,SC,1,Mount Pleasant Police Department,0.8461538461538461
 Florida Department of Transportation,13,US,FL,1,Florida Department of Transportation,0
 Norfolk State University,13,US,VA,1,Norfolk State University,0
+Safeway,13,US,WA,1,Safeway,0
 Sam's Club,13,US,CA,1,Sam's Club,0
 Target Corporation,13,US,CA MA MD NC NV OR,3,target | Target | Target Corporation,0.6923076923076923
 University of Central Florida,13,US,FL,1,University of Central Florida,0
@@ -292,6 +315,7 @@ Whitewater Police Department (WI),13,WI,WI,1,Whitewater Police Department,1
 El Monte Police Department (CA),12,CA,CA,1,El Monte Police Department,1
 Hollister Police Department (CA),12,CA,CA,1,Hollister Police Department,1
 Los Gatos/Monte Sereno Police Department (CA),12,CA,CA,1,Los Gatos/Monte Sereno Police Department,0.6666666666666666
+Denver Police Department (CO),12,CO,CO,1,Denver Police Department,0.08333333333333333
 Polk County Sheriff (FL),12,FL,FL,1,Polk County Sheriff,1
 Plainfield Police (IL),12,IL,IL,1,Plainfield Police,1
 Jackson Police Department (MI),12,MI,MI,1,Jackson Police Department,1
@@ -303,11 +327,15 @@ St. Peters PD (MO),12,MO,MO,1,St. Peters PD,1
 Clarkstown Police Department (NY),12,NY,NY,1,Clarkstown Police Department,1
 Salamanca Police Department (NY),12,NY,NY,1,Salamanca Police Department,0
 Maumee Police Department (OH),12,OH,OH,1,Maumee Police Department,1
+Township of Jackson (PA),12,PA,PA,1,Township of Jackson,0
 Bedford Police Department (TX),12,TX,TX,1,Bedford Police Department,1
 Universal City (TX),12,TX,TX,1,Universal City,1
+Louisiana Tech University,12,US,LA,1,Louisiana Tech University,0.08333333333333333
+Seneca Valley School District,12,US,PA,1,Seneca Valley School District,0
 Sparks,12,US,NV,1,Sparks,1
 King George Sherrifs Office (VA),12,VA,VA,3,King George Sheriff's Office | King George Sherrif's Office | King George Sherrifs Office,1
 Town of Culpeper Police Department (VA),12,VA,VA,1,Town of Culpeper Police Department,1
+Toppenish Police (WA),12,WA,WA,1,Toppenish Police,1
 Fond Du Lac County (WI),12,WI,WI,1,Fond Du Lac County,0
 Jonesboro Police Department (AR),11,AR,AR,1,Jonesboro Police Department,1
 Rogers Police Department (AR),11,AR,AR,2,Rogers Police | Rogers Police Department,0.18181818181818182
@@ -316,6 +344,7 @@ Brisbane Police Department (CA),11,CA,CA,1,Brisbane Police Department,1
 Oceanside Police Department (CA),11,CA,CA,1,Oceanside Police Department,0.8181818181818182
 Pacific Grove Police Department (CA),11,CA,CA,1,Pacific Grove Police Department,0
 Palo Alto Police Department (CA),11,CA,CA,1,Palo Alto Police Department,0.5454545454545454
+Boulder County Sheriff's Office (CO),11,CO,CO,1,Boulder County Sheriff's Office,0.9090909090909091
 Newtown Police Department (CT),11,CT,CT,1,Newtown Police Department,1
 Pinellas County Sheriff's Office (FL),11,FL,FL,1,Pinellas County Sheriff's Office,1
 North Liberty Police Department (IA),11,IA,IA,1,North Liberty Police Department,1
@@ -365,14 +394,17 @@ Wake Forest Police Department (NC),10,NC,NC,1,Wake Forest Police Department,1
 Athens County Sheriff's Office (OH),10,OH,OH,1,Athens County Sheriff's Office,1
 Canfield Police Department (OH),10,OH,OH,1,Canfield Police Department,1
 Brookfield Property Partners,10,US,VA,1,Brookfield Property Partners,0.4
-Great Wolf Lodge,10,US,MI MN WI,1,Great Wolf Lodge,1
 Lyons GA,10,US,GA,1,Lyons GA,1
 Menomonee Falls,10,US,WI,1,Menomonee Falls,0
 New Braunfels,10,US,TX,1,New Braunfels,1
+Park Meadows,10,US,CO,1,Park Meadows,0
 Pebble Beach Company,10,US,CA,1,Pebble Beach Company,0
 Rock Security,10,US,MI,1,Rock Security,0
 UoF,10,US,FL,1,UoF,0
 Williamsburg Settlement Maintenance Association,10,US,TX,1,Williamsburg Settlement Maintenance Association,1
+WSDOT,10,US,WA,1,WSDOT,0
+Chelan County SO (WA),10,WA,WA,1,Chelan County SO,1
+Sumner Police (WA),10,WA,WA,1,Sumner Police,1
 Sawyer County Sheriff (WI),10,WI,WI,1,Sawyer County Sheriff,1
 Scottsdale Police Department (AZ),9,AZ,AZ,1,Scottsdale Police Department,1
 Brawley Police Department (CA),9,CA,CA,1,Brawley Police Department,1
@@ -401,17 +433,20 @@ Yorktown/Westchester County Police RTC/Intelligence Regional and National Data S
 Perrysburg Police Department (OH),9,OH,OH,1,Perrysburg Police Department,1
 Worthington PD (OH),9,OH,OH,1,Worthington PD,0.8888888888888888
 Murrysville Police Department (PA),9,PA,PA,1,Murrysville Police Department,0
+Township of Buffalo (PA),9,PA,PA,1,Township of Buffalo,0
+Township of Middlesex (PA),9,PA,PA,1,Township of Middlesex,0
 Warwick Police Department (RI),9,RI,RI,1,Warwick Police Department,1
 Trophy Club PD (TX),9,TX,TX,1,Trophy Club PD,1
 College of William and Mary,9,US,VA,1,College of William and Mary,0.1111111111111111
 GoldOller Real Estate Investments,9,US,MI OH,2,Goldoller | GoldOller Real Estate Investments,1
 Holmby Hills Homeowners Association,9,US,CA,1,Holmby Hills Homeowners Association,1
-Kroger,9,US,OR TX WA,1,Kroger,0.2222222222222222
 Navy Federal Credit Union,9,US,FL MD,1,Navy Federal Credit Union,0.8888888888888888
 Premium Parking,9,US,FL,1,Premium Parking,0
 QuikTrip Corporation,9,US,OK,2,QuikTrip | QuikTrip Corporation,0.3333333333333333
 ThedaCare-Froedtert Health,9,US,WI,1,ThedaCare-Froedtert Health,0.8888888888888888
 City of Fredericksburg (VA),9,VA,VA,1,City of Fredericksburg,1
+Puyallup Police (WA),9,WA,WA,1,Puyallup Police,1
+SeaTac Police (WA),9,WA,WA,1,SeaTac Police,1
 Calexico Police Department (CA),8,CA,CA,1,Calexico Police Department,1
 Carmel Police Department (CA),8,CA,CA,1,Carmel Police Department,0
 Garden Grove Police Department (CA),8,CA,CA,1,Garden Grove Police Department,1
@@ -435,6 +470,7 @@ Roseville Police Department (MN),8,MN,MN,1,Roseville Police Department,1
 Greenburgh Westchester County Police RTC/Intelligence Regional and National Data Sharing (NY),8,NY,NY,1,Greenburgh Westchester County Police RTC/Intelligence Regional and National Data Sharing,0
 Delhi Township PD (OH),8,OH,OH,1,Delhi Township PD,1
 Heath Police Department (OH),8,OH,OH,1,Heath Police Department,1
+Borough of Evans City (PA),8,PA,PA,1,Borough of Evans City,0
 County of Indiana (PA),8,PA,PA,1,County of Indiana,0
 Union City Police Department (TN),8,TN,TN,1,Union City Police Department,0
 "City of Taylor, TX (TX)",8,TX,TX,1,"City of Taylor, TX",1
@@ -446,15 +482,22 @@ Lakeshore Homes Association (LHA),8,US,CA,1,Lakeshore Homes Association (LHA),0.
 Mt. Juliet,8,US,TN,1,Mt. Juliet,1
 Rekor,8,US,OH,1,Rekor,0
 ROCO Real Estate,8,US,MI,1,ROCO Real Estate,1
+Scheels,8,US,CO,1,Scheels,1
 Sunset Valley,8,US,TX,1,Sunset Valley,0.75
 TOPD,8,US,CA,1,TOPD,0.375
 UTTyler,8,US,TX,1,UTTyler,1
 Wegmans Food Markets,8,US,CT NY,1,Wegmans Food Markets,0
+Centralia Police Department (WA),8,WA,WA,1,Centralia Police Department,1
+City of Redmond (WA),8,WA,WA,1,City of Redmond,1
+Kent Police (WA),8,WA,WA,1,Kent Police,1
+Wapato Police (WA),8,WA,WA,1,Wapato Police,1
 Columbia County (WI),8,WI,WI,1,Columbia County,0
 Sedona Police Department (AZ),7,AZ,AZ,1,Sedona Police Department,1
 City of Stanton (CA),7,CA,CA,1,City of Stanton,1
 Truckee Police Department (CA),7,CA,CA,1,Truckee Police Department,1
 Ukiah Police Department (CA),7,CA,CA,1,Ukiah Police Department,1
+Broomfield Police Department (CO),7,CO,CO,1,Broomfield Police Department,1
+Lone Tree Police Department (CO),7,CO,CO,1,Lone Tree Police Department,1
 Beacon Falls Police Department (CT),7,CT,CT,1,Beacon Falls Police Department,1
 Clinton Police Department (CT),7,CT,CT,1,Clinton Police Department,1
 Stamford Police Department (CT),7,CT,CT,1,Stamford Police Department,0
@@ -475,6 +518,7 @@ Mott Community College Department of Public Safety (MI),7,MI,MI,1,Mott Community
 Dakota County Sheriff's Office (MN),7,MN,MN,1,Dakota County Sheriff's Office,1
 Rogers Police Department (MN),7,MN,MN,1,Rogers Police Department,1
 Sartell Police Department (MN),7,MN,MN,1,Sartell Police Department,0.7142857142857143
+Palmyra Police Department (MO),7,MO,MO,2,Palmyra PD | Palmyra Police Department,1
 Transylvania County Sheriff's Office (NC),7,NC,NC,2,Transylvania County Sheriff's Office | Transylvania County SO,1
 New Mexico State Police (NM),7,NM,NM,1,New Mexico State Police,0
 "Boulder City, NV (NV)",7,NV,NV,1,"Boulder City, NV",0
@@ -485,12 +529,14 @@ Akron Police Department (OH),7,OH,OH,2,Akron PD | Akron Police Department,1
 Bryan PD (OH),7,OH,OH,1,Bryan PD,1
 "Dayton, OH Police Dept (OH)",7,OH,OH,1,"Dayton, OH Police Dept",1
 Oregon Police Department (OH),7,OH,OH,1,Oregon Police Department,1
+City of Butler (PA),7,PA,PA,1,City of Butler,0
 Farmers Branch Police Department (TX),7,TX,TX,2,Farmers Branch PD | Farmers Branch Police Department,1
 CAL FIRE,7,US,CA,1,CAL FIRE,0
 California State Parks,7,US,CA,1,California State Parks,1
 Converse,7,US,TX,1,Converse,1
 DHL,7,US,KY,1,DHL,1
 Eagan,7,US,MN,1,Eagan,0
+Fred Meyer,7,US,WA,1,Fred Meyer,0
 Leonardo,7,US,OH,1,Leonardo,0
 Palms Casino Resort,7,US,NV,1,Palms Casino Resort,0
 Paul Bunyan Drug Task Force,7,US,MN,1,Paul Bunyan Drug Task Force,0.7142857142857143
@@ -498,6 +544,8 @@ ProMedica,7,US,OH,1,ProMedica,1
 stonybrook university,7,US,NY,1,stonybrook university,0
 Swainsboro GA,7,US,GA,1,Swainsboro GA,1
 Hampton University Police Department (VA),7,VA,VA,1,Hampton University Police Department,0
+Richland Police (WA),7,WA,WA,1,Richland Police,1
+Wenatchee Police Department (WA),7,WA,WA,1,Wenatchee Police Department,1
 Marathon County Sheriff’s Office (WI),7,WI,WI,3,(Marathon County Sheriff's Department) | Marathon County Sheriff's Department | Marathon County Sheriff’s Office,0.8571428571428571
 Trumann Police Department (AR),6,AR,AR,1,Trumann Police Department,1
 Auburn Police Department (CA),6,CA,CA,1,Auburn Police Department,0
@@ -520,12 +568,18 @@ Lake County Sheriffs Office (FL),6,FL,FL,1,Lake County Sheriffs Office,1
 Idaho Falls Police Department (ID),6,ID,ID,1,Idaho Falls Police Department,1
 Addison Police Department (IL),6,IL,IL,1,Addison Police Department,0
 Mahomet Police Department (IL),6,IL,IL,1,Mahomet Police Department,1
+Auburn Police Department (IN),6,IN,IN,1,Auburn Police Department,1
 Crown Point Indiana Police (IN),6,IN,IN,1,Crown Point Indiana Police,0.6666666666666666
+Fort Wayne Police Department (IN),6,IN,IN,1,Fort Wayne Police Department,1
+Wakarusa Police Department (IN),6,IN,IN,1,Wakarusa Police Department,0
+Wichita Police Department (KS),6,KS,KS,1,Wichita Police Department,0.3333333333333333
 Malden Police (MA),6,MA,MA,1,Malden Police,1
 New Bedford Police (MA),6,MA,MA,1,New Bedford Police,1
 Westfield Police (MA),6,MA,MA,1,Westfield Police,0.3333333333333333
 Winthrop Police (MA),6,MA,MA,1,Winthrop Police,1
 Anne Arundel County Police (MD),6,MD,MD,1,Anne Arundel County Police,0.6666666666666666
+Auburn Police (ME),6,ME,ME,1,Auburn Police,1
+South Portland Police (ME),6,ME,ME,1,South Portland Police,1
 Barry County Sheriff's Office (MI),6,MI,MI,1,Barry County Sheriff's Office,1
 Beverly Hills Department of Public Safety (Michigan) (MI),6,MI,MI,1,Beverly Hills Department of Public Safety (Michigan),1
 Buena Vista Township Police Department (MI),6,MI,MI,1,Buena Vista Township Police Department,1
@@ -544,7 +598,8 @@ Girard Police Department (OH),6,OH,OH,1,Girard Police Department,1
 North Canton Police Department (OH),6,OH,OH,1,North Canton Police Department,0.5
 Jenks Police (OK),6,OK,OK,1,Jenks Police,1
 Muskogee Police (OK),6,OK,OK,1,Muskogee Police,1
-Township of Buffalo (PA),6,PA,PA,1,Township of Buffalo,0
+Borough of Zelienople (PA),6,PA,PA,1,Borough of Zelienople,0
+Township of Penn (PA),6,PA,PA,1,Township of Penn,0
 South Fulton Police Department (TN),6,TN,TN,1,South Fulton Police Department,0
 Caldwell County Sheriff (TX),6,TX,TX,2,Caldwell County sheriff | Caldwell County Sheriff,1
 "Boerne TX, City of (TX)",6,TX,TX,1,"Boerne TX, City of",1
@@ -558,8 +613,10 @@ Centennial Park HOA,6,US,MI,1,Centennial Park HOA,1
 College of the Sequoias,6,US,CA,1,College of the Sequoias,0.3333333333333333
 Cuero,6,US,TX,1,Cuero,0
 CVG Airport,6,US,KY,1,CVG Airport,1
+Dick's Sporting Goods,6,US,MI WA,1,Dick's Sporting Goods,0.8333333333333334
 Fond Du Lac,6,US,WI,1,Fond Du Lac,0
 Harbour View HOA,6,US,VA,1,Harbour View HOA,1
+Indiana Dept. of Corrections,6,US,IN,1,Indiana Dept. of Corrections,1
 LAW ENFORCEMENT,6,US,OH,1,LAW ENFORCEMENT,1
 Mequon,6,US,WI,1,Mequon,0
 Norfolk Redevelopment and Housing Authority,6,US,VA,1,Norfolk Redevelopment and Housing Authority,1
@@ -570,8 +627,7 @@ Weldon Spring,6,US,MO,1,Weldon Spring,0
 Winghaven ROA,6,US,MO,1,Winghaven ROA,1
 Chesterfield County Sheriff's Office (VA),6,VA,VA,1,Chesterfield County Sheriff's Office,1
 Gloucester County Sheriffs Office (VA),6,VA,VA,2,Gloucester County Sheriff's Office | Gloucester County Sheriffs Office,0
-Richland Police (WA),6,WA,WA,1,Richland Police,1
-Spokane County Sheriff's Office (WA),6,WA,WA,3,Spokane Co Sheriff | Spokane County Sheriff's Office | Spokane County SO,1
+Othello PD (WA),6,WA,WA,1,Othello PD,1
 City of Beaver Dam (WI),6,WI,WI,1,City of Beaver Dam,0
 Grafton Police Dept (WI),6,WI,WI,1,Grafton Police Dept,0
 Lake Delton Police Department (WI),6,WI,WI,1,Lake Delton Police Department,1
@@ -595,6 +651,8 @@ Stephens County Sheriffs Office (GA),5,GA,GA,1,Stephens County Sheriffs Office,0
 [Rockton Police Department] (IL),5,IL,IL,1,[Rockton Police Department],1
 [Roscoe Police Department] (IL),5,IL,IL,1,[Roscoe Police Department],1
 Warrick county sherriff (IN),5,IN,IN,2,Warrick county sheriff | Warrick county sherriff,0.2
+Wells County Sheriff's Office (IN),5,IN,IN,1,Wells County Sheriff's Office,1
+Salina Police (KS),5,KS,KS,1,Salina Police,1
 Nicholasville Police Department (KY),5,KY,KY,1,Nicholasville Police Department,0
 Groton Police (MA),5,MA,MA,1,Groton Police,0.8
 Monson Police (MA),5,MA,MA,1,Monson Police,0.6
@@ -613,6 +671,7 @@ City of Willmar - Police (MN),5,MN,MN,1,City of Willmar - Police,1
 Hennepin County Sheriff's Office (MN),5,MN,MN,1,Hennepin County Sheriff's Office,1
 Minnetonka Police Department (MN),5,MN,MN,1,Minnetonka Police Department,0.8
 Brentwood PD (MO),5,MO,MO,1,Brentwood PD,1
+City of Columbia PD (MO),5,MO,MO,1,City of Columbia PD,1
 Forsyth County (NC),5,NC,NC,1,Forsyth County,0
 Madison County Sheriffs Department (NC),5,NC,NC,1,Madison County Sheriffs Department,0.6
 Readington Township Police Department (NJ),5,NJ,NJ,1,Readington Township Police Department,1
@@ -635,15 +694,17 @@ Swisher County Sheriff's Office (TX),5,TX,TX,2,Swisher County Sheriff's Office |
 Academy Sports + Outdoors,5,US,TX,1,Academy Sports + Outdoors,0.4
 ACSO,5,US,FL MI,2,[ACSO] | ACSO,0.2
 AdventHealth,5,US,FL,1,AdventHealth,0
+Castle Rock,5,US,CO,1,Castle Rock,1
 Cibolo,5,US,TX,1,Cibolo,1
 Coral Ridge Mall,5,US,IA,1,Coral Ridge Mall,1
-Dick's Sporting Goods,5,US,MI,1,Dick's Sporting Goods,1
 FCIC,5,US,TX,1,FCIC,1
 HOA,5,US,CA GA MI OK,2,HoA | HOA,1
 Jackson Housing Commission,5,US,MI,1,Jackson Housing Commission,1
+Launch Apartments,5,US,IN,1,Launch Apartments,1
 "Mesquite, NV",5,US,NV,1,"Mesquite, NV",0
 Minnesota State Patrol / Paul Bunyan Task Force,5,US,MN,1,Minnesota State Patrol / Paul Bunyan Task Force,1
 Oakland Towne Square,5,US,MI,1,Oakland Towne Square,1
+Omni Hotels & Resorts,5,US,CO,1,Omni Hotels & Resorts,0
 Pennsylvania Real Estate Investment Trust,5,US,MI,1,Pennsylvania Real Estate Investment Trust,0
 St Francis Wood HOA,5,US,CA,1,St Francis Wood HOA,1
 State of Connecticut,5,US,CT,1,State of Connecticut,0
@@ -652,10 +713,12 @@ Terrell Hills,5,US,TX,1,Terrell Hills,0
 University of Rhode Island,5,US,RI,1,University of Rhode Island,0
 UPS,5,US,CA MI,1,UPS,1
 West Bend,5,US,WI,1,West Bend,0
+WestWind Management,5,US,CO,1,WestWind Management,1
 Lone Peak Police Department (UT),5,UT,UT,1,Lone Peak Police Department,1
 Grottoes Police Department (VA),5,VA,VA,1,Grottoes Police Department,1
 New Kent County Sheriff's Office (VA),5,VA,VA,1,New Kent County Sheriff's Office,0
 Manchester Police Department (VT),5,VT,VT,1,Manchester Police Department,1
+King County Housing Authority (WA),5,WA,WA,1,King County Housing Authority,1
 Skamania County Sheriff's Department (WA),5,WA,WA,1,Skamania County Sheriff's Department,1
 West Richland Police (WA),5,WA,WA,1,West Richland Police,1
 Germantown Police Department (WI),5,WI,WI,1,Germantown Police Department,0
@@ -687,6 +750,9 @@ Forest Preserve District of DuPage County (IL),4,IL,IL,1,Forest Preserve Distric
 Itasca Police Department (IL),4,IL,IL,1,Itasca Police Department,1
 [Loves Park Police Department] (IL),4,IL,IL,1,[Loves Park Police Department],1
 Metropolis IL PD (IL),4,IL,IL,1,Metropolis IL PD,1
+Bluffton Police Department (IN),4,IN,IN,1,Bluffton Police Department,1
+Porter County Sheriffs Office (IN),4,IN,IN,1,Porter County Sheriffs Office,0.5
+Livingston Parish Sheriff's Office (LA),4,LA,LA,1,Livingston Parish Sheriff's Office,1
 Agawam Police (MA),4,MA,MA,1,Agawam Police,1
 Auburn Police (MA),4,MA,MA,1,Auburn Police,1
 Beverly Police (MA),4,MA,MA,1,Beverly Police,1
@@ -695,6 +761,8 @@ Charlton Police (MA),4,MA,MA,1,Charlton Police,1
 Marlborough Police (MA),4,MA,MA,1,Marlborough Police,1
 Rochester Police (MA),4,MA,MA,1,Rochester Police,0.75
 Maryland State Police (MD),4,MD,MD,1,Maryland State Police,0
+Bangor Police (ME),4,ME,ME,1,Bangor Police,1
+Falmouth Police (ME),4,ME,ME,1,Falmouth Police,1
 York Police (ME),4,ME,ME,1,York Police,1
 Barton Hills Village (MI),4,MI,MI,1,Barton Hills Village,0
 Battle Creek Police Department (MI),4,MI,MI,1,Battle Creek Police Department,1
@@ -735,6 +803,7 @@ Bristow Police (OK),4,OK,OK,1,Bristow Police,1
 Broken Arrow PD (OK),4,OK,OK,1,Broken Arrow PD,0
 Creek County Sheriff (OK),4,OK,OK,1,Creek County Sheriff,1
 Allentown PD (PA),4,PA,PA,1,Allentown PD,0
+Hermitage Police Department (PA),4,PA,PA,1,Hermitage Police Department,1
 Lower Salford Township (PA),4,PA,PA,1,Lower Salford Township,0
 Temple University Campus PA PD (PA),4,PA,PA,1,Temple University Campus PA PD,1
 Seneca Police Department (SC),4,SC,SC,1,Seneca Police Department,1
@@ -778,6 +847,7 @@ Table Mountain Casino,4,US,CA,1,Table Mountain Casino,0
 Transportation Corridor Agencies,4,US,CA,1,Transportation Corridor Agencies,0
 United States Border Patrol,4,US,AZ,1,United States Border Patrol,0
 US Department of Veterans Affairs,4,US,VT,1,US Department of Veterans Affairs,0
+Valley Medical Center,4,US,WA,1,Valley Medical Center,1
 Walden Galeria,4,US,NY,1,Walden Galeria,1
 WisDOT,4,US,WI,1,WisDOT,0
 XNA,4,US,AR,1,XNA,1
@@ -790,7 +860,9 @@ Radford Police Department (VA),4,VA,VA,1,Radford Police Department,1
 Remington Police Department (VA),4,VA,VA,1,Remington Police Department,1
 Roanoke Police Department (VA),4,VA,VA,1,Roanoke Police Department,1
 Rocky Mount Police Department (VA),4,VA,VA,1,Rocky Mount Police Department,1
+Covington Police (WA),4,WA,WA,1,Covington Police,1
 Liberty Lake PD (WA),4,WA,WA,1,Liberty Lake PD,1
+Sunnyside Police (WA),4,WA,WA,1,Sunnyside Police,1
 Bayfield County Sheriffs Dept (WI),4,WI,WI,3,Bayfield County Sheriff's Dept | Bayfield County Sheriffs Dept | Bayfield County Sherrif's Dept,1
 Grant County (WI),4,WI,WI,1,Grant County,0
 Village of Menomonee Falls (WI),4,WI,WI,1,Village of Menomonee Falls,0
@@ -806,6 +878,7 @@ San Benito County Sheriff's Office (CA),3,CA,CA,1,San Benito County Sheriff's Of
 Santa Barbara County Sheriff's Office (CA),3,CA,CA,1,Santa Barbara County Sheriff's Office,1
 Saint Helena Police Department (CA),3,CA,CA,1,Saint Helena Police Department,1
 Studio City Property & Business Improvement District (CA),3,CA,CA,1,Studio City Property & Business Improvement District,1
+Mead Police Department (CO),3,CO,CO,1,Mead Police Department,1
 Berlin Police Department (CT),3,CT,CT,1,Berlin Police Department,1
 Bloomfield Police Department (CT),3,CT,CT,1,Bloomfield Police Department,0.3333333333333333
 Branford Police Department (CT),3,CT,CT,1,Branford Police Department,0
@@ -827,9 +900,12 @@ Carlisle Police Department (IA),3,IA,IA,1,Carlisle Police Department,1
 Riverside IL PD (IL),3,IL,IL,1,Riverside IL PD,0.6666666666666666
 Schaumburg Police Department (IL),3,IL,IL,1,Schaumburg Police Department,1
 Southern Illinois University Police Department (IL),3,IL,IL,1,Southern Illinois University Police Department,1
+Plainfield Police Department (IN),3,IN,IN,1,Plainfield Police Department,1
 Valparasio Police Department (IN),3,IN,IN,1,Valparasio Police Department,1
+Abilene Police (KS),3,KS,KS,1,Abilene Police,1
 Planned-Owensboro Police Dept. (KY),3,KY,KY,1,Planned-Owensboro Police Dept.,1
 Shively PD (KY),3,KY,KY,1,Shively PD,1
+LA PD / UL PD (LA),3,LA,LA,1,LA PD / UL PD,1
 Barnstable Police (MA),3,MA,MA,1,Barnstable Police,1
 Chicopee Police (MA),3,MA,MA,1,Chicopee Police,1
 Dartmouth Police (MA),3,MA,MA,1,Dartmouth Police,1
@@ -851,8 +927,8 @@ New Brighton Police Department (MN),3,MN,MN,1,New Brighton Police Department,1
 Ramsey Police Department (MN),3,MN,MN,1,Ramsey Police Department,0.6666666666666666
 South Lake Minnetonka Police Department (MN),3,MN,MN,2,South Lake Minnetonka PD | South Lake Minnetonka Police Department,1
 Ballwin PD (MO),3,MO,MO,1,Ballwin PD,1
+City of Fremont Hills (MO),3,MO,MO,1,City of Fremont Hills,1
 Cottleville PD (MO),3,MO,MO,1,Cottleville PD,1
-Palmyra Police Department (MO),3,MO,MO,2,Palmyra PD | Palmyra Police Department,1
 Harlan County Sheriff (NE),3,NE,NE,2,Harlan County Sheriff | Harlan County Sheriff Office,1
 Reno Police Department (NV),3,NV,NV,1,Reno Police Department,1
 Binghamton University PD (NY),3,NY,NY,2,Binghamton University PD | binghamton university police department,1
@@ -899,16 +975,21 @@ Harrah's Cherokee Casino,3,US,NC,1,Harrah's Cherokee Casino,0
 Holland Pointe HOA,3,US,OK,1,Holland Pointe HOA,1
 Hope Ranch,3,US,CA,1,Hope Ranch,1
 "Kading Properties, LLC",3,US,IA,1,"Kading Properties, LLC",1
+LiveView Technologies,3,US,CO OR,1,LiveView Technologies,0
+Lockheed Martin,3,US,CO,1,Lockheed Martin,1
+Mississippi State University,3,US,MS,1,Mississippi State University,0.3333333333333333
 Morris Hills Regional High School District,3,US,NJ,1,Morris Hills Regional High School District,0
 Nashua Housing Authority,3,US,NH,1,Nashua Housing Authority,1
 National Park Service,3,US,FL TX,1,National Park Service,0.3333333333333333
 New Berlin,3,US,WI,1,New Berlin,0.6666666666666666
 North Hill Farms,3,US,MI,1,North Hill Farms,0
+Northlake Ridge HOA,3,US,WA,1,Northlake Ridge HOA,1
 Oconomowoc,3,US,WI,1,Oconomowoc,0
 Ottawa Hills Local School District,3,US,OH,1,Ottawa Hills Local School District,1
 PaducahPD,3,US,KY,1,PaducahPD,1
 Patrick Henry Mall,3,US,VA,1,Patrick Henry Mall,0
 Pittsburgh Parking Authority,3,US,PA,1,Pittsburgh Parking Authority,0
+Prosper Gulfport,3,US,MS,1,Prosper Gulfport,1
 Regents of the University of California,3,US,CA,1,Regents of the University of California,0
 ReNew Foundry Centre Apartments,3,US,MD,1,ReNew Foundry Centre Apartments,1
 Rincon Del Rio Young Enterprises LP,3,US,CA,1,Rincon Del Rio Young Enterprises LP,0
@@ -916,6 +997,7 @@ Rio All-Suite Hotel and Casino,3,US,NV,1,Rio All-Suite Hotel and Casino,0
 Southlake Residential Association,3,US,AL,1,Southlake Residential Association,1
 Spring Arbor University,3,US,MI,1,Spring Arbor University,1
 Saint Ursula Academy,3,US,OH,1,Saint Ursula Academy,1
+State Of Louisiana,3,US,LA,1,State Of Louisiana,0
 Stone Meadows HOA,3,US,MO,1,Stone Meadows HOA,1
 Stonestown Galleria Mall,3,US,CA,1,Stonestown Galleria Mall,1
 Stonewall Ranch Municipal Utility District,3,US,TX,1,Stonewall Ranch Municipal Utility District,1
@@ -935,6 +1017,9 @@ Mount Jackson Police Department (VA),3,VA,VA,1,Mount Jackson Police Department,1
 Pulaski Police Department (VA),3,VA,VA,1,Pulaski Police Department,1
 Town of Orange Police Department (VA),3,VA,VA,1,Town of Orange Police Department,1
 Barre city police dept (VT),3,VT,VT,2,Barre City Police Department | Barre city police dept,0
+Edmonds Police (WA),3,WA,WA,1,Edmonds Police,1
+Mill Creek Police Department (WA),3,WA,WA,1,Mill Creek Police Department,1
+Montesano Police Department (WA),3,WA,WA,1,Montesano Police Department,1
 Burnett County Sheriff (WI),3,WI,WI,1,Burnett County Sheriff,1
 Menomonee Falls Police Department (WI),3,WI,WI,1,Menomonee Falls Police Department,0
 Stevens Point Police Department (WI),3,WI,WI,1,Stevens Point Police Department,0.3333333333333333
@@ -949,6 +1034,7 @@ Santa Ana Police Department (CA),2,CA,CA,1,Santa Ana Police Department,1
 Seal Beach Police Department (CA),2,CA,CA,1,Seal Beach Police Department,0.5
 Union City Police Department (CA),2,CA,CA,1,Union City Police Department,1
 West Covina Police Department (CA),2,CA,CA,1,West Covina Police Department,1
+City of Thornton (CO),2,CO,CO,1,City of Thornton,0
 North Haven Police Department (CT),2,CT,CT,1,North Haven Police Department,0
 South Windsor Police Department (CT),2,CT,CT,1,South Windsor Police Department,1
 Wallingford Police Department (CT),2,CT,CT,1,Wallingford Police Department,0
@@ -976,9 +1062,18 @@ Northlake Police Department (IL),2,IL,IL,1,Northlake Police Department,1
 Quincy Police Department (IL),2,IL,IL,1,Quincy Police Department,1
 Rosemont Police Department (IL),2,IL,IL,1,Rosemont Police Department,1
 University of Illinois Police Department (IL),2,IL,IL,1,University of Illinois Police Department,1
+Angola Police Department (IN),2,IN,IN,1,Angola Police Department,1
+Butler Police Department (IN),2,IN,IN,1,Butler Police Department,1
+Carmel Police Department (IN),2,IN,IN,1,Carmel Police Department,0
 city of Boonville/Boonville police (IN),2,IN,IN,1,city of Boonville/Boonville police,0
+Elkhart Police Department (IN),2,IN,IN,1,Elkhart Police Department,0
+Huntington County SO (IN),2,IN,IN,1,Huntington County SO,1
 Lake County Sheriff (IN),2,IN,IN,2,Lake County Sheriff | Lake County Sheriffs Office,0
-Porter County Sheriffs Office (IN),2,IN,IN,1,Porter County Sheriffs Office,1
+Marshall County Sheriffs Office (IN),2,IN,IN,1,Marshall County Sheriffs Office,1
+Starke County Sheriffs Office (IN),2,IN,IN,1,Starke County Sheriffs Office,1
+Wabash County Sheriff (IN),2,IN,IN,1,Wabash County Sheriff,1
+West Lafayette Police Department (IN),2,IN,IN,1,West Lafayette Police Department,1
+Whitley County Sheriffs Office (IN),2,IN,IN,1,Whitley County Sheriffs Office,1
 Central Bank & Trust Co. (KY),2,KY,KY,1,Central Bank & Trust Co.,1
 Acushnet Police (MA),2,MA,MA,1,Acushnet Police,1
 Chelmsford Police (MA),2,MA,MA,1,Chelmsford Police,1
@@ -992,6 +1087,7 @@ Wareham Police (MA),2,MA,MA,1,Wareham Police,1
 Anne Arundel county Police (RTIC) (MD),2,MD,MD,2,Anne Arundel county Police (RTIC) | Anne Arundel County Police (RTIC),0
 Baltimore County (police?) (MD),2,MD,MD,1,Baltimore County (police?),0.5
 Prince George's County Police (MD),2,MD,MD,1,Prince George's County Police,1
+Brewer Police (ME),2,ME,ME,1,Brewer Police,0.5
 City of Fowlerville (MI),2,MI,MI,1,City of Fowlerville,0
 Franklin-Bingham Farms Police Department (MI),2,MI,MI,1,Franklin-Bingham Farms Police Department,1
 Green Oak Township Police Department (MI),2,MI,MI,1,Green Oak Township Police Department,0
@@ -1005,6 +1101,8 @@ Chisago County Sheriff's Office (MN),2,MN,MN,1,Chisago County Sheriff's Office,1
 Lake City Police Department (MN),2,MN,MN,1,Lake City Police Department,1
 University of Minnesota Police Department (MN),2,MN,MN,1,University of Minnesota Police Department,1
 Chesterfield PD (MO),2,MO,MO,1,Chesterfield PD,1
+"Columbia, Mo Police Department (MO)",2,MO,MO,1,"Columbia, Mo Police Department",1
+"Town of Harrisburg, Mo (MO)",2,MO,MO,1,"Town of Harrisburg, Mo",1
 Twin Chimneys Village HOA (MO),2,MO,MO,1,Twin Chimneys Village HOA,1
 Villages At Dardenne Prairie Village HOA (MO),2,MO,MO,1,Villages At Dardenne Prairie Village HOA,1
 Webster Groves PD (MO),2,MO,MO,1,Webster Groves PD,1
@@ -1064,6 +1162,7 @@ Northlake PD (TX),2,TX,TX,1,Northlake PD,1
 VILLAGE GREEN HOMEOWNERS ASSOCIATION (TX),2,TX,TX,1,VILLAGE GREEN HOMEOWNERS ASSOCIATION,1
 Village of Briarcliff (TX),2,TX,TX,1,Village of Briarcliff,1
 Wylie Police Department (TX),2,TX,TX,1,Wylie Police Department,1
+Abita Lakes Homeowner's Association,2,US,LA,1,Abita Lakes Homeowner's Association,1
 Anna Meadows Homeowners Association,2,US,MO,1,Anna Meadows Homeowners Association,1
 Barnes-Jewish Hospital,2,US,MO,1,Barnes-Jewish Hospital,0
 Bell Station HOA,2,US,TX,1,Bell Station HOA,1
@@ -1073,12 +1172,15 @@ Bretton Woods HOA,2,US,OK,1,Bretton Woods HOA,1
 Brighton Area Schools,2,US,MI,1,Brighton Area Schools,0
 Brillion,2,US,WI,1,Brillion,1
 Brook Casino,2,US,NH,1,Brook Casino,1
+Butler Transit Authority,2,US,PA,1,Butler Transit Authority,0
 California Resources Corporation,2,US,CA,1,California Resources Corporation,1
 [Camargo Club/Indian Hill],2,US,OH,1,[Camargo Club/Indian Hill],1
 Chaminade College Preparatory School,2,US,MO,1,Chaminade College Preparatory School,1
 Chantilly HOA,2,US,IL,1,Chantilly HOA,0
+Chehalis Tribal Law Enforcement,2,US,WA,1,Chehalis Tribal Law Enforcement,1
 Chesapeake Bay Bridge and Tunnel District,2,US,VA,1,Chesapeake Bay Bridge and Tunnel District,0
 The Church of Jesus Christ of Latter Day Saints,2,US,OR UT,2,The Church of Jesus Christ of Latter Day Saints | The Church of Jesus Christ of Latter-day Saints,0
+Colorado State University,2,US,CO,1,Colorado State University,0
 Columbia Electric,2,US,CA,1,Columbia Electric,1
 Concordia University Ann Arbor,2,US,MI,1,Concordia University Ann Arbor,1
 Danbury Park Manor/Green National,2,US,MI,1,Danbury Park Manor/Green National,1
@@ -1092,11 +1194,15 @@ froedtert,2,US,WI,1,froedtert,1
 Gahanna,2,US,OH,1,Gahanna,1
 The Gardens HOA,2,US,CA,1,The Gardens HOA,1
 Georgia Tech,2,US,GA,1,Georgia Tech,0
+Grain Valley,2,US,MO,1,Grain Valley,1
+[Greenwood],2,US,MO,1,[Greenwood],1
 Gregory Meadows HOA,2,US,MI,1,Gregory Meadows HOA,1
 Guardian Industries,2,US,MI,1,Guardian Industries,1
+The Hedges Homeowners Association,2,US,WA,1,The Hedges Homeowners Association,1
 [Hermiston School District],2,US,OR,1,[Hermiston School District],0
 Imperial Valley College,2,US,CA,1,Imperial Valley College,1
 [Insight Public Sector(contracted by FCPD],2,US,VA,2,[Insight Public Sector(contracted by FCPD] | Insight Public Sector (contracted by FCPD),1
+JCPRD,2,US,KS,1,JCPRD,0
 Jenoptik,2,US,CA,1,Jenoptik,0
 Jewish Federation of Greater Toledo,2,US,OH,1,Jewish Federation of Greater Toledo,1
 Kennison Creek Community Association,2,US,GA,1,Kennison Creek Community Association,1
@@ -1106,12 +1212,12 @@ Kirk of the Hills Presbyterian Church,2,US,MO,1,Kirk of the Hills Presbyterian C
 Lakeshore Avenue Business Improvement District (LABID),2,US,CA,1,Lakeshore Avenue Business Improvement District (LABID),1
 Land owner,2,US,TX,2,Land owner | Land Owner,1
 Live Oak Creek HOA,2,US,TX,1,Live Oak Creek HOA,1
-LiveView Technologies,2,US,OR,1,LiveView Technologies,0
 Lochhaven HOA,2,US,VA,1,Lochhaven HOA,0
 Los Angeles Union Station,2,US,CA,1,Los Angeles Union Station,0
 [Lowes Home Improvement (Corporate Security],2,US,IL,1,[Lowes Home Improvement (Corporate Security],1
 Lowe's Home Improvement Live Oak,2,US,FL,1,Lowe's Home Improvement Live Oak,1
 Lowe's (retailer),2,US,MA,1,Lowe's (retailer),1
+Lynnwood,2,US,WA,1,Lynnwood,1
 Marylander Condominiums,2,US,MD,1,Marylander Condominiums,0
 Maximum Exposures Security,2,US,MI,1,Maximum Exposures Security,0
 McDonald's,2,US,CA NY,1,McDonald's,1
@@ -1119,9 +1225,12 @@ Memorial Club Townhomes,2,US,TX,1,Memorial Club Townhomes,1
 Michigan Department of Natural Resources,2,US,MI,1,Michigan Department of Natural Resources,1
 Micro Center,2,US,OH,1,Micro Center,1
 Migration Path Estates,2,US,WI,1,Migration Path Estates,1
+Millcreek Mall,2,US,PA,1,Millcreek Mall,1
+Missouri State Highway Patrol,2,US,MO,1,Missouri State Highway Patrol,1
 Niagara Frontier Transportation Authority,2,US,NY,1,Niagara Frontier Transportation Authority,1
 Nordam,2,US,OK,1,Nordam,1
 Northwestern Medicine,2,US,IL,1,Northwestern Medicine,0
+Novoa,2,US,WA,1,Novoa,0
 NYC DOT Red light camera,2,US,NY,2,NYC DOT Red light camera | NYC DOT Red light Camera,0
 Oshkosh,2,US,WI,1,Oshkosh,1
 Owner,2,US,GA,1,Owner,1
@@ -1146,9 +1255,12 @@ Sunnyvale DPS,2,US,CA,1,Sunnyvale DPS,1
 Temple of Aaron,2,US,MN,1,Temple of Aaron,1
 Texas Department of Transportation,2,US,TX,1,Texas Department of Transportation,1
 Total Wine,2,US,CA,1,Total Wine,1
+Tuscany Homeowners Association,2,US,WA,1,Tuscany Homeowners Association,1
 U.S. Drug Enforcement Administration (U.S. Customs and Border Protection also has access to imagery),2,US,AZ,1,U.S. Drug Enforcement Administration (U.S. Customs and Border Protection also has access to imagery),0
 UCANN,2,US,CA,1,UCANN,1
+[uknown],2,US,CO OH,2,[uknown] | uknown,1
 University of California Los Angeles,2,US,CA,1,University of California Los Angeles,0
+University of Colorado Boulder,2,US,CO,1,University of Colorado Boulder,1
 University of Illinois Chicago,2,US,IL,1,University of Illinois Chicago,1
 US Department of Energy,2,US,VA,1,US Department of Energy,0
 Utah Department of Transportation,2,US,UT,1,Utah Department of Transportation,0
@@ -1158,10 +1270,13 @@ VCSO,2,US,FL,1,VCSO,1
 Verra Mobility NYC DOT red light camera,2,US,NY,1,Verra Mobility NYC DOT red light camera,0
 The Vineyards HOA,2,US,MO,1,The Vineyards HOA,1
 Warren Manor Apartments,2,US,MI,1,Warren Manor Apartments,1
+Washington State Patrol,2,US,WA,1,Washington State Patrol,0.5
 Wilderness Hotel & Golf Resort,2,US,WI,1,Wilderness Hotel & Golf Resort,1
 Wind Castle HOA,2,US,MO,1,Wind Castle HOA,1
+Winter Park,2,US,CO,1,Winter Park,0
 Woodstone Apartments,2,US,MO,1,Woodstone Apartments,1
 Yorktown HOA,2,US,OK,1,Yorktown HOA,1
+ZionsvillePD,2,US,IN,1,ZionsvillePD,1
 Washington City Police Department (UT),2,UT,UT,1,Washington City Police Department,0
 West Jordan Police Department (UT),2,UT,UT,1,West Jordan Police Department,1
 Arlington County Police Department (VA),2,VA,VA,1,Arlington County Police Department,1
@@ -1180,7 +1295,10 @@ Town of Woodstock (VA),2,VA,VA,1,Town of Woodstock,1
 Virginia State Police (VA),2,VA,VA,1,Virginia State Police,0
 Wise County Sheriff's Department (VA),2,VA,VA,1,Wise County Sheriff's Department,1
 Vermont State Police (VT),2,VT,VT,1,Vermont State Police,0
+Adams County Sheriff (WA),2,WA,WA,1,Adams County Sheriff,1
 [City of Walla Walla] (WA),2,WA,WA,1,[City of Walla Walla],1
+East Wenatchee Police Department (WA),2,WA,WA,1,East Wenatchee Police Department,1
+Shelton PD (WA),2,WA,WA,2,Shelton PD | Shelton Police Dept.,1
 Baraboo Police Department (WI),2,WI,WI,1,Baraboo Police Department,1
 City of Greenfield (WI),2,WI,WI,1,City of Greenfield,0
 City of West Allis (WI),2,WI,WI,1,City of West Allis,0
@@ -1216,6 +1334,11 @@ San Diego County Sheriff Office (CA),1,CA,CA,1,San Diego County Sheriff Office,1
 San Jose Police Department (CA),1,CA,CA,1,San Jose Police Department,1
 Simi Valley PD (CA),1,CA,CA,1,Simi Valley PD,0
 Temple City (CA),1,CA,CA,1,Temple City,1
+Arvada Police Department (CO),1,CO,CO,1,Arvada Police Department,1
+City of Westminster (CO),1,CO,CO,1,City of Westminster,0
+[Lafayette Police Department] (CO),1,CO,CO,1,[Lafayette Police Department],1
+Summit County (CO),1,CO,CO,1,Summit County,1
+Town of Castle Rock (CO),1,CO,CO,1,Town of Castle Rock,1
 City of Groton Police Department (CT),1,CT,CT,1,City of Groton Police Department,1
 Montville Police Department (CT),1,CT,CT,1,Montville Police Department,1
 Norwich Police Deparment (CT),1,CT,CT,1,Norwich Police Deparment,1
@@ -1265,10 +1388,16 @@ Summit Police Department (IL),1,IL,IL,1,Summit Police Department,1
 Vernon Hills Police Department (IL),1,IL,IL,1,Vernon Hills Police Department,1
 Villa Park Police Department (IL),1,IL,IL,1,Villa Park Police Department,1
 Village of River Forest (IL),1,IL,IL,1,Village of River Forest,0
-Adams County Sheriff's Office (IN),1,IN,IN,1,Adams County Sheriff's Office,1
+Cass County Sheriffs Office (IN),1,IN,IN,1,Cass County Sheriffs Office,1
 "Crown Point, IN Police (IN)",1,IN,IN,1,"Crown Point, IN Police",1
+Humane Society - Johnson County (IN),1,IN,IN,1,Humane Society - Johnson County,1
+LaGrange County Sheriffs Office (IN),1,IN,IN,1,LaGrange County Sheriffs Office,1
+LaPorte County Sheriffs Office (IN),1,IN,IN,1,LaPorte County Sheriffs Office,1
+McCordsville Police Department (IN),1,IN,IN,1,McCordsville Police Department,1
+Mishawaka Police Department (IN),1,IN,IN,1,Mishawaka Police Department,0
 Owensboro Police Dept. (IN),1,IN,IN,1,Owensboro Police Dept.,1
 Cherokee County SO (KS),1,KS,KS,1,Cherokee County SO,1
+Riley County Sheriff (KS),1,KS,KS,1,Riley County Sheriff,1
 Anchorage PD (KY),1,KY,KY,1,Anchorage PD,1
 City of Ashland KY Police (KY),1,KY,KY,1,City of Ashland KY Police,1
 Garrard County KY SO (KY),1,KY,KY,1,Garrard County KY SO,1
@@ -1295,6 +1424,10 @@ Calvert County Sheriff (MD),1,MD,MD,1,Calvert County Sheriff,0
 Montgomery College Public Safety (MD),1,MD,MD,1,Montgomery College Public Safety,1
 Salisbury PD (MD),1,MD,MD,1,Salisbury PD,1
 United States Park Police (MD),1,MD,MD,1,United States Park Police,1
+Farmington Police (ME),1,ME,ME,1,Farmington Police,1
+Portland Police (ME),1,ME,ME,1,Portland Police,1
+Veazie Police (ME),1,ME,ME,1,Veazie Police,0
+Waldo County Sheriff (ME),1,ME,ME,1,Waldo County Sheriff,0
 Allen Park Police Department (MI),1,MI,MI,1,Allen Park Police Department,1
 Battle Creek City Police (MI),1,MI,MI,1,Battle Creek City Police,1
 City of Muskegon (MI),1,MI,MI,1,City of Muskegon,1
@@ -1321,7 +1454,10 @@ St louis park PD (MN),1,MN,MN,1,St louis park PD,1
 Stadium Village Flats (MN),1,MN,MN,1,Stadium Village Flats,1
 Stillwater Police Department (MN),1,MN,MN,1,Stillwater Police Department,0
 Cape Girardeau Police Department (MO),1,MO,MO,1,Cape Girardeau Police Department,1
+Cass County Sheriff's Office (MO),1,MO,MO,1,Cass County Sheriff's Office,1
 Hannibal Police Department (MO),1,MO,MO,1,Hannibal Police Department,1
+Holden Police Department (MO),1,MO,MO,1,Holden Police Department,1
+Jefferson City Police (MO),1,MO,MO,1,Jefferson City Police,1
 Jefferson county parks and rec (MO),1,MO,MO,1,Jefferson county parks and rec,0
 Jefferson County Parks Deptment (MO),1,MO,MO,1,Jefferson County Parks Deptment,1
 Jefferson County PD (MO),1,MO,MO,1,Jefferson County PD,0
@@ -1329,6 +1465,7 @@ Jefferson county SD (MO),1,MO,MO,1,Jefferson county SD,0
 Manchester PD (MO),1,MO,MO,1,Manchester PD,1
 Marion County SO (MO),1,MO,MO,1,Marion County SO,1
 Montecito Village Homeowners Association (MO),1,MO,MO,1,Montecito Village Homeowners Association,1
+Parkville PD (MO),1,MO,MO,1,Parkville PD,1
 Ralls County Sheriff's Office Missouri (MO),1,MO,MO,1,Ralls County Sheriff's Office Missouri,1
 Shrewsbury PD (MO),1,MO,MO,1,Shrewsbury PD,1
 Village of Marlborough (MO),1,MO,MO,1,Village of Marlborough,1
@@ -1444,6 +1581,7 @@ Chesapeake Bay Bridge Tunnel District,1,US,VA,1,Chesapeake Bay Bridge Tunnel Dis
 Cheshunt HOA,1,US,NC,1,Cheshunt HOA,1
 Cobb Parks,1,US,GA,1,Cobb Parks,1
 Connect Community Management,1,US,TX,1,Connect Community Management,1
+Copper Mill HOA,1,US,LA,1,Copper Mill HOA,1
 Coral Gables,1,US,FL,1,Coral Gables,0
 The Corners of Brookfield,1,US,WI,1,The Corners of Brookfield,1
 Coronado Mall,1,US,NM,1,Coronado Mall,1
@@ -1460,6 +1598,7 @@ Flock Safety (Development),1,US,TX,1,Flock Safety (Development),1
 Florida Int'l University,1,US,FL,1,Florida Int'l University,0
 Florida Internationl University,1,US,FL,1,Florida Internationl University,0
 Fort Worth,1,US,TX,1,Fort Worth,1
+Gated Community,1,US,WA,1,Gated Community,1
 Gated Properties VIII LLC,1,US,OH,1,Gated Properties VIII LLC,1
 Germantown,1,US,WI,1,Germantown,0
 Glenn Ivey HOA,1,US,GA,1,Glenn Ivey HOA,1
@@ -1479,9 +1618,11 @@ Landowner,1,US,TX,1,Landowner,1
 "Lauderhill, FLA",1,US,FL,1,"Lauderhill, FLA",0
 Leinbach Company,1,US,KY,1,Leinbach Company,1
 Lisbon Resident State Trooper Office,1,US,CT,1,Lisbon Resident State Trooper Office,1
+LiveView Technologies (LVT),1,US,CO,1,LiveView Technologies (LVT),0
 Lodi,1,US,WI,1,Lodi,0
 "Lowe's Companies, Inc",1,US,MA,1,"Lowe's Companies, Inc",1
 LVT,1,US,MA,1,LVT,0
+Maine National Guard,1,US,ME,1,Maine National Guard,1
 Manhattan Beach Civic Association,1,US,MD,1,Manhattan Beach Civic Association,0
 Marathon Petroleum Corporation,1,US,MI,1,Marathon Petroleum Corporation,1
 Mark Allen Chevrolet,1,US,OK,1,Mark Allen Chevrolet,1
@@ -1491,14 +1632,16 @@ Mellody Farms,1,US,IL,1,Mellody Farms,1
 Metro Transit,1,US,MN,1,Metro Transit,0
 Metropolitan Washington Airports Authority,1,US,VA,1,Metropolitan Washington Airports Authority,1
 Mission Viejo,1,US,CA,1,Mission Viejo,1
-Missouri State Highway Patrol,1,US,MO,1,Missouri State Highway Patrol,1
+Missouri Highway Patrol,1,US,MO,1,Missouri Highway Patrol,1
 neighborhood association,1,US,MA,1,neighborhood association,1
 (NETHOA/Owner),1,US,MO,1,(NETHOA/Owner),0
 New Hampshire Department of Corrections,1,US,NH,1,New Hampshire Department of Corrections,1
+[Newport Yacht Club],1,US,WA,1,[Newport Yacht Club],1
 oculens,1,US,AZ,1,oculens,0
 Ossining PD: Facial Recongnition? LPR?,1,US,NY,1,Ossining PD: Facial Recongnition? LPR?,0
 [Pace Academy],1,US,GA,1,[Pace Academy],1
 Palladium East Berry Apts/ FWPD,1,US,TX,1,Palladium East Berry Apts/ FWPD,1
+"Parkville, MO",1,US,MO,1,"Parkville, MO",1
 Pasadena Parking Enforcement,1,US,CA,1,Pasadena Parking Enforcement,0
 Patriot Series LLC?,1,US,MA,1,Patriot Series LLC?,1
 PHILLIP ALLEN WIEMANN,1,US,IA,1,PHILLIP ALLEN WIEMANN,0
@@ -1529,7 +1672,6 @@ Traffic,1,US,MI,1,Traffic,1
 Travelodge Madison Heights,1,US,MI,1,Travelodge Madison Heights,1
 turing,1,US,PA,1,turing,0
 U.S. Customs and Border Protection,1,US,AZ,1,U.S. Customs and Border Protection,0
-[uknown],1,US,OH,1,[uknown],1
 Univeristy of Fla.,1,US,FL,1,Univeristy of Fla.,0
 University of Illinois,1,US,IL,1,University of Illinois,1
 Venetian Resort Las Vegas,1,US,NV,1,Venetian Resort Las Vegas,0
@@ -1543,6 +1685,7 @@ Western Heights Apartments,1,US,MI,1,Western Heights Apartments,1
 Westport Station Office Park,1,US,IA,1,Westport Station Office Park,1
 [Willaimson Place POA],1,US,AR,1,[Willaimson Place POA],1
 [Williamson Place POA],1,US,AR,1,[Williamson Place POA],1
+WinCo Foods,1,US,WA,1,WinCo Foods,0
 Woodhill Country Club,1,US,MN,1,Woodhill Country Club,1
 WSU,1,US,WA,1,WSU,0
 Provo PD (UT),1,UT,UT,1,Provo PD,1
@@ -1566,6 +1709,17 @@ Staunton Police Department (VA),1,VA,VA,1,Staunton Police Department,1
 Surry County Sheriff's Office (VA),1,VA,VA,1,Surry County Sheriff's Office,0
 Windsor Police Department (VA),1,VA,VA,1,Windsor Police Department,0
 Barre City Poilce Dept (VT),1,VT,VT,1,Barre City Poilce Dept,0
+Black Diamond Police (WA),1,WA,WA,1,Black Diamond Police,1
+City of Ellensburg (WA),1,WA,WA,1,City of Ellensburg,1
+City of Lakewood (WA),1,WA,WA,1,City of Lakewood,0
+City of Marysville (WA),1,WA,WA,1,City of Marysville,0
+Cylde Hill PD (WA),1,WA,WA,1,Cylde Hill PD,1
+Des Moines WA Police Department (WA),1,WA,WA,1,Des Moines WA Police Department,1
+Lincoln County Sheriff Office (WA),1,WA,WA,1,Lincoln County Sheriff Office,1
+Normandy Park Police Department (WA),1,WA,WA,1,Normandy Park Police Department,1
+Orting PD (WA),1,WA,WA,1,Orting PD,1
+Renton Police (WA),1,WA,WA,1,Renton Police,1
+Tukwila Police (WA),1,WA,WA,1,Tukwila Police,1
 Walla Walla Police Department (WA),1,WA,WA,1,Walla Walla Police Department,1
 City of Mount Pleasant (WI),1,WI,WI,1,City of Mount Pleasant,1
 Fibd Du Lac County (WI),1,WI,WI,1,Fibd Du Lac County,0
