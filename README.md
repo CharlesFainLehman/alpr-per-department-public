@@ -4,7 +4,6 @@ Estimate the number of automated license plate readers (ALPRs) per US local poli
 crowdsourced OpenStreetMap camera data (the DeFlock layer) to law-enforcement agencies.
 
 Status: complete run on the 2026-10-03 OSM snapshot. Results and definitions: `output/summary.md`.
-Work happens on branch `alpr-pipeline`.
 
 ## Layout
 
