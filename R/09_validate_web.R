@@ -98,7 +98,7 @@ n_log(v, "matched web-reported agencies")
 write_csv(v |> select(state, agency_name, ori, matched_name = cand_name, basis, agency_type_fbi, reported, program_status, mobile_flag,
                       vendor, flock_only, as_of_date, source_type, osm_tagged = tagged_all, osm_located, osm_attributed,
                       url, quote, notes),
-          file.path(OUT, "validation_web_comparison.csv"))
+          file.path(OUT_CSV, "validation_web_comparison.csv"))
 
 metrics <- function(osm, rep) {
   pos <- rep > 0; r <- osm[pos] / rep[pos]
@@ -119,7 +119,7 @@ res <- bind_rows(
   { d <- filter(v, program_status == "discontinued"); metrics(d$osm_located, d$reported) |> mutate(measure = "located", subset = "discontinued programs (last count)", .before = 1) },
   { d <- filter(v, program_status == "planned_or_contracted"); metrics(d$osm_located, d$reported) |> mutate(measure = "located", subset = "planned / contracted counts", .before = 1) })
 print(res, width = Inf)
-write_csv(res, file.path(OUT, "validation_web_metrics.csv"))
+write_csv(res, file.path(OUT_CSV, "validation_web_metrics.csv"))
 
 BRK <- c(0, 1, 3, 10, 30, 100, 300, 1000, 3000)
 LIM <- c(0, 3000)
@@ -137,7 +137,7 @@ p <- ggplot(core, aes(reported, osm_located)) +
        caption = cf_caption(sprintf("Agency websites, government documents and news reports (%s-%s); OpenStreetMap via Overpass, pulled %s.",
                                     min(core$year, na.rm = TRUE), max(core$year, na.rm = TRUE), readLines(file.path(PROC, "osm_pull_date.txt"))))) +
   theme_cf(title_size = 36)
-cf_save(p, file.path(OUT, "validation_web_scatter.png"))
+cf_save(p, file.path(OUT_PNG, "validation_web_scatter.png"))
 
 # Reported counts as an independent estimate of cameras per agency -------------------------------------
 # The web sample is not random: it holds agencies that have cameras and whose count was published
@@ -158,8 +158,8 @@ dens_size <- core |> mutate(size = coalesce(as.character(popbin(population_fbi))
                               median_reported_per10k = median(rep_per10k, na.rm = TRUE), median_osm_per10k = median(osm_per10k, na.rm = TRUE),
                               median_ratio_osm_to_reported = median(osm_located[reported > 0] / reported[reported > 0]), .groups = "drop")
 print(dens, width = Inf); print(dens_size, width = Inf)
-write_csv(dens, file.path(OUT, "validation_web_density.csv"))
-write_csv(dens_size, file.path(OUT, "validation_web_density_by_size.csv"))
+write_csv(dens, file.path(OUT_CSV, "validation_web_density.csv"))
+write_csv(dens_size, file.path(OUT_CSV, "validation_web_density_by_size.csv"))
 
 # Minnesota BCA register of fixed LPR locations: a separate check ---------------------------------------
 # The BCA publishes, per agency, the locations of stationary LPRs (Minn. Stat. 13.824). The register lists
@@ -184,7 +184,7 @@ n_log(mv, "MN BCA agencies matched, local, locations not withheld")
 write_csv(mn |> left_join(osm |> select(ori, osm_located = located_all), by = "ori") |>
             select(agency_name, ori, matched_name = cand_name, basis, non_local, withheld, listed_locations = listed,
                    device_estimate, osm_located),
-          file.path(OUT, "validation_mn_bca_comparison.csv"))
+          file.path(OUT_CSV, "validation_mn_bca_comparison.csv"))
 mmet <- function(d, nm) {
   pos <- d$listed > 0; r <- d$located_all[pos] / d$listed[pos]
   tibble(subset = nm, n = nrow(d), n_listing_zero = sum(!pos), pearson_r_log1p = cor(log1p(d$located_all), log1p(d$listed)),
@@ -195,4 +195,4 @@ mmet <- function(d, nm) {
 mres <- bind_rows(mmet(filter(mv, listed > 0), "agencies listing >=1 fixed location"),
                   mmet(mv, "including agencies listing zero fixed locations"))
 print(mres, width = Inf)
-write_csv(mres, file.path(OUT, "validation_mn_bca_metrics.csv"))
+write_csv(mres, file.path(OUT_CSV, "validation_mn_bca_metrics.csv"))

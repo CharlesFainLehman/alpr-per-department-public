@@ -60,8 +60,8 @@ write_csv(x |> select(osm_id, lat, lon, state, manufacturer, brand, operator, op
                       a_ori, a_name, a_type, a_basis,
                       b_status, b_ori, b_name, b_type, place_geoid, cousub_geoid, county_geoid, n_polygon_overlaps,
                       attr_ori, attr_basis, a_b_compare),
-          gzfile(file.path(OUT, "cameras.csv.gz")))
-write_csv(x |> select(osm_id, all_tags), gzfile(file.path(OUT, "cameras_osm_tags.csv.gz")))
+          gzfile(file.path(OUT_CSV, "cameras.csv.gz")))
+write_csv(x |> select(osm_id, all_tags), gzfile(file.path(OUT_CSV, "cameras_osm_tags.csv.gz")))
 
 # Agency table ----------------------------------------------------------------------------------------
 cnt <- function(col, filt = NULL) {
@@ -89,7 +89,7 @@ agt <- ag |> left_join(geo, by = "ori") |>
 n_log(agt, "agency table (all local PDs + sheriffs, incl. zero cameras)")
 stopifnot(sum(agt$cameras_tagged) == sum(!is.na(x$a_ori)), sum(agt$cameras_located) == sum(!is.na(x$b_ori)),
           sum(agt$cameras_attributed) == sum(!is.na(x$attr_ori)))
-write_csv(agt, file.path(OUT, "agencies.csv"))
+write_csv(agt, file.path(OUT_CSV, "agencies.csv"))
 message("Agencies with zero located cameras, by reason:"); print(count(agt, located_zero_type, sort = TRUE))
 
 # Summary statistics (current agencies only; historical ORIs excluded) -------------------------------
@@ -119,5 +119,5 @@ for (m in names(MEASURES)) {
   }
 }
 summ <- bind_rows(summ) |> relocate(group_var, group, .after = set)
-write_csv(summ, file.path(OUT, "summary_stats.csv"))
+write_csv(summ, file.path(OUT_CSV, "summary_stats.csv"))
 print(summ |> filter(group_var == "overall"), width = Inf)

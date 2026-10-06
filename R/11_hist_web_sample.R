@@ -3,7 +3,7 @@
 source("R/00_setup.R")
 source("R/theme_cf.R")
 
-v <- read_csv(file.path(OUT, "validation_web_comparison.csv"), show_col_types = FALSE) |>
+v <- read_csv(file.path(OUT_CSV, "validation_web_comparison.csv"), show_col_types = FALSE) |>
   filter(program_status == "current", mobile_flag == "no")
 message("core agencies: ", nrow(v))
 edges <- c(0, 1, 2, 5, 10, 20, 50, 100, 200, 500, Inf)
@@ -46,4 +46,4 @@ p <- ggplot(d) +
        caption = cf_caption(sprintf("Agency websites, government documents and news reports (%s-%s); OpenStreetMap via Overpass, pulled %s.",
                                     min(substr(v$as_of_date, 1, 4)), max(substr(v$as_of_date, 1, 4)), readLines(file.path(PROC, "osm_pull_date.txt"))))) +
   theme_cf(title_size = 36)
-cf_save(p, file.path(OUT, "hist_web_sample_reported_vs_osm.png"))
+cf_save(p, file.path(OUT_PNG, "hist_web_sample_reported_vs_osm.png"))

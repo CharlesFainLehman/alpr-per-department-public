@@ -16,5 +16,5 @@ file.copy(file.path("data/snapshots", sprintf("query_log_%s.csv", PULL_DATE)), f
 saveRDS(cams, file.path(PROC, "osm_alpr.rds"))
 writeLines(PULL_DATE, file.path(PROC, "osm_pull_date.txt"))
 mf <- cams |> mutate(manufacturer = coalesce(manufacturer, "(none)")) |> count(manufacturer, sort = TRUE)
-write_csv(mf, file.path(OUT, "osm_counts_by_manufacturer.csv"))
+write_csv(mf, file.path(OUT_CSV, "osm_counts_by_manufacturer.csv"))
 message("Loaded snapshot ", PULL_DATE, ": ", nrow(cams), " cameras")

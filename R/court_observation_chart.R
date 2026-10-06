@@ -53,4 +53,4 @@ p <- ggplot(d, aes(x = per_day, y = label)) +
         panel.grid.major.x = element_line(color = cf_grid, linewidth = 0.6),
         axis.text.y = element_text(color = cf_ink, size = 19, hjust = 0),
         axis.title.x = element_text(color = cf_axis, size = 18, margin = margin(t = 10)))
-cf_save(p, file.path(OUT, "court_observations_per_day.png"))
+cf_save(p, file.path(OUT_PNG, "court_observations_per_day.png"))

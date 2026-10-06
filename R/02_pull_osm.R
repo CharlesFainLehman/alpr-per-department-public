@@ -121,4 +121,4 @@ print(mf, n = 30)
 message(sprintf("Share with non-empty operator tag: %.1f%% (%d of %d)",
                 100 * mean(!is.na(cams$operator) & cams$operator != ""),
                 sum(!is.na(cams$operator) & cams$operator != ""), nrow(cams)))
-write_csv(mf, file.path(OUT, "osm_counts_by_manufacturer.csv"))
+write_csv(mf, file.path(OUT_CSV, "osm_counts_by_manufacturer.csv"))

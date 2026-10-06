@@ -17,8 +17,10 @@ stopifnot(dir.exists(file.path(ROOT, "R")))
 RAW  <- file.path(ROOT, "data", "raw")
 PROC <- file.path(ROOT, "data", "derived")
 OUT  <- file.path(ROOT, "output")
+OUT_PNG <- file.path(OUT, "png")   # charts
+OUT_CSV <- file.path(OUT, "csv")   # tables
 REVIEW <- file.path(OUT, "review")   # diagnostic lists for manual review
-for (d in c(RAW, PROC, OUT, REVIEW)) dir.create(d, recursive = TRUE, showWarnings = FALSE)
+for (d in c(RAW, PROC, OUT, OUT_PNG, OUT_CSV, REVIEW)) dir.create(d, recursive = TRUE, showWarnings = FALSE)
 
 TIGER_YEAR <- 2025   # latest TIGER/Line on www2.census.gov at download time
 ACS_YEAR   <- 2024   # latest ACS 5-year (2020-2024)
