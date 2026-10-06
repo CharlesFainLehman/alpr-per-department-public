@@ -3,6 +3,18 @@
 library(ggplot2)
 library(scales)
 
+# Where Liberation Sans isn't installed (e.g. macOS), register a local copy from data/raw/fonts
+# (liberation-fonts-ttf-2.1.5 from github.com/liberationfonts) so ragg doesn't fall back to another face.
+local({
+  d <- Sys.glob("data/raw/fonts/liberation-fonts-ttf-*")[1]
+  if (!"Liberation Sans" %in% systemfonts::system_fonts()$family && !is.na(d))
+    systemfonts::register_font("Liberation Sans",
+                               plain = file.path(d, "LiberationSans-Regular.ttf"),
+                               bold = file.path(d, "LiberationSans-Bold.ttf"),
+                               italic = file.path(d, "LiberationSans-Italic.ttf"),
+                               bolditalic = file.path(d, "LiberationSans-BoldItalic.ttf"))
+})
+
 cf_ink    <- "#111111"
 cf_mute   <- "#8A8A8A"
 cf_grid   <- "#E8E8E8"
