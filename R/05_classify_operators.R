@@ -1,31 +1,32 @@
-# Classify every camera's operator into one category, used by method B and the attribution measure.
+# Classify every camera's operator into one category. 06_locate_cameras.R excludes private and public_other.
 #
 #   missing          no operator tag
 #   vendor           the camera maker / vendor is named, not the owner (e.g., "Flock Safety")
-#   local_police     operator matched to a local PD or sheriff by method A
-#   local_government a city/county named without an agency word, matched by method A ("City of Beverly Hills")
+#   local_police     operator matched to a local PD or sheriff (04_match_operator_names.R)
+#   local_government a city/county named without an agency word, matched in 04 ("City of Beverly Hills")
 #   police_unmatched police/sheriff-like name not matched to the agency list
 #   public_other     public body outside the local-agency scope: DOTs, transit, toll, ports, airports,
 #                    state police / highway patrol, federal agencies, universities, colleges, schools,
 #                    district attorneys, housing authorities
 #   private          retailers, malls, HOAs, businesses, hospitals, churches, private security,
 #                    plus surveillance=private or operator:type private/business
-#   unclassified     anything else (reviewed list: output/review/operator_classes_for_review.csv)
+#   unclassified     anything else (list written to output/review/operator_classes_for_review.csv)
 #
-# Order matters: vendor/placeholder first, then a method-A match to a local agency (so "University
+# Order matters: vendor/placeholder first, then a match to a local agency (so "University
 # Heights PD" or "North College Hill PD" is not caught by "university"/"college"), then the
-# public-other and private patterns. R/operator_class_overrides.csv holds reviewed exceptions.
+# public-other and private patterns. data/operator_class_overrides.csv holds reviewed exceptions.
 source("R/00_setup.R")
 
 cams <- readRDS(file.path(PROC, "osm_alpr.rds"))
-a    <- readRDS(file.path(PROC, "method_a.rds"))
-ovr  <- read_csv("R/operator_class_overrides.csv", col_types = cols(.default = "c"))
+om   <- readRDS(file.path(PROC, "operator_match.rds"))
+ovr  <- read_csv("data/operator_class_overrides.csv", col_types = cols(.default = "c"))
+stopifnot(!anyDuplicated(ovr$operator))
 n_log(cams, "cameras in")
 
 x <- cams |> select(osm_id, state, operator, operator_type, surveillance) |>
-  left_join(a, by = "osm_id") |>
+  left_join(om, by = "osm_id") |>
   mutate(op = str_squish(operator), op_l = str_to_lower(coalesce(op, "")))
-n_log(x, "cameras after joining method A")
+n_log(x, "cameras after joining operator matches")
 
 VENDOR_RX  <- "^(the )?(flock|flock safety|flock group( inc\\.?)?|flock_safety|motorola( solutions)?|vigilant( solutions)?|rekor|genetec|leonardo|elsag|axon|ubicquia)$"
 GENERIC_PRIVATE_RX <- "^\\[?(private|hoa|land ?owner|owner|business|residential|commercial|gated community)\\]?$"
@@ -60,13 +61,16 @@ x <- x |> left_join(ovr |> select(op = operator, ovr_class = op_class), by = "op
   mutate(
     op_class = case_when(
       !is.na(ovr_class) ~ ovr_class,
-      coalesce(str_to_lower(surveillance) == "private", FALSE) & is.na(a_ori) & !str_detect(op_l, POLICE_RX) ~ "private",
+      # tagged surveillance=private, unless the operator is a local agency or police-like name
+      coalesce(str_to_lower(surveillance) == "private", FALSE) & is.na(operator_ori) & !str_detect(op_l, POLICE_RX) ~ "private",
+      # no operator, but operator:type says private
+      op_l == "" & str_to_lower(coalesce(operator_type, "")) %in% c("private", "business", "commercial") ~ "private",
       op_l == "" ~ "missing",
       str_detect(op_l, VENDOR_RX) ~ "vendor",
       str_detect(op_l, GENERIC_PRIVATE_RX) ~ "private",
       str_detect(op_l, GENERIC_UNKNOWN_RX) ~ "unclassified",
-      !is.na(a_ori) & a_basis == "jurisdiction_only" ~ "local_government",
-      !is.na(a_ori) ~ "local_police",
+      !is.na(operator_ori) & operator_match == "jurisdiction_only" ~ "local_government",
+      !is.na(operator_ori) ~ "local_police",
       str_detect(op_l, PUBLIC_OTHER_RX) ~ "public_other",
       str_detect(op_l, PRIVATE_RX) ~ "private",
       str_to_lower(operator_type) %in% c("private", "business", "commercial") ~ "private",

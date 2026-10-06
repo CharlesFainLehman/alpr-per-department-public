@@ -1,5 +1,8 @@
-# Pull all ALPR nodes (man_made=surveillance + surveillance:type=ALPR) from Overpass, state by state.
+# Optional: make a new OpenStreetMap snapshot (data/snapshots/osm_alpr_raw_<today>.csv.gz and its query log)
+# from the live OSM database. R/02_osm_snapshot.R then loads it. Takes about two hours; needs R/01_census.R.
+# Run with `Rscript R/run_all.R --pull`, or alone.
 #
+# Pulls all ALPR nodes (man_made=surveillance + surveillance:type=ALPR) from Overpass, state by state.
 # Each state is queried by its TIGER bounding box (split if the server times out), then every node
 # is assigned to a state by point-in-polygon and de-duplicated by OSM id (bboxes overlap).
 # overpass-api.de is tried first; the VK mirror (maps.mail.ru) is the fallback. Both run the
@@ -107,18 +110,8 @@ message("  nodes outside US states (dropped): ", sum(is.na(cams$state)))
 cams <- cams |> filter(!is.na(state))
 n_log(cams, "US ALPR nodes (inside a state polygon)")
 
-write_csv(bind_rows(log_rows), file.path(odir, "query_log.csv"))
-dir.create("data/snapshots", showWarnings = FALSE)   # committed form, read by 02_load_osm_snapshot.R
+dir.create("data/snapshots", showWarnings = FALSE)
 write_csv(cams, gzfile(file.path("data/snapshots", sprintf("osm_alpr_raw_%s.csv.gz", PULL_DATE))))
-file.copy(file.path(odir, "query_log.csv"), file.path("data/snapshots", sprintf("query_log_%s.csv", PULL_DATE)), overwrite = TRUE)
-saveRDS(cams, file.path(PROC, "osm_alpr.rds"))
-writeLines(PULL_DATE, file.path(PROC, "osm_pull_date.txt"))
-
-# Report -------------------------------------------------------------------------------------------
-message("\nTotal US ALPR nodes: ", nrow(cams), "   (OSM base timestamps ", min(bind_rows(log_rows)$osm_base), " to ", max(bind_rows(log_rows)$osm_base), ")")
-mf <- cams |> mutate(manufacturer = coalesce(manufacturer, "(none)")) |> count(manufacturer, sort = TRUE)
-print(mf, n = 30)
-message(sprintf("Share with non-empty operator tag: %.1f%% (%d of %d)",
-                100 * mean(!is.na(cams$operator) & cams$operator != ""),
-                sum(!is.na(cams$operator) & cams$operator != ""), nrow(cams)))
-write_csv(mf, file.path(OUT_CSV, "osm_counts_by_manufacturer.csv"))
+write_csv(bind_rows(log_rows), file.path("data/snapshots", sprintf("query_log_%s.csv", PULL_DATE)))
+message("\nTotal US ALPR nodes: ", nrow(cams), "   (OSM base timestamps ", min(bind_rows(log_rows)$osm_base), " to ",
+        max(bind_rows(log_rows)$osm_base), ")")

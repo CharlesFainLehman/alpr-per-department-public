@@ -1,19 +1,12 @@
 # Causal Fallacy house chart style (verbatim spec). Sourced by every script that draws a chart.
-# Needs the Liberation Sans font (apt: fonts-liberation) and the ragg package. Charts pass x = NULL, y = NULL.
+# Needs the ragg package. Charts pass x = NULL, y = NULL.
 library(ggplot2)
 library(scales)
 
-# Where Liberation Sans isn't installed (e.g. macOS), register a local copy from data/raw/fonts
-# (liberation-fonts-ttf-2.1.5 from github.com/liberationfonts) so ragg doesn't fall back to another face.
-local({
-  d <- Sys.glob("data/raw/fonts/liberation-fonts-ttf-*")[1]
-  if (!"Liberation Sans" %in% systemfonts::system_fonts()$family && !is.na(d))
-    systemfonts::register_font("Liberation Sans",
-                               plain = file.path(d, "LiberationSans-Regular.ttf"),
-                               bold = file.path(d, "LiberationSans-Bold.ttf"),
-                               italic = file.path(d, "LiberationSans-Italic.ttf"),
-                               bolditalic = file.path(d, "LiberationSans-BoldItalic.ttf"))
-})
+# Liberation Sans ships in data/fonts/ (SIL Open Font License); register it when it isn't installed.
+if (!"Liberation Sans" %in% systemfonts::system_fonts()$family)
+  systemfonts::register_font("Liberation Sans", plain = "data/fonts/LiberationSans-Regular.ttf",
+                             bold = "data/fonts/LiberationSans-Bold.ttf")
 
 cf_ink    <- "#111111"
 cf_mute   <- "#8A8A8A"

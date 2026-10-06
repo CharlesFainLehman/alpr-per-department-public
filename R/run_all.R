@@ -1,13 +1,12 @@
 # Run the whole pipeline from the repo root, in order. Each script's log goes to output/log_<script>.txt.
-#   Rscript R/run_all.R            # OSM from the committed snapshot (reproduces the published numbers)
-#   Rscript R/run_all.R --pull     # new Overpass pull instead (~2 h; gives a new snapshot date)
-#   Rscript R/run_all.R --from 03  # skip the downloads; start at script 03
-# Set LC_ALL=C.UTF-8 before running (some regexes use non-ASCII characters).
+#   Rscript R/run_all.R            # from the committed snapshots (reproduces the published numbers)
+#   Rscript R/run_all.R --pull     # first make a new OSM snapshot from the live database (~2 h)
+#   Rscript R/run_all.R --from 04  # start at script 04 (01-03 already run)
+Sys.setenv(LC_ALL = "C.UTF-8")   # some regexes use non-ASCII characters; inherited by each Rscript below
 args <- commandArgs(trailingOnly = TRUE)
-osm <- if ("--pull" %in% args) "02_pull_osm" else "02_load_osm_snapshot"
-steps <- c("01_download_census", osm, "03_agencies", "04_method_a", "05_operator_class", "06_method_b",
-           "07_combine_outputs", "09_validate_web", "11_hist_web_sample", "court_observation_chart")
-if ("--from" %in% args) steps <- steps[!grepl("^[0-9]", steps) | substr(steps, 1, 2) >= args[which(args == "--from") + 1]]
+steps <- c("01_census", if ("--pull" %in% args) "osm_pull", "02_osm_snapshot", "03_agencies", "04_match_operator_names",
+           "05_classify_operators", "06_locate_cameras", "07_count_per_agency", "08_validate", "09_charts")
+if ("--from" %in% args) steps <- steps[seq(which(substr(steps, 1, 2) == args[which(args == "--from") + 1])[1], length(steps))]
 for (s in steps) {
   message("running ", s)
   log <- file.path("output", paste0("log_", s, ".txt"))

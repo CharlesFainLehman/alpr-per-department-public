@@ -10,7 +10,7 @@ suppressPackageStartupMessages({
   library(sf)
 })
 
-# Project root = folder that holds R/. Scripts are run as `Rscript R/xx.R` from the repo root.
+# Scripts are run as `Rscript R/xx.R` from the repo root (R/run_all.R runs them all in order).
 ROOT <- normalizePath(".")
 stopifnot(dir.exists(file.path(ROOT, "R")))
 
@@ -64,3 +64,15 @@ fetch <- function(url, dest, tries = 4) {
   }
   stop("Could not download ", url)
 }
+
+# Agencies that receive cameras (03_agencies.R sets record_status; contract cities and historical ORIs don't).
+is_current <- function(record_status) record_status %in% c("current_cde", "employee_file_only_recent")
+
+# Newest committed snapshot for a prefix, e.g. latest_snapshot("osm_alpr_raw") ->
+# "data/snapshots/osm_alpr_raw_2026-10-03.csv.gz". NA if there is none.
+latest_snapshot <- function(prefix) {
+  f <- sort(list.files("data/snapshots", paste0("^", prefix, "_\\d{4}-\\d{2}-\\d{2}\\.csv\\.gz$"), full.names = TRUE),
+            decreasing = TRUE)
+  if (length(f)) f[1] else NA_character_
+}
+snapshot_date <- function(path) str_match(basename(path), "_(\\d{4}-\\d{2}-\\d{2})\\.csv\\.gz$")[, 2]

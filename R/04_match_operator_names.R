@@ -1,4 +1,6 @@
-# Method A: match the OSM operator tag to an agency name within the same state.
+# Match each camera's OSM operator tag to an agency name in the same state ("Austin Police Department",
+# "City of Hollywood", "Pasco Sheriff's Office"). 05_classify_operators.R uses the result to tell local-agency
+# cameras from DOT, university, retailer and other cameras, so those can be excluded in 06_locate_cameras.R.
 #
 # Steps (on unique state + operator strings, then joined back to cameras):
 #   1. Normalize text; detect agency kind (police / sheriff / none) and the jurisdiction "core".
@@ -16,7 +18,7 @@ FUZZY_MAX <- 0.05
 FUZZY_GAP <- 0.05
 
 cams <- readRDS(file.path(PROC, "osm_alpr.rds"))
-ag   <- readRDS(file.path(PROC, "agencies_fbi.rds")) |> filter(record_status != "historical")
+ag   <- readRDS(file.path(PROC, "agencies.rds")) |> filter(is_current(record_status))
 n_log(cams, "cameras in"); n_log(ag, "agencies in")
 
 source("R/name_parser.R")
@@ -48,32 +50,32 @@ ops <- ops |> left_join(muni_typed, by = c("state", "core_typed" = "core")) |>
 message("  operators matched on typed core (Town/Township/Village of X): ", sum(!is.na(ops$ori_typed)))
 m <- ops |> left_join(k1, by = c("state", "kind", "core" = "k"))
 n_log(m, "operators after exact join (core)")
-m <- m |> mutate(a_ori = case_when(!is.na(ori_typed) ~ ori_typed, n_ag == 1 ~ ori, TRUE ~ NA),
-                 a_basis = case_when(!is.na(ori_typed) ~ "exact_typed", n_ag == 1 ~ "exact", TRUE ~ NA),
+m <- m |> mutate(operator_ori = case_when(!is.na(ori_typed) ~ ori_typed, n_ag == 1 ~ ori, TRUE ~ NA),
+                 operator_match = case_when(!is.na(ori_typed) ~ "exact_typed", n_ag == 1 ~ "exact", TRUE ~ NA),
                  ambiguous = is.na(ori_typed) & !is.na(n_ag) & n_ag > 1) |> select(-ori, -n_ag, -ori_typed)
-message("  exact (core): ", sum(!is.na(m$a_ori)), "; ambiguous: ", sum(m$ambiguous))
+message("  exact (core): ", sum(!is.na(m$operator_ori)), "; ambiguous: ", sum(m$ambiguous))
 
 # Step 3: exact on core2
 m <- m |> left_join(k2, by = c("state", "kind", "core2" = "k"))
 n_log(m, "operators after exact join (core2)")
-m <- m |> mutate(take = is.na(a_ori) & !is.na(n_ag) & n_ag == 1 & kind != "none",
-                 a_basis = if_else(take, "exact_no_muni_word", a_basis),
-                 a_ori = if_else(take, ori, a_ori),
-                 ambiguous = ambiguous | (is.na(a_ori) & !is.na(n_ag) & n_ag > 1)) |>
+m <- m |> mutate(take = is.na(operator_ori) & !is.na(n_ag) & n_ag == 1 & kind != "none",
+                 operator_match = if_else(take, "exact_no_muni_word", operator_match),
+                 operator_ori = if_else(take, ori, operator_ori),
+                 ambiguous = ambiguous | (is.na(operator_ori) & !is.na(n_ag) & n_ag > 1)) |>
   select(-ori, -n_ag, -take)
-message("  + exact (core2): ", sum(m$a_basis == "exact_no_muni_word", na.rm = TRUE))
+message("  + exact (core2): ", sum(m$operator_match == "exact_no_muni_word", na.rm = TRUE))
 
 # Step 3b: county word omitted ("Pasco Sheriff's Office" -> Pasco County Sheriff's Office)
-m <- m |> mutate(core_cty = if_else(is.na(a_ori) & kind != "none" & !str_detect(core2, "\\b(county|parish)\\b"),
+m <- m |> mutate(core_cty = if_else(is.na(operator_ori) & kind != "none" & !str_detect(core2, "\\b(county|parish)\\b"),
                                     paste(core2, "county"), NA)) |>
   left_join(k2 |> filter(n_ag == 1) |> select(state, kind, k, ori_c = ori), by = c("state", "kind", "core_cty" = "k"))
 n_log(m, "operators after exact join (county word added)")
-m <- m |> mutate(a_basis = if_else(is.na(a_ori) & !is.na(ori_c), "exact_county_added", a_basis),
-                 a_ori = coalesce(a_ori, ori_c)) |> select(-ori_c, -core_cty)
-message("  + exact (county word added): ", sum(m$a_basis == "exact_county_added", na.rm = TRUE))
+m <- m |> mutate(operator_match = if_else(is.na(operator_ori) & !is.na(ori_c), "exact_county_added", operator_match),
+                 operator_ori = coalesce(operator_ori, ori_c)) |> select(-ori_c, -core_cty)
+message("  + exact (county word added): ", sum(m$operator_match == "exact_county_added", na.rm = TRUE))
 
 # Step 4: jurisdiction only ("City of X", "County of Y", "X County", bare "X")
-juris <- m |> filter(is.na(a_ori), kind == "none") |>
+juris <- m |> filter(is.na(operator_ori), kind == "none") |>
   mutate(target_kind = if_else(prefix == "county", "sheriff", "police"),
          target_core = if_else(prefix == "county", str_replace(core, "^(.*?)( county| parish)?$", "\\1 county"), core2))
 ag_j <- ag_p |> mutate(jk = if_else(is_county, "sheriff", "police"),
@@ -82,12 +84,12 @@ ag_j <- ag_p |> mutate(jk = if_else(is_county, "sheriff", "police"),
 juris <- juris |> left_join(ag_j, by = c("state", "target_kind" = "jk", "target_core" = "jcore")) |>
   filter(n_ag == 1) |> select(state, operator, ori_j)
 m <- m |> left_join(juris, by = c("state", "operator")) |>
-  mutate(a_basis = if_else(is.na(a_ori) & !is.na(ori_j), "jurisdiction_only", a_basis),
-         a_ori = coalesce(a_ori, ori_j)) |> select(-ori_j)
-message("  + jurisdiction only: ", sum(m$a_basis == "jurisdiction_only", na.rm = TRUE))
+  mutate(operator_match = if_else(is.na(operator_ori) & !is.na(ori_j), "jurisdiction_only", operator_match),
+         operator_ori = coalesce(operator_ori, ori_j)) |> select(-ori_j)
+message("  + jurisdiction only: ", sum(m$operator_match == "jurisdiction_only", na.rm = TRUE))
 
 # Step 5: fuzzy within state and kind (police/sheriff operators only)
-fz <- m |> filter(is.na(a_ori), kind != "none", core2 != "")
+fz <- m |> filter(is.na(operator_ori), kind != "none", core2 != "")
 fuzzy <- pmap_dfr(fz |> select(state, operator, kind, core2, n_cameras), \(state, operator, kind, core2, n_cameras) {
   cand <- ag_p[ag_p$state == state & ag_p$kind == kind, ]
   if (!nrow(cand)) return(NULL)
@@ -104,23 +106,23 @@ fuzzy <- fuzzy |> left_join(ag_p |> select(best_ori = ori, best_core2 = core2), 
          accepted = best_dist <= FUZZY_MAX & (is.na(second_dist) | second_dist - best_dist >= FUZZY_GAP) &
                     last_word_dist <= 0.1) |>
   arrange(desc(accepted), best_dist)
-write_csv(fuzzy |> filter(best_dist <= 0.15), file.path(REVIEW, "method_a_fuzzy_matches_for_review.csv"))
+write_csv(fuzzy |> filter(best_dist <= 0.15), file.path(REVIEW, "operator_fuzzy_matches_for_review.csv"))
 message("  fuzzy candidates (dist <= 0.15) written for review: ", sum(fuzzy$best_dist <= 0.15),
         "; accepted: ", sum(fuzzy$accepted))
 m <- m |> left_join(fuzzy |> filter(accepted) |> select(state, operator, f_ori = best_ori, f_dist = best_dist),
                     by = c("state", "operator")) |>
-  mutate(a_basis = if_else(is.na(a_ori) & !is.na(f_ori), "fuzzy", a_basis), a_ori = coalesce(a_ori, f_ori)) |>
+  mutate(operator_match = if_else(is.na(operator_ori) & !is.na(f_ori), "fuzzy", operator_match), operator_ori = coalesce(operator_ori, f_ori)) |>
   select(-f_ori)
 
 # Results ------------------------------------------------------------------------------------------
-m <- m |> left_join(ag |> select(a_ori = ori, a_name = name, a_type = agency_type), by = "a_ori")
-write_csv(m |> arrange(state, desc(n_cameras)), file.path(REVIEW, "method_a_operator_crosswalk.csv"))
-message("\nMethod A summary (unique state+operator strings / cameras):")
-print(m |> mutate(a_basis = coalesce(a_basis, if_else(ambiguous, "unmatched_ambiguous", "unmatched"))) |>
-        group_by(a_basis) |> summarise(strings = n(), cameras = sum(n_cameras)) |> arrange(desc(cameras)))
+m <- m |> left_join(ag |> select(operator_ori = ori, matched_name = name, matched_type = agency_type), by = "operator_ori")
+write_csv(m |> arrange(state, desc(n_cameras)), file.path(REVIEW, "operator_crosswalk.csv"))
+message("\nOperator match summary (unique state+operator strings / cameras):")
+print(m |> mutate(operator_match = coalesce(operator_match, if_else(ambiguous, "unmatched_ambiguous", "unmatched"))) |>
+        group_by(operator_match) |> summarise(strings = n(), cameras = sum(n_cameras)) |> arrange(desc(cameras)))
 
 cams_a <- cams |> select(osm_id, state, operator) |>
-  left_join(m |> select(state, operator, a_ori, a_basis), by = c("state", "operator"))
-n_log(cams_a, "cameras after joining method A result")
+  left_join(m |> select(state, operator, operator_ori, operator_match), by = c("state", "operator"))
+n_log(cams_a, "cameras after joining the operator matches")
 stopifnot(nrow(cams_a) == nrow(cams))
-saveRDS(cams_a |> select(osm_id, a_ori, a_basis), file.path(PROC, "method_a.rds"))
+saveRDS(cams_a |> select(osm_id, operator_ori, operator_match), file.path(PROC, "operator_match.rds"))

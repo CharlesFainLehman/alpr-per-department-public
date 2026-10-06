@@ -1,8 +1,9 @@
-# Agency-name parser shared by method A (operator tags), method B (PD-to-place names) and both validations.
+# Agency-name parser shared by 04 (operator tags), 06 (PD-to-place names) and 08 (reported counts).
 # parse_name() returns the normalized string, the agency kind (police / sheriff / none) and the jurisdiction core.
 
 basic <- function(x) {
-  x |> str_to_lower() |> str_replace_all("[’`]", "'") |> str_replace_all("'s\\b", "s") |>
+  # accents are transliterated first ("Cañon" -> "canon"); everything else non-alphanumeric becomes a space
+  x |> stringi::stri_trans_general("Latin-ASCII") |> str_to_lower() |> str_replace_all("[’`]", "'") |> str_replace_all("'s\\b", "s") |>
     str_replace_all("&", " and ") |> str_replace_all("\\bst\\.\\s", "saint ") |>
     str_replace(",[^,]* (county|parish)$", "") |>          # FBI: "Miami Township PD, Clermont County"
     str_replace_all("[^a-z0-9 ]", " ") |> str_squish() |> str_replace_all("\\bst\\b", "saint") |>
