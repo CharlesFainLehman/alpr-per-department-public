@@ -9,7 +9,8 @@
 # Flock-tagged OSM cameras are counted.
 #
 # Writes output/csv/validation_web_comparison.csv (one row per matched agency; core = TRUE for the comparison
-# set) and output/csv/validation_web_metrics.csv. A separate check against Minnesota's state register of
+# set), output/csv/reported_cameras_by_department.csv (the same rows as a plain list with sources) and
+# output/csv/validation_web_metrics.csv. A separate check against Minnesota's state register of
 # fixed reader locations is added to the metrics.
 source("R/00_setup.R")
 source("R/name_parser.R")
@@ -106,6 +107,12 @@ write_csv(v |> select(state, agency_name, ori, matched_name = cand_name, basis, 
                       program_status, mobile_flag, core, vendor, flock_only, as_of_date, source_type, osm_located,
                       url, quote, notes),
           file.path(OUT_CSV, "validation_web_comparison.csv"))
+# the same rows as a plain list of reported counts with sources; the 360 core agencies first
+write_csv(v |> transmute(state, agency = agency_name, agency_type = agency_type_fbi, reported_cameras = reported,
+                         mapped_cameras_osm = osm_located, in_core_comparison = core, program_status,
+                         includes_mobile_or_shared = mobile_flag, vendor, as_of_date, source_type, url, quote) |>
+            arrange(desc(in_core_comparison), state, agency),
+          file.path(OUT_CSV, "reported_cameras_by_department.csv"))
 
 # 4. Metrics -----------------------------------------------------------------------------------------------
 # osm vs reported, over all n agencies:

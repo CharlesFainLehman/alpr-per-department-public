@@ -44,8 +44,8 @@ Shared: `R/00_setup.R` (paths, helpers), `R/name_parser.R` (agency-name normaliz
 | `data/fonts/` | Liberation Sans, the chart font (SIL Open Font License) |
 
 Census files are downloaded on the first run (~0.5 GB, `data/raw/`, not in git). Intermediate files go to
-`data/derived/` and lists for manual review to `output/review/`. Of the tables in `output/csv/`, only the two behind
-the charts are in git; `cameras.csv.gz`, `agencies.csv` and `summary_stats.csv` are written by a run.
+`data/derived/` and lists for manual review to `output/review/`. Of the tables in `output/csv/`, the two behind the
+charts and `reported_cameras_by_department.csv` (each department's published count, with source link) are in git; `cameras.csv.gz`, `agencies.csv` and `summary_stats.csv` are written by a run.
 
 ## Rerunning
 

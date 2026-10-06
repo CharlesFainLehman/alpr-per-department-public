@@ -17,3 +17,4 @@ output/csv/*
 !output/png/validation_web_scatter.png
 !output/csv/validation_web_comparison.csv
 !output/csv/validation_web_metrics.csv
+!output/csv/reported_cameras_by_department.csv
