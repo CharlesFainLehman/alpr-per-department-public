@@ -2,7 +2,7 @@
 
 Ties crowdsourced OpenStreetMap camera data (the DeFlock layer) to US local police agencies, checks the mapped
 counts against publicly reported ones, and compares observation counts in ALPR court rulings with *Carpenter*.
-Method write-up: `docs/METHODS.md`.
+Method write-up: `docs/METHODS.md`. Step-by-step guide to the code: `docs/HOW_IT_WORKS.md`.
 
 ## Charts
 
