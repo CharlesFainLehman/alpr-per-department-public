@@ -116,7 +116,7 @@ Joins everything into one table per camera and one per agency. A map point tagge
 (`camera:count`) counts each one. Agencies with no cameras are kept, with `area_resolved` saying whether a zero is
 a real mapped zero or an agency whose territory couldn't be placed on the map.
 
-*Output:* `output/csv/cameras.csv.gz`, `agencies.csv`, `summary_stats.csv` (written by a run, not in git).
+*Output:* `output/csv/cameras.csv.gz` (written by a run, not in git), `agencies.csv`, `summary_stats.csv`.
 Headline: 135,872 cameras credited to 7,795 agencies; the median agency with at least one camera has 6.
 
 ### 8. Validate against published counts: `R/08_validate.R`
@@ -137,10 +137,13 @@ register of reader locations is compared separately.
 
 ### 9. Charts: `R/09_charts.R`
 
-Draws the three charts from files that are all in git, so `Rscript R/09_charts.R` works on its own:
+Draws the four charts from files that are all in git, so `Rscript R/09_charts.R` works on its own:
 
 - `validation_web_scatter.png`: reported vs. mapped cameras for the 360 agencies.
-- `hist_web_sample_reported_vs_osm.png`: the distribution of both counts for the same agencies.
+- `hist_cameras_per_agency_stats.png`: all agencies with at least one mapped camera, by number of cameras
+  (median 6).
+- `hist_reported_cameras_per_agency.png`: the validation agencies, by the number of cameras they reported
+  (median 17). They are larger than the typical agency, so this is not an estimate for all agencies.
 - `court_observations_per_day.png`: captures per day in ALPR court rulings vs. *Carpenter*, from the
   hand-built spreadsheet `docs/alpr_observation_counts.xlsx`.
 

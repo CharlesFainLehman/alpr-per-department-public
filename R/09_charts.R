@@ -1,8 +1,10 @@
 # The three charts, from saved tables only (no pipeline objects), so they can be redrawn on their own:
 #   output/png/validation_web_scatter.png          reported vs. mapped cameras per agency
-#   output/png/hist_web_sample_reported_vs_osm.png  the same agencies: distribution of each count
+#   output/png/hist_cameras_per_agency_stats.png   all agencies: distribution of mapped cameras per agency
+#   output/png/hist_reported_cameras_per_agency.png the validation agencies: distribution of their published counts
 #   output/png/court_observations_per_day.png      captures per day in ALPR court rulings vs. Carpenter
 # Inputs: output/csv/validation_web_comparison.csv and validation_web_metrics.csv (from 08_validate.R),
+# output/csv/agencies.csv (from 07_count_per_agency.R),
 # the OSM snapshot's date (from its file name) and docs/alpr_observation_counts.xlsx (compiled by hand).
 source("R/00_setup.R")
 source("R/theme_cf.R")
@@ -38,44 +40,59 @@ p <- ggplot(core, aes(reported, osm_located)) +
   theme_cf(title_size = 36)
 cf_save(p, file.path(OUT_PNG, "validation_web_scatter.png"))
 
-# 2. Histogram: share of agencies by camera-count range, reported vs. mapped -------------------------------------
-edges <- c(0, 1, 2, 5, 10, 20, 50, 100, 200, 500, Inf)
-rng <- tibble(lo = head(edges, -1), hi = tail(edges, -1)) |> mutate(i = row_number(),
-  lab = case_when(hi == Inf ~ paste0(lo, "+"), hi - lo == 1 ~ as.character(lo), TRUE ~ paste0(lo, "-", hi - 1)))
-SER <- c("Publicly reported" = cf_blue, "Mapped in OSM (located in area)" = cf_orange)
-counts <- list(core$reported, core$osm_located)
-d <- map2_dfr(names(SER), counts, \(s, n) tibble(series = s, n = n)) |>
-  mutate(i = findInterval(n, edges, rightmost.closed = FALSE)) |>
-  count(series, i) |> group_by(series) |> mutate(share = n / sum(n)) |> ungroup() |>
-  complete(series, i = rng$i, fill = list(n = 0, share = 0)) |>
-  mutate(series = factor(series, levels = names(SER)), x = i + if_else(series == names(SER)[1], -0.21, 0.21))
-stopifnot(all(d |> group_by(series) |> summarise(t = sum(n)) |> pull(t) == nrow(core)))
+# 2-3. Bar charts: share of agencies by number of cameras ---------------------------------------------------------
+# Equal-width bars for labeled ranges (a smoothed density on a log axis dips between whole numbers); median, mean and
+# 99th-percentile lines placed inside their range by log interpolation. Agencies with at least one camera.
+bar_chart <- function(n, fill, title, subtitle, caption, file) {
+  edges <- c(1, 2, 5, 10, 20, 50, 100, 200, 500, Inf)
+  bins <- tibble(lo = head(edges, -1), hi = tail(edges, -1)) |>
+    mutate(i = row_number(), k = map2_int(lo, hi, \(a, b) sum(n >= a & n < b)), share = k / length(n),
+           lab = case_when(hi == Inf ~ paste0(lo, "+"), hi - lo == 1 ~ as.character(lo), TRUE ~ paste0(lo, "-", hi - 1)))
+  stopifnot(sum(bins$k) == length(n))
+  pos_x <- function(v) { k <- max(which(bins$lo <= v)); b <- bins[k, ]
+    hi <- if (is.finite(b$hi)) b$hi else max(n) + 1
+    k - 0.5 + (log(v) - log(b$lo)) / (log(hi) - log(b$lo)) }
+  ymax <- ceiling(max(bins$share) * 1.3 * 20) / 20
+  st <- tibble(value = c(median(n), mean(n), quantile(n, 0.99, names = FALSE)),
+               label = sprintf(c("Median: %.0f", "Mean: %.1f", "99th percentile: %.0f"), value)) |>
+    mutate(x = map_dbl(value, pos_x), y = ymax * c(0.97, 0.88, 0.97),
+           # a line that falls on a bar starts above the bar's percentage label
+           bar = round(x), y0 = if_else(abs(x - bar) < 0.4, bins$share[bar] + ymax * 0.07, 0))
+  print(st); print(bins |> select(lab, k, share))
+  p <- ggplot(bins) +
+    geom_col(aes(x = i, y = share), fill = fill, width = 0.8) +
+    geom_text(aes(x = i, y = share, label = if_else(share < 0.005, "<1%", percent(share, accuracy = 1))), vjust = -0.5,
+              family = "Liberation Sans", size = 19 / .pt, colour = cf_axis) +
+    geom_segment(data = st, aes(x = x, xend = x, y = y0, yend = y - ymax * 0.03), colour = cf_ink, linewidth = 1, linetype = "dashed") +
+    geom_text(data = st, aes(x = x, y = y, label = label), family = "Liberation Sans", size = 19 / .pt, colour = cf_ink) +
+    scale_x_continuous(breaks = bins$i, labels = bins$lab, expand = expansion(add = 0.4)) +
+    scale_y_continuous(labels = label_percent(accuracy = 1), limits = c(0, ymax), expand = expansion(mult = c(0, 0))) +
+    labs(x = NULL, y = NULL, title = title, subtitle = subtitle, caption = caption) +
+    theme_cf(title_size = 34)
+  cf_save(p, file.path(OUT_PNG, file))
+}
 
-# median lines, placed inside their range by log interpolation
-pos_x <- function(val) { k <- max(which(rng$lo <= val)); b <- rng[k, ]
-  if (b$lo == 0) return(k)
-  hi <- if (is.finite(b$hi)) b$hi else 1000; k - 0.5 + (log(val) - log(b$lo)) / (log(hi) - log(b$lo)) }
-ymax <- ceiling(max(d$share) * 1.25 * 20) / 20
-st <- tibble(series = factor(names(SER), levels = names(SER)), value = map_dbl(counts, median)) |>
-  mutate(x = map_dbl(value, pos_x), y = ymax * c(0.97, 0.88),
-         label = sprintf("%s median: %s", c("Reported", "Mapped"), sprintf("%.0f", value)))
-print(st)
-p <- ggplot(d) +
-  geom_col(aes(x = x, y = share, fill = series), width = 0.4) +
-  geom_segment(data = st, aes(x = x, xend = x, y = 0, yend = y, colour = series), linetype = "dashed", linewidth = 1) +
-  geom_text(data = st, aes(x = x + 0.1, y = y, label = label, colour = series), hjust = 0, vjust = 0.5,
-            family = "Liberation Sans", size = 21 / .pt) +
-  scale_fill_manual(values = SER, guide = "none") + scale_colour_manual(values = SER, guide = "none") +
-  scale_x_continuous(breaks = rng$i, labels = rng$lab, expand = expansion(add = 0.3)) +
-  scale_y_continuous(labels = label_percent(accuracy = 1), limits = c(0, ymax), expand = expansion(mult = c(0, 0))) +
-  labs(x = NULL, y = NULL,
-       title = "Reported and mapped camera counts look much alike",
-       subtitle = sprintf("Share of %d agencies by number of fixed license plate reader cameras: count reported by the agency (blue)\nand cameras mapped in OpenStreetMap in its area (orange). Not a random sample: all have a published count.", nrow(core)),
-       caption = web_caption) +
-  theme_cf(title_size = 36)
-cf_save(p, file.path(OUT_PNG, "hist_web_sample_reported_vs_osm.png"))
+# 2. OSM: all current agencies with at least one mapped camera
+osm_n <- read_csv(file.path(OUT_CSV, "agencies.csv"), show_col_types = FALSE) |>
+  filter(is_current(record_status), cameras_located >= 1) |> pull(cameras_located)
+stopifnot(mean(osm_n < 10) > 0.5)   # the title's claim
+bar_chart(osm_n, cf_orange,
+  title = "Most agencies have fewer than 10 mapped plate readers",
+  subtitle = sprintf("Share of %s local police and sheriff's offices with at least one camera, by cameras mapped in OpenStreetMap:\nthose tagged to the agency, plus untagged cameras in its area. Mapped cameras, not verified inventories.",
+                     format(length(osm_n), big.mark = ",")),
+  caption = cf_caption(sprintf("OpenStreetMap (DeFlock layer) via Overpass, pulled %s; FBI Crime Data Explorer; BJS LEAIC; Census TIGER/Line.", pull_date)),
+  file = "hist_cameras_per_agency_stats.png")
 
-# 3. Court rulings: captures per day of one vehicle vs. Carpenter -------------------------------------------------
+# 3. Validation: counts the core agencies published themselves
+rep_n <- core$reported[core$reported >= 1]
+bar_chart(rep_n, cf_blue,
+  title = sprintf("Agencies that publish counts report a median of %.0f cameras", median(rep_n)),
+  subtitle = sprintf("Share of %d agencies by the number of fixed license plate reader cameras they reported (%d more reported none).\nCurrent programs; cameras the agency operates. Not a random sample: all have a published count.",
+                     length(rep_n), sum(core$reported == 0)),
+  caption = cf_caption(sprintf("Agency websites, government documents and news reports (%s-%s).", min(core$year, na.rm = TRUE), max(core$year, na.rm = TRUE))),
+  file = "hist_reported_cameras_per_agency.png")
+
+# 4. Court rulings: captures per day of one vehicle vs. Carpenter -------------------------------------------------
 # Only records spanning a week or more (the sheet leaves shorter ones without a period) and only figures from the
 # court record (press rows, tier "c", are left out). Rates divide each opinion's count by its period.
 x <- readxl::read_excel("docs/alpr_observation_counts.xlsx", sheet = "Observation counts")

@@ -9,12 +9,13 @@ Method write-up: `docs/METHODS.md`. Step-by-step guide to the code: `docs/HOW_IT
 | Chart | What it shows |
 |---|---|
 | `output/png/validation_web_scatter.png` | reported vs. mapped cameras, 360 agencies |
-| `output/png/hist_web_sample_reported_vs_osm.png` | the same agencies: distribution of each count |
+| `output/png/hist_cameras_per_agency_stats.png` | all 7,795 agencies with a mapped camera: share by number of cameras (median 6) |
+| `output/png/hist_reported_cameras_per_agency.png` | the validation agencies: share by number of cameras they reported (median 17) |
 | `output/png/court_observations_per_day.png` | captures per day in ALPR court rulings vs. *Carpenter* |
 
-All three are drawn by `R/09_charts.R` from files in git, so `Rscript R/09_charts.R` redraws them without rerunning
-the pipeline: `output/csv/validation_web_comparison.csv` (one row per agency), `output/csv/validation_web_metrics.csv`
-and `docs/alpr_observation_counts.xlsx` (court rulings, compiled by hand with sources).
+All four are drawn by `R/09_charts.R` from files in git, so `Rscript R/09_charts.R` redraws them without rerunning
+the pipeline: `output/csv/validation_web_comparison.csv` (one row per agency), `output/csv/validation_web_metrics.csv`,
+`output/csv/agencies.csv` and `docs/alpr_observation_counts.xlsx` (court rulings, compiled by hand with sources).
 
 ## Pipeline
 
@@ -44,8 +45,8 @@ Shared: `R/00_setup.R` (paths, helpers), `R/name_parser.R` (agency-name normaliz
 | `data/fonts/` | Liberation Sans, the chart font (SIL Open Font License) |
 
 Census files are downloaded on the first run (~0.5 GB, `data/raw/`, not in git). Intermediate files go to
-`data/derived/` and lists for manual review to `output/review/`. Of the tables in `output/csv/`, the two behind the
-charts and `reported_cameras_by_department.csv` (each department's published count, with source link) are in git; `cameras.csv.gz`, `agencies.csv` and `summary_stats.csv` are written by a run.
+`data/derived/` and lists for manual review to `output/review/`. Of the tables in `output/csv/`, all are in git except
+`cameras.csv.gz` (one row per camera, 4 MB), which a run writes.
 
 ## Rerunning
 

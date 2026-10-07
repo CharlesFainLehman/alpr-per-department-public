@@ -13,8 +13,11 @@ output/*
 output/png/*
 output/csv/*
 !output/png/court_observations_per_day.png
-!output/png/hist_web_sample_reported_vs_osm.png
+!output/png/hist_reported_cameras_per_agency.png
 !output/png/validation_web_scatter.png
 !output/csv/validation_web_comparison.csv
 !output/csv/validation_web_metrics.csv
 !output/csv/reported_cameras_by_department.csv
+!output/csv/agencies.csv
+!output/csv/summary_stats.csv
+!output/png/hist_cameras_per_agency_stats.png
