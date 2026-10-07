@@ -137,13 +137,16 @@ register of reader locations is compared separately.
 
 ### 9. Charts: `R/09_charts.R`
 
-Draws the four charts from files that are all in git, so `Rscript R/09_charts.R` works on its own:
+Draws the five charts from files that are all in git, so `Rscript R/09_charts.R` works on its own:
 
 - `validation_web_scatter.png`: reported vs. mapped cameras for the 360 agencies.
 - `hist_cameras_per_agency_stats.png`: all agencies with at least one mapped camera, by number of cameras
   (median 6).
 - `hist_reported_cameras_per_agency.png`: the validation agencies, by the number of cameras they reported
   (median 17). They are larger than the typical agency, so this is not an estimate for all agencies.
+- `hist_findingflock_public_operators.png`: the public agencies on Finding Flock's operator list, by cameras whose
+  operator tag names them (median 11). Finding Flock tallies the same OpenStreetMap data, so this is not independent
+  of our estimate; it lists only operators with at least five tagged cameras. Snapshot made by `R/findingflock_pull.R`.
 - `court_observations_per_day.png`: captures per day in ALPR court rulings vs. *Carpenter*, from the
   hand-built spreadsheet `docs/alpr_observation_counts.xlsx`.
 

@@ -2,6 +2,7 @@
 #   output/png/validation_web_scatter.png          reported vs. mapped cameras per agency
 #   output/png/hist_cameras_per_agency_stats.png   all agencies: distribution of mapped cameras per agency
 #   output/png/hist_reported_cameras_per_agency.png the validation agencies: distribution of their published counts
+#   output/png/hist_findingflock_public_operators.png Finding Flock's public operators: tagged cameras per operator
 #   output/png/court_observations_per_day.png      captures per day in ALPR court rulings vs. Carpenter
 # Inputs: output/csv/validation_web_comparison.csv and validation_web_metrics.csv (from 08_validate.R),
 # output/csv/agencies.csv (from 07_count_per_agency.R),
@@ -43,7 +44,7 @@ cf_save(p, file.path(OUT_PNG, "validation_web_scatter.png"))
 # 2-3. Bar charts: share of agencies by number of cameras ---------------------------------------------------------
 # Equal-width bars for labeled ranges (a smoothed density on a log axis dips between whole numbers); median, mean and
 # 99th-percentile lines placed inside their range by log interpolation. Agencies with at least one camera.
-bar_chart <- function(n, fill, title, subtitle, caption, file) {
+bar_chart <- function(n, fill, title, subtitle, caption, file, empty_label = "") {
   edges <- c(1, 2, 5, 10, 20, 50, 100, 200, 500, Inf)
   bins <- tibble(lo = head(edges, -1), hi = tail(edges, -1)) |>
     mutate(i = row_number(), k = map2_int(lo, hi, \(a, b) sum(n >= a & n < b)), share = k / length(n),
@@ -61,7 +62,7 @@ bar_chart <- function(n, fill, title, subtitle, caption, file) {
   print(st); print(bins |> select(lab, k, share))
   p <- ggplot(bins) +
     geom_col(aes(x = i, y = share), fill = fill, width = 0.8) +
-    geom_text(aes(x = i, y = share, label = if_else(share < 0.005, "<1%", percent(share, accuracy = 1))), vjust = -0.5,
+    geom_text(aes(x = i, y = share, label = case_when(k == 0 ~ empty_label, share < 0.005 ~ "<1%", TRUE ~ percent(share, accuracy = 1))), vjust = -0.5,
               family = "Liberation Sans", size = 19 / .pt, colour = cf_axis) +
     geom_segment(data = st, aes(x = x, xend = x, y = y0, yend = y - ymax * 0.03), colour = cf_ink, linewidth = 1, linetype = "dashed") +
     geom_text(data = st, aes(x = x, y = y, label = label), family = "Liberation Sans", size = 19 / .pt, colour = cf_ink) +
@@ -91,6 +92,18 @@ bar_chart(rep_n, cf_blue,
                      length(rep_n), sum(core$reported == 0)),
   caption = cf_caption(sprintf("Agency websites, government documents and news reports (%s-%s).", min(core$year, na.rm = TRUE), max(core$year, na.rm = TRUE))),
   file = "hist_reported_cameras_per_agency.png")
+
+# 3b. Finding Flock: public operators' tagged cameras (R/findingflock_pull.R snapshot) ------------------------------
+ff_file <- tail(sort(Sys.glob("data/snapshots/findingflock_operators_*.csv")), 1)
+ff <- read_csv(ff_file, show_col_types = FALSE) |> filter(section == "Public agencies")
+stopifnot(nrow(ff) > 0, min(ff$cameras) >= 5)
+bar_chart(ff$cameras, cf_axis,
+  title = sprintf("Finding Flock's list of public operators: a median of %.0f cameras", median(ff$cameras)),
+  subtitle = sprintf("Share of %d public agencies listed by Finding Flock, an anti-surveillance site, by number of cameras whose\nOpenStreetMap operator tag names them. Only operators with at least five tagged cameras are listed, and most\ncameras carry no operator tag, so each count is a floor.",
+                     nrow(ff)),
+  caption = cf_caption(sprintf("Finding Flock (findingflock.com/operators, %s), from OpenStreetMap contributors (ODbL).",
+                               str_match(basename(ff_file), "_(\\d{4}-\\d{2}-\\d{2})")[, 2])),
+  file = "hist_findingflock_public_operators.png", empty_label = "not listed")
 
 # 4. Court rulings: captures per day of one vehicle vs. Carpenter -------------------------------------------------
 # Only records spanning a week or more (the sheet leaves shorter ones without a period) and only figures from the

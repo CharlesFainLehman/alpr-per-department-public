@@ -14,6 +14,7 @@ output/png/*
 output/csv/*
 !output/png/court_observations_per_day.png
 !output/png/hist_reported_cameras_per_agency.png
+!output/png/hist_findingflock_public_operators.png
 !output/png/validation_web_scatter.png
 !output/csv/validation_web_comparison.csv
 !output/csv/validation_web_metrics.csv

@@ -1,0 +1,727 @@
+section,operator,cameras,where
+Private operators,Lowe's,1688,"CA (158), MI (119), VA (111), NC (111), PA (106), TX (101), FL (95), NY (64), WA (63), SC (52) · in Las Vegas, Charlotte"
+Private operators,The Home Depot,1108,"CA (219), FL (85), NY (71), WA (60), TX (59), PA (50), CO (44), AZ (38), UT (38), MA (37) · in Los Angeles, Albuquerque"
+Private operators,Simon Property Group,134,"PA (26), FL (24), TX (16), NY (13), MI (11), CA (9), OK (5), VA (3), GA (3), OH (3) · in Auburn Hills, King of Prussia"
+Private operators,Meijer,91,"MI (70), OH (11), IN (10) · in Toledo, Greenwood"
+Private operators,Lowes,73,"FL (13), TN (11), OK (9), KY (9), MA (6), VT (4), NC (3), CO (3), SC (3), VA (2) · in St. Matthews, Kingsport"
+Private operators,Kaiser Permanente,70,"CA (70) · in Sacramento, Arden-Arcade"
+Private operators,Walmart,63,"CA (34), FL (17), CO (3), AR (3), KS (2), OK (1), WA (1), MA (1), PA (1) · in Palmdale, Lancaster"
+Private operators,Dierbergs Markets,50,"MO (50) · in St. Peters, Creve Coeur"
+Private operators,Home Depot,48,"MA (17), CA (9), FL (4), CO (4), MD (4), AZ (3), MN (3), MO (2), VA (1), NM (1) · in San Mateo, Lone Tree"
+Private operators,LSSC,39,"FL (39) · in Clermont, Leesburg"
+Private operators,Station Casinos,34,"NV (34) · in Henderson, Las Vegas"
+Private operators,FedEx,30,"MI (8), CT (8), WI (6), TX (4), MO (2), WA (2) · in Schertz, Madison"
+Private operators,United Wholesale Mortgage,24,MI (24) · in Pontiac
+Private operators,Lake of the Pines Association,24,CA (24) · in Lake of the Pines
+Private operators,Great Wolf Lodge,20,"WA (10), MI (4), WI (4), MN (2) · in Grand Mound, Lake Delton"
+Private operators,Sun City Texas,20,TX (20) · in Georgetown
+Private operators,Kroger,19,"WA (7), OR (6), OH (4), TX (2) · in Blue Ash, Portland"
+Private operators,Lowe's Home Improvement,18,"OK (9), CA (5), FL (4) · in Riverside, Broken Arrow"
+Private operators,Kenwood Towne Center,17,OH (17) · in Kenwood
+Private operators,NYC M.T.A,16,NY (16)
+Private operators,CVS,16,"FL (14), MA (1), NH (1) · in Miami, Hialeah"
+Private operators,Fashion Show Mall,15,NV (15) · in Paradise
+Private operators,Mayfair Mall / Brookfield Properties Retail Inc.,14,WI (14) · in Wauwatosa
+Private operators,"Interlocken Owners' Association, Inc.",14,CO (14) · in Broomfield
+Private operators,Stonestown Galleria Mall,13,CA (13) · in San Francisco
+Private operators,Sam's Club,13,CA (13) · in Palmdale
+Private operators,The Home Depo,13,"CA (13) · in Santa Clarita, San Fernando"
+Private operators,Safeway,13,WA (13) · in Des Moines
+Private operators,Lake Of The Pines Association,12,CA (12) · in Lake of the Pines
+Private operators,Southfield Town Center,11,MI (11) · in Southfield
+Private operators,Boeing,11,OK (11) · in Oklahoma City
+Private operators,Clean Express Auto Wash,11,"MI (11) · in Roseville, Dearborn Heights"
+Private operators,Pebble Beach Company,10,CA (10) · in Del Monte Forest
+Private operators,Park Meadows,10,CO (10) · in Lone Tree
+Private operators,Brookfield Property Partners,10,VA (10) · in Tysons
+Private operators,Rock Security,10,MI (10) · in Detroit
+Private operators,Lyons GA,10,GA (10)
+Private operators,Williamsburg Settlement Maintenance Association,10,TX (10)
+Private operators,UoF,10,FL (10) · in Gainesville
+Private operators,ThedaCare-Froedtert Health,9,"WI (9) · in Wauwatosa, Mequon"
+Private operators,Holmby Hills Homeowners Association,9,CA (9)
+Private operators,Premium Parking,9,FL (9) · in Pensacola
+Private operators,Navy Federal Credit Union,9,"FL (7), MD (2) · in Bowie"
+Private operators,Lakeshore Homes Association (LHA),8,CA (8)
+Private operators,King George Sherrifs Office,8,VA (8)
+Private operators,Destiny USA,8,NY (8) · in Syracuse
+Private operators,Celebration Community Development District,8,FL (8) · in Celebration
+Private operators,ROCO Real Estate,8,"MI (8) · in Southfield, Westland"
+Private operators,Scheels,8,CO (8) · in Colorado Springs
+Private operators,Baylor Scott & White Health,8,TX (8) · in McKinney
+Private operators,UTTyler,8,TX (8) · in Tyler
+Private operators,Mt. Juliet,8,TN (8) · in Mount Juliet
+Private operators,Wegmans Food Markets,8,"CT (4), NY (4) · in Norwalk"
+Private operators,Borough of Evans City,8,PA (8)
+Private operators,ProMedica,7,OH (7)
+Private operators,Target Corporation,7,"OR (3), CA (2), NC (2) · in Durham"
+Private operators,DHL,7,KY (7)
+Private operators,Palms Casino Resort,7,NV (7) · in Paradise
+Private operators,"Boulder City, NV",7,NV (7)
+Private operators,Swainsboro GA,7,GA (7)
+Private operators,Fred Meyer,7,WA (7)
+Private operators,CAL FIRE,7,CA (7)
+Private operators,QuikTrip Corporation,6,OK (6)
+Private operators,Cuero,6,TX (6)
+Private operators,GoldOller Real Estate Investments,6,"OH (6) · in Cincinnati, Fairfield"
+Private operators,Winghaven ROA,6,MO (6) · in O'Fallon
+Private operators,Harbour View HOA,6,VA (6) · in Suffolk
+Private operators,Weldon Spring,6,MO (6)
+Private operators,Centennial Park HOA,6,MI (6)
+Private operators,LAW ENFORCEMENT,6,OH (6)
+Private operators,Bridge Valley HOA,6,MI (6)
+Private operators,Dick's Sporting Goods,6,"MI (5), WA (1) · in Troy"
+Private operators,Buc-ee's,6,TX (6) · in New Braunfels
+Private operators,Sentry Insurance,6,WI (6) · in Stevens Point
+Private operators,Cambio Communities,6,MI (6)
+Private operators,Borough of Zelienople,6,PA (6)
+Private operators,Omni Hotels & Resorts,5,CO (5) · in Broomfield
+Private operators,Oakland Towne Square,5,MI (5)
+Private operators,Academy Sports + Outdoors,5,TX (5) · in San Antonio
+Private operators,BJ's Wholesale Club,5,CT (5)
+Private operators,Pennsylvania Real Estate Investment Trust,5,MI (5) · in Kentwood
+Private operators,Coral Ridge Mall,5,IA (5) · in Coralville
+Private operators,WestWind Management,5,CO (5) · in Aurora
+Private operators,St Francis Wood HOA,5,CA (5)
+Private operators,AdventHealth,5,"FL (5) · in Orlando, Celebration"
+Private operators,UPS,5,"CA (3), MI (2) · in Lathrop"
+Private operators,Launch Apartments,5,IN (5) · in West Lafayette
+Private operators,UC Riverside,5,CA (5) · in Riverside
+Private operators,FCIC,5,TX (5) · in Tyler
+Public agencies,NYC Department of Transportation,594,NY (594) · in New York
+Public agencies,San Diego Police Department,591,CA (591) · in San Diego
+Public agencies,Detroit Police Department,450,MI (450) · in Detroit
+Public agencies,San Francisco Police Department,418,CA (418) · in San Francisco
+Public agencies,California Highway Patrol (CHP),402,"CA (402) · in Oakland, Castro Valley"
+Public agencies,Chicago Police Department,225,IL (225) · in Chicago
+Public agencies,New York City Police Department,215,NY (215) · in New York
+Public agencies,St. Charles County PD,175,"MO (175) · in St. Charles, St. Peters"
+Public agencies,Norfolk Police Department,166,VA (166) · in Norfolk
+Public agencies,Las Vegas Metropolitan Police Department,164,"NV (164) · in Las Vegas, Paradise"
+Public agencies,St. Louis City PD,158,"MO (158) · in St. Louis, University City"
+Public agencies,Irvine Police Department,140,CA (140) · in Irvine
+Public agencies,Albuquerque Police Department,125,"NM (125) · in Albuquerque, Rio Rancho"
+Public agencies,Hampton Police Division,115,VA (115) · in Hampton
+Public agencies,Salinas Police Department,106,CA (106) · in Salinas
+Public agencies,New Haven Police Department,105,CT (105) · in New Haven
+Public agencies,Buffalo Police Department,104,NY (104) · in Buffalo
+Public agencies,Sacramento Police Department,97,"CA (97) · in Sacramento, Arden-Arcade"
+Public agencies,Tulsa Police Department,97,OK (97) · in Tulsa
+Public agencies,Henrico County Police Division,97,"VA (97) · in Tuckahoe, Short Pump"
+Public agencies,Newport News Police Department,96,VA (94) · in Newport News
+Public agencies,Toledo Police Department,93,"OH (93) · in Toledo, Maumee"
+Public agencies,Stockton Police Department,92,CA (92) · in Stockton
+Public agencies,Oakland County Sheriff's Office,91,"MI (91) · in Pontiac, Rochester Hills"
+Public agencies,West University Place Police Dept,88,"TX (88) · in West University Place, Houston"
+Public agencies,Customs and Border Protection,86,"TX (42), AZ (17), CA (13), NM (8) · in Brownsville, El Paso"
+Public agencies,Volusia County Sheriff's Office,82,"FL (82) · in Deltona, Daytona Beach"
+Public agencies,Richmond Police Department,81,"VA (59), CA (22) · in Richmond, Richmond"
+Public agencies,Metropolitan Transportation Authority,79,NY (79) · in New York
+Public agencies,City of Beverly Hills,78,"CA (78) · in Beverly Hills, West Hollywood"
+Public agencies,Tucson Police Department,77,AZ (77) · in Tucson
+Public agencies,Santa Maria Police Department,76,CA (76) · in Santa Maria
+Public agencies,Amarillo Police Department,75,TX (75) · in Amarillo
+Public agencies,Dearborn Police Department,74,MI (74) · in Dearborn
+Public agencies,Illinois State Police,72,"IL (72) · in Chicago, Maywood"
+Public agencies,Tustin Police Department,72,"CA (72) · in Tustin, Santa Ana"
+Public agencies,Pasadena Police Department,71,CA (71) · in Pasadena
+Public agencies,Clay County Sheriff's Office,68,"FL (68) · in Bellair-Meadowbrook Terrace, Lakeside"
+Public agencies,El Centro Police Department,68,CA (68) · in El Centro
+Public agencies,City of Buckeye,67,AZ (67) · in Buckeye
+Public agencies,Dallas Police Department,64,"TX (63), OR (1) · in Dallas"
+Public agencies,University of Arizona Police Department,64,AZ (64) · in Tucson
+Public agencies,Champaign Police Department,63,IL (63) · in Champaign
+Public agencies,Lexington Police Department,60,KY (60) · in Lexington-Fayette
+Public agencies,Louisville Metro Police Department,58,"KY (58) · in Louisville/Jefferson County, Jeffersontown"
+Public agencies,City of Yakima,57,"WA (57) · in Yakima, Union Gap"
+Public agencies,Township of Cranberry,56,PA (56)
+Public agencies,Portsmouth Police Department,54,VA (54) · in Portsmouth
+Public agencies,Washington State Department of Transportation,53,"WA (53) · in Kent, Kirkland"
+Public agencies,New York Police Department,53,NY (53)
+Public agencies,New Hampshire Bureau of Turnpikes,52,NH (52)
+Public agencies,Hempstead Police Department,52,"NY (52) · in Hempstead, Garden City"
+Public agencies,California Highway Patrol,50,"CA (50) · in Oakland, Hayward"
+Public agencies,Cedar Rapids Police Department,49,IA (49) · in Cedar Rapids
+Public agencies,St. Johns County Sheriff,49,"FL (49) · in St. Augustine, World Golf Village"
+Public agencies,Suffolk Police Department,48,VA (48) · in Suffolk
+Public agencies,Westchester County Police RTC/Intelligence Regional and Nati,48,"NY (48) · in Mount Kisco, Yonkers"
+Public agencies,Taylor Police Department,48,MI (48) · in Taylor
+Public agencies,West Des Moines Police Department,48,IA (48) · in West Des Moines
+Public agencies,Shelby Township Police Department,46,MI (46)
+Public agencies,Redlands Police Department,46,CA (46) · in Redlands
+Public agencies,Salamanca Police Department,46,NY (46) · in Salamanca
+Public agencies,Minneapolis Police Department,45,MN (45) · in Minneapolis
+Public agencies,City of Piedmont,44,CA (44) · in Piedmont
+Public agencies,San Leandro Police Department,44,CA (44) · in San Leandro
+Public agencies,Federal Way Police,44,WA (44) · in Federal Way
+Public agencies,JCPD,43,TN (43) · in Johnson City
+Public agencies,San Mateo Police Department,42,CA (42) · in San Mateo
+Public agencies,Berkeley Police Department,42,CA (42) · in Berkeley
+Public agencies,Youngstown Police Department,42,OH (42) · in Youngstown
+Public agencies,Lakewood Police Department,41,"WA (41) · in Lakewood, Tacoma"
+Public agencies,University of Florida,41,FL (41) · in Gainesville
+Public agencies,Little Rock Police Department,40,AR (40) · in Little Rock
+Public agencies,Farmington Hills Police Department,40,"MI (40) · in Farmington Hills, Novi"
+Public agencies,Lowell Police,40,MA (40) · in Lowell
+Public agencies,Altoona Police Department,39,IA (39) · in Altoona
+Public agencies,Springfield Police,39,MA (39) · in Springfield
+Public agencies,Pasco Sheriff’s Office,38,FL (38) · in Wesley Chapel
+Public agencies,Newport Beach Police Department,38,"CA (38) · in Newport Beach, Costa Mesa"
+Public agencies,Santa Rosa Police Department,36,CA (36) · in Santa Rosa
+Public agencies,Santa Clara Police Department,36,"CA (36) · in Santa Clara, Sunnyvale"
+Public agencies,Chesapeake Police Department,36,VA (36) · in Chesapeake
+Public agencies,Milford Police Department,36,"CT (21), MI (15) · in Milford"
+Public agencies,Van Buren Township Police Department,36,MI (36)
+Public agencies,City of Bakersfield,36,CA (36) · in Bakersfield
+Public agencies,Northern Regional Police Department of Allegheny County,35,PA (35) · in Seven Fields
+Public agencies,Michigan State University Department of Police and Public Sa,35,MI (35) · in East Lansing
+Public agencies,Culver City,35,CA (35) · in Culver City
+Public agencies,Spokane County Sheriff's Office,34,WA (34)
+Public agencies,Los Angeles Police Department,34,CA (34) · in Los Angeles
+Public agencies,Maricopa PD,33,AZ (33) · in Maricopa
+Public agencies,Flint Police Department,33,MI (33) · in Flint
+Public agencies,Seminole County Sheriff's Office,33,"GA (25), FL (8) · in Altamonte Springs, Sanford"
+Public agencies,Daly City Police Department,33,CA (33) · in Daly City
+Public agencies,Boulder Police Department,32,CO (32) · in Boulder
+Public agencies,Virginia Beach Police Department,32,VA (32) · in Virginia Beach
+Public agencies,Garden City Police Department,32,"MI (25), NY (7) · in Garden City, Garden City"
+Public agencies,Saginaw Police Department,32,MI (32) · in Saginaw
+Public agencies,Lompoc Police Department,32,CA (32) · in Lompoc
+Public agencies,Prescott Police Department,31,AZ (31) · in Prescott
+Public agencies,Highland Park Police Department,31,"MI (16), IL (15) · in Highland Park, Highland Park"
+Public agencies,O'Fallon PD,31,"MO (31) · in O'Fallon, Dardenne Prairie"
+Public agencies,Cherokee Indian Police Department,31,NC (31) · in Cherokee
+Public agencies,Methuen Police,31,"MA (29), NH (2) · in Methuen"
+Public agencies,Mount Pleasant/Westchester County Police RTC/Intelligence Re,30,NY (30)
+Public agencies,Chula Vista Police Department,30,CA (30) · in Chula Vista
+Public agencies,Lawrence Police Department,30,KS (30) · in Lawrence
+Public agencies,Sutherlin Police Department,30,OR (30) · in Sutherlin
+Public agencies,Marshalltown Police Department,30,IA (30) · in Marshalltown
+Public agencies,Prescott Valley Police Department,30,AZ (30) · in Prescott Valley
+Public agencies,Metro Police Department,30,DC (30) · in Washington
+Public agencies,City of Columbia,29,MO (29) · in Columbia
+Public agencies,Macomb County Sheriff's Office,29,MI (29)
+Public agencies,University of Toledo Police Department,29,OH (29) · in Toledo
+Public agencies,New York City Department of Transportation,29,NY (29)
+Public agencies,Southfield Police Department,28,"MI (28) · in Southfield, Oak Park"
+Public agencies,Seaside Police Department,28,"CA (28) · in Seaside, Sand City"
+Public agencies,River Rouge Police Department,28,"MI (28) · in River Rouge, Ecorse"
+Public agencies,Wood Dale Police Department,28,"IL (28) · in Wood Dale, Addison"
+Public agencies,Atlanta Police Department,28,GA (28) · in Atlanta
+Public agencies,Livonia Police Department,28,MI (28) · in Livonia
+Public agencies,Massachusetts Department of Transportation,27,MA (27) · in Boston
+Public agencies,Romulus Police Department,27,MI (27) · in Romulus
+Public agencies,Northampton County Sheriff's Office,27,VA (27)
+Public agencies,Auburn Police,27,"WA (17), ME (6), MA (4) · in Auburn"
+Public agencies,Drug Enforcement Administration,27,"TX (14), NM (5), AZ (4), CA (4)"
+Public agencies,Huntington Beach Police Department,26,"CA (26) · in Huntington Beach, Seal Beach"
+Public agencies,Wayne County Airport Authority,26,MI (26) · in Romulus
+Public agencies,Williamsburg Police Department,25,VA (25) · in Williamsburg
+Public agencies,Town of Westfield Police Department,25,NJ (25) · in Westfield
+Public agencies,Troy Police Department (Michigan),25,MI (25) · in Troy
+Public agencies,Owasso Police,25,OK (25) · in Owasso
+Public agencies,Orange County Sheriff,25,"CA (25) · in Lake Forest, Laguna Hills"
+Public agencies,Everett Police Department,25,WA (25) · in Everett
+Public agencies,Norwich Police Department,25,CT (25) · in Norwich
+Public agencies,Henderson,25,NV (25) · in Henderson
+Public agencies,Barstow Police Department,25,CA (25) · in Barstow
+Public agencies,Los Angeles County Metropolitan Transportation Authority,24,"CA (24) · in Los Angeles, El Monte"
+Public agencies,Grand Blanc Township Police Department,24,MI (24)
+Public agencies,Southington Police Department,24,CT (24)
+Public agencies,Iowa State University Police Department,24,IA (24) · in Ames
+Public agencies,Urbandale Police Department,24,IA (24) · in Urbandale
+Public agencies,Lansing Police Department,24,MI (24) · in Lansing
+Public agencies,Saint Johns County Sheriff's Office,23,FL (23) · in St. Augustine
+Public agencies,Sterling Heights Police Department,23,MI (23) · in Sterling Heights
+Public agencies,York-Poquoson Sheriff's Office,23,VA (23)
+Public agencies,Portage Department of Public Safety Police Division,23,"MI (23) · in Portage, Kalamazoo"
+Public agencies,Grand Rapids Police Department,23,MI (23) · in Grand Rapids
+Public agencies,Los Altos Police Department,23,"CA (23) · in Los Altos, Mountain View"
+Public agencies,San Marino Police Department,23,CA (23) · in San Marino
+Public agencies,Brownstown Police Department,23,MI (23)
+Public agencies,Manitowoc Police Department,23,WI (23) · in Manitowoc
+Public agencies,Fairfield Police Department,23,CT (23)
+Public agencies,Ridgecrest Police Department,23,CA (23) · in Ridgecrest
+Public agencies,Laredo PD,23,TX (22) · in Laredo
+Public agencies,Dixon Police Department,23,CA (23) · in Dixon
+Public agencies,Syracuse Police Department,23,NY (23) · in Syracuse
+Public agencies,Auburn Hills Police Department,22,MI (22) · in Auburn Hills
+Public agencies,Burbank,22,CA (22) · in Burbank
+Public agencies,Beaumont Police Department,22,TX (22) · in Beaumont
+Public agencies,West Bloomfield Police Department,22,MI (22)
+Public agencies,Mass State Police,22,"MA (22) · in Chicopee, Worcester"
+Public agencies,Florida International University,22,FL (22) · in Westchester
+Public agencies,Larimer County Sheriff's Office,21,"CO (21) · in Berthoud, Fort Collins"
+Public agencies,Lucas County Sheriff's Office,21,OH (21)
+Public agencies,Oakland Police Department,21,CA (21) · in Oakland
+Public agencies,Lincoln Park Police Department,21,MI (21) · in Lincoln Park
+Public agencies,Lawrence Police,21,MA (21) · in Lawrence
+Public agencies,Vidalia GA,21,GA (21) · in Vidalia
+Public agencies,West Hartford Police Department,21,CT (21) · in West Hartford
+Public agencies,Fall River Police,21,MA (21) · in Fall River
+Public agencies,Odessa Police Department,21,TX (21) · in Odessa
+Public agencies,Roseville Police Department,20,"MI (12), MN (8) · in Roseville, Roseville"
+Public agencies,Michigan State Police,20,MI (20) · in Detroit
+Public agencies,Live Oak,20,"TX (20) · in Live Oak, San Antonio"
+Public agencies,CCPD,20,VA (20) · in Chester
+Public agencies,Forest Park PD,20,"OH (20) · in Forest Park, Springdale"
+Public agencies,Maryland Transportation Authority,20,"MD (15), VA (1) · in Baltimore"
+Public agencies,Boardman Police Department,20,OH (20)
+Public agencies,Wyandotte Police Department,19,MI (19) · in Wyandotte
+Public agencies,Tufts University,19,"MA (19) · in Medford, Somerville"
+Public agencies,Mount Lebanon Police Department,19,"PA (19) · in Mount Lebanon, Castle Shannon"
+Public agencies,PANYNJ,19,"NY (12), NJ (7) · in Jersey City"
+Public agencies,Waterford Police Department,19,"MI (15), CT (4)"
+Public agencies,Accomack County Sheriff's Office,19,VA (19)
+Public agencies,Rossford Police Department,19,OH (19) · in Rossford
+Public agencies,Watsonville Police Department,19,CA (19) · in Watsonville
+Public agencies,Kalamazoo Department of Public Safety,19,MI (19) · in Kalamazoo
+Public agencies,Port Huron Police Department,19,MI (14) · in Port Huron
+Public agencies,Dover Police Department,19,DE (19) · in Dover
+Public agencies,Tewksbury Police,19,MA (19)
+Public agencies,University of Iowa Police Department,19,IA (19) · in Iowa City
+Public agencies,Alhambra Police Department,19,"CA (19) · in Alhambra, San Marino"
+Public agencies,Clive Police Department,19,"IA (19) · in Clive, Urbandale"
+Public agencies,Davison Township Police Department,19,MI (19)
+Public agencies,Nassau County Police Department,19,"NY (19) · in Uniondale, Hempstead"
+Public agencies,NYC D.O.T,19,NY (19)
+Public agencies,MTA Bridges and Tunnels,19,NY (19)
+Public agencies,Bay Area Toll Authority,18,"CA (14) · in Richmond, Fremont"
+Public agencies,Oro Valley Police Department,18,AZ (18) · in Oro Valley
+Public agencies,Boston Police,18,MA (18) · in Boston
+Public agencies,Warren Police Department,18,MI (18) · in Warren
+Public agencies,Bloomfield Township Police Department,18,MI (18)
+Public agencies,Roseburg Police Department,18,OR (18) · in Roseburg
+Public agencies,Hernando County Sheriff's Office,18,FL (18) · in Spring Hill
+Public agencies,West Allis,18,"WI (18) · in West Allis, Greenfield"
+Public agencies,Town of Bay Harbor Islands,18,FL (18) · in Bay Harbor Islands
+Public agencies,Monroe Police Department,18,"MI (12), CT (6) · in Monroe"
+Public agencies,Stanford University,18,CA (18) · in Stanford
+Public agencies,University Heights PD,18,"OH (18) · in University Heights, South Euclid"
+Public agencies,Township of Butler,18,PA (18) · in Homeacre-Lyndora
+Public agencies,Township of Adams,17,PA (17)
+Public agencies,Wentzville PD,17,MO (17) · in Wentzville
+Public agencies,Livingston County Sheriff's Office,17,MI (17)
+Public agencies,Marina Department of Public Safety,17,CA (17) · in Marina
+Public agencies,East Palo Alto Police Department,17,CA (17) · in East Palo Alto
+Public agencies,Dearborn Heights Police Department,17,MI (17) · in Dearborn Heights
+Public agencies,Eastpointe Police Department,17,MI (17) · in Eastpointe
+Public agencies,Everett Police,17,"WA (15), MA (2) · in Everett"
+Public agencies,Albion Department of Public Safety,17,MI (17) · in Albion
+Public agencies,Glastonbury Police Department,17,CT (17) · in Glastonbury Center
+Public agencies,Riverside County Sheriff’s Department,17,"CA (17) · in Rancho Mirage, Palm Desert"
+Public agencies,West Fargo Police Department,16,ND (16) · in West Fargo
+Public agencies,Hudson Police Department,16,WI (16) · in Hudson
+Public agencies,Dodge County,16,WI (16)
+Public agencies,Sylvania Police Department,16,OH (16) · in Sylvania
+Public agencies,Windsor Police Department,16,"CT (15), VA (1)"
+Public agencies,Storm Lake Police Department,16,IA (16) · in Storm Lake
+Public agencies,Costa Mesa Police Department,16,CA (16) · in Costa Mesa
+Public agencies,San Gabriel Police Department,16,"CA (16) · in San Gabriel, Rosemead"
+Public agencies,Rogers Police Department,16,"AR (9), MN (7) · in Rogers"
+Public agencies,Plano Police Department,16,TX (16) · in Plano
+Public agencies,Lynn Police,16,MA (16) · in Lynn
+Public agencies,Riverside County Sheriff's Department,16,CA (16) · in Rancho Mirage
+Public agencies,New Britain Police Department,16,CT (16) · in New Britain
+Public agencies,Haverhill Police,16,MA (16) · in Haverhill
+Public agencies,Michigan State University Parking Services,16,MI (16) · in East Lansing
+Public agencies,Clovis Police Department,16,NM (16) · in Clovis
+Public agencies,Kyle Police Department,16,TX (16) · in Kyle
+Public agencies,Imperial County Sheriff Department,15,CA (15)
+Public agencies,Lantana Police Department,15,FL (15) · in Lantana
+Public agencies,Bristol TN Police Department,15,TN (15) · in Bristol
+Public agencies,Burton Police Department,15,"MI (15) · in Burton, Flint"
+Public agencies,Oak Creek Police Department,15,WI (15) · in Oak Creek
+Public agencies,Adams County Sheriff's Office,15,IN (15)
+Public agencies,Lake St. Louis PD,15,MO (15) · in Lake St. Louis
+Public agencies,Northville Township Police Department,15,MI (15)
+Public agencies,Hamtramck Police Department,15,MI (15) · in Hamtramck
+Public agencies,Johnston Police Department,15,IA (15) · in Johnston
+Public agencies,San Bernardino County Sheriff's Department,15,"CA (15) · in Highland, San Bernardino"
+Public agencies,Saugus Police,15,MA (15) · in Saugus
+Public agencies,Lynnwood Police,15,"WA (15) · in Lynnwood, Edmonds"
+Public agencies,City of El Cajon,15,CA (15) · in El Cajon
+Public agencies,Clark County Sheriff's Office,15,WA (15)
+Public agencies,Atherton Police Department,14,CA (14) · in Atherton
+Public agencies,UNC Chapel Hill Police Department,14,NC (14) · in Chapel Hill
+Public agencies,Cranston Police Department,14,RI (14) · in Cranston
+Public agencies,Sunnyvale Department of Public Safety,14,CA (14) · in Sunnyvale
+Public agencies,Des Moines Police,14,"WA (14) · in Des Moines, SeaTac"
+Public agencies,Ankeny Police Department,14,IA (14) · in Ankeny
+Public agencies,City of Strongsville Police,14,"OH (14) · in Strongsville, Middleburg Heights"
+Public agencies,Huron Township Police Department,14,MI (14)
+Public agencies,Elk River Police Department,14,MN (14) · in Elk River
+Public agencies,Pasco Sheriff's Office,14,FL (14) · in Wesley Chapel
+Public agencies,Melvindale Police Department,14,MI (14) · in Melvindale
+Public agencies,BYU PD,14,UT (14) · in Provo
+Public agencies,Owensboro Police Dept.,14,"KY (13), IN (1) · in Owensboro"
+Public agencies,Wright County Sheriffs Office,14,MN (14)
+Public agencies,Albuqueque Police Department,13,NM (13) · in Albuquerque
+Public agencies,Thousand Oaks Police Department,13,CA (13) · in Thousand Oaks
+Public agencies,Edmond Police Department,13,OK (13) · in Edmond
+Public agencies,James City County Police Department,13,VA (13) · in Williamsburg
+Public agencies,San Bernardino County Sheriff,13,"CA (13) · in Loma Linda, Grand Terrace"
+Public agencies,University of Central Florida,13,FL (13) · in University
+Public agencies,Mount Pleasant Police Department,13,SC (13) · in Mount Pleasant
+Public agencies,Grand Traverse County Sheriff's Office,13,MI (13)
+Public agencies,Blackman-Leoni Township Department of Public Safety,13,MI (13)
+Public agencies,Saint Clair County Sheriff's Office,13,MI (13)
+Public agencies,Wausau Police Department,13,WI (13) · in Wausau
+Public agencies,Norfolk State University,13,VA (13) · in Norfolk
+Public agencies,Hopewell Police Department,13,VA (13) · in Hopewell
+Public agencies,Flint Township Police Department,13,MI (13)
+Public agencies,Midlothian Police Department,13,TX (13) · in Midlothian
+Public agencies,Whitewater Police Department,13,WI (13) · in Whitewater
+Public agencies,Virginia Tech Police Department,13,VA (13) · in Blacksburg
+Public agencies,ASU Police,13,AZ (13) · in Tempe
+Public agencies,Foster City Police Department,13,CA (13) · in Foster City
+Public agencies,The Colony Police Department,13,"TX (13) · in The Colony, Lewisville"
+Public agencies,El Monte Police Department,13,"CA (13) · in El Monte, Temple City"
+Public agencies,New Canaan Police Department,13,CT (13)
+Public agencies,Lewiston Police,13,ME (13) · in Lewiston
+Public agencies,Florida Department of Transportation,13,FL (13)
+Public agencies,North Andover Police,13,MA (13)
+Public agencies,Seneca Valley School District,12,PA (12)
+Public agencies,Burlingame Police Department,12,"CA (12) · in Burlingame, Hillsborough"
+Public agencies,Ottawa County Sheriff's Office,12,MI (12)
+Public agencies,Maumee Police Department,12,OH (12) · in Maumee
+Public agencies,Denver Police Department,12,CO (12) · in Denver
+Public agencies,Fond Du Lac County,12,WI (12) · in Fond du Lac
+Public agencies,Metro Police Authority of Genesee County,12,MI (12)
+Public agencies,Auburn Police Department,12,"CA (6), IN (6) · in Auburn, Auburn"
+Public agencies,Hollister Police Department,12,CA (12) · in Hollister
+Public agencies,Jackson Police Department,12,MI (12) · in Jackson
+Public agencies,Universal City,12,TX (12) · in Universal City
+Public agencies,Los Gatos/Monte Sereno Police Department,12,"CA (12) · in Los Gatos, Monte Sereno"
+Public agencies,Town of Culpeper Police Department,12,VA (12) · in Culpeper
+Public agencies,Louisiana Tech University,12,LA (12) · in Ruston
+Public agencies,Saint Clair Shores Police Department,12,MI (12) · in St. Clair Shores
+Public agencies,Toppenish Police,12,WA (12) · in Toppenish
+Public agencies,St. Peters PD,12,MO (12) · in St. Peters
+Public agencies,Bedford Police Department,12,TX (12) · in Bedford
+Public agencies,Sparks,12,NV (12) · in Sparks
+Public agencies,Clarkstown Police Department,12,"NY (12) · in Nanuet, New City"
+Public agencies,Plainfield Police,12,IL (12) · in Plainfield
+Public agencies,Metropolitan Transit Authority,12,NY (12)
+Public agencies,Township of Jackson,12,PA (12)
+Public agencies,Ossining/Westchester County Police RTC/Intelligence Regional,11,NY (11) · in Ossining
+Public agencies,Brisbane Police Department,11,"CA (11) · in Brisbane, Daly City"
+Public agencies,Boulder County Sheriff's Office,11,CO (11)
+Public agencies,Pacific Grove Police Department,11,"CA (11) · in Pacific Grove, Del Monte Forest"
+Public agencies,Blacksburg Police Department,11,VA (11) · in Blacksburg
+Public agencies,Alameda County Sheriff's Office,11,"CA (11) · in Ashland, Castro Valley"
+Public agencies,Barron County Sheriff,11,WI (11) · in Rice Lake
+Public agencies,Manchester Police Department,11,"CT (6), VT (5)"
+Public agencies,Oceanside Police Department,11,CA (11) · in Oceanside
+Public agencies,Greenfield,11,"WI (11) · in Greenfield, Milwaukee"
+Public agencies,Newark Ohio Division of Police,11,"OH (11) · in Newark, Heath"
+Public agencies,Nevada County Sheriff’s Office,11,CA (11)
+Public agencies,The Colony PD,11,"TX (11) · in The Colony, Carrollton"
+Public agencies,Pinellas County Sheriff's Office,11,FL (11) · in East Lake
+Public agencies,Smithfield Police Department,11,VA (11) · in Smithfield
+Public agencies,Worcester Police,11,MA (11) · in Worcester
+Public agencies,North Liberty Police Department,11,IA (11) · in Coralville
+Public agencies,"Los Angeles County Sheriff's Department,Santa Clarita",11,CA (11) · in Santa Clarita
+Public agencies,Mount Morris Township Police Department,11,MI (11)
+Public agencies,Ludlow Police,11,MA (11)
+Public agencies,Quapaw Nation,11,"OK (10), KS (1)"
+Public agencies,Green Township PD,11,OH (11) · in Monfort Heights
+Public agencies,Newtown Police Department,11,CT (11)
+Public agencies,LASD,11,CA (9) · in Malibu
+Public agencies,Jonesboro Police Department,11,AR (11) · in Jonesboro
+Public agencies,Lake County Indiana Sheriff,11,"IN (11) · in Hobart, Merrillville"
+Public agencies,Woburn Police,11,MA (11) · in Woburn
+Public agencies,Somerton Police Department,11,AZ (11) · in Somerton
+Public agencies,Carrollton Police Department,11,TX (11) · in Carrollton
+Public agencies,Pensacola,11,FL (11) · in Pensacola
+Public agencies,Bedford/Westchester County Police RTC/Intelligence Regional,11,NY (11)
+Public agencies,Carmel Police Department,10,"CA (8), IN (2) · in Carmel"
+Public agencies,University of Chicago Police Department,10,IL (10) · in Chicago
+Public agencies,Waukee Police Department,10,IA (10) · in Waukee
+Public agencies,Wixom Police Department,10,MI (10) · in Wixom
+Public agencies,Novi Police Department,10,MI (10) · in Novi
+Public agencies,Palo Alto Police Department,10,CA (10) · in Palo Alto
+Public agencies,Menomonee Falls,10,WI (10) · in Menomonee Falls
+Public agencies,Union City Police Department,10,"TN (8), CA (2) · in Union City, Hayward"
+Public agencies,Westminster Police Department,10,"CA (6), SC (4) · in Westminster"
+Public agencies,Athens County Sheriff's Office,10,OH (10)
+Public agencies,Morro Bay Police Department,10,CA (10) · in Morro Bay
+Public agencies,City of Torrance,10,"CA (10) · in Gardena, Torrance"
+Public agencies,Wake Forest Police Department,10,NC (10) · in Wake Forest
+Public agencies,Faribault Police Department,10,MN (10) · in Faribault
+Public agencies,Polk County Sheriff,10,"FL (10) · in Lakeland, Auburndale"
+Public agencies,Genesee County Sheriff's Office,10,MI (10)
+Public agencies,Sumner Police,10,WA (10) · in Sumner
+Public agencies,Royal Oak Police Department,10,MI (10) · in Royal Oak
+Public agencies,Revere Police,10,MA (10) · in Revere
+Public agencies,Warner Robins Police Department,10,GA (10) · in Warner Robins
+Public agencies,WSDOT,10,"WA (10) · in Sumner, Wollochet"
+Public agencies,Saginaw Valley State University Police Department,10,MI (10)
+Public agencies,Creve Coeur PD,10,MO (10) · in Creve Coeur
+Public agencies,Adrian Police Department,10,MI (10) · in Adrian
+Public agencies,Santa Barbara Police Department,10,CA (10) · in Santa Barbara
+Public agencies,Town of Groton Police Department,10,CT (10)
+Public agencies,New Braunfels,10,TX (10) · in New Braunfels
+Public agencies,Sawyer County Sheriff,10,WI (10) · in Rice Lake
+Public agencies,Canfield Police Department,10,OH (10) · in Canfield
+Public agencies,Saint Cloud Police Department,10,MN (10) · in St. Cloud
+Public agencies,San Diego Sheriff Department,10,CA (10) · in Poway
+Public agencies,San Luis Police Department,10,AZ (10)
+Public agencies,Chelan County SO,10,WA (10)
+Public agencies,Oak Park Police Department,10,MI (10) · in Oak Park
+Public agencies,Paso Robles Police Department,10,CA (10) · in El Paso de Robles (Paso Robles)
+Public agencies,Putnam County Sheriff,9,NY (9)
+Public agencies,Yorktown/Westchester County Police RTC/Intelligence Regional,9,NY (9)
+Public agencies,Massachusetts State Police,9,MA (9)
+Public agencies,Napoleon Township Police Department,9,MI (9)
+Public agencies,Perrysburg Police Department,9,OH (9) · in Perrysburg
+Public agencies,New Baltimore Police Department,9,MI (8) · in New Baltimore
+Public agencies,Trophy Club PD,9,"TX (9) · in Roanoke, Westlake"
+Public agencies,Hamden Police Department,9,CT (9) · in New Haven
+Public agencies,Grandville Police Department,9,MI (9) · in Grandville
+Public agencies,Colleyville PD,9,TX (9) · in Colleyville
+Public agencies,Ecorse Police Department,9,MI (9) · in Ecorse
+Public agencies,Kent County Sheriff's Office,9,MI (9)
+Public agencies,Warwick Police Department,9,RI (9) · in Warwick
+Public agencies,Sausalito Police Department,9,CA (7) · in Sausalito
+Public agencies,Cheshire Police Department,9,CT (9)
+Public agencies,Billerica Police,9,MA (9)
+Public agencies,Worthington PD,9,OH (9) · in Worthington
+Public agencies,Puyallup Police,9,WA (9) · in Puyallup
+Public agencies,Chelsea Police,9,MA (9) · in Chelsea
+Public agencies,Brawley Police Department,9,CA (9) · in Brawley
+Public agencies,SeaTac Police,9,WA (9) · in SeaTac
+Public agencies,Flushing Police Department,9,MI (9) · in Flushing
+Public agencies,College of William and Mary,9,VA (9) · in Williamsburg
+Public agencies,County of Orange,9,CA (9)
+Public agencies,Scottsdale Police Department,9,AZ (9) · in Scottsdale
+Public agencies,Farmington Police Department,9,"CT (7), NM (2) · in Farmington"
+Public agencies,City of Fredericksburg,9,VA (9) · in Fredericksburg
+Public agencies,Menlo Park Police Department,9,"CA (9) · in Menlo Park, East Palo Alto"
+Public agencies,Darien Police Department,9,CT (9)
+Public agencies,City of Oxford,9,NC (9)
+Public agencies,anne arundel police department,9,MD (9) · in Glen Burnie
+Public agencies,Port Authority of New York and New Jersey,9,"NJ (6), NY (3) · in Fort Lee, Elizabeth"
+Public agencies,Indianola Police Department,9,IA (9)
+Public agencies,Monterey Police Department,9,CA (9) · in Monterey
+Public agencies,Township of Buffalo,9,PA (9)
+Public agencies,Township of Middlesex,9,PA (9)
+Public agencies,Murrysville Police Department,9,PA (9) · in Murrysville
+Public agencies,Golden Gate Bridge Highway and Transportation District,8,CA (8) · in San Francisco
+Public agencies,TOPD,8,CA (8) · in Thousand Oaks
+Public agencies,Columbia County,8,WI (8) · in Wisconsin Dells
+Public agencies,Fraser Department of Public Safety,8,MI (8) · in Roseville
+Public agencies,McCracken County Sheriffs Office,8,KY (8) · in Paducah
+Public agencies,Heath Police Department,8,OH (8) · in Heath
+Public agencies,Redford Township Police Department,8,MI (8)
+Public agencies,Charlotte Police Department,8,MI (8)
+Public agencies,Garden Grove Police Department,8,CA (8) · in Garden Grove
+Public agencies,Sunset Valley,8,TX (8) · in Sunset Valley
+Public agencies,Trenton Police Department,8,MI (8)
+Public agencies,Centralia Police Department,8,WA (8) · in Centralia
+Public agencies,Clio Police Department,8,MI (8)
+Public agencies,Edina Police Department,8,"MN (8) · in Edina, St. Louis Park"
+Public agencies,Westland Police Department,8,MI (8) · in Westland
+Public agencies,South San Francisco Police Department,8,CA (8) · in South San Francisco
+Public agencies,Hopkins PD,8,MN (8) · in Hopkins
+Public agencies,Kent Police,8,WA (8) · in Kent
+Public agencies,Harrington Police Department,8,DE (8)
+Public agencies,Delhi Township PD,8,OH (8)
+Public agencies,Wapato Police,8,WA (8) · in Wapato
+Public agencies,"City of Taylor, TX",8,TX (8) · in Taylor
+Public agencies,Grafton Police,8,MA (8)
+Public agencies,Omaha PD,8,NE (8) · in Omaha
+Public agencies,Mashantucket Pequot Tribal Nation Police Department,8,CT (8)
+Public agencies,Schoolcraft College Police Department,8,MI (8) · in Livonia
+Public agencies,Calexico Police Department,8,CA (8)
+Public agencies,Greenburgh Westchester County Police RTC/Intelligence Region,8,NY (8)
+Public agencies,County of Indiana,8,PA (8)
+Public agencies,Wenatchee Police Department,7,WA (7) · in Wenatchee
+Public agencies,stonybrook university,7,NY (7)
+Public agencies,City of Butler,7,PA (7) · in Butler
+Public agencies,"Panama City, FL",7,FL (7) · in Panama City
+Public agencies,Eagan,7,MN (7) · in Eagan
+Public agencies,Truckee Police Department,7,CA (7) · in Truckee
+Public agencies,Hazel Park Police Department,7,MI (7)
+Public agencies,Lone Tree Police Department,7,CO (7) · in Lone Tree
+Public agencies,City of Stanton,7,CA (7) · in Stanton
+Public agencies,Bensenville Police Department,7,IL (7) · in Bensenville
+Public agencies,Richland Police,7,WA (7)
+Public agencies,Birmingham Police Department (Michigan),7,MI (7)
+Public agencies,California State Parks,7,CA (6)
+Public agencies,Lake County Sheriffs Office,7,"FL (6), IN (1) · in Merrillville"
+Public agencies,Windsor Locks Police Department,7,CT (7) · in Windsor Locks
+Public agencies,Sedona Police Department,7,AZ (7)
+Public agencies,Converse,7,TX (7) · in Converse
+Public agencies,Dakota County Sheriff's Office,7,MN (7)
+Public agencies,Oregon Police Department,7,OH (7)
+Public agencies,Hampton University Police Department,7,VA (7) · in Hampton
+Public agencies,North Castle/Westchester County Police RTC/Intelligence Regi,7,NY (7)
+Public agencies,jcpd,7,TN (7) · in Johnson City
+Public agencies,Hartford Police Department,7,CT (7) · in Hartford
+Public agencies,Ukiah Police Department,7,CA (7) · in Ukiah
+Public agencies,Bryan PD,7,OH (7)
+Public agencies,Douglas Police,7,MA (7)
+Public agencies,Beacon Falls Police Department,7,CT (7)
+Public agencies,Peabody Police,7,MA (7)
+Public agencies,Clinton Police Department,7,CT (7)
+Public agencies,Mott Community College Department of Public Safety,7,MI (7) · in Flint
+Public agencies,"Dayton, OH Police Dept",7,OH (7) · in Dayton
+Public agencies,Stamford Police Department,7,CT (7)
+Public agencies,Wethersfield Police Department,7,CT (7) · in Wethersfield
+Public agencies,New Mexico State Police,7,NM (7)
+Public agencies,Sharon Police Department,7,MA (7)
+Public agencies,Springdale Police,7,AR (7) · in Springdale
+Public agencies,Greenwich Police Department,7,CT (7)
+Public agencies,Norwalk Police Department,7,"CT (6), IA (1) · in Norwalk"
+Public agencies,Sartell Police Department,7,MN (7)
+Public agencies,Paul Bunyan Drug Task Force,7,MN (7) · in Bemidji
+Public agencies,Ayer Police,7,MA (7)
+Public agencies,Broomfield Police Department,7,"CO (7) · in Broomfield, Westminster"
+Public agencies,City of Palmetto PD,7,GA (7) · in Palmetto
+Public agencies,"City of Perry, FL - Perry Police Department",7,FL (7) · in Perry
+Public agencies,White Plains/Westchester County RTC/Intelligence Regional an,7,NY (7)
+Public agencies,Lewsiboro/Westchester County Police RTC/Intelligence Regiona,6,NY (6)
+Public agencies,Jenks Police,6,OK (6) · in Jenks
+Public agencies,San Mateo County Sheriff's Office,6,"CA (6) · in San Carlos, Woodside"
+Public agencies,Grafton Police Dept,6,WI (6) · in Grafton
+Public agencies,White Lake Township Police Department,6,MI (6)
+Public agencies,College of the Sequoias,6,CA (6) · in Visalia
+Public agencies,Wichita Police Department,6,KS (6) · in Wichita
+Public agencies,Bristol Police Department,6,CT (6) · in Bristol
+Public agencies,Lake Delton Police Department,6,WI (6) · in Lake Delton
+Public agencies,Mequon,6,WI (6) · in Mequon
+Public agencies,Beaver Dam,6,WI (6) · in Beaver Dam
+Public agencies,Fond Du Lac,6,WI (6) · in Fond du Lac
+Public agencies,City of Beaver Dam,6,WI (6) · in Beaver Dam
+Public agencies,Walled Lake Police Department,6,MI (6)
+Public agencies,City of Athens Police Department,6,OH (6)
+Public agencies,Muskogee Police,6,OK (6) · in Muskogee
+Public agencies,Inkster Police Department,6,MI (6)
+Public agencies,South Fulton Police Department,6,TN (6)
+Public agencies,New Castle County PD,6,DE (6)
+Public agencies,Kentwood Police Department,6,MI (6) · in Kentwood
+Public agencies,Indiana Dept. of Corrections,6,IN (6) · in Plainfield
+Public agencies,Chesterfield County Sheriff's Office,6,VA (6) · in Chester
+Public agencies,Addison Police Department,6,IL (6) · in Addison
+Public agencies,"Boerne TX, City of",6,TX (6) · in Boerne
+Public agencies,Fort Wayne Police Department,6,IN (6) · in Fort Wayne
+Public agencies,Buena Vista Township Police Department,6,MI (6)
+Public agencies,Selma,6,"TX (6) · in Selma, Universal City"
+Public agencies,Malden Police,6,MA (6) · in Malden
+Public agencies,Palmyra Police Department,6,MO (6)
+Public agencies,Gilroy Police Department,6,CA (6) · in Gilroy
+Public agencies,City of Redmond,6,WA (6) · in Redmond
+Public agencies,CVG Airport,6,KY (6)
+Public agencies,University of Michigan-Dearborn Department of Public Safety,6,MI (6) · in Dearborn
+Public agencies,Barry County Sheriff's Office,6,MI (6)
+Public agencies,Portsmouth Police Department (Virginia),6,VA (6) · in Portsmouth
+Public agencies,Prospect Police Department,6,CT (6)
+Public agencies,Beverly Hills Department of Public Safety (Michigan),6,MI (6)
+Public agencies,Girard Police Department,6,OH (6) · in Girard
+Public agencies,Mahomet Police Department,6,IL (6) · in Mahomet
+Public agencies,Anne Arundel County Police,6,MD (6)
+Public agencies,North Canton Police Department,6,OH (6)
+Public agencies,Trumann Police Department,6,AR (6)
+Public agencies,Wakarusa Police Department,6,IN (6)
+Public agencies,South Portland Police,6,ME (6)
+Public agencies,Simsbury Police Department,6,CT (6)
+Public agencies,Madison Police Department,6,CT (6)
+Public agencies,Onondaga Community Collage Public Safety (OCC PS),6,NY (6)
+Public agencies,New London Police Department,6,CT (6)
+Public agencies,Coronado Police Department,6,CA (6) · in Coronado
+Public agencies,Crown Point Indiana Police,6,IN (6)
+Public agencies,Spokane Co Sheriff,6,WA (6) · in Spokane Valley
+Public agencies,Idaho Falls Police Department,6,ID (6) · in Idaho Falls
+Public agencies,Jacksonville Sheriffs Office,6,FL (6) · in Jacksonville
+Public agencies,Westfield Police,6,MA (6) · in Westfield
+Public agencies,New Bedford Police,6,MA (6)
+Public agencies,Mohegan Tribal Police Department,6,CT (6)
+Public agencies,Othello PD,6,WA (6)
+Public agencies,Volusia County Sheriff’s Office,6,"FL (6) · in New Smyrna Beach, Edgewater"
+Public agencies,Winthrop Police,6,MA (6)
+Public agencies,New York State University Police,6,NY (6) · in East Farmingdale
+Public agencies,Norfolk Redevelopment and Housing Authority,6,VA (6)
+Public agencies,Tulia Police Dept,6,TX (6)
+Public agencies,University of Fla.,6,FL (6) · in Gainesville
+Public agencies,Township of Penn,6,PA (6)
+Public agencies,Carmel/Putnam County Sheriff to Westchester Putnam/RTC,5,NY (5)
+Public agencies,Peekskill/Westchester County Police RTC/Intelligence Regiona,5,NY (5)
+Public agencies,"University of California, Santa Cruz",5,CA (5)
+Public agencies,Cobb County Police Department,5,GA (5)
+Public agencies,Chesterfield Township Police Department,5,MI (5)
+Public agencies,Clinton Township Police Department,5,MI (5)
+Public agencies,Nicholasville Police Department,5,KY (5) · in Nicholasville
+Public agencies,Sun Prairie Police Department,5,WI (5) · in Sun Prairie
+Public agencies,Gloucester County Sheriffs Office,5,VA (5)
+Public agencies,Marathon County Sheriff’s Office,5,WI (5) · in Wausau
+Public agencies,West Bend,5,WI (5) · in West Bend
+Public agencies,Germantown Police Department,5,WI (5) · in Germantown
+Public agencies,State of Connecticut,5,CT (5)
+Public agencies,Ellijay Police Department,5,GA (5)
+Public agencies,Sapulpa Police,5,OK (5)
+Public agencies,Pryor Police,5,OK (5)
+Public agencies,Roswell Police,5,"GA (5) · in Roswell, Alpharetta"
+Public agencies,Skamania County Sheriff's Department,5,WA (5)
+Public agencies,Ocean City Police Department,5,MD (5)
+Public agencies,Lone Peak Police Department,5,UT (5)
+Public agencies,Wells County Sheriff's Office,5,IN (5)
+Public agencies,Salina Police,5,KS (5) · in Salina
+Public agencies,Cibolo,5,TX (5) · in Cibolo
+Public agencies,West Richland Police,5,WA (5) · in West Richland
+Public agencies,Minnetonka Police Department,5,MN (5) · in Minnetonka
+Public agencies,South Pasadena Police Department,5,CA (5) · in South Pasadena
+Public agencies,Readington Township Police Department,5,NJ (5)
+Public agencies,Stephens County Sheriffs Office,5,GA (5)
+Public agencies,Forsyth County,5,NC (5) · in Winston-Salem
+Public agencies,Colerain Township,5,OH (5)
+Public agencies,North College Hill PD,5,OH (5) · in North College Hill
+Public agencies,New Kent County Sheriff's Office,5,VA (5)
+Public agencies,Delaware State Police,5,DE (5)
+Public agencies,Colerain Township PD,5,OH (5)
+Public agencies,Brentwood PD,5,"MO (5) · in Brentwood, Ladue"
+Public agencies,Grosse Pointe Shores Department of Public Safety,5,MI (5)
+Public agencies,Grosse Pointe Woods Department of Public Safety,5,MI (5)
+Public agencies,Grosse Pointe Park Department of Public Safety,5,MI (5)
+Public agencies,Harper Woods Police Department,5,MI (5) · in Harper Woods
+Public agencies,Sharonville PD,5,OH (5) · in Sharonville
+Public agencies,Castle Rock,5,CO (5) · in Castle Rock
+Public agencies,Azusa Police Department,5,CA (5) · in Azusa
+Public agencies,King County Housing Authority,5,WA (5) · in Auburn
+Public agencies,Madison County Sheriffs Department,5,NC (5)
+Public agencies,City of Willmar - Police,5,MN (5)
+Public agencies,"Alamogordo, City of",5,NM (5) · in Alamogordo
+Public agencies,Stratford Police Department,5,CT (5)
+Public agencies,Terrell Hills,5,TX (5) · in Terrell Hills
+Public agencies,"Mesquite, NV",5,NV (5)
+Public agencies,Winton Woods City Schools,5,OH (5) · in Forest Park
+Public agencies,East Haven Police Department,5,CT (5)
+Public agencies,City of Columbia PD,5,MO (5) · in Columbia
+Public agencies,Jackson Housing Commission,5,MI (5) · in Jackson
+Public agencies,Grottoes Police Department,5,VA (5)
+Public agencies,Onondaga County Sheriff’s Office,5,NY (5)
+Public agencies,Quincy Police,5,MA (5) · in Quincy
+Public agencies,Chino Valley Police Department,5,AZ (5)
+Public agencies,Caldwell County Sheriff,5,TX (5)
+Public agencies,Rocky Hill Police Department,5,CT (5)
+Public agencies,Elk Grove Police Department,5,CA (5) · in Elk Grove
+Public agencies,Hennepin County Sheriff's Office,5,MN (5) · in Minneapolis
+Public agencies,Monson Police,5,MA (5)
+Public agencies,Lenawee County Sheriff's Office,5,MI (5)
+Public agencies,Newington Police Department,5,CT (5) · in Newington
+Public agencies,Village of Saint Johnsville Police Department,5,NY (5)
+Public agencies,Groton Police,5,MA (5)
+Public agencies,St. Johns County Sheriff’s Office,5,FL (5) · in World Golf Village
+Public agencies,West Springfield Police,5,MA (5)
+Public agencies,Littleton Police,5,MA (5)
+Public agencies,Wayne Police Department,5,MI (5)
+Public agencies,Enfield Police Department,5,CT (5)
+Public agencies,Minnesota State Patrol / Paul Bunyan Task Force,5,MN (5) · in Bemidji
+Public agencies,Akron Police Department,5,OH (5) · in Akron
+Public agencies,University of Rhode Island,5,RI (5)
+Public agencies,UC Merced Police Department,5,CA (5) · in Merced
+Public agencies,Town of Huntington,5,NY (5) · in Huntington Station
+Recorded as the vendor,Flock Safety,2143,"TX (452), IL (415), GA (290), CA (251), OH (232), WI (118), IN (68), VA (41), TN (34), MO (25) · in Houston, Springfield"
+Recorded as the vendor,Rekor,8,OH (8) · in Avon
+Recorded as the vendor,Leonardo,7,"OH (7) · in Brook Park, Parma"
+Recorded as the vendor,Flock,6,"NE (1), NM (1), WI (1), TX (1), GA (1), FL (1) · in Largo, Española"

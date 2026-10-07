@@ -11,9 +11,10 @@ Method write-up: `docs/METHODS.md`. Step-by-step guide to the code: `docs/HOW_IT
 | `output/png/validation_web_scatter.png` | reported vs. mapped cameras, 360 agencies |
 | `output/png/hist_cameras_per_agency_stats.png` | all 7,795 agencies with a mapped camera: share by number of cameras (median 6) |
 | `output/png/hist_reported_cameras_per_agency.png` | the validation agencies: share by number of cameras they reported (median 17) |
+| `output/png/hist_findingflock_public_operators.png` | Finding Flock's public operators: share by number of operator-tagged cameras (median 11) |
 | `output/png/court_observations_per_day.png` | captures per day in ALPR court rulings vs. *Carpenter* |
 
-All four are drawn by `R/09_charts.R` from files in git, so `Rscript R/09_charts.R` redraws them without rerunning
+All five are drawn by `R/09_charts.R` from files in git, so `Rscript R/09_charts.R` redraws them without rerunning
 the pipeline: `output/csv/validation_web_comparison.csv` (one row per agency), `output/csv/validation_web_metrics.csv`,
 `output/csv/agencies.csv` and `docs/alpr_observation_counts.xlsx` (court rulings, compiled by hand with sources).
 
@@ -31,6 +32,7 @@ the pipeline: `output/csv/validation_web_comparison.csv` (one row per agency), `
 | `R/08_validate.R` | compares located counts with reported counts (and Minnesota's register) |
 | `R/09_charts.R` | the three charts |
 | `R/osm_pull.R` | optional: makes a new OSM snapshot from the live database (~2 h) |
+| `R/findingflock_pull.R` | optional: snapshots the operator tables on findingflock.com/operators |
 
 Shared: `R/00_setup.R` (paths, helpers), `R/name_parser.R` (agency-name normalization), `R/theme_cf.R` (chart style).
 
@@ -38,7 +40,7 @@ Shared: `R/00_setup.R` (paths, helpers), `R/name_parser.R` (agency-name normaliz
 
 | Path | Contents |
 |---|---|
-| `data/snapshots/` | OSM snapshot and its Overpass query log; FBI agency directory and employee file, pinned 2026-10-06 |
+| `data/snapshots/` | OSM snapshot and its Overpass query log; FBI agency directory and employee file, pinned 2026-10-06; Finding Flock operator table, 2026-10-07 (derived from OpenStreetMap, ODbL) |
 | `data/raw/leaic/` | BJS LEAIC 2012 (ICPSR 35158) |
 | `data/validation_web/` | publicly reported camera counts (URL and quote per row), status overrides, Minnesota BCA register |
 | `data/operator_class_overrides.csv` | reviewed operator classes that override the rules in 05 |
