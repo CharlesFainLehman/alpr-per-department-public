@@ -1,10 +1,12 @@
-# Assign each camera to the local agency whose area contains it: the city or town police department, or the
-# county agency outside them. This is a geographic measure ("located"), not ownership.
+# Assign each camera to a local agency: the one its operator tag names, if that is a local agency; otherwise the
+# one whose area contains it (the city or town police department, or the county agency outside them).
 #
 # Cameras whose operator is classified private or public_other (05_classify_operators.R) are excluded:
-# location in a city does not make a DOT, CHP, university or retailer camera the city PD's.
+# location in a city does not make a DOT, CHP, university or retailer camera the city PD's. So are cameras
+# tagged as destroyed, disabled, removed or otherwise not operating.
 # Every remaining camera gets a status (located_status) saying how it was placed:
 #
+#   operator_tag            the operator tag names a local agency (04): that agency, wherever the camera is
 #   direct_place            inside an incorporated place whose code identifies one current municipal PD
 #   direct_cousub           inside an active town/township (county subdivision) with its own PD
 #   direct_*_name_mismatch  as above, but the PD's name differs from the Census name of its code
@@ -16,7 +18,7 @@
 #                           agency, where one municipal PD serves >= 50% of county population; inferred
 #   unresolved_shared_code  place code shared by >1 PD and no unique name match; not assigned
 #   no_local_agency         no local agency for the area (state-police areas); not assigned
-#   excluded_private / excluded_public_other
+#   excluded_private / excluded_public_other / excluded_not_operating
 #
 # Place codes come from LEAIC (2012). Where several PDs share a code, the PD whose name matches the
 # Census place name wins; otherwise the code is left unresolved (no population tie-break).
@@ -154,10 +156,15 @@ write_csv(shared |> mutate(resolution = case_when(ori %in% resolved_shared$ori ~
 place_to_pd <- bind_rows(muni |> add_count(place_fips, name = "n_code") |> filter(n_code == 1),
                          resolved_shared) |> transmute(geo = place_fips, pd_ori = ori, pd_name_ok = coalesce(name_matches_code, FALSE))
 stopifnot(!anyDuplicated(place_to_pd$geo))
-# codes actually used for each PD (agencies.csv reports these, not the raw LEAIC codes)
-saveRDS(muni |> filter(place_fips %in% place_to_pd$geo, ori %in% place_to_pd$pd_ori) |>
-          summarise(place_used = paste(sort(unique(place_fips)), collapse = ";"), place_source = first(place_source), .by = ori),
-        file.path(PROC, "pd_place_codes.rds"))
+# Contract cities (03) whose police service comes from a neighboring city's department, not the sheriff
+PROVIDER <- c(CA0430900 = "CA0430700",   # Monte Sereno -> Los Gatos/Monte Sereno PD (losgatosca.gov/2023)
+              CA0040100 = "CA0040300",   # Biggs -> Gridley PD (biggs-ca.gov)
+              CA0470400 = "CA0470300")   # Fort Jones -> Etna PD (fortjonesca.org)
+served <- ag_all |> filter(ori %in% names(PROVIDER), !is.na(place_fips), !place_fips %in% place_to_pd$geo) |>
+  transmute(geo = place_fips, pd_ori = PROVIDER[ori], pd_name_ok = TRUE)
+stopifnot(all(served$pd_ori %in% ag$ori))
+place_to_pd <- bind_rows(place_to_pd, served)
+message("  contract cities assigned to a neighboring city's PD: ", nrow(served))
 message("  single-PD codes whose PD name does not match the Census name (kept, flagged): ",
         sum(!coalesce(muni$name_matches_code[!muni$place_fips %in% shared$place_fips], FALSE)))
 write_csv(muni |> filter(!coalesce(name_matches_code, FALSE)) |> select(ori, name, state, place_fips, geo_name, place_source),
@@ -185,10 +192,22 @@ cw <- muni_all |> filter(!is.na(county_fips)) |> left_join(cty_pop, by = "county
   arrange(county_fips, desc(population_fbi)) |> distinct(county_fips, .keep_all = TRUE)
 write_csv(cw |> select(county_fips, ori, name, population_fbi, county_pop), file.path(REVIEW, "located_countywide_pds.csv"))
 countywide <- cw |> select(geo = county_fips, cw_ori = ori)
+# each agency's resolved area: place / county subdivision codes, county, county-wide (agencies.csv reports it)
+saveRDS(bind_rows(place_to_pd |> transmute(ori = pd_ori, area = geo),
+                  county_to_ag |> transmute(ori = cty_ori, area = paste0("county ", geo)),
+                  countywide |> transmute(ori = cw_ori, area = paste0("countywide ", geo))) |>
+          summarise(area = paste(sort(unique(area)), collapse = ";"), .by = ori),
+        file.path(PROC, "agency_area.rds"))
 c8 <- inc_places$GEOID[inc_places$CLASSFP == "C8"]
 
 # 4. Assign ------------------------------------------------------------------------------------------------
-b <- cams |> select(osm_id, op_class, place_geoid, cousub_geoid, county_geoid) |>
+# Not operating: OSM lifecycle tags (status / operational_status, disused: / removed: keys)
+NOT_OPERATING_RX <- '"(status|operational_status)":"(destroyed|deactivated|disabled|inactive|missing|removed|decommissioned)"|"(disused|removed|was):'
+om <- readRDS(file.path(PROC, "operator_match.rds"))
+b <- cams |> select(osm_id, op_class, all_tags, place_geoid, cousub_geoid, county_geoid) |>
+  left_join(om |> select(osm_id, operator_ori), by = "osm_id") |>
+  mutate(not_operating = str_detect(all_tags, NOT_OPERATING_RX),
+         tag_ori = if_else(op_class %in% c("local_police", "local_government"), operator_ori, NA)) |> select(-all_tags, -operator_ori) |>
   mutate(cousub_key = if_else(is.na(cousub_geoid), NA, cs_key(cousub_geoid)))
 b <- b |> left_join(place_to_pd, by = c("place_geoid" = "geo")); n_log(b, "after place -> PD join")
 b <- b |> left_join(place_to_pd |> rename(cs_pd_ori = pd_ori, cs_name_ok = pd_name_ok), by = c("cousub_key" = "geo")); n_log(b, "after county subdivision -> PD join")
@@ -200,6 +219,8 @@ b <- b |> mutate(
   located_status = case_when(
     op_class == "private" ~ "excluded_private",
     op_class == "public_other" ~ "excluded_public_other",
+    not_operating ~ "excluded_not_operating",
+    !is.na(tag_ori) ~ "operator_tag",
     !is.na(pd_ori) & pd_name_ok ~ "direct_place",
     !is.na(pd_ori) ~ "direct_place_name_mismatch",
     place_geoid %in% unresolved_codes ~ "unresolved_shared_code",
@@ -211,10 +232,13 @@ b <- b |> mutate(
     !is.na(place_geoid) & !is.na(cty_ori) ~ "inferred_no_pd_in_place",
     !is.na(cty_ori) ~ "county_unincorporated",
     TRUE ~ "no_local_agency"),
-  located_ori = case_when(str_starts(located_status, "direct_place") ~ pd_ori, str_starts(located_status, "direct_cousub") ~ cs_pd_ori,
+  located_ori = case_when(located_status == "operator_tag" ~ tag_ori, str_starts(located_status, "direct_place") ~ pd_ori, str_starts(located_status, "direct_cousub") ~ cs_pd_ori,
                           located_status %in% c("county_unincorporated", "inferred_no_pd_in_place") ~ cty_ori,
                           located_status == "inferred_countywide_pd" ~ cw_ori, TRUE ~ NA))
 message("\nLocated status:"); print(count(b, located_status, sort = TRUE))
+area_ori <- with(b, case_when(!is.na(pd_ori) ~ pd_ori, !is.na(cs_pd_ori) ~ cs_pd_ori, !is.na(cty_ori) & is.na(cw_ori) ~ cty_ori, TRUE ~ cw_ori))
+message("  operator-tagged cameras credited to an agency other than the one whose area holds them: ",
+        sum(b$located_status == "operator_tag" & coalesce(b$tag_ori != area_ori, TRUE)))
 stopifnot(all(b$located_ori %in% c(NA, ag$ori)))
 saveRDS(b |> select(osm_id, located_status, located_ori, place_geoid, cousub_geoid, county_geoid),
         file.path(PROC, "camera_location.rds"))

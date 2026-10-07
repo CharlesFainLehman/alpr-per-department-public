@@ -25,7 +25,7 @@ and `docs/alpr_observation_counts.xlsx` (court rulings, compiled by hand with so
 | `R/03_agencies.R` | builds the list of local police and sheriff's offices (FBI directory, FBI employee file, BJS LEAIC) |
 | `R/04_match_operator_names.R` | matches each camera's operator tag to an agency name |
 | `R/05_classify_operators.R` | classes each operator: local agency, vendor, private, other public body, ... |
-| `R/06_locate_cameras.R` | assigns each camera to the agency whose area contains it, excluding private and other-public cameras |
+| `R/06_locate_cameras.R` | credits each camera to the local agency its operator tag names, or else the agency whose area contains it; excludes private, other-public and non-operating cameras |
 | `R/07_count_per_agency.R` | per-camera and per-agency tables, summary statistics |
 | `R/08_validate.R` | compares located counts with reported counts (and Minnesota's register) |
 | `R/09_charts.R` | the three charts |
@@ -61,6 +61,9 @@ systemfonts, readxl. Logs go to `output/log_<script>.txt`.
 ## Known limits
 
 - 84% of OSM cameras have no operator tag. Untagged cameras of other operators inside an agency's area count for that agency.
+- Some reported counts are old (24 of the 360 predate 2025) or cover a different scope; `08` reports the metrics for
+  sources dated 2025-2026 separately, and rows counting locations rather than cameras are kept out of the core set.
+- In `agencies.csv`, `area_resolved = FALSE` marks agencies with no mapped service area (150); their zero is not a mapped zero.
 - Volunteer mapping coverage is uneven, and car-mounted readers are not in OSM.
 - Cities that pay the county sheriff for policing are listed in the FBI directory as police departments. 03 drops
   them when they report no staff (in California, or with an ORI ending in "X"), so their cameras go to the sheriff.

@@ -92,8 +92,8 @@ write_csv(w |> filter(is.na(ori)) |> select(state, agency_name, basis, cand_name
 # 3. OSM located counts for the same agencies ---------------------------------------------------------------
 cams <- readRDS(file.path(PROC, "cameras_assigned.rds")) |> filter(!is.na(located_ori))
 osm <- ag |> select(ori, agency_type_fbi = agency_type, population_fbi) |>
-  left_join(count(cams, ori = located_ori, name = "located_all"), by = "ori") |>
-  left_join(count(filter(cams, is_flock), ori = located_ori, name = "located_flock"), by = "ori") |>
+  left_join(count(cams, ori = located_ori, wt = devices, name = "located_all"), by = "ori") |>
+  left_join(count(filter(cams, is_flock), ori = located_ori, wt = devices, name = "located_flock"), by = "ori") |>
   mutate(across(c(located_all, located_flock), \(z) coalesce(z, 0L)))
 v <- w |> filter(!is.na(ori)) |> select(-c(kind, core, core2, core_typed)) |> left_join(osm, by = "ori") |>
   mutate(vendor_l = str_to_lower(coalesce(vendor, "")),
@@ -119,18 +119,21 @@ write_csv(v |> transmute(state, agency = agency_name, agency_type = agency_type_
 #   pearson_r_log1p   correlation of log(1 + count)
 #   within_2x         share with osm between half and double the reported count; an agency reporting zero counts
 #                     as within when osm is also zero (below_half / above_double split the rest)
+#   within_20pct      the same with osm between 0.8 and 1.2 times the reported count
 #   median_ratio      median of osm / reported, over the n_ratio agencies reporting at least one camera
 metrics <- function(osm, rep) {
   pos <- rep > 0; r <- if_else(pos, osm / rep, if_else(osm == 0, 1, Inf))
   tibble(n = length(rep), pearson_r_log1p = cor(log1p(osm), log1p(rep)), spearman_rho = cor(osm, rep, method = "spearman"),
-         within_2x = mean(r >= 0.5 & r <= 2), below_half = mean(r < 0.5), above_double = mean(r > 2),
-         n_ratio = sum(pos), median_ratio = median(r[pos]), median_abs_error = median(abs(osm - rep)))
+         within_2x = mean(r >= 0.5 & r <= 2), within_20pct = mean(r >= 0.8 & r <= 1.2), below_half = mean(r < 0.5),
+         above_double = mean(r > 2), n_ratio = sum(pos), median_ratio = median(r[pos]),
+         median_abs_error = median(abs(osm - rep)), mean_abs_error = mean(abs(osm - rep)))
 }
 core <- v |> filter(core)
 n_log(core, "core comparison set (current program, fixed agency-operated count)")
 popbin <- function(p) cut(p, c(-Inf, 10000, 50000, 250000, Inf), right = FALSE, labels = c("<10k", "10k-50k", "50k-250k", "250k+"))
 res <- bind_rows(
   metrics(core$osm_located, core$reported) |> mutate(subset = "core: current, fixed, agency-operated", .before = 1),
+  { d <- filter(core, year >= 2025); metrics(d$osm_located, d$reported) |> mutate(subset = "core, source dated 2025-2026", .before = 1) },
   core |> mutate(size = coalesce(as.character(popbin(population_fbi)), "unknown")) |>
     reframe(metrics(osm_located, reported), .by = size) |>
     mutate(subset = paste("core, population", size), .before = 1) |> select(-size))

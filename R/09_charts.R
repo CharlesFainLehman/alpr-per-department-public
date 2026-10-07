@@ -14,7 +14,7 @@ met <- read_csv(file.path(OUT_CSV, "validation_web_metrics.csv"), show_col_types
   filter(subset == "core: current, fixed, agency-operated")
 stopifnot(nrow(met) == 1, met$n == nrow(core))
 web_caption <- paste0(
-  sprintf("Mapped: cameras in the agency's area, not tagged to another operator; Flock-tagged only where the reported figure is a Flock count (%d of %d).\n",
+  sprintf("Mapped: cameras tagged to the agency, plus untagged cameras in its area; Flock only where the reported figure is a Flock count (%d of %d).\n",
           sum(core$flock_only), nrow(core)),
   cf_caption(sprintf("Agency websites, government documents and news reports (%s-%s); OpenStreetMap via Overpass, pulled %s.",
                      min(core$year, na.rm = TRUE), max(core$year, na.rm = TRUE), pull_date)))
@@ -31,7 +31,7 @@ p <- ggplot(core, aes(reported, osm_located)) +
   scale_x_continuous(trans = "log1p", breaks = BRK, labels = label_comma(), limits = LIM, expand = expansion(mult = 0.02)) +
   scale_y_continuous(trans = "log1p", breaks = BRK, labels = label_comma(), limits = LIM, expand = expansion(mult = 0.02)) +
   labs(x = NULL, y = NULL,
-       title = "Mapped camera counts mostly match what agencies report",
+       title = "Mapped camera counts track what agencies report",
        subtitle = sprintf("Fixed license plate reader cameras per agency, %d agencies (log scale). Across: count reported by the\nagency. Up: cameras mapped in OpenStreetMap in its area. %.0f%% of agencies are within a factor of two.",
                           nrow(core), 100 * met$within_2x),
        caption = web_caption) +

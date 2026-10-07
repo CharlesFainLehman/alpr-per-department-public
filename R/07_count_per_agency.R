@@ -1,8 +1,9 @@
 # Put the camera-level results together and count the cameras located in each agency's area.
 #
-# "Located" cameras are those inside an agency's area (06_locate_cameras.R), excluding cameras whose operator
-# is a private party or another public body. Cameras of unknown operator count. This is not an inventory of
-# cameras an agency owns, and it says nothing about what an agency can search through shared networks.
+# An agency's "located" cameras (06_locate_cameras.R) are those its operator tag names, plus untagged cameras in its
+# area; cameras tagged to a private party, another public body or another local agency, and cameras tagged as not
+# operating, are left out. A node tagged camera:count = n counts n cameras. This is not an inventory of cameras an
+# agency owns, and it says nothing about what an agency can search through shared networks.
 #
 # Writes output/csv/cameras.csv.gz (one row per camera), output/csv/agencies.csv (one row per agency,
 # including agencies with no cameras) and output/csv/summary_stats.csv.
@@ -13,7 +14,7 @@ om   <- readRDS(file.path(PROC, "operator_match.rds"))
 cls  <- readRDS(file.path(PROC, "operator_class.rds"))
 loc  <- readRDS(file.path(PROC, "camera_location.rds"))
 ag   <- readRDS(file.path(PROC, "agencies.rds"))
-pdc  <- readRDS(file.path(PROC, "pd_place_codes.rds"))   # place codes 06 used for each PD
+area <- readRDS(file.path(PROC, "agency_area.rds"))    # each agency's resolved area (06)
 
 # Every intermediate must describe exactly this camera set.
 for (d in list(om, cls, loc)) stopifnot(setequal(d$osm_id, cams$osm_id), !anyDuplicated(d$osm_id))
@@ -28,25 +29,28 @@ x <- x |>
            (is.na(manufacturer) & is.na(brand) & str_detect(str_to_lower(coalesce(operator, "")), "flock")),
          # an operator-name match is reported only where the operator is a local agency (an override can
          # reclass a matched name, e.g. "Texas DPS" is not Texas City PD)
-         operator_ori = if_else(op_class %in% c("local_police", "local_government"), operator_ori, NA))
+         operator_ori = if_else(op_class %in% c("local_police", "local_government"), operator_ori, NA),
+         devices = pmax(1L, coalesce(suppressWarnings(as.integer(str_match(all_tags, '"camera:count":"([0-9]+)"')[, 2])), 1L)))
 n_log(x, "cameras with operator class, location and agency names")
 saveRDS(x, file.path(PROC, "cameras_assigned.rds"))
 write_csv(x |> select(osm_id, lat, lon, state, manufacturer, brand, operator, operator_type, surveillance,
-                      surveillance_zone, last_edit, is_flock, op_class, op_class_source, operator_ori, operator_match,
+                      surveillance_zone, last_edit, is_flock, devices, op_class, op_class_source, operator_ori, operator_match,
                       located_status, located_ori, located_name, located_type, place_geoid, cousub_geoid, county_geoid),
           gzfile(file.path(OUT_CSV, "cameras.csv.gz")))
 
 # Agency table ------------------------------------------------------------------------------------------
 INFERRED <- c("inferred_no_pd_in_place", "inferred_countywide_pd", "direct_place_name_mismatch", "direct_cousub_name_mismatch")
 per_ag <- x |> filter(!is.na(located_ori)) |>
-  summarise(cameras_located = n(), located_via_inferred_rule = sum(located_status %in% INFERRED), .by = located_ori)
+  summarise(cameras_located = sum(devices), located_via_inferred_rule = sum(devices[located_status %in% INFERRED]), .by = located_ori)
 agt <- ag |> select(ori, name, agency_type, state, record_status, place_fips_leaic = place_fips, county_fips, population_fbi, pop_year) |>
-  left_join(pdc, by = "ori") |> relocate(place_used, place_source, .after = place_fips_leaic) |>
+  left_join(area, by = "ori") |> relocate(area, .after = place_fips_leaic) |>
   left_join(per_ag, by = c("ori" = "located_ori")) |>
   mutate(across(c(cameras_located, located_via_inferred_rule), \(v) coalesce(v, 0L)),
-         per10k_located = if_else(population_fbi > 0, 1e4 * cameras_located / population_fbi, NA))
+         per10k_located = if_else(population_fbi > 0, 1e4 * cameras_located / population_fbi, NA),
+         # a zero for an agency with no resolved area is not a mapped zero
+         area_resolved = !is.na(area))
 n_log(agt, "agency table (all local PDs + sheriffs, incl. zero cameras)")
-stopifnot(sum(agt$cameras_located) == sum(!is.na(x$located_ori)))
+stopifnot(sum(agt$cameras_located) == sum(x$devices[!is.na(x$located_ori)]))
 write_csv(agt, file.path(OUT_CSV, "agencies.csv"))
 
 # Summary statistics (current agencies only; contract cities and historical ORIs never receive cameras) ---------
