@@ -19,8 +19,8 @@ cf_blue   <- "#1F77D0"
 theme_cf <- function(title_size = 36) {
   theme_minimal(base_family = "Liberation Sans", base_size = 20) +
     theme(
-      plot.background    = element_rect(fill = "white", color = NA),
-      panel.background   = element_rect(fill = "white", color = NA),
+      plot.background    = element_rect(fill = "transparent", color = NA),
+      panel.background   = element_rect(fill = "transparent", color = NA),
       panel.grid.minor   = element_blank(),
       panel.grid.major.x = element_blank(),
       panel.grid.major.y = element_line(color = cf_grid, linewidth = 0.6),
@@ -44,5 +44,5 @@ cf_caption <- function(source) {
 
 cf_save <- function(p, path) {
   ggsave(path, p, device = ragg::agg_png,
-         width = 1600, height = 900, units = "px", dpi = 100, bg = "white")
+         width = 1600, height = 900, units = "px", dpi = 100, bg = "transparent")
 }
