@@ -3,7 +3,7 @@
 # Sources
 #   FBI Crime Data Explorer (CDE) agency directory                 -> ORI, name, type, county
 #   FBI CDE "Law Enforcement Employees" file (lee_1960_2025.csv)  -> population served
-#   BJS LEAIC 2012 (ICPSR 35158, committed in data/raw/leaic/)    -> place / county FIPS
+#   BJS LEAIC 2012 (ICPSR 35158, downloaded by hand to data/raw/leaic/) -> place / county FIPS
 # The two FBI files are pinned in data/snapshots/ (fbi_cde_agencies_<date>, fbi_lee_<date>). If those
 # are missing they are downloaded again; the CDE directory is served from a "LATEST" address and changes.
 source("R/00_setup.R")

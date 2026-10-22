@@ -1,4 +1,4 @@
-# The three charts, from saved tables only (no pipeline objects), so they can be redrawn on their own:
+# The five charts, from saved tables only (no pipeline objects), so they can be redrawn on their own:
 #   output/png/validation_web_scatter.png          reported vs. mapped cameras per agency
 #   output/png/hist_cameras_per_agency_stats.png   all agencies: distribution of mapped cameras per agency
 #   output/png/hist_reported_cameras_per_agency.png the validation agencies: distribution of their published counts

@@ -45,7 +45,8 @@ Builds the list of local law-enforcement agencies from three sources:
 - **FBI employee file**: the population each agency serves, and whether it reports any staff.
 - **Bureau of Justice Statistics crosswalk (LEAIC, 2012)**: links each ORI to a Census city or county code.
 
-The FBI files are pinned in `data/snapshots/` so reruns give the same answer. The script keeps city police,
+The FBI files are pinned in `data/snapshots/` so reruns give the same answer. The crosswalk can't be
+redistributed, so it isn't in git: download it from ICPSR and put it in `data/raw/leaic/` first (see the README). The script keeps city police,
 sheriffs and county police, and marks each record's status:
 
 - **current**: receives cameras.
