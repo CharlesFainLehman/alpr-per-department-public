@@ -42,8 +42,9 @@ write_csv(x |> select(osm_id, lat, lon, state, manufacturer, brand, operator, op
 INFERRED <- c("inferred_no_pd_in_place", "inferred_countywide_pd", "direct_place_name_mismatch", "direct_cousub_name_mismatch")
 per_ag <- x |> filter(!is.na(located_ori)) |>
   summarise(cameras_located = sum(devices), located_via_inferred_rule = sum(devices[located_status %in% INFERRED]), .by = located_ori)
-agt <- ag |> select(ori, name, agency_type, state, record_status, place_fips_leaic = place_fips, county_fips, population_fbi, pop_year) |>
-  left_join(area, by = "ori") |> relocate(area, .after = place_fips_leaic) |>
+# LEAIC's own place codes are left out: ICPSR's terms bar redistributing the crosswalk.
+agt <- ag |> select(ori, name, agency_type, state, record_status, county_fips, population_fbi, pop_year) |>
+  left_join(area, by = "ori") |> relocate(area, .after = record_status) |>
   left_join(per_ag, by = c("ori" = "located_ori")) |>
   mutate(across(c(cameras_located, located_via_inferred_rule), \(v) coalesce(v, 0L)),
          per10k_located = if_else(population_fbi > 0, 1e4 * cameras_located / population_fbi, NA),
